@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-Holi
-=======
-HOLA
->>>>>>> origin/master
