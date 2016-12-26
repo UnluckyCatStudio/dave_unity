@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ee76dbd6b67fbea499f8bf5a830ffc44
+timeCreated: 1482342347
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alphahate
+  fontNames:
+  - Alphahate
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
