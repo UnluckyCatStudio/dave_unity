@@ -12,12 +12,29 @@ public class UIManager : MonoBehaviour
 
 	#region Pause Menu
 
+	#region Controls
+	[Header("Controls")]
+	public InputField forward;
+	public InputField backwards;
+	public InputField jump;
+	public InputField backwards_jump;
+
+	// Converts Controls input to Upper
+	// Also saves all the keys
+	public void ToUpper ( InputField control )
+	{
+		if ( control.text != "" && control.text != " " )
+		{
+			control.text = control.text.ToUpper ();
+			Game.input.ApplySave (); 
+		}
+	}
+
+	#endregion
+
 	#region Graphics
-
-	// Resolution
-	public InputField height;
-	public InputField width;
-
+	[Header("Graphics")]
+	public Dropdown resolutions;
 	public Toggle vsync;
 	public Slider textures;
 	public Slider shadows;
@@ -29,7 +46,7 @@ public class UIManager : MonoBehaviour
 
 	public void Resume ()
 	{
-		Game.mPause.SwitchPause ();
+		Game.pause.SwitchPause ();
 	}
 	
 	public void QuitToMainMenu ()
