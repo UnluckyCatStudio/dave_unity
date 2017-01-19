@@ -1,34 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
-	// Changed in save-file
-	public KeyCode pauseKey		= KeyCode.P;
-	public KeyCode pauseKey2	= KeyCode.Escape;
-	public KeyCode run			= KeyCode.LeftShift;
-
-	// Changed through menu
-	public KeyCode forward				= KeyCode.D;
-	public KeyCode backwards            = KeyCode.A;
-	public KeyCode jump					= KeyCode.Space;
-	public KeyCode backwards_jump		= KeyCode.Space;
+	#region KEYS
+	// Order is important.
+	// Should respect order in Unity hieracy
+	public KeyCode[] keys = new KeyCode[]
+	{
+		KeyCode.W,									// Forward
+		KeyCode.S,									// Backwards
+		KeyCode.A,									// Left
+		KeyCode.D,									// Right
+		KeyCode.Space,								// Jump
+		KeyCode.LeftShift | KeyCode.RightShift,		// Run
+		KeyCode.R,									// Sword
+		KeyCode.Q,									// Boomerang
+		KeyCode.Mouse2,								// Lock enemy
+		KeyCode.Mouse0								// Attack
+	};
+	#endregion
 
 	public void LoadValues ()
 	{
-		Game.ui.forward.text			= forward.ToString ();
-		Game.ui.backwards.text			= backwards.ToString ();
-		Game.ui.jump.text				= jump.ToString ();
-		Game.ui.backwards_jump.text		= backwards_jump.ToString ();
+		for ( int k=0; k!=keys.Length; k++ )
+		{
+			Game.ui.keyFields[k].text = keys[k].ToString ();
+		}
 	}
 
 	public void ApplySave ()
 	{
-		forward			= ParseKey ( Game.ui.forward.text );
-		backwards		= ParseKey ( Game.ui.backwards.text );
-		jump			= ParseKey ( Game.ui.jump.text );
-		backwards_jump	= ParseKey ( Game.ui.backwards_jump.text );
+		for ( int k = 0; k != keys.Length; k++ )
+		{
+			keys[k] = ParseKey ( Game.ui.keyFields[k].text );
+		}
 
 		PlayerPrefs.SetString ( "Input", JsonUtility.ToJson ( this ) );
 		PlayerPrefs.Save ();

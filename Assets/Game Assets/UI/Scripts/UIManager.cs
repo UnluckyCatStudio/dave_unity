@@ -14,10 +14,7 @@ public class UIManager : MonoBehaviour
 
 	#region Controls
 	[Header("Controls")]
-	public InputField forward;
-	public InputField backwards;
-	public InputField jump;
-	public InputField backwards_jump;
+	public InputField[] keyFields;
 
 	// Converts Controls input to Upper
 	// Also saves all the keys
@@ -41,7 +38,6 @@ public class UIManager : MonoBehaviour
 	public Toggle antialiasing;
 	public Slider postFX;
 	public Slider FOV;
-
 	#endregion
 
 	public void Resume ()
@@ -51,24 +47,26 @@ public class UIManager : MonoBehaviour
 	
 	public void QuitToMainMenu ()
 	{
-		#if DEMO_V_0_1
+#if DEMO_V_0_1
 		Time.timeScale = 1;
 		Camera.main.clearFlags = CameraClearFlags.SolidColor;
 		SceneManager.LoadScene ( "MainMenuBG_DEMO" );
 		GetComponent<DontDestroy> ().DestroyAll ();
-		#else
+#else
 		SceneManager.LoadScene ( "EmptyUIScene" );
 		Time.timeScale = 1;
-		#endif
+#endif
 	}
-
 	#endregion
 
 	#region Main Menu
-
 	public void Play ()
 	{
+#if DEMO_V_0_1
 		SceneManager.LoadScene ( "dave_tests" );
+#else
+
+#endif
 		pauseMenu.SetActive ( false );
 		mainMenu.SetActive ( false );
 	}
@@ -77,6 +75,5 @@ public class UIManager : MonoBehaviour
 	{
 		Application.Quit ();
 	}
-
-	#endregion
+#endregion
 }
