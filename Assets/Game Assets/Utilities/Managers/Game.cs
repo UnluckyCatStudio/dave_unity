@@ -14,7 +14,7 @@ public class Game : MonoBehaviour
 	public static InputManager		input;
 	public static PauseManager		pause;
 
-	// Initialize managers
+	// Initialize managers ( default values )
 	private void Awake ()
 	{
 		ui			= GetComponent<UIManager> ();
@@ -32,11 +32,11 @@ public class Game : MonoBehaviour
 		var jsonInput		= PlayerPrefs.GetString ( "Input" );
 
 		if ( jsonGraphics != "" )	graphics	= JsonUtility.FromJson<GraphicsManager> ( jsonGraphics );
-		graphics.LoadResolutions ();
-		graphics.LoadValues ();
+		//graphics.LoadResolutions ();
+		//graphics.LoadValues ();
 
 		if ( jsonAudio != "" )		audio		= JsonUtility.FromJson<AudioManager> ( jsonAudio );
-		
+		audio.LoadValues ();
 
 		if ( jsonInput != "" )		input		= JsonUtility.FromJson<InputManager> ( jsonInput );
 		input.LoadValues ();

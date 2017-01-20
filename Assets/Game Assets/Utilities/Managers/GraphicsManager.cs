@@ -9,10 +9,10 @@ public class GraphicsManager : MonoBehaviour
 	public int	resolution		= 0;
 	public bool vsync			= true;
 	public int	textures		= 3;
-	public int	shadows			= 0;
-	public bool antialising		= true;
 	public int	postFX			= 3;
+	public int	shadows			= 0;
 	public int	fov				= 60;
+	public bool antialising		= true;
 
 	public void LoadValues ()
 	{
@@ -30,31 +30,24 @@ public class GraphicsManager : MonoBehaviour
 		// Apply changes to engine
 		Screen.SetResolution ( Screen.resolutions[resolution].width, Screen.resolutions[resolution].height, true );
 		QualitySettings.vSyncCount = 1;
-		Camera.main.fieldOfView = fov;
 		QualitySettings.masterTextureLimit = Math.Abs ( textures );
 		QualitySettings.shadowResolution = ( ShadowResolution ) shadows;
-		// TODO: AA, PostFX;
+		// TODO:
+		// AA, PostFX & FoV
+		// is controlled per camera
 
 		SaveValues ();
-	}
-
-	private void ResetValues ()
-    {
-		LoadValues ();
-
-		PlayerPrefs.SetString ( "Graphics", JsonUtility.ToJson ( this ) );
-		PlayerPrefs.Save ();
 	}
 
 	private void SaveValues ()
 	{
 		resolution	= Game.ui.resolutions.value;
 		vsync		= Game.ui.vsync.isOn;
-		antialising = Game.ui.antialiasing.isOn;
-		fov			= ( int ) Game.ui.FOV.value;
 		textures	= ( int ) Game.ui.textures.value;
-		shadows		= ( int ) Game.ui.shadows.value;
 		postFX		= ( int ) Game.ui.postFX.value;
+		shadows		= ( int ) Game.ui.shadows.value;
+		fov			= ( int ) Game.ui.FOV.value;
+		antialising = Game.ui.antialiasing.isOn;
 
         PlayerPrefs.SetString ( "Graphics", JsonUtility.ToJson ( this ) );
         PlayerPrefs.Save ();

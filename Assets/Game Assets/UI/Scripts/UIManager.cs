@@ -14,32 +14,21 @@ public class UIManager : MonoBehaviour
 
 	#region Controls
 	[Header("Controls")]
-	public InputField[] keyFields;
-
-	// Converts Controls input to Upper
-	// Also saves all the keys
-	public void ToUpper ( InputField control )
-	{
-		if ( control.text != "" && control.text != " " )
-		{
-			control.text = control.text.ToUpper ();
-			Game.input.ApplySave (); 
-		}
-	}
-
+	public Text[] hotkeys;
 	#endregion
 
 	#region Graphics
 	[Header("Graphics")]
-	public Dropdown resolutions;
-	public Toggle vsync;
-	public Slider textures;
-	public Slider shadows;
-	public Toggle antialiasing;
-	public Slider postFX;
-	public Slider FOV;
+	public Dropdown		resolutions;
+	public Toggle		vsync;
+	public Slider		textures;
+	public Slider		postFX;
+	public Slider		shadows;
+	public Slider		FOV;
+	public Toggle		antialiasing;
 	#endregion
 
+	#region FX
 	public void Resume ()
 	{
 		Game.pause.SwitchPause ();
@@ -59,7 +48,11 @@ public class UIManager : MonoBehaviour
 	}
 	#endregion
 
+	#endregion
+
 	#region Main Menu
+
+	#region FX
 	public void Play ()
 	{
 #if DEMO_V_0_1
@@ -75,5 +68,7 @@ public class UIManager : MonoBehaviour
 	{
 		Application.Quit ();
 	}
-#endregion
+	#endregion
+
+	#endregion
 }

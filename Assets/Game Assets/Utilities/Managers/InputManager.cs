@@ -6,20 +6,19 @@ using UnityEngine.UI;
 public class InputManager : MonoBehaviour
 {
 	#region KEYS
-	// Order is important.
-	// Should respect order in Unity hieracy
-	public KeyCode[] keys = new KeyCode[]
+	public KeyCode[] keys =
 	{
 		KeyCode.W,									// Forward
 		KeyCode.S,									// Backwards
 		KeyCode.A,									// Left
 		KeyCode.D,									// Right
 		KeyCode.Space,								// Jump
-		KeyCode.LeftShift | KeyCode.RightShift,		// Run
+		KeyCode.LeftShift,							// Run
 		KeyCode.R,									// Sword
 		KeyCode.Q,									// Boomerang
 		KeyCode.Mouse2,								// Lock enemy
-		KeyCode.Mouse0								// Attack
+		KeyCode.Mouse0,								// Attack
+		KeyCode.E									// Interact
 	};
 	#endregion
 
@@ -27,7 +26,7 @@ public class InputManager : MonoBehaviour
 	{
 		for ( int k=0; k!=keys.Length; k++ )
 		{
-			Game.ui.keyFields[k].text = keys[k].ToString ();
+			Game.ui.hotkeys[k].text = keys[k].ToString ();
 		}
 	}
 
@@ -35,7 +34,7 @@ public class InputManager : MonoBehaviour
 	{
 		for ( int k = 0; k != keys.Length; k++ )
 		{
-			keys[k] = ParseKey ( Game.ui.keyFields[k].text );
+			keys[k] = ParseKey ( Game.ui.hotkeys[k].text );
 		}
 
 		PlayerPrefs.SetString ( "Input", JsonUtility.ToJson ( this ) );
