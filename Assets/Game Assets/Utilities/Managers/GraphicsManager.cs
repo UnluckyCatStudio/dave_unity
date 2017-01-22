@@ -3,6 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public struct GraphicsSettings
+{
+	public int  resolution;
+	public bool vsync;
+	public int  textures;
+	public int  postFX;
+	public int  shadows;
+	public int  fov;
+	public bool antialising;
+}
+
 public class GraphicsManager : MonoBehaviour
 {
 	// Default values
@@ -10,7 +22,7 @@ public class GraphicsManager : MonoBehaviour
 	public bool vsync			= true;
 	public int	textures		= 3;
 	public int	postFX			= 3;
-	public int	shadows			= 0;
+	public int	shadows			= 3;
 	public int	fov				= 60;
 	public bool antialising		= true;
 
@@ -25,22 +37,9 @@ public class GraphicsManager : MonoBehaviour
 		Game.ui.FOV.value				= fov;
 	}
 
-	public void Apply ()
+	public void ApplySave ( bool justApply = false )
 	{
-		// Apply changes to engine
-		Screen.SetResolution ( Screen.resolutions[resolution].width, Screen.resolutions[resolution].height, true );
-		QualitySettings.vSyncCount = 1;
-		QualitySettings.masterTextureLimit = Math.Abs ( textures );
-		QualitySettings.shadowResolution = ( ShadowResolution ) shadows;
-		// TODO:
-		// AA, PostFX & FoV
-		// is controlled per camera
-
-		SaveValues ();
-	}
-
-	private void SaveValues ()
-	{
+		// Apply
 		resolution	= Game.ui.resolutions.value;
 		vsync		= Game.ui.vsync.isOn;
 		textures	= ( int ) Game.ui.textures.value;
@@ -49,8 +48,24 @@ public class GraphicsManager : MonoBehaviour
 		fov			= ( int ) Game.ui.FOV.value;
 		antialising = Game.ui.antialiasing.isOn;
 
+		Apply ();
+		if ( justApply ) return;
+
+		// Save
         PlayerPrefs.SetString ( "Graphics", JsonUtility.ToJson ( this ) );
         PlayerPrefs.Save ();
+	}
+
+	private void Apply ()
+	{
+		// Apply changes to engine
+		Screen.SetResolution ( Screen.resolutions[resolution].width, Screen.resolutions[resolution].height, true );
+		QualitySettings.vSyncCount = vsync ? 1 : 0;
+		QualitySettings.masterTextureLimit = Math.Abs ( textures - 3 );		// Correct slider value
+		QualitySettings.shadowResolution = ( ShadowResolution ) shadows;
+		// TODO:
+		// AA, PostFX & FoV
+		// is controlled per camera
 	}
 
 	public void LoadResolutions ()

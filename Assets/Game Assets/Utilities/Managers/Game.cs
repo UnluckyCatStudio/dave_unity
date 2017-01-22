@@ -31,14 +31,55 @@ public class Game : MonoBehaviour
 		var jsonAudio		= PlayerPrefs.GetString ( "Audio" );
 		var jsonInput		= PlayerPrefs.GetString ( "Input" );
 
-		if ( jsonGraphics != "" )	graphics	= JsonUtility.FromJson<GraphicsManager> ( jsonGraphics );
+		#region LOAD GRAPHICS
+		if ( jsonGraphics != "" )
+		{
+			var temp = JsonUtility.FromJson<GraphicsSettings> ( jsonGraphics );
+
+			graphics.resolution		= temp.resolution;
+			graphics.vsync			= temp.vsync;
+			graphics.textures		= temp.textures;
+			graphics.postFX			= temp.postFX;
+			graphics.shadows		= temp.shadows;
+			graphics.fov			= temp.fov;
+			graphics.antialising	= temp.antialising;
+		}
 		//graphics.LoadResolutions ();
-		//graphics.LoadValues ();
+		graphics.LoadValues ();
+		graphics.ApplySave ( true );
+		#endregion
 
-		if ( jsonAudio != "" )		audio		= JsonUtility.FromJson<AudioManager> ( jsonAudio );
+		#region LOAD AUDIO
+		if ( jsonAudio != "" )
+		{
+			var temp = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
+
+			audio.master	= temp.master;
+			audio.music		= temp.music;
+			audio.sfx		= temp.sfx;
+			audio.ambient	= temp.ambient;
+			audio.voices	= temp.voices;
+		}
 		audio.LoadValues ();
+		audio.ApplySave ( true );
+		#endregion
 
-		if ( jsonInput != "" )		input		= JsonUtility.FromJson<InputManager> ( jsonInput );
+		#region LOAD INPUT
+		if ( jsonInput != "" )
+		{
+			var temp = JsonUtility.FromJson<InputSettings> ( jsonInput );
+
+			for ( int i = 0; i != temp.keys.Length; i++ )
+				input.keys[i] = ( KeyCode ) temp.keys[i];
+		}
 		input.LoadValues ();
+		// No need to apply, since game will search itself for
+		// the controls here.
+		#endregion
+
+		// Translate
+		// TODO : select translation based on UI control
+		// - now i'm just using default values -
+		ui.pauseMenu.BroadcastMessage ( "UpdateTranslation" );
 	}
 }

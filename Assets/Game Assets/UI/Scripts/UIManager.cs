@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 /// <summary>
 /// FX and UI controls
@@ -11,11 +12,6 @@ public class UIManager : MonoBehaviour
 	public GameObject pauseMenu;
 
 	#region Pause Menu
-
-	#region Controls
-	[Header("Controls")]
-	public Text[] hotkeys;
-	#endregion
 
 	#region Graphics
 	[Header("Graphics")]
@@ -28,7 +24,45 @@ public class UIManager : MonoBehaviour
 	public Toggle		antialiasing;
 	#endregion
 
+	#region AUDIO
+	[Header ("Audio")]
+	public AudioMixer audioMaster;
+	public Slider master;
+	public Slider music;
+	public Slider sfx;
+	public Slider ambient;
+	public Slider voices;
+	#endregion
+
+	#region Controls
+	[Header("Controls")]
+	public Text[] hotkeys;
+	#endregion
+
 	#region FX
+	// IDs of quality info texts
+	// for translation.
+	string[] infoRef =
+	{
+		"pause_menu:low",
+		"pause_menu:medium",
+		"pause_menu:high",
+		"pause_menu:veryhigh"
+	};
+	public void UpdateInfoText ( Text info )
+	{
+		var value = ( int ) info.transform.parent.GetComponent<Slider> ().value;
+		info.text = Localizator.GetText ( infoRef[value] );
+	}
+
+	public void UpdateInfoInt ( Text info )
+	{
+		//if ( !info.gameObject.activeInHierarchy ) return;
+
+		var value = ( int ) info.transform.parent.GetComponent<Slider> ().value;
+		info.text = value.ToString ();
+	}
+
 	public void Resume ()
 	{
 		Game.pause.SwitchPause ();
@@ -42,8 +76,7 @@ public class UIManager : MonoBehaviour
 		SceneManager.LoadScene ( "MainMenuBG_DEMO" );
 		GetComponent<DontDestroy> ().DestroyAll ();
 #else
-		SceneManager.LoadScene ( "EmptyUIScene" );
-		Time.timeScale = 1;
+		throw new System.NotImplementedException ( "FALTA MAIN MENU LOL" );
 #endif
 	}
 	#endregion

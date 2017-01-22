@@ -1,7 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public struct InputSettings
+{
+	public int[] keys;
+}
 
 public class InputManager : MonoBehaviour
 {
@@ -35,6 +42,7 @@ public class InputManager : MonoBehaviour
 		for ( int k = 0; k != keys.Length; k++ )
 		{
 			keys[k] = ParseKey ( Game.ui.hotkeys[k].text );
+			print ( keys[k] );
 		}
 
 		PlayerPrefs.SetString ( "Input", JsonUtility.ToJson ( this ) );

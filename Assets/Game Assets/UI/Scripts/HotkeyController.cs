@@ -26,12 +26,15 @@ public class HotkeyController : MonoBehaviour
 			{
 				if ( Input.GetKeyDown ( kcode ) )
 				{
-					print ( index );
-					// Save new value
-					Game.input.keys[index] = kcode;
+					// Check if user pressed ESC
+					if ( kcode != KeyCode.Escape )
+					{
+						// Save new value
+						Game.input.keys[index] = kcode;
 
-					// Show new value
-					selected.text = kcode.ToString ();
+						// Show new value
+						selected.text = kcode.ToString (); 
+					}
 
 					// Stop waiting input
 					selected.gameObject.SetActive ( true );
