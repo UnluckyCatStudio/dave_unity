@@ -9,23 +9,27 @@ public class EditorUtils : Editor
 	public static void DeletePlayerPrefs ()
 	{
 		PlayerPrefs.DeleteAll ();
+		Debug.Log ( "All PlayerPrefs deleted!" );
 	}
 
 	[MenuItem( "etc-utils/Player prefs/Print all" )]
 	public static void PrintPlayerPrefs ()
 	{
-		Debug.Log ( PlayerPrefs.GetString ( "Graphics" ) );
-		Debug.Log ( PlayerPrefs.GetString ( "Audio" ) );
-		Debug.Log ( PlayerPrefs.GetString ( "Input" ) );
+		Debug.Log ( "Graphics : " + PlayerPrefs.GetString ( "Graphics" ) );
+		Debug.Log ( "Audio : " + PlayerPrefs.GetString ( "Audio" ) );
+		Debug.Log ( "Input : " + PlayerPrefs.GetString ( "Input" ) );
+		Debug.Log ( "Lang : " + PlayerPrefs.GetInt ( "Lang" ) );
 	}
 
 	[MenuItem("etc-utils/Localization/Save default lang texts")]
 	public static void SaveLangTextToDisk ()
 	{
-		using ( var file = System.IO.File.CreateText ( Application.persistentDataPath + "/ref.lang" ) )
+		using ( var file = new System.IO.StreamWriter ( Application.persistentDataPath + "/ref.lang", false ) )
 		{
 			foreach ( var t in Localizator.PrintTexts () )
 				file.WriteLine ( t );
 		}
+
+		Debug.Log ( "Language-file reference saved!" );
 	}
 }

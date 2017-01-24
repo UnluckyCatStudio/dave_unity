@@ -23,11 +23,12 @@ public static class Localizator
 		"pause_menu:graphics",
 		"pause_menu:audio",
 		"pause_menu:controls",
-		"pause_menu:apply",
+		"pause_menu:language",
 		"pause_menu:back",
 
 		#region GRAPHICS
 		"pause_menu:resolution",
+		"pause_menu:fullscreen",
 		"pause_menu:vsync",
 		"pause_menu:textures",
 		"pause_menu:postfx",
@@ -38,6 +39,7 @@ public static class Localizator
 		"pause_menu:medium",
 		"pause_menu:high",
 		"pause_menu:veryhigh",
+		"pause_menu:apply",
 		#endregion
 
 		#region AUDIO
@@ -75,11 +77,12 @@ public static class Localizator
 		"Graphics",
 		"Audio",
 		"Controls",
-		"Apply",
+		"Language:",
 		"Back",
 
 		#region GRAPHICS
 		"Resolution",
+		"Fullscreen",
 		"V-Sync",
 		"Textures",
 		"Post Fx",
@@ -90,6 +93,7 @@ public static class Localizator
 		"Medium",
 		"High",
 		"Very high",
+		"Apply",
 		#endregion
 
 		#region AUDIO
@@ -118,6 +122,10 @@ public static class Localizator
 	};
 
 	private static int i;					// Global variable for loops
+	/// <summary>
+	/// Returns a text from 'texts' array
+	/// in the given ID index.
+	/// </summary>
 	public static string GetText ( string key, bool makeAllCaps = false )
 	{
 		for ( i = 0; i != ids.Length; i++ )
@@ -125,6 +133,19 @@ public static class Localizator
 				return makeAllCaps ? texts[i].ToUpper () : texts[i];
 
 		throw new System.NotImplementedException ( "Can't find key!" );
+	}
+
+	private static List<Localize> kids =  new List<Localize> ();
+	/// <summary>
+	/// Updates the text of all objects
+	/// localized in the scene.
+	/// </summary>
+	public static void UpdateAll ()
+	{
+		foreach ( var o in kids )
+		{
+			o.UpdateTranslation ();
+		}
 	}
 
 	/// <summary>
@@ -138,8 +159,28 @@ public static class Localizator
 		string temp = "";
 		for ( i=0; i!=ids.Length; i++ )
 		{
-			temp += texts[i];
+			temp = texts[i];
 			yield return temp;
 		}
+	}
+
+	/// <summary>
+	/// Loads a language file into the
+	/// Localizator so that all UI is translated.
+	/// This method does NOT
+	/// </summary>
+	/// <param name="lang">File prefix ( "es.lang" )</param>
+	public static void LoadLang ( string lang )
+	{
+		using ( var file = new System.IO.StreamReader ( Application.persistentDataPath + "/" + lang + ".lang" ) )
+		{
+			for ( int i = 0; i != ids.Length; i++ )
+				texts[i] = file.ReadLine ();
+		}
+	}
+
+	public static void Initialize ()
+	{
+		Game.ui.globalParent.GetComponentsInChildren ( true, kids );
 	}
 }

@@ -8,11 +8,11 @@ using UnityEngine;
 /// </summary>
 public class Game : MonoBehaviour
 {
-	public static UIManager			ui;
-	public static GraphicsManager	graphics;
+	public static UIManager         ui;
+	public static GraphicsManager   graphics;
 	public static AudioManager      audio;
-	public static InputManager		input;
-	public static PauseManager		pause;
+	public static InputManager      input;
+	public static PauseManager      pause;
 
 	// Initialize managers ( default values )
 	private void Awake ()
@@ -27,9 +27,23 @@ public class Game : MonoBehaviour
 	// Load settings
 	private void Start ()
 	{
-		var jsonGraphics	= PlayerPrefs.GetString ( "Graphics" );
-		var jsonAudio		= PlayerPrefs.GetString ( "Audio" );
-		var jsonInput		= PlayerPrefs.GetString ( "Input" );
+		var jsonLang        = PlayerPrefs.GetInt    ( "Lang" );
+		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
+		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
+		var jsonInput       = PlayerPrefs.GetString ( "Input" );
+
+		#region TRANSLATION
+		ui.language.value = jsonLang;
+		Localizator.Initialize ();
+		string[] availableLangs =
+		{
+			"en",	// English
+			"es",	// Spanish
+			"cat"	// Catalan
+		};
+		Localizator.LoadLang ( availableLangs[( int ) ui.language.value] );
+		Localizator.UpdateAll ();
+		#endregion
 
 		#region LOAD GRAPHICS
 		if ( jsonGraphics != "" )
@@ -37,6 +51,7 @@ public class Game : MonoBehaviour
 			var temp = JsonUtility.FromJson<GraphicsSettings> ( jsonGraphics );
 
 			graphics.resolution		= temp.resolution;
+			graphics.fullscreen		= temp.fullscreen;
 			graphics.vsync			= temp.vsync;
 			graphics.textures		= temp.textures;
 			graphics.postFX			= temp.postFX;
@@ -44,7 +59,9 @@ public class Game : MonoBehaviour
 			graphics.fov			= temp.fov;
 			graphics.antialising	= temp.antialising;
 		}
-		//graphics.LoadResolutions ();
+#if !UNITY_EDITOR
+		graphics.LoadResolutions ();
+#endif
 		graphics.LoadValues ();
 		graphics.ApplySave ( true );
 		#endregion
@@ -73,13 +90,9 @@ public class Game : MonoBehaviour
 				input.keys[i] = ( KeyCode ) temp.keys[i];
 		}
 		input.LoadValues ();
-		// No need to apply, since game will search itself for
-		// the controls here.
+		// No need to apply, since game 
+		// will search itself for
+		// the controls here
 		#endregion
-
-		// Translate
-		// TODO : select translation based on UI control
-		// - now i'm just using default values -
-		ui.pauseMenu.BroadcastMessage ( "UpdateTranslation" );
 	}
 }

@@ -20,6 +20,8 @@ public class DaveCameraController : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+		if ( PauseManager.paused ) return;
+
 		#region ROTATION
 		var inputH = Input.GetAxis ( "Mouse X" );
 		transform.RotateAround

@@ -8,14 +8,23 @@ using UnityEngine.Audio;
 /// </summary>
 public class UIManager : MonoBehaviour
 {
-	public GameObject mainMenu;
-	public GameObject pauseMenu;
+	[Header ("Basic references")]
+	public GameObject   globalParent;
+	public GameObject	pauseMenu;
+	public GameObject   pauseMenuMain;
+	public Dropdown		language;
+	public GameObject   pauseMenuOptions;
+	public GameObject   pauseMenuGraphics;
+	public GameObject   pauseMenuAudio;
+	public GameObject   pauseMenuControls;
+	public Image        pauseMenuBG;
 
 	#region Pause Menu
 
 	#region Graphics
 	[Header("Graphics")]
 	public Dropdown		resolutions;
+	public Toggle       fullscreen;
 	public Toggle		vsync;
 	public Slider		textures;
 	public Slider		postFX;
@@ -40,17 +49,17 @@ public class UIManager : MonoBehaviour
 	#endregion
 
 	#region FX
-	// IDs of quality info texts
-	// for translation.
-	string[] infoRef =
-	{
-		"pause_menu:low",
-		"pause_menu:medium",
-		"pause_menu:high",
-		"pause_menu:veryhigh"
-	};
 	public void UpdateInfoText ( Text info )
 	{
+		// IDs of quality info texts
+		// for translation.
+		string[] infoRef =
+		{
+			"pause_menu:low",
+			"pause_menu:medium",
+			"pause_menu:high",
+			"pause_menu:veryhigh"
+		};
 		var value = ( int ) info.transform.parent.GetComponent<Slider> ().value;
 		info.text = Localizator.GetText ( infoRef[value] );
 	}
@@ -60,24 +69,40 @@ public class UIManager : MonoBehaviour
 		//if ( !info.gameObject.activeInHierarchy ) return;
 
 		var value = ( int ) info.transform.parent.GetComponent<Slider> ().value;
-		info.text = value.ToString ();
+
+		if ( info.transform.parent.name == "SLD_fov" )	info.text = value.ToString () + " º";
+		else											info.text = value.ToString () + " %";
+	}
+
+	public void ChangeLang ( int newLang )
+	{
+		string[] availableLangs =
+		{
+			"en",	// English
+			"es",	// Spanish
+			"cat"	// Catalan
+		};
+		Localizator.LoadLang ( availableLangs[newLang] );
+		Localizator.UpdateAll ();
+
+		// Also update Sliders' info
+		Game.ui.textures.onValueChanged.Invoke ( Game.ui.textures.value );
+		Game.ui.postFX.onValueChanged.Invoke ( Game.ui.postFX.value );
+		Game.ui.shadows.onValueChanged.Invoke ( Game.ui.shadows.value );
+
+		// Save
+		PlayerPrefs.SetInt ( "Lang", newLang );
+		PlayerPrefs.Save ();
 	}
 
 	public void Resume ()
 	{
-		Game.pause.SwitchPause ();
+		Game.pause.StartCoroutine ( "SwitchPause" );
 	}
 	
 	public void QuitToMainMenu ()
 	{
-#if DEMO_V_0_1
-		Time.timeScale = 1;
-		Camera.main.clearFlags = CameraClearFlags.SolidColor;
-		SceneManager.LoadScene ( "MainMenuBG_DEMO" );
-		GetComponent<DontDestroy> ().DestroyAll ();
-#else
 		throw new System.NotImplementedException ( "FALTA MAIN MENU LOL" );
-#endif
 	}
 	#endregion
 
@@ -88,13 +113,7 @@ public class UIManager : MonoBehaviour
 	#region FX
 	public void Play ()
 	{
-#if DEMO_V_0_1
-		SceneManager.LoadScene ( "dave_tests" );
-#else
-
-#endif
-		pauseMenu.SetActive ( false );
-		mainMenu.SetActive ( false );
+		throw new System.NotImplementedException ( "A DONDE SE JUEA ESTO=X? HAHA" );
 	}
 
 	public void Exit ()

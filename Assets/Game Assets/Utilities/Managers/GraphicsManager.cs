@@ -7,6 +7,7 @@ using UnityEngine;
 public struct GraphicsSettings
 {
 	public int  resolution;
+	public bool fullscreen;
 	public bool vsync;
 	public int  textures;
 	public int  postFX;
@@ -19,6 +20,7 @@ public class GraphicsManager : MonoBehaviour
 {
 	// Default values
 	public int	resolution		= 0;
+	public bool fullscreen      = true;
 	public bool vsync			= true;
 	public int	textures		= 3;
 	public int	postFX			= 3;
@@ -29,6 +31,7 @@ public class GraphicsManager : MonoBehaviour
 	public void LoadValues ()
 	{
 		Game.ui.resolutions.value		= resolution;
+		Game.ui.fullscreen.isOn			= fullscreen;
 		Game.ui.vsync.isOn				= vsync;
 		Game.ui.textures.value			= textures;
 		Game.ui.shadows.value			= shadows;
@@ -41,6 +44,7 @@ public class GraphicsManager : MonoBehaviour
 	{
 		// Apply
 		resolution	= Game.ui.resolutions.value;
+		fullscreen	= Game.ui.fullscreen.isOn;
 		vsync		= Game.ui.vsync.isOn;
 		textures	= ( int ) Game.ui.textures.value;
 		postFX		= ( int ) Game.ui.postFX.value;
@@ -59,7 +63,7 @@ public class GraphicsManager : MonoBehaviour
 	private void Apply ()
 	{
 		// Apply changes to engine
-		Screen.SetResolution ( Screen.resolutions[resolution].width, Screen.resolutions[resolution].height, true );
+		Screen.SetResolution ( Screen.resolutions[resolution].width, Screen.resolutions[resolution].height, fullscreen );
 		QualitySettings.vSyncCount = vsync ? 1 : 0;
 		QualitySettings.masterTextureLimit = Math.Abs ( textures - 3 );		// Correct slider value
 		QualitySettings.shadowResolution = ( ShadowResolution ) shadows;
