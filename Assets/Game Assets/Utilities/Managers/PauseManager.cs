@@ -31,7 +31,6 @@ public class PauseManager : MonoBehaviour
 		// Play BG animation
 		if ( paused )		// Hide every menu
 		{
-			Game.ui.pauseMenuMain.SetActive ( false );
 			Game.ui.pauseMenuOptions.SetActive ( false );
 			Game.ui.pauseMenuGraphics.SetActive ( false );
 			Game.ui.pauseMenuAudio.SetActive ( false );
@@ -40,7 +39,7 @@ public class PauseManager : MonoBehaviour
 		else Game.ui.pauseMenu.SetActive ( true );		// Show BG
 
 		var i = paused ? imgs.Length-1 : 0;
-		while ( i != ( paused ? 0 : imgs.Length ) )
+		while ( i != ( paused ? -1 : imgs.Length ) )
 		{
 			//print ( i );
 			Game.ui.pauseMenuBG.sprite = imgs[i];
@@ -50,7 +49,6 @@ public class PauseManager : MonoBehaviour
 		}
 		if ( !paused )
 		{
-			Game.ui.pauseMenuMain.SetActive ( true );
 			Game.ui.pauseMenu.SetActive ( true );
 		}
 		else Game.ui.pauseMenu.SetActive ( false );

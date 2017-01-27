@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Collections;
 
 /// <summary>
 /// FX and UI controls
@@ -12,12 +13,18 @@ public class UIManager : MonoBehaviour
 	public GameObject   globalParent;
 	public GameObject	pauseMenu;
 	public GameObject   pauseMenuMain;
+	public GameObject   pauseMenuTitleGraphic;
 	public Dropdown		language;
 	public GameObject   pauseMenuOptions;
 	public GameObject   pauseMenuGraphics;
 	public GameObject   pauseMenuAudio;
 	public GameObject   pauseMenuControls;
 	public Image        pauseMenuBG;
+
+	[Header("Main Menu1")]
+	public GameObject   mainMenu;
+	public int			fps;
+	public Sprite[]     imgs;
 
 	#region Pause Menu
 
@@ -102,7 +109,56 @@ public class UIManager : MonoBehaviour
 	
 	public void QuitToMainMenu ()
 	{
-		throw new System.NotImplementedException ( "FALTA MAIN MENU LOL" );
+		StartCoroutine ( "SwitchMainMenu", false );
+	}
+
+	IEnumerator SwitchMainMenu ( bool backwards )
+	{
+		if ( !backwards )	// From Pause menu to Main menu
+		{
+			// Play pause menu animation back
+			var j = Game.pause.imgs.Length - 1;
+			while ( j != -1 )
+			{
+				//print ( i );
+				Game.ui.pauseMenuBG.sprite = Game.pause.imgs[j];
+				j += -1;
+
+				yield return new WaitForSeconds ( ( float ) 1 / Game.pause.fps );
+			}
+			pauseMenuMain.SetActive ( false );
+			pauseMenuTitleGraphic.SetActive ( false );
+
+			// Play main menu animation in
+			mainMenu.SetActive ( true );
+			var k = 0;
+			while ( k != imgs.Length )
+			{
+				//print ( i );
+				Game.ui.pauseMenuBG.sprite = imgs[k];
+				k += 1;
+
+				yield return new WaitForSeconds ( ( float ) 1 / fps );
+			}
+		}
+		else	// Play button
+		{
+			// Play main menu animation back
+			var k = imgs.Length-1;
+			while ( k != -1 )
+			{
+				//print ( i );
+				Game.ui.pauseMenuBG.sprite = imgs[k];
+				k += -1;
+
+				yield return new WaitForSeconds ( ( float ) 1 / fps );
+			}
+			mainMenu.SetActive ( false );
+			pauseMenuTitleGraphic.SetActive ( true );
+			pauseMenuMain.SetActive ( true );
+			pauseMenu.SetActive ( false );
+			PauseManager.paused = false;
+		}
 	}
 	#endregion
 
@@ -113,7 +169,7 @@ public class UIManager : MonoBehaviour
 	#region FX
 	public void Play ()
 	{
-		throw new System.NotImplementedException ( "A DONDE SE JUEA ESTO=X? HAHA" );
+		StartCoroutine ( "SwitchMainMenu", true );
 	}
 
 	public void Exit ()
@@ -123,4 +179,9 @@ public class UIManager : MonoBehaviour
 	#endregion
 
 	#endregion
+
+	void Start ()
+	{
+		PauseManager.paused = true;
+	} 
 }

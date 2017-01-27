@@ -14,6 +14,10 @@ public static class Localizator
 {
 	private static string[] ids =          // Transtions ID ( accessors )
 	{
+		#region MAIN MENU
+		"main_menu:play",
+		#endregion
+
 		#region PAUSE MENU
 		"pause_menu:pause",
 		"pause_menu:resume",
@@ -68,6 +72,10 @@ public static class Localizator
 	};
 	private static string[] texts =        // Translations - default values
 	{
+		#region MAIN MENU
+		"Play",
+		#endregion
+
 		#region PAUSE MENU
 		"Pause",
 		"Resume",
