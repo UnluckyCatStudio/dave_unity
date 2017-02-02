@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DaveCameraController : MonoBehaviour
 {
+	// Dave transform
+	public Transform dave;
+
 	// Own rigidbody component
 	public Rigidbody body;
 
@@ -46,6 +49,15 @@ public class DaveCameraController : MonoBehaviour
 		#endregion
 
 		#region POSITION
+		// Follow Dave moment
+		look.position =
+			new Vector3
+			(
+				dave.position.x,
+				dave.position.y + 1f,		// height offset
+				dave.position.z
+			);
+
 		var distance = Vector3.Distance ( transform.position, look.position );
 		if ( !colliding && distance < minDistnace )
 		{

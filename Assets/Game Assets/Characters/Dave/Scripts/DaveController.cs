@@ -10,8 +10,8 @@ public class DaveController : MonoBehaviour
 
 	// Movement
 	[Header("Basic movement")]
-	public bool     canMove;        // Can the player move?
-	public float	speed;          // Movement speed multiplier
+	public	bool    canMove;		// Can the player move?
+	public float	speed;			// Movement speed multiplier
 
 	[Header("IK")]
 	public bool			activeIK;       // Is Dave IK working?
@@ -23,13 +23,21 @@ public class DaveController : MonoBehaviour
 	{
 		if ( canMove )
 		{
-			#region MOVEMENT
-			
+			#region KEYBOARD
+			var inputDir = Vector3.zero;
 
-			if ( Input.GetKey ( Game.input.keys[0] ) )
-			{
-				anim.SetFloat ( "walking", speed );
-			}
+			if ( Input.GetKey ( Game.input.keys[0] ) ) inputDir += Vector3.forward;
+			if ( Input.GetKey ( Game.input.keys[1] ) ) inputDir += Vector3.back;
+			if ( Input.GetKey ( Game.input.keys[2] ) ) inputDir += Vector3.left;
+			if ( Input.GetKey ( Game.input.keys[3] ) ) inputDir += Vector3.right;
+
+			// Get the actual movement direction ( relative to camera )
+			var moveDir = cam.TransformDirection ( inputDir.normalized );
+			// Rotate towards movement direction
+			body.MoveRotation ( Quaternion.LookRotation ( moveDir ) );
+			body.MovePosition ( transform.position + moveDir * Time.fixedDeltaTime );
+
+			anim.SetFloat ( "speed", inputDir == Vector3.zero ? 0 : 1 );
 			#endregion
 		}
 	}
