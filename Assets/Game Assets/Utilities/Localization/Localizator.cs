@@ -180,7 +180,7 @@ public static class Localizator
 	/// <param name="lang">File prefix ( "es.lang" )</param>
 	public static void LoadLang ( string lang )
 	{
-		using ( var file = new System.IO.StreamReader ( Application.persistentDataPath + "/" + lang + ".lang" ) )
+		using ( var file = new System.IO.StreamReader ( Application.dataPath + "/Lang/" + lang + ".lang" ) )
 		{
 			for ( int i = 0; i != ids.Length; i++ )
 				texts[i] = file.ReadLine ();

@@ -24,12 +24,14 @@ public class EditorUtils : Editor
 	[MenuItem("etc-utils/Localization/Save default lang texts")]
 	public static void SaveLangTextToDisk ()
 	{
-		using ( var file = new System.IO.StreamWriter ( Application.persistentDataPath + "/ref.lang", false ) )
+		var path = Application.dataPath + "/Lang/ref.lang";
+
+		using ( var file = new System.IO.StreamWriter ( path, false ) )
 		{
 			foreach ( var t in Localizator.PrintTexts () )
 				file.WriteLine ( t );
 		}
 
-		Debug.Log ( "Language-file reference saved!" );
+		Debug.Log ( "Language-file reference saved in " + path );
 	}
 }

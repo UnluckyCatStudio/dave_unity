@@ -4,34 +4,47 @@ using UnityEngine;
 
 public class DaveController : MonoBehaviour
 {
-	private CharacterController controller;
-	private Animator animator;
+	private Animator anim;
+	private Rigidbody body;
+	private Transform cam;
 
 	// Movement
-	[Header("Movement")]
-	public float speed;             // Movement speed multiplier
-	private float mov;				// Real movement speed
-	private bool backwards;			// Is Dave moving backwards?
+	[Header("Basic movement")]
+	public bool     canMove;        // Can the player move?
+	public float	speed;          // Movement speed multiplier
 
-	// Spline tracker
-	[Header("Spline tracker")]
-	public RailManager rail;     // Movement spline
-	public RailManager cameraRail;
+	[Header("IK")]
+	public bool			activeIK;       // Is Dave IK working?
+	public float		weight;         // IK weight
+	public Transform    leftFoot;
+	public Transform    rightFoot;
 
-	private void Update ()
+	void FixedUpdate ()
 	{
-		// Movement + spline tracking
-		if ( Input.GetKey ( KeyCode.D ) )
+		if ( canMove )
 		{
-			animator.SetBool ( "walking", true );
-		}
-		else animator.SetBool ( "walking", false );
+			#region MOVEMENT
+			
 
+			if ( Input.GetKey ( Game.input.keys[0] ) )
+			{
+				anim.SetFloat ( "walking", speed );
+			}
+			#endregion
+		}
 	}
 
-	private void Awake ()
+	private void OnAnimatorIK ()
 	{
-		controller = GetComponent<CharacterController> ();
-		animator = GetComponent<Animator> ();
+		if ( activeIK )
+		{
+
+		}
+	} 
+
+	void Awake ()
+	{
+		anim	= GetComponent<Animator> ();
+		body	= GetComponent<Rigidbody> ();
 	}
 }
