@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 40c35882a43dcb64b82d249374ac9c4c
+timeCreated: 1485207413
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Polo
+  fontNames:
+  - Polo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

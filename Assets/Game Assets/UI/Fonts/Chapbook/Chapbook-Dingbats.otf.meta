@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: aec84959018b3bb4eadc46d658613e79
+timeCreated: 1485359130
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chapbook
+  fontNames:
+  - Chapbook
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 20cfcbf0c6fb33847b10ef7b31372ffe, type: 3}
+  - {fileID: 12800000, guid: 0339fe2341952154e897c1e0ee07fa85, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

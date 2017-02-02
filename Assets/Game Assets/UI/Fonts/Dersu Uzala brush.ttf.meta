@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9c5b2fcf7d2ad1748b19a0028d7508fa
+timeCreated: 1485207413
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 20
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Dersu Uzala brush
+  fontNames:
+  - Dersu Uzala brush
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

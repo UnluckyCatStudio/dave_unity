@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 7d047dd530ab68248830391ebb3ce99a
+timeCreated: 1484785752
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ATLAS_Menu-Pause_BTN
+    21300002: ATLAS_Menu-Pause_Toggle
+    21300004: ATLAS_Menu-Pause_SpecialBTN
+    21300006: ATLAS_Menu-Pause_Checkmark
+    21300008: ATLAS_Menu-Pause_Droplist
+    21300010: ATLAS_Menu-Pause_droplist_list
+    21300012: ATLAS_Menu-Pause_droplist_scroll
+    21300014: ATLAS_Menu-Pause_SLD_handle
+    21300016: ATLAS_Menu-Pause_SLD_fill
+    21300018: ATLAS_Menu-Pause_SLD_bg
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_BTN
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 841
+        width: 721
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_Toggle
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 672
+        width: 152
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_SpecialBTN
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 659
+        width: 291
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_Checkmark
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 696
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_Droplist
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 536
+        width: 476
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_droplist_list
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 291
+        width: 476
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_droplist_scroll
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 292
+        width: 14
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_SLD_handle
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 200
+        width: 71
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_SLD_fill
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 214
+        width: 443
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ATLAS_Menu-Pause_SLD_bg
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 90
+        width: 515
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
