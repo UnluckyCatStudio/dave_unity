@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Kyru.UI;
 
 [Serializable]
 public struct GraphicsSettings
@@ -14,9 +15,29 @@ public struct GraphicsSettings
 	public int  shadows;
 	public int  fov;
 	public bool antialising;
+
+	public void DiscardChanges ()
+	{
+		throw new NotImplementedException ();
+	}
+
+	public void Load ()
+	{
+		throw new NotImplementedException ();
+	}
+
+	public void Save ()
+	{
+		throw new NotImplementedException ();
+	}
+
+	public void Apply ()
+	{
+		throw new NotImplementedException ();
+	}
 }
 
-public class GraphicsManager : MonoBehaviour
+public class GraphicsManager : ScriptableObject
 {
 	// Default values
 	public int	resolution		= 0;

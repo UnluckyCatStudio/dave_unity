@@ -7,7 +7,7 @@ namespace Kyru.UI
 {
 	public abstract class UI<T> : MonoBehaviour
 	{
-		T control { get; set; }
+		protected abstract T control { get; set; }
 
 		/// <summary>
 		/// Updates all the localizable texts of
@@ -23,15 +23,8 @@ namespace Kyru.UI
 				throw new Exception ( "UI Type must be a component!" );
 
 			control = GetComponent<T> ();
+			RegisterAll ();
 		}
-	}
-
-	public interface ISettings
-	{
-		void Discard ();
-		void Load    ();
-		void Save    ();
-		void Apply   ();
 	}
 
 	/// <summary>

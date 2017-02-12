@@ -9,7 +9,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
 	public static UIManager         ui;
-	public static GraphicsManager   graphics;
+	public GraphicsManager   graphics;
 	public static AudioManager      audio;
 	public static InputManager      input;
 	public static PauseManager      pause;
@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
 			"es",	// Spanish
 			"cat"	// Catalan
 		};
-		Localizator.LoadLang ( availableLangs[( int ) ui.language.value] );
+		Localizator.LoadLang ( availableLangs[ui.language.value] );
 		Localizator.UpdateAll ();
 		#endregion
 

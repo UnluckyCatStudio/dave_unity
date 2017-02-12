@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour
 	private KeyCode ParseKey ( string key )
 	{
 		KeyCode code;
-		code = ( KeyCode ) System.Enum.Parse ( typeof ( KeyCode ), key, true );
+		code = ( KeyCode ) Enum.Parse ( typeof ( KeyCode ), key, true );
 		return code;
 	}
 }

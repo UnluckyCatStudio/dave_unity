@@ -20,6 +20,11 @@ namespace Kyru.UI
 		/// Including: Menus and HUD.
 		/// </summary>
 		public static Dictionary<string, string> texts = new Dictionary<string, string> ();
+
+		/// <summary>
+		/// All the UI Text elements registered to have
+		/// its translation updated.
+		/// </summary>
 		public static List<LocalizableText> registry = new List<LocalizableText> ();
 
 		public static bool LoadTexts () 
