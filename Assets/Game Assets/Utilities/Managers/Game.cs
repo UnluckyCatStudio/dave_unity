@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Kyru.UI;
 using UnityEngine;
 
 /// <summary>
@@ -8,91 +9,53 @@ using UnityEngine;
 /// </summary>
 public class Game : MonoBehaviour
 {
-	public static UIManager         ui;
-	public GraphicsManager   graphics;
-	public static AudioManager      audio;
-	public static InputManager      input;
-	public static PauseManager      pause;
+	public static GraphicSettings	 graphics = new GraphicSettings ();
+	public static InputSettings      input    = new InputSettings ();
+	public static new AudioSettings  audio    = new AudioSettings ();
 
-	// Initialize managers ( default values )
 	private void Awake ()
 	{
-		ui			= GetComponent<UIManager> ();
-		graphics	= GetComponent<GraphicsManager> ();
-		audio		= GetComponent<AudioManager> ();
-		input		= GetComponent<InputManager> ();
-		pause		= GetComponent<PauseManager> ();
-	}
-
-	// Load settings
-	private void Start ()
-	{
-		var jsonLang        = PlayerPrefs.GetInt    ( "Lang" );
+		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
 		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
-		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
+		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 
 		#region TRANSLATION
-		ui.language.value = jsonLang;
-		Localizator.Initialize ();
-		string[] availableLangs =
-		{
-			"en",	// English
-			"es",	// Spanish
-			"cat"	// Catalan
-		};
-		Localizator.LoadLang ( availableLangs[ui.language.value] );
-		Localizator.UpdateAll ();
+		Localization.lang = lang;
+		Localization.LoadTexts ();
+		Localization.UpdateAllTexts ();
 		#endregion
 
 		#region LOAD GRAPHICS
+		var gManager = FindObjectOfType<GraphicsManager> ();
 		if ( jsonGraphics != "" )
-		{
-			var temp = JsonUtility.FromJson<GraphicsSettings> ( jsonGraphics );
+			graphics = JsonUtility.FromJson<GraphicSettings> ( jsonGraphics );
+		else
+			graphics.SetDefaults ();
 
-			graphics.resolution		= temp.resolution;
-			graphics.fullscreen		= temp.fullscreen;
-			graphics.vsync			= temp.vsync;
-			graphics.textures		= temp.textures;
-			graphics.postFX			= temp.postFX;
-			graphics.shadows		= temp.shadows;
-			graphics.fov			= temp.fov;
-			graphics.antialising	= temp.antialising;
-		}
-#if !UNITY_EDITOR
-		graphics.LoadResolutions ();
-#endif
-		graphics.LoadValues ();
-		graphics.ApplySave ( true );
-		#endregion
+		#if !UNITY_EDITOR
+		gManager.LoadResolutions ();
+		#endif
 
-		#region LOAD AUDIO
-		if ( jsonAudio != "" )
-		{
-			var temp = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
-
-			audio.master	= temp.master;
-			audio.music		= temp.music;
-			audio.sfx		= temp.sfx;
-			audio.ambient	= temp.ambient;
-			audio.voices	= temp.voices;
-		}
-		audio.LoadValues ();
-		audio.ApplySave ( true );
+		gManager.LoadValues ();
+		gManager.ApplySave ( true );
 		#endregion
 
 		#region LOAD INPUT
+		var iManager = FindObjectOfType<InputManager> ();
 		if ( jsonInput != "" )
-		{
-			var temp = JsonUtility.FromJson<InputSettings> ( jsonInput );
+			input = JsonUtility.FromJson<InputSettings> ( jsonInput );
 
-			for ( int i = 0; i != temp.keys.Length; i++ )
-				input.keys[i] = ( KeyCode ) temp.keys[i];
-		}
-		input.LoadValues ();
-		// No need to apply, since game 
-		// will search itself for
-		// the controls here
+		iManager.LoadValues ();
+		#endregion
+
+		#region LOAD AUDIO
+		var aManager = FindObjectOfType<AudioManager> ();
+		if ( jsonAudio != "" )
+			audio = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
+
+		aManager.LoadValues ();
+		aManager.ApplySave ( true );
 		#endregion
 	}
 }

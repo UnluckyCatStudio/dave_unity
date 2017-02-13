@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 [Serializable]
 public struct AudioSettings
@@ -16,45 +17,49 @@ public struct AudioSettings
 
 public class AudioManager : MonoBehaviour
 {
-	public float	master	= 100,
-					music	= 100,
-					sfx		= 100,
-					ambient	= 100,
-					voices	= 100;
+	#region UI
+	public Slider	master,
+					music,
+					sfx	,
+					ambient,
+					voices;
+	#endregion
+
+	public new AudioMixer audio;
 
 	public void LoadValues ()
 	{
-		Game.ui.master.value	= master;
-		Game.ui.music.value		= music;
-		Game.ui.sfx.value		= sfx;
-		Game.ui.ambient.value	= ambient;
-		Game.ui.voices.value	= voices;
+		master.value	= Game.audio.master;
+		music.value		= Game.audio.music;
+		sfx.value		= Game.audio.sfx;
+		ambient.value	= Game.audio.ambient;
+		voices.value	= Game.audio.voices;
 	}
 
 	public void ApplySave ( bool justApply = false )
 	{
 		// Apply
-		master	= Game.ui.master.value;
-		music	= Game.ui.music.value;
-		sfx		= Game.ui.sfx.value;
-		ambient	= Game.ui.ambient.value;
-		voices	= Game.ui.voices.value;
+		Game.audio.master	= master.value;
+		Game.audio.music	= music.value;
+		Game.audio.sfx		= sfx.value;
+		Game.audio.ambient	= ambient.value;
+		Game.audio.voices	= voices.value;
 
 		Apply ();
 		if ( justApply ) return;
 
 		// Save
-		PlayerPrefs.SetString ( "Audio", JsonUtility.ToJson ( this ) );
+		PlayerPrefs.SetString ( "Audio", JsonUtility.ToJson ( Game.audio ) );
 		PlayerPrefs.Save ();
 	}
 
 	private void Apply ()
 	{
-		Game.ui.audioMaster.SetFloat ( "master-vol", CorrectVolume ( master ) );
-		Game.ui.audioMaster.SetFloat ( "music-vol", CorrectVolume ( music ) );
-		Game.ui.audioMaster.SetFloat ( "sfx-vol", CorrectVolume ( sfx ) );
-		Game.ui.audioMaster.SetFloat ( "ambient-vol", CorrectVolume ( ambient ) );
-		Game.ui.audioMaster.SetFloat ( "voices-vol", CorrectVolume ( voices ) );
+		audio.SetFloat ( "master-vol", CorrectVolume ( master.value ) );
+		audio.SetFloat ( "music-vol", CorrectVolume ( music.value ) );
+		audio.SetFloat ( "sfx-vol", CorrectVolume ( sfx.value ) );
+		audio.SetFloat ( "ambient-vol", CorrectVolume ( ambient.value ) );
+		audio.SetFloat ( "voices-vol", CorrectVolume ( voices.value ) );
 	}
 
 	/// <summary>

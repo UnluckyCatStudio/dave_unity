@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Kyru.UI;
 
 public class EditorUtils : Editor
 {
@@ -22,13 +23,13 @@ public class EditorUtils : Editor
 	}
 
 	[MenuItem("etc-utils/Localization/Save default lang texts")]
-	public static void SaveLangTextToDisk ()
+	public static void SaveLangTextToDisk () 
 	{
 		var path = Application.dataPath + "/Lang/ref.lang";
 
 		using ( var file = new System.IO.StreamWriter ( path, false ) )
 		{
-			foreach ( var t in Localizator.PrintTexts () )
+			foreach ( var t in Localization.PrintAllTexts () )
 				file.WriteLine ( t );
 		}
 
