@@ -57,7 +57,7 @@ namespace Kyru.UI
 
 		public static bool UpdateAllTexts () 
 		{
-			foreach ( var t in registry ) t.Update ();
+			foreach ( var t in registry ) t.UpdateText ();
 
 			return true;
 		}
@@ -65,65 +65,13 @@ namespace Kyru.UI
 		public static IEnumerable<string> PrintAllTexts ()
 		{
 			#if UNITY_EDITOR
-				var ui = GameObject.Find ( "UI" );
-				foreach ( var t in ui.GetComponentsInChildren<LocalizableText> ( true ) )
-					yield return t.GetKeyValue ();
+				var ui = GameObject.Find ( "UI" ).GetComponentsInChildren<LocalizableText> ( true );
+				foreach ( var t in ui )
+					yield return t.GetKey ();
 			#else
 				foreach ( var t in texts )
 					yield return t.Key+":"+t.Value;
 			#endif
-		}
-	}
-
-	/// <summary>
-	/// Class for any UI Text
-	/// that should be localizable.
-	/// </summary>
-	[Serializable]
-	public struct LocalizableText 
-	{
-		[SerializeField] Text   control;
-		[SerializeField] string _key;
-
-		string key   
-		{
-			get { return _key; }
-			set
-			{
-				_key = value;
-				Update ();
-			}
-		}
-		string value 
-		{
-			get { return Localization.texts[key]; }
-		}
-
-		/// <summary>
-		/// Updates the control text
-		/// to current translation.
-		/// </summary>
-		public void Update () 
-		{
-			control.text = value;
-		}
-
-		/// <summary>
-		/// Registers this Localizable text
-		/// in the Localization list so it can be updated.
-		/// </summary>
-		public void Register () 
-		{
-			Localization.registry.Add ( this );
-		}
-
-		/// <summary>
-		/// Returns the localizable text dictionary entry
-		/// in the format "key:value"
-		/// </summary>
-		public string GetKeyValue () 
-		{
-			return key+":"+value;
 		}
 	}
 }
