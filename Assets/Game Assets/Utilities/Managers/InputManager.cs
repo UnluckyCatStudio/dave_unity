@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
 
 	HotkeyButton selected;
 
-	public void LoadValues ()
+	public void LoadValues () 
 	{
 		for ( int k=0; k!=hotkeys.Length; k++ )
 		{
@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	public void ApplySave ()
+	public void ApplySave () 
 	{
 		for ( int k = 0; k != hotkeys.Length; k++ )
 		{
@@ -53,21 +53,21 @@ public class InputManager : MonoBehaviour
 		PlayerPrefs.Save ();
 	}
 
-	private KeyCode ParseKey ( string key )
+	private KeyCode ParseKey ( string key ) 
 	{
 		KeyCode code;
 		code = ( KeyCode ) Enum.Parse ( typeof ( KeyCode ), key, true );
 		return code;
 	}
 
-	public void SelectButton ( HotkeyButton button )
+	public void SelectButton ( HotkeyButton button ) 
 	{
 		selected = button;
 		button.esc.gameObject.SetActive ( true );
 		button.info.gameObject.SetActive ( false );
 	}
 
-	void Update ()
+	void Update () 
 	{
 		if ( selected != null )
 		{

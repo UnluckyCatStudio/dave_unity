@@ -22,10 +22,10 @@ namespace Kyru.UI
 			control.text = Localization.texts[keys[( int ) slider.value]];
 		}
 
-		protected override void Awake ()
+		public override void Init ()
 		{
 			control = GetComponent<Text> ();
-			slider  = GetComponentInParent<Slider> ();
+			slider  = GetComponentsInParent<Slider> ( true )[0];
 		}
 	} 
 }

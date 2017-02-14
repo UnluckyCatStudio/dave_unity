@@ -57,6 +57,18 @@ namespace Kyru.UI
 			return true;
 		}
 
+		public static bool InitAllTexts ()
+		{
+			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
+			foreach ( var t in txts )
+			{
+				registry.Add ( t );
+				t.Init ();
+			}
+
+			return true;
+		}
+
 		public static bool UpdateAllTexts () 
 		{
 			foreach ( var t in registry ) t.UpdateText ();
@@ -69,8 +81,8 @@ namespace Kyru.UI
 			var list = new List<string> ();
 
 			#if UNITY_EDITOR
-			var ui = GameObject.Find ( "UI" ).GetComponentsInChildren<LocalizableText> ( true );
-			foreach ( var t in ui )
+			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
+			foreach ( var t in txts )
 			{
 				if ( !(t is SliderText) )
 				{

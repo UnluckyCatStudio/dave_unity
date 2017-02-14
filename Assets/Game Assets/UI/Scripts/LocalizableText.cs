@@ -46,15 +46,6 @@ public class LocalizableText : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Registers this Localizable text
-	/// in the Localization list so it can be updated.
-	/// </summary>
-	public void Register () 
-	{
-		Localization.registry.Add ( this );
-	}
-
-	/// <summary>
 	/// Returns the localizable text dictionary entry
 	/// in the format "key:value"
 	/// </summary>
@@ -63,7 +54,7 @@ public class LocalizableText : MonoBehaviour
 		return key + ":";
 	}
 
-	protected virtual void Awake ()
+	public virtual void Init() 
 	{
 		control = GetComponent<Text> ();
 	}
