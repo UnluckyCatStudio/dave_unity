@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HotkeyButton : MonoBehaviour
+namespace Kyru.UI
 {
-	private Button button;
-
-	public Key  key;
-	public Text info;
-	public Text esc;
-
-	void Awake () 
+	public class HotkeyButton : MonoBehaviour
 	{
-		button = GetComponent<Button> ();
+		private Button button;
+
+		public Key  key;
+		public Text info;
+		public Text esc;
+
+		void Awake ()
+		{
+			button = GetComponent<Button> ();
+		}
 	}
 }

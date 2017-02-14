@@ -47,7 +47,7 @@ public class GraphicsManager : MonoBehaviour
 	public Toggle	antialiasing;
 	#endregion
 
-	public void LoadValues ()
+	public void LoadValues () 
 	{
 		resolution.value	= Game.graphics.resolution;
 		fullscreen.isOn		= Game.graphics.fullscreen;
@@ -59,7 +59,7 @@ public class GraphicsManager : MonoBehaviour
 		fov.value			= Game.graphics.fov;
 	}
 
-	public void ApplySave ( bool justApply = false )
+	public void ApplySave ( bool justApply = false ) 
 	{
 		// Apply
 		Game.graphics.resolution	= resolution.value;
@@ -79,7 +79,7 @@ public class GraphicsManager : MonoBehaviour
         PlayerPrefs.Save ();
 	}
 
-	private void Apply ()
+	private void Apply () 
 	{
 		// Apply changes to engine
 		Screen.SetResolution ( Screen.resolutions[resolution.value].width, Screen.resolutions[resolution.value].height, fullscreen.isOn );
@@ -91,7 +91,7 @@ public class GraphicsManager : MonoBehaviour
 		// is controlled per camera
 	}
 
-	public void LoadResolutions ()
+	public void LoadResolutions () 
 	{
 		for ( int i = 0; i != Screen.resolutions.Length; i++ )
 		{

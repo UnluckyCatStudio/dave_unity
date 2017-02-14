@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using Kyru.etc;
 
 namespace Kyru.UI
 {
@@ -40,15 +41,16 @@ namespace Kyru.UI
 			*/
 			var path = Application.dataPath + "/Lang/" + availableLanguage[lang] + ".lang";
 
-			using ( var f = new FileStream ( path, FileMode.Open, FileAccess.Read ) )
-			using ( var s = new StreamReader ( f ) )
+			using ( var fs = new FileStream ( path, FileMode.Open, FileAccess.Read ) )
+			using ( var sr = new StreamReader ( fs ) )
 			{
 				// key:Value
-				var line = s.ReadLine ().Split ( ':' );
+				var line = sr.ReadLine ();
 				while ( line != null )
 				{
-					texts.Add ( line[0], line[1] );
-					line = s.ReadLine ().Split ( ':' );
+					var s = line.Split ( ':' );
+					texts.Add ( s[0], s[1] );
+					line = sr.ReadLine ();
 				}
 			}
 
@@ -62,16 +64,41 @@ namespace Kyru.UI
 			return true;
 		}
 
-		public static IEnumerable<string> PrintAllTexts ()
+		public static IEnumerable<string> PrintAllTexts () 
 		{
+			var list = new List<string> ();
+
 			#if UNITY_EDITOR
-				var ui = GameObject.Find ( "UI" ).GetComponentsInChildren<LocalizableText> ( true );
-				foreach ( var t in ui )
-					yield return t.GetKey ();
+			var ui = GameObject.Find ( "UI" ).GetComponentsInChildren<LocalizableText> ( true );
+			foreach ( var t in ui )
+			{
+				if ( !(t is SliderText) )
+				{
+					var k = t.GetKey ();
+					if ( !list.Contains ( k ) )
+					{
+						yield return k;
+						list.Add ( k );
+					}
+				}
+			}
 			#else
-				foreach ( var t in texts )
-					yield return t.Key+":"+t.Value;
+			foreach ( var t in texts )
+			{
+				if ( !(t is SliderText) )
+				{
+					if ( !list.Contains ( t.Key ) )
+					{
+						yield return t.Key+":"+t.Value;
+						list.Add ( t.Key );
+					}
+				}
+			}
 			#endif
+
+			// Quality-text keys
+			for ( int i=0; i!=SliderText.keys.Length; i++ )
+				yield return SliderText.keys[i] + ":";
 		}
 	}
 }

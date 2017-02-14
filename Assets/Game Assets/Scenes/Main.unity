@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1484782226}
-  m_IndirectSpecularColor: {r: 0.25153396, g: 0.30649787, b: 0.36619842, a: 1}
+  m_IndirectSpecularColor: {r: 0.2515336, g: 0.30649742, b: 0.36619768, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 34315881}
   - component: {fileID: 34315883}
   - component: {fileID: 34315882}
+  - component: {fileID: 34315884}
   m_Layer: 5
   m_Name: info
   m_TagString: Untagged
@@ -314,6 +315,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34315880}
+--- !u!114 &34315884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 34315880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &35004004
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +585,7 @@ GameObject:
   - component: {fileID: 83604051}
   - component: {fileID: 83604050}
   - component: {fileID: 83604049}
+  - component: {fileID: 83604052}
   m_Layer: 5
   m_Name: BTN_left
   m_TagString: Untagged
@@ -642,34 +656,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1507717618}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 83604052}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2025731131}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -711,6 +703,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 83604047}
+--- !u!114 &83604052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83604047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 2
+  info: {fileID: 1507717618}
+  esc: {fileID: 2025731131}
 --- !u!1 &93896281
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +872,7 @@ GameObject:
   - component: {fileID: 105369164}
   - component: {fileID: 105369166}
   - component: {fileID: 105369165}
+  - component: {fileID: 105369167}
   m_Layer: 5
   m_Name: info
   m_TagString: Untagged
@@ -933,6 +940,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105369163}
+--- !u!114 &105369167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105369163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &107489351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,11 +1040,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 107489351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6d6173746572
   allCaps: 0
+  _key: master
 --- !u!1 &109252299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,12 +1134,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoText
-        m_Mode: 2
+      - m_Target: {fileID: 698592073}
+        m_MethodName: UpdateText
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 698592071}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1216,11 +1235,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 114102875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6c6f636b2d656e656d79
   allCaps: 0
+  _key: lock-enemy
 --- !u!1 &116368725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1361,7 @@ GameObject:
   - component: {fileID: 131300866}
   - component: {fileID: 131300865}
   - component: {fileID: 131300864}
+  - component: {fileID: 131300867}
   m_Layer: 5
   m_Name: BTN_backwards
   m_TagString: Untagged
@@ -1412,34 +1432,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1591985577}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 131300867}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 233652503}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1481,6 +1479,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 131300862}
+--- !u!114 &131300867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131300862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 1
+  info: {fileID: 1591985577}
+  esc: {fileID: 233652503}
 --- !u!1 &142516675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,11 +1653,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 148931921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6f7074696f6e73
   allCaps: 0
+  _key: options
 --- !u!1 &160468773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,11 +1818,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 212489396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a7061757365
   allCaps: 1
+  _key: pause
 --- !u!1 &233652501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +1835,7 @@ GameObject:
   - component: {fileID: 233652504}
   - component: {fileID: 233652503}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1901,6 +1913,7 @@ GameObject:
   - component: {fileID: 241206590}
   - component: {fileID: 241206589}
   - component: {fileID: 241206588}
+  - component: {fileID: 241206591}
   m_Layer: 5
   m_Name: BTN_jump
   m_TagString: Untagged
@@ -1971,34 +1984,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1822407454}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 241206591}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1819239720}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2040,6 +2031,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 241206586}
+--- !u!114 &241206591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241206586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 4
+  info: {fileID: 1822407454}
+  esc: {fileID: 1819239720}
 --- !u!1 &247456941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,12 +2290,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoText
-        m_Mode: 2
+      - m_Target: {fileID: 1428985882}
+        m_MethodName: UpdateText
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1428985880}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2702,13 +2707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45accf94428bf44ca5522e07fd1bb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dave: {fileID: 0}
-  body: {fileID: 309934939}
-  look: {fileID: 0}
-  minDistnace: 2
-  transition: 0.7
-  colliding: 0
-  speed: 120
 --- !u!54 &309934939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2900,6 +2898,7 @@ GameObject:
   - component: {fileID: 328265223}
   - component: {fileID: 328265225}
   - component: {fileID: 328265224}
+  - component: {fileID: 328265226}
   m_Layer: 5
   m_Name: info
   m_TagString: Untagged
@@ -2967,6 +2966,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 328265222}
+--- !u!114 &328265226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328265222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &332594619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,7 +2989,6 @@ GameObject:
   - component: {fileID: 332594620}
   - component: {fileID: 332594622}
   - component: {fileID: 332594621}
-  - component: {fileID: 332594623}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -3046,19 +3056,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332594619}
---- !u!114 &332594623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332594619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allCaps: 0
-  _key: 
 --- !u!1 &343799161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,11 +3426,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 380531770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6c656674
   allCaps: 0
+  _key: move-left
 --- !u!1 &387606661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,11 +3519,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 387606661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a73776f7264
   allCaps: 0
+  _key: use-sword
 --- !u!1 &391584473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,7 +3800,7 @@ GameObject:
   - component: {fileID: 431064968}
   - component: {fileID: 431064967}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3901,8 +3898,8 @@ RectTransform:
   m_Father: {fileID: 1407092700}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.6666667, y: 0}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 36.7, y: -20.1}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4029,11 +4026,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 448573448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a626f6f6d6572616e67
   allCaps: 0
+  _key: use-boomerang
 --- !u!1 &475525262
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +4136,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4190,6 +4187,7 @@ GameObject:
   - component: {fileID: 511234493}
   - component: {fileID: 511234492}
   - component: {fileID: 511234491}
+  - component: {fileID: 511234494}
   m_Layer: 5
   m_Name: BTN_sword
   m_TagString: Untagged
@@ -4260,34 +4258,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1742581974}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 511234494}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1750710648}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4329,6 +4305,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 511234489}
+--- !u!114 &511234494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511234489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 6
+  info: {fileID: 1742581974}
+  esc: {fileID: 1750710648}
 --- !u!1 &518697960
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,8 +4423,8 @@ RectTransform:
   m_Father: {fileID: 1679614090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.6666667, y: 0}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 38.9, y: -20.6}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4552,7 +4542,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1745929264}
         m_MethodName: ApplySave
         m_Mode: 6
         m_Arguments:
@@ -4760,11 +4750,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 594360372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6d75736963
   allCaps: 0
+  _key: music
 --- !u!1 &600196638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,6 +4844,7 @@ GameObject:
   - component: {fileID: 603616259}
   - component: {fileID: 603616261}
   - component: {fileID: 603616260}
+  - component: {fileID: 603616262}
   m_Layer: 5
   m_Name: info
   m_TagString: Untagged
@@ -4921,6 +4912,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603616258}
+--- !u!114 &603616262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603616258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &603891799
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +5039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &605280274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5861,12 +5864,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 803757545}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 803757543}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6125,7 +6128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
-  _key: 
+  _key: back
 --- !u!1 &660446733
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6439,7 @@ RectTransform:
   m_Father: {fileID: 689956940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5551331}
+  m_AnchorMin: {x: 0, y: 0.5555133}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -7001,7 +7004,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 698592069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 58e1751758c989e48b2d1db3d1fdcad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
@@ -7115,7 +7118,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -7218,11 +7221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 743465452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a717569742d746f2d6465736b746f70
   allCaps: 0
+  _key: quit-to-desktop
 --- !u!1 &743586495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7235,6 +7238,7 @@ GameObject:
   - component: {fileID: 743586499}
   - component: {fileID: 743586498}
   - component: {fileID: 743586497}
+  - component: {fileID: 743586500}
   m_Layer: 5
   m_Name: BTN_attack
   m_TagString: Untagged
@@ -7305,34 +7309,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 893132128}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 743586500}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2012316731}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7374,6 +7356,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743586495}
+--- !u!114 &743586500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 743586495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 9
+  info: {fileID: 893132128}
+  esc: {fileID: 2012316731}
 --- !u!1 &743815334
 GameObject:
   m_ObjectHideFlags: 0
@@ -7913,11 +7909,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 749179619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a696e746572616374
   allCaps: 0
+  _key: interact
 --- !u!1 &749410219
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,6 +7925,7 @@ GameObject:
   - component: {fileID: 749410223}
   - component: {fileID: 749410221}
   - component: {fileID: 749410222}
+  - component: {fileID: 749410224}
   m_Layer: 5
   m_Name: Mask
   m_TagString: Untagged
@@ -8005,6 +8002,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 749410219}
+--- !u!95 &749410224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749410219}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &759705209
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,7 +8034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &759705210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8057,6 +8071,7 @@ GameObject:
   - component: {fileID: 766113439}
   - component: {fileID: 766113438}
   - component: {fileID: 766113437}
+  - component: {fileID: 766113440}
   m_Layer: 5
   m_Name: BTN_run
   m_TagString: Untagged
@@ -8127,34 +8142,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1971590285}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 766113440}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1003440395}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8196,6 +8189,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766113435}
+--- !u!114 &766113440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766113435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 5
+  info: {fileID: 1971590285}
+  esc: {fileID: 1003440395}
 --- !u!1 &785477449
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,7 +8236,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8279,6 +8286,7 @@ GameObject:
   - component: {fileID: 803757542}
   - component: {fileID: 803757544}
   - component: {fileID: 803757543}
+  - component: {fileID: 803757545}
   m_Layer: 5
   m_Name: info
   m_TagString: Untagged
@@ -8346,6 +8354,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 803757541}
+--- !u!114 &803757545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803757541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &820881014
 GameObject:
   m_ObjectHideFlags: 0
@@ -8434,11 +8454,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 820881014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a717569742d746f2d6d656e75
   allCaps: 0
+  _key: quit-to-menu
 --- !u!1 &849284781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8451,6 +8471,7 @@ GameObject:
   - component: {fileID: 849284785}
   - component: {fileID: 849284784}
   - component: {fileID: 849284783}
+  - component: {fileID: 849284786}
   m_Layer: 5
   m_Name: BTN_interact
   m_TagString: Untagged
@@ -8521,34 +8542,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1834847988}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 849284786}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2116196573}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8590,6 +8589,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 849284781}
+--- !u!114 &849284786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849284781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 10
+  info: {fileID: 1834847988}
+  esc: {fileID: 2116196573}
 --- !u!1 &850802926
 GameObject:
   m_ObjectHideFlags: 0
@@ -8678,11 +8691,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 850802926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a766f69636573
   allCaps: 0
+  _key: voices
 --- !u!1 &863183346
 GameObject:
   m_ObjectHideFlags: 0
@@ -8846,7 +8859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
-  _key: 
+  _key: apply
 --- !u!1 &893132126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8910,7 +8923,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -9105,11 +9118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 928544927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a666f7277617264
   allCaps: 0
+  _key: move-forward
 --- !u!1 &949552591
 GameObject:
   m_ObjectHideFlags: 0
@@ -9173,7 +9186,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -9383,11 +9396,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 971690214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6a756d70
   allCaps: 0
+  _key: jump
 --- !u!1 &978414932 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100082, guid: 69c344c80c1efa34187721a6143405dd, type: 3}
@@ -9495,12 +9508,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoText
-        m_Mode: 2
+      - m_Target: {fileID: 1360554855}
+        m_MethodName: UpdateText
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1360554853}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9520,7 +9533,7 @@ GameObject:
   - component: {fileID: 1003440396}
   - component: {fileID: 1003440395}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9987,7 +10000,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 672202119}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.44486693
+  m_Size: 0.44448668
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10117,11 +10130,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035435858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a636f6e74726f6c73
   allCaps: 0
+  _key: controls
 --- !u!1 &1035842084
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,11 +10367,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1052126412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Script: {fileID: 11500000, guid: d0630f6f59449e946bf4cd644424f7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCaps: 0
-  _key: 
+  type: 1
 --- !u!1 &1055477987
 GameObject:
   m_ObjectHideFlags: 0
@@ -10555,11 +10567,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065617132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a617564696f
   allCaps: 1
+  _key: audio
 --- !u!1 &1097129619
 GameObject:
   m_ObjectHideFlags: 0
@@ -10572,6 +10584,7 @@ GameObject:
   - component: {fileID: 1097129623}
   - component: {fileID: 1097129622}
   - component: {fileID: 1097129621}
+  - component: {fileID: 1097129624}
   m_Layer: 5
   m_Name: BTN_forward
   m_TagString: Untagged
@@ -10642,33 +10655,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 732710402}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1624334842}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1097129624}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10711,6 +10702,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097129619}
+--- !u!114 &1097129624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097129619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 0
+  info: {fileID: 732710402}
+  esc: {fileID: 1624334842}
 --- !u!1 &1109040526
 GameObject:
   m_ObjectHideFlags: 0
@@ -10899,6 +10904,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1151990361}
+  - component: {fileID: 1151990362}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -10932,6 +10938,23 @@ RectTransform:
   m_AnchoredPosition: {x: -958.5, y: 0.25}
   m_SizeDelta: {x: 1917, y: -0.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1151990362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151990360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58326aadf3d85134fbee49a33b0fe81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  master: {fileID: 2068297256}
+  music: {fileID: 1257417391}
+  sfx: {fileID: 643907323}
+  ambient: {fileID: 1575659889}
+  voices: {fileID: 1414630769}
+  audio: {fileID: 24100000, guid: 4711c218581e9244ea65746a4ef13796, type: 2}
 --- !u!1 &1162822004
 GameObject:
   m_ObjectHideFlags: 0
@@ -11131,7 +11154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
-  _key: 
+  _key: fov
 --- !u!1 &1227858450
 GameObject:
   m_ObjectHideFlags: 0
@@ -11257,12 +11280,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 328265226}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 328265224}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11369,11 +11392,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1264958532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6772617068696373
   allCaps: 0
+  _key: graphics
 --- !u!1 &1266582295
 GameObject:
   m_ObjectHideFlags: 0
@@ -11479,7 +11502,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11550,8 +11573,8 @@ RectTransform:
   m_Father: {fileID: 37904580}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.6666667, y: 0}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 38.8, y: -20.6}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11909,12 +11932,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 1052126416}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 1052126414}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11951,6 +11974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d05f421778405342b2a5dd19a0c572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 1767264856}
 --- !u!4 &1309869451
 Transform:
   m_ObjectHideFlags: 0
@@ -12013,12 +12037,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311561773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c4748b6b73da914f8c8db826cc98561, type: 3}
+  m_Script: {fileID: 11500000, guid: 07935704d5f16ba468c9746bb20ed972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: {fileID: 0}
-  info: {fileID: 0}
-  index: 0
+  hotkeys:
+  - {fileID: 1097129624}
+  - {fileID: 131300867}
+  - {fileID: 83604052}
+  - {fileID: 1839602604}
+  - {fileID: 241206591}
+  - {fileID: 766113440}
+  - {fileID: 511234494}
+  - {fileID: 1972476348}
+  - {fileID: 1861510698}
+  - {fileID: 743586500}
+  - {fileID: 849284786}
 --- !u!1 &1324462361
 GameObject:
   m_ObjectHideFlags: 0
@@ -12322,7 +12355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360554851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 58e1751758c989e48b2d1db3d1fdcad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
@@ -12796,7 +12829,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -13238,12 +13271,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 603616262}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 603616260}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13422,11 +13455,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427152570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a61747461636b
   allCaps: 0
+  _key: attack
 --- !u!1 &1428985878
 GameObject:
   m_ObjectHideFlags: 0
@@ -13514,7 +13547,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1428985878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 58e1751758c989e48b2d1db3d1fdcad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
@@ -13728,11 +13761,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1432910345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a636f6e74726f6c73
   allCaps: 1
+  _key: controls
 --- !u!1 &1434315797
 GameObject:
   m_ObjectHideFlags: 0
@@ -13956,7 +13989,7 @@ GameObject:
   - component: {fileID: 1467593539}
   - component: {fileID: 1467593538}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14336,7 +14369,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -14562,12 +14595,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 105369167}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 105369165}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14633,11 +14666,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1578320802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6c616e6775616765
   allCaps: 0
+  _key: language
 --- !u!114 &1578320805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14767,11 +14800,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585994069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6f7074696f6e73
   allCaps: 1
+  _key: options
 --- !u!1 &1591985575
 GameObject:
   m_ObjectHideFlags: 0
@@ -14783,6 +14816,7 @@ GameObject:
   - component: {fileID: 1591985576}
   - component: {fileID: 1591985578}
   - component: {fileID: 1591985577}
+  - component: {fileID: 1591985579}
   m_Layer: 5
   m_Name: TXT_backwards
   m_TagString: Untagged
@@ -14835,7 +14869,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -14850,6 +14884,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591985575}
+--- !u!114 &1591985579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1591985575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCaps: 0
+  _key: move-backwards
 --- !u!1 &1598257290
 GameObject:
   m_ObjectHideFlags: 0
@@ -14904,7 +14951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1601317724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15037,7 +15084,7 @@ GameObject:
   - component: {fileID: 1621940121}
   - component: {fileID: 1621940120}
   m_Layer: 5
-  m_Name: Canvas_Menus
+  m_Name: Canvas_Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15134,7 +15181,7 @@ GameObject:
   - component: {fileID: 1624334843}
   - component: {fileID: 1624334842}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15288,11 +15335,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1642861282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a617564696f
   allCaps: 0
+  _key: audio
 --- !u!1 &1644753585
 GameObject:
   m_ObjectHideFlags: 0
@@ -15456,7 +15503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
-  _key: 
+  _key: postfx
 --- !u!1 &1671504319
 GameObject:
   m_ObjectHideFlags: 0
@@ -15705,7 +15752,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -15783,7 +15830,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -15814,7 +15861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1745929263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15876,7 +15923,7 @@ GameObject:
   - component: {fileID: 1750710649}
   - component: {fileID: 1750710648}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16033,8 +16080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6261636b7761726473
-  allCaps: 0
 --- !u!1 &1767264856
 GameObject:
   m_ObjectHideFlags: 0
@@ -16044,6 +16089,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1767264857}
+  - component: {fileID: 1767264858}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -16067,6 +16113,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767264858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767264856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde3677aed40e644b94f446802d7906c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1772641692
 GameObject:
   m_ObjectHideFlags: 0
@@ -16426,11 +16483,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797306708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6261636b
   allCaps: 0
+  _key: back
 --- !u!1 &1800993479
 GameObject:
   m_ObjectHideFlags: 0
@@ -16522,7 +16579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCaps: 0
-  _key: 
+  _key: shadows
 --- !u!1 &1801951758
 GameObject:
   m_ObjectHideFlags: 0
@@ -16611,11 +16668,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801951758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a736678
   allCaps: 0
+  _key: sfx
 --- !u!1 &1802437313
 GameObject:
   m_ObjectHideFlags: 0
@@ -16740,11 +16797,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814811570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a6261636b
   allCaps: 0
+  _key: back
 --- !u!1 &1819239718
 GameObject:
   m_ObjectHideFlags: 0
@@ -16757,7 +16814,7 @@ GameObject:
   - component: {fileID: 1819239721}
   - component: {fileID: 1819239720}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16886,7 +16943,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -16989,11 +17046,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1827269960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a616d6269656e74
   allCaps: 0
+  _key: ambient
 --- !u!1 &1834847986
 GameObject:
   m_ObjectHideFlags: 0
@@ -17057,7 +17114,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -17084,6 +17141,7 @@ GameObject:
   - component: {fileID: 1839602603}
   - component: {fileID: 1839602602}
   - component: {fileID: 1839602601}
+  - component: {fileID: 1839602604}
   m_Layer: 5
   m_Name: BTN_right
   m_TagString: Untagged
@@ -17154,34 +17212,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1734679334}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 1839602604}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 431064967}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17223,6 +17259,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839602599}
+--- !u!114 &1839602604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839602599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 3
+  info: {fileID: 1734679334}
+  esc: {fileID: 431064967}
 --- !u!1 &1854018955
 GameObject:
   m_ObjectHideFlags: 0
@@ -17320,6 +17370,7 @@ GameObject:
   - component: {fileID: 1861510697}
   - component: {fileID: 1861510696}
   - component: {fileID: 1861510695}
+  - component: {fileID: 1861510698}
   m_Layer: 5
   m_Name: BTN_lock
   m_TagString: Untagged
@@ -17390,34 +17441,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1397631283}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 1861510698}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1467593538}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17459,6 +17488,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861510693}
+--- !u!114 &1861510698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1861510693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 8
+  info: {fileID: 1397631283}
+  esc: {fileID: 1467593538}
 --- !u!1 &1885432717
 GameObject:
   m_ObjectHideFlags: 0
@@ -17564,7 +17607,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17614,6 +17657,7 @@ GameObject:
   - component: {fileID: 1921471632}
   - component: {fileID: 1921471634}
   - component: {fileID: 1921471633}
+  - component: {fileID: 1921471635}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -17681,6 +17725,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921471631}
+--- !u!114 &1921471635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921471631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allCaps: 0
+  _key: back
 --- !u!1 &1948538136
 GameObject:
   m_ObjectHideFlags: 0
@@ -17729,7 +17786,7 @@ GameObject:
   - component: {fileID: 1955412747}
   - component: {fileID: 1955412746}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18556,8 +18613,8 @@ RectTransform:
   m_Father: {fileID: 2126465249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.6, y: 0}
+  m_AnchorMax: {x: 0.6, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 37.5, y: -20.8}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18608,7 +18665,7 @@ GameObject:
   - component: {fileID: 1971590286}
   - component: {fileID: 1971590285}
   m_Layer: 5
-  m_Name: TZXT_run
+  m_Name: TXT_run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18659,7 +18716,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 100
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -18686,6 +18743,7 @@ GameObject:
   - component: {fileID: 1972476347}
   - component: {fileID: 1972476346}
   - component: {fileID: 1972476345}
+  - component: {fileID: 1972476348}
   m_Layer: 5
   m_Name: BTN_boomerang
   m_TagString: Untagged
@@ -18756,34 +18814,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1311561775}
-        m_MethodName: WaitHotkey
+        m_MethodName: SelectButton
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 949552593}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 1972476348}
+          m_ObjectArgumentAssemblyTypeName: Kyru.UI.HotkeyButton, Assembly-CSharp
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1955412746}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1311561775}
-        m_MethodName: SetIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18825,6 +18861,20 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972476343}
+--- !u!114 &1972476348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1972476343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c2450148f0e944fa32e4258bb26c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 7
+  info: {fileID: 949552593}
+  esc: {fileID: 1955412746}
 --- !u!1 &1981652620
 GameObject:
   m_ObjectHideFlags: 0
@@ -19092,11 +19142,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991444917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a7269676874
   allCaps: 0
+  _key: move-right
 --- !u!1 &2010538564
 GameObject:
   m_ObjectHideFlags: 0
@@ -19181,7 +19231,7 @@ GameObject:
   - component: {fileID: 2012316732}
   - component: {fileID: 2012316731}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19295,7 +19345,7 @@ GameObject:
   - component: {fileID: 2025731132}
   - component: {fileID: 2025731131}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19576,11 +19626,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042094116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a726573756d65
   allCaps: 0
+  _key: resume
 --- !u!1 &2051500782
 GameObject:
   m_ObjectHideFlags: 0
@@ -19742,23 +19792,23 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateInfoInt
-        m_Mode: 2
+      - m_Target: {fileID: 34315884}
+        m_MethodName: UpdateInfo
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 34315882}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: ApplySave
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20072,6 +20122,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1745929264}
+        m_MethodName: LoadValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2101493935
@@ -20121,7 +20182,7 @@ GameObject:
   - component: {fileID: 2116196574}
   - component: {fileID: 2116196573}
   m_Layer: 5
-  m_Name: info
+  m_Name: esc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20324,9 +20385,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadValues
-        m_Mode: 1
+      - m_Target: {fileID: 1151990362}
+        m_MethodName: ApplySave
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20532,11 +20593,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144686261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9ba269b4f768b48af2275a69494128, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a1153a5b0f29b74ba742dfdbc2bae9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 70617573655f6d656e753a72756e
   allCaps: 0
+  _key: run
 --- !u!1 &2146496994
 GameObject:
   m_ObjectHideFlags: 0

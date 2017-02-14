@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Kyru.UI;
 
 [Serializable]
 public struct InputSettings 
@@ -31,7 +32,7 @@ public class InputManager : MonoBehaviour
 	public HotkeyButton[] hotkeys;
 	#endregion
 
-	public HotkeyButton selected;
+	HotkeyButton selected;
 
 	public void LoadValues ()
 	{

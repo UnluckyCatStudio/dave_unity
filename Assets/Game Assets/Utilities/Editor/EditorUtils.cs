@@ -27,7 +27,7 @@ public class EditorUtils : Editor
 	{
 		var path = Application.dataPath + "/Lang/ref.lang";
 
-		using ( var file = new System.IO.StreamWriter ( path, false ) )
+		using ( var file = new System.IO.StreamWriter ( path, false, System.Text.Encoding.Unicode ) )
 		{
 			foreach ( var t in Localization.PrintAllTexts () )
 				file.WriteLine ( t );

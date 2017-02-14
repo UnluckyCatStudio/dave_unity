@@ -13,6 +13,11 @@ public class Game : MonoBehaviour
 	public static InputSettings      input    = new InputSettings ();
 	public static new AudioSettings  audio    = new AudioSettings ();
 
+	/// <summary>
+	/// Global UI parent.
+	/// </summary>
+	public GameObject ui;
+
 	private void Awake ()
 	{
 		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
@@ -27,7 +32,7 @@ public class Game : MonoBehaviour
 		#endregion
 
 		#region LOAD GRAPHICS
-		var gManager = FindObjectOfType<GraphicsManager> ();
+		var gManager = ui.GetComponentInChildren <GraphicsManager> ( true );
 		if ( jsonGraphics != "" )
 			graphics = JsonUtility.FromJson<GraphicSettings> ( jsonGraphics );
 		else
@@ -42,7 +47,7 @@ public class Game : MonoBehaviour
 		#endregion
 
 		#region LOAD INPUT
-		var iManager = FindObjectOfType<InputManager> ();
+		var iManager = ui.GetComponentInChildren<InputManager> ( true );
 		if ( jsonInput != "" )
 			input = JsonUtility.FromJson<InputSettings> ( jsonInput );
 
@@ -50,7 +55,7 @@ public class Game : MonoBehaviour
 		#endregion
 
 		#region LOAD AUDIO
-		var aManager = FindObjectOfType<AudioManager> ();
+		var aManager = ui.GetComponentInChildren<AudioManager> ( true );
 		if ( jsonAudio != "" )
 			audio = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
 

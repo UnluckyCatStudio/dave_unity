@@ -11,12 +11,12 @@ using Kyru.UI;
 /// </summary>
 public class LocalizableText : MonoBehaviour
 {
-	Text   control;
+	protected Text control;
 
-	[SerializeField] bool allCaps;
-	[SerializeField] string _key;
+	[SerializeField] private bool allCaps;
+	[SerializeField] private string _key;
 
-	string key   
+	private string key   
 	{
 		get { return _key; }
 		set
@@ -25,7 +25,7 @@ public class LocalizableText : MonoBehaviour
 			UpdateText ();
 		}
 	}
-	string value 
+	private string value 
 	{
 		get
 		{
@@ -40,7 +40,7 @@ public class LocalizableText : MonoBehaviour
 	/// Updates the control text
 	/// to current translation.
 	/// </summary>
-	public void UpdateText () 
+	public virtual void UpdateText () 
 	{
 		control.text = value;
 	}
@@ -63,7 +63,7 @@ public class LocalizableText : MonoBehaviour
 		return key + ":";
 	}
 
-	void Awake ()
+	protected virtual void Awake ()
 	{
 		control = GetComponent<Text> ();
 	}
