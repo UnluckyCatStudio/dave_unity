@@ -6,13 +6,22 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 
 [Serializable]
-public struct AudioSettings
+public struct AudioSettings 
 {
 	public float    master,
 					music,
 					sfx,
 					ambient,
 					voices;
+
+    public void SetDefaults ()
+    {
+        master  = 100;
+        music   = 100;
+        sfx     = 100;
+        ambient = 100;
+        voices  = 100;
+    }
 }
 
 public class AudioManager : MonoBehaviour
@@ -27,7 +36,7 @@ public class AudioManager : MonoBehaviour
 
 	public new AudioMixer audio;
 
-	public void LoadValues ()
+	public void LoadValues () 
 	{
 		master.value	= Game.audio.master;
 		music.value		= Game.audio.music;
@@ -36,7 +45,7 @@ public class AudioManager : MonoBehaviour
 		voices.value	= Game.audio.voices;
 	}
 
-	public void ApplySave ( bool justApply = false )
+	public void ApplySave ( bool justApply = false ) 
 	{
 		// Apply
 		Game.audio.master	= master.value;
@@ -53,7 +62,7 @@ public class AudioManager : MonoBehaviour
 		PlayerPrefs.Save ();
 	}
 
-	private void Apply ()
+	private void Apply () 
 	{
 		audio.SetFloat ( "master-vol", CorrectVolume ( master.value ) );
 		audio.SetFloat ( "music-vol", CorrectVolume ( music.value ) );
@@ -66,7 +75,7 @@ public class AudioManager : MonoBehaviour
 	/// Given a % from 0->100 returns
 	/// a value from -80->0
 	/// </summary>
-	private float CorrectVolume ( float value )
+	private float CorrectVolume ( float value ) 
 	{
 		return
 			( value / 100 * 80 ) - 80;

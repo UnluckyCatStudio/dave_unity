@@ -21,7 +21,7 @@ public struct GraphicSettings
 	/// Sets this struct to default
 	/// graphics settings.
 	/// </summary>
-	public void SetDefaults ()
+	public void SetDefaults () 
 	{
 		resolution	= 0;
 		fullscreen	= true;

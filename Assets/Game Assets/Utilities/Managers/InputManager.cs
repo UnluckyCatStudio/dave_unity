@@ -6,9 +6,27 @@ using UnityEngine.UI;
 using Kyru.UI;
 
 [Serializable]
-public struct InputSettings 
+public struct InputSettings
 {
 	public KeyCode[] keys;
+
+    public void SetDefaults () 
+    {
+        keys = new KeyCode[]
+        {
+            KeyCode.W,
+            KeyCode.S,
+            KeyCode.A,
+            KeyCode.D,
+            KeyCode.Space,
+            KeyCode.LeftShift,
+            KeyCode.R,
+            KeyCode.Q,
+            KeyCode.Mouse2,
+            KeyCode.Mouse0,
+            KeyCode.E
+        };
+    }
 }
 
 public enum Key 
@@ -28,7 +46,7 @@ public enum Key
 
 public class InputManager : MonoBehaviour
 {
-	#region KEYS
+	#region UI
 	public HotkeyButton[] hotkeys;
 	#endregion
 

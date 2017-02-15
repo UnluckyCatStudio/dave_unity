@@ -28,7 +28,7 @@ namespace Kyru.UI
 			text.text = s;
 		}
 
-		void Awake () 
+		public void Init () 
 		{
 			text   = GetComponent<Text> ();
 		}

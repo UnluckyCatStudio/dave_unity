@@ -51,6 +51,8 @@ public class Game : MonoBehaviour
 		var iManager = ui.GetComponentInChildren<InputManager> ( true );
 		if ( jsonInput != "" )
 			input = JsonUtility.FromJson<InputSettings> ( jsonInput );
+        else
+            input.SetDefaults ();
 
 		iManager.LoadValues ();
 		#endregion
@@ -59,7 +61,13 @@ public class Game : MonoBehaviour
 		var aManager = ui.GetComponentInChildren<AudioManager> ( true );
 		if ( jsonAudio != "" )
 			audio = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
+        else
+            audio.SetDefaults ();
 
+        // Initialize all values
+        foreach ( var s in ui.GetComponentsInChildren<SliderInt> ( true ) )
+            s.Init ();
+        
 		aManager.LoadValues ();
 		aManager.ApplySave ( true );
 		#endregion
