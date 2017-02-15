@@ -34,4 +34,10 @@ public class EditorUtils : Editor
 
 		Debug.Log ( "Language-file reference saved in " + path );
 	}
+
+	//[MenuItem("etc-utils/Materials/Auto-Material")]
+	public static void StartAutoMaterial ()
+	{
+		AutoMaterial.Init ();
+	}
 }

@@ -46,6 +46,30 @@ ModelImporter:
     100076: torre_soporte_palo_h
     100078: torre_soporte_palo_v
     100080: //RootNode
+    100082: Terrain_bosque
+    100084: "Terrain_caba\xF1a"
+    100086: Terrain_entrada_bosque
+    100088: Terrain_moutains
+    100090: Terrain_torre
+    100092: torre.001
+    100094: Field
+    100096: Portal
+    100098: Ruinas_Espada
+    100100: Terrain_int
+    100102: Tower_exterior
+    100104: Tower_int
+    100106: river
+    100108: floor_button
+    100110: floor_button.001
+    100112: floor_button.002
+    100114: cuerda_piedra
+    100116: cuerda_piedra.002
+    100118: cuerda_v
+    100120: cuerda_v.002
+    100122: Piedra
+    100124: piedra.001
+    100126: Piedra.002
+    100128: piedra.003
     400000: acueducto
     400002: aro
     400004: balla
@@ -87,6 +111,30 @@ ModelImporter:
     400076: torre_soporte_palo_h
     400078: torre_soporte_palo_v
     400080: //RootNode
+    400082: Terrain_bosque
+    400084: "Terrain_caba\xF1a"
+    400086: Terrain_entrada_bosque
+    400088: Terrain_moutains
+    400090: Terrain_torre
+    400092: torre.001
+    400094: Field
+    400096: Portal
+    400098: Ruinas_Espada
+    400100: Terrain_int
+    400102: Tower_exterior
+    400104: Tower_int
+    400106: river
+    400108: floor_button
+    400110: floor_button.001
+    400112: floor_button.002
+    400114: cuerda_piedra
+    400116: cuerda_piedra.002
+    400118: cuerda_v
+    400120: cuerda_v.002
+    400122: Piedra
+    400124: piedra.001
+    400126: Piedra.002
+    400128: piedra.003
     2300000: acueducto
     2300002: aro
     2300004: balla
@@ -126,6 +174,23 @@ ModelImporter:
     2300072: torre_soporte_hierro
     2300074: torre_soporte_palo_h
     2300076: torre_soporte_palo_v
+    2300078: Terrain_bosque
+    2300080: "Terrain_caba\xF1a"
+    2300082: Terrain_entrada_bosque
+    2300084: Terrain_moutains
+    2300086: Terrain_torre
+    2300088: torre
+    2300090: torre.001
+    2300092: river
+    2300094: floor_button
+    2300096: floor_button.001
+    2300098: floor_button.002
+    2300100: cuerda_piedra
+    2300102: cuerda_piedra.002
+    2300104: cuerda_v
+    2300106: cuerda_v.002
+    2300108: piedra.001
+    2300110: piedra.003
     3300000: acueducto
     3300002: aro
     3300004: balla
@@ -165,6 +230,23 @@ ModelImporter:
     3300072: torre_soporte_hierro
     3300074: torre_soporte_palo_h
     3300076: torre_soporte_palo_v
+    3300078: Terrain_bosque
+    3300080: "Terrain_caba\xF1a"
+    3300082: Terrain_entrada_bosque
+    3300084: Terrain_moutains
+    3300086: Terrain_torre
+    3300088: torre
+    3300090: torre.001
+    3300092: river
+    3300094: floor_button
+    3300096: floor_button.001
+    3300098: floor_button.002
+    3300100: cuerda_piedra
+    3300102: cuerda_piedra.002
+    3300104: cuerda_v
+    3300106: cuerda_v.002
+    3300108: piedra.001
+    3300110: piedra.003
     4300000: pedestal
     4300002: piedra
     4300004: balla
@@ -204,6 +286,23 @@ ModelImporter:
     4300072: acueducto
     4300074: escaleras_estanque
     4300076: estanque
+    4300078: Terrain_torre
+    4300080: Terrain_bosque
+    4300082: "Terrain_caba\xF1a"
+    4300084: Terrain_entrada_bosque
+    4300086: Terrain_moutains
+    4300088: torre.001
+    4300090: torre
+    4300092: river
+    4300094: floor_button.002
+    4300096: floor_button.001
+    4300098: floor_button
+    4300100: piedra.003
+    4300102: cuerda_v.002
+    4300104: cuerda_piedra.002
+    4300106: piedra.001
+    4300108: cuerda_v
+    4300110: cuerda_piedra
   materials:
     importMaterials: 1
     materialName: 0
