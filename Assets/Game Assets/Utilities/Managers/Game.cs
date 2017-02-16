@@ -18,12 +18,14 @@ public class Game : MonoBehaviour
 	/// </summary>
 	public static GameObject ui;
 
-	private void Start ()
+	private void Awake ()
 	{
 		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
 		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
+
+		ui = GameObject.Find ( "UI" );
 
 		#region TRANSLATION
 		Localization.lang = lang;
@@ -71,10 +73,5 @@ public class Game : MonoBehaviour
 		aManager.LoadValues ();
 		aManager.ApplySave ( true );
 		#endregion
-	}
-
-	private void Awake () 
-	{
-		ui = GameObject.Find ( "UI" );
 	}
 }

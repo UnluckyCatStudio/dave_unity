@@ -9,19 +9,19 @@ namespace Kyru.UI
 	/// </summary>
 	public class Fx : MonoBehaviour
 	{
-		public void Resume ()
+		public void Resume () 
 		{
 
 		}
 
-		public void QuitToMainMenu ()
+		public void QuitToMainMenu () 
 		{
 
 		}
 
-		public void QuitToDesktop ()
+		public void QuitToDesktop () 
 		{
-
+			Application.Quit ();
 		}
 	} 
 }

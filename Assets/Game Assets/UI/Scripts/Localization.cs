@@ -32,6 +32,9 @@ namespace Kyru.UI
 
 		public static bool LoadTexts () 
 		{
+			// If loaded again, clear it first
+			texts.Clear ();
+
 			/*
 			 * BUILD:
 			 * /PATH/Kyru_Data/Lang/*.lang
@@ -57,7 +60,7 @@ namespace Kyru.UI
 			return true;
 		}
 
-		public static bool InitAllTexts ()
+		public static bool InitAllTexts () 
 		{
 			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
 			foreach ( var t in txts )

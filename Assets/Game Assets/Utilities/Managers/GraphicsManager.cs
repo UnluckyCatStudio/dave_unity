@@ -93,6 +93,9 @@ public class GraphicsManager : MonoBehaviour
 
 	public void LoadResolutions () 
 	{
+		// Clear first Editor options
+		resolution.options.Clear ();
+
 		for ( int i = 0; i != Screen.resolutions.Length; i++ )
 		{
 			var txt = Screen.resolutions[i].width + " x " + Screen.resolutions[i].height;
