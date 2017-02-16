@@ -18,6 +18,11 @@ public class Game : MonoBehaviour
 	/// </summary>
 	public static GameObject ui;
 
+	/// <summary>
+	/// Reference to the Main Camera Rig Manager
+	/// </summary>
+	public static CamManager cam;
+
 	private void Awake ()
 	{
 		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
@@ -25,7 +30,8 @@ public class Game : MonoBehaviour
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 
-		ui = GameObject.Find ( "UI" );
+		ui  = GameObject.Find ( "UI" );
+		cam = GameObject.Find ( "CamController" ).GetComponent<CamManager> ();
 
 		#region TRANSLATION
 		Localization.lang = lang;

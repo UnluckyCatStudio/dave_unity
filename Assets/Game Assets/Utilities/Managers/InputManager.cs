@@ -93,8 +93,8 @@ public class InputManager : MonoBehaviour
 			{
 				if ( Input.GetKeyDown ( kcode ) )
 				{
-					// Check if user pressed ESC
-					if ( kcode != KeyCode.Escape )
+					// Check if user pressed ESC or P ( pausing keys )
+					if ( kcode != KeyCode.Escape && kcode != KeyCode.P )
 					{
 						// Save new value
 						Game.input.keys[(int)selected.key] = kcode;

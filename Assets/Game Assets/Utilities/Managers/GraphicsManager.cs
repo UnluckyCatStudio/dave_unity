@@ -72,6 +72,7 @@ public class GraphicsManager : MonoBehaviour
 		Game.graphics.antialising	= antialiasing.isOn;
 
 		Apply ();
+		Game.cam.UpdateRig ();
 		if ( justApply ) return;
 
 		// Save
