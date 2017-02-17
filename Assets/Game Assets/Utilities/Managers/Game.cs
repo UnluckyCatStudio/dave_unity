@@ -30,8 +30,9 @@ public class Game : MonoBehaviour
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 
+		DontDestroyOnLoad ( this );
 		ui  = GameObject.Find ( "UI" );
-		cam = GameObject.Find ( "CamController" ).GetComponent<CamManager> ();
+		// Camera Rig will be self-set when game is started
 
 		#region TRANSLATION
 		Localization.lang = lang;

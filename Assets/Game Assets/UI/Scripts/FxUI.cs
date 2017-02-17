@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace Kyru.UI
 {
-	/// <summary>
-	/// General UI functions.
-	/// </summary>
+	// General UI functions.
 	public class FxUI : MonoBehaviour
 	{
 		public static bool paused = true;
-		public Animator ui;
+		Animator ui;
 
 		public void Resume () 
 		{
 
 		}
 
+		// Starts new game
 		public void Play ()
 		{
 			ui.SetBool ( "OnMainMenu", false );
-			// TODO: Loading scene!
+			ui.SetBool ( "Loading", true );
+			ZoneLoader.Init ( this, "Zona_0", 3f );
 		}
 
 		public void QuitToMainMenu () 
@@ -33,16 +33,11 @@ namespace Kyru.UI
 			Application.Quit ();
 		}
 
-		private void Update ()
+		// Don't destoy on load
+		private void Awake () 
 		{
-			if ( Input.GetKeyDown ( KeyCode.P ) )
-				Play ();
-
-			if ( !paused && Input.GetKeyDown ( KeyCode.P ) || Input.GetKeyDown ( KeyCode.Escape ) )
-			{
-				paused = true;
-				ui.SetBool ( "Paused", paused );
-			}
+			DontDestroyOnLoad ( this );
+			ui = GetComponent<Animator> ();
 		}
 	} 
 }

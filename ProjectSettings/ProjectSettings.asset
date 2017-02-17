@@ -14,7 +14,7 @@ PlayerSettings:
   productName: Kyru
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.09411766, g: 0.098039225, b: 0.09411766, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -38,12 +38,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 075d50cb978cc104086f52c8cd6e9a55, type: 3}
+  - logo: {fileID: 21300000, guid: 72b8bd86c72f15d45acd1a6a2e29f2cc, type: 3}
     duration: 3
-  - logo: {fileID: 21300000, guid: 26dec87ffdb45184c96a280ecdf83920, type: 3}
-    duration: 2
-  - logo: {fileID: 21300000, guid: 5e26b819e3ee46440baeb19c9d35a85e, type: 3}
-    duration: 2.2
   m_SplashScreenBackgroundLandscape: {fileID: 0}
   m_SplashScreenBackgroundPortrait: {fileID: 0}
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -126,8 +122,7 @@ PlayerSettings:
     Others: 0
   bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
-  preloadedAssets:
-  - {fileID: 0}
+  preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
@@ -149,7 +144,7 @@ PlayerSettings:
   StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
-    m_Bits: 110
+    m_Bits: 96
   iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 
   tvOSSdkVersion: 0

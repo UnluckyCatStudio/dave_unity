@@ -7,10 +7,10 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/DEMO/v0.1/MainMenuBG_DEMO.unity
+  - enabled: 0
+    path: Assets/Game Assets/Scenes/Loading.unity
   - enabled: 1
     path: Assets/Game Assets/Scenes/Main.unity
-  - enabled: 1
-    path: Assets/Game Assets/Scenes/Loading.unity
   - enabled: 1
     path: Assets/Game Assets/Scenes/Zona_0.unity
   - enabled: 0

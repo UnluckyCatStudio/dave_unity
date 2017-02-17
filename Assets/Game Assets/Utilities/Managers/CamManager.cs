@@ -34,6 +34,15 @@ public class CamManager : MonoBehaviour
 		// AA and FoV
 		active.GetComponent<Camera> ().fieldOfView = Game.graphics.fov;
 		active.GetComponent<AntiAliasing> ().enabled = Game.graphics.antialising;
+	}
 
+	// Don't destroy on load
+	// Setup game reference
+	// First update!
+	private void Awake () 
+	{
+		DontDestroyOnLoad ( this );
+		Game.cam = this;
+		UpdateRig ();
 	}
 }
