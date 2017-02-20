@@ -5,54 +5,48 @@ using UnityEngine;
 public class DaveController : MonoBehaviour
 {
 	private Animator anim;
-	private Rigidbody body;
-	private Transform cam;
+	private CharacterController me;
 
 	// Movement
 	[Header("Basic movement")]
-	public	bool    canMove;		// Can the player move?
-	public float	speed;			// Movement speed multiplier
+	public Transform    cam;			// The camera pivot ( for relative movement )
+	public bool			canMove;		// Can the player move?
+	public float		speed;			// Movement speed multiplier
 
-	[Header("IK")]
-	public bool			activeIK;       // Is Dave IK working?
-	public float		weight;         // IK weight
-	public Transform    leftFoot;
-	public Transform    rightFoot;
+//	[Header("IK")]
+//	public Transform    leftFoot;
+//	public Transform    rightFoot;
 
-	void FixedUpdate ()
+	void Update ()
 	{
 		if ( canMove )
 		{
-			#region KEYBOARD
-			var inputDir = Vector3.zero;
+			#region MOVEMENT
+			var movement = Vector3.zero;
+			// Get movement relative to camera rotation
+			if ( Input.GetKey ( Game.input.keys[(int)Key.Forward] ) )	movement += cam.forward;
+			if ( Input.GetKey ( Game.input.keys[(int)Key.Backwards] ) ) movement -= cam.forward;
+			if ( Input.GetKey ( Game.input.keys[(int)Key.Left] ) )		movement -= cam.right;
+			if ( Input.GetKey ( Game.input.keys[(int)Key.Right] ) )		movement += cam.right;
+			// Only keep direction of movement
+			movement.Normalize ();
 
-			if ( Input.GetKey ( Game.input.keys[0] ) ) inputDir += Vector3.forward;
-			if ( Input.GetKey ( Game.input.keys[1] ) ) inputDir += Vector3.back;
-			if ( Input.GetKey ( Game.input.keys[2] ) ) inputDir += Vector3.left;
-			if ( Input.GetKey ( Game.input.keys[3] ) ) inputDir += Vector3.right;
-
-			// Get the actual movement direction ( relative to camera )
-			var moveDir = cam.TransformDirection ( inputDir.normalized );
-			// Rotate towards movement direction
-			body.MoveRotation ( Quaternion.LookRotation ( moveDir ) );
-			body.MovePosition ( transform.position + moveDir * Time.fixedDeltaTime );
-
-			anim.SetFloat ( "speed", inputDir == Vector3.zero ? 0 : 1 );
+			if ( movement != Vector3.zero ) me.SimpleMove ( movement );
 			#endregion
 		}
 	}
 
-	private void OnAnimatorIK ()
-	{
-		if ( activeIK )
-		{
-
-		}
-	} 
+//	private void OnAnimatorIK ()
+//	{
+//		if ( activeIK )
+//		{
+//
+//		}
+//	} 
 
 	void Awake ()
 	{
 		anim	= GetComponent<Animator> ();
-		body	= GetComponent<Rigidbody> ();
+		me		= GetComponent<CharacterController> ();
 	}
 }

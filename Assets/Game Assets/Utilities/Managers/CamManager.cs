@@ -15,7 +15,7 @@ public class CamManager : MonoBehaviour
 	public  GameObject[] cameras;
 
 	private GameObject   active;
-	private int          activeID;
+	private int          activeID=3;
 
 	/// <summary>
 	/// Happens when graphic settings change so the
@@ -32,7 +32,7 @@ public class CamManager : MonoBehaviour
 		active.SetActive ( true );
 
 		// AA and FoV
-		active.GetComponent<Camera> ().fieldOfView = Game.graphics.fov;
+		active.GetComponent<Camera> ().fieldOfView = 60;//Game.graphics.fov;
 		active.GetComponent<AntiAliasing> ().enabled = Game.graphics.antialising;
 	}
 
