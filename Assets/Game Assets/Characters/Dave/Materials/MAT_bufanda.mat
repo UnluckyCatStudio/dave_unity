@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 5ba6f202b1c584b4683da2257c3a7005, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 4000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -75,7 +75,7 @@ Material:
       second: 1
     - first:
         name: _Cutoff
-      second: 0.01
+      second: 1
     - first:
         name: _DetailNormalMapScale
       second: 1

@@ -11,7 +11,8 @@ public class DaveController : MonoBehaviour
 	[Header("Basic movement")]
 	public Transform    cam;			// The camera pivot ( for relative movement )
 	public bool			canMove;		// Can the player move?
-	public float		speed;			// Movement speed multiplier
+	public float		speed;          // Movement speed multiplier
+	public float        rotationSpeed;
 
 //	[Header("IK")]
 //	public Transform    leftFoot;
@@ -31,7 +32,17 @@ public class DaveController : MonoBehaviour
 			// Only keep direction of movement
 			movement.Normalize ();
 
-			if ( movement != Vector3.zero ) me.SimpleMove ( movement );
+			if ( movement != Vector3.zero )
+			{
+				me.SimpleMove ( movement * speed );
+				anim.SetBool ( "Moving", true );
+			}
+			else anim.SetBool ( "Moving", false );
+			#endregion
+
+			#region ROTATION
+			// poor implementattion
+			transform.rotation = cam.rotation;
 			#endregion
 		}
 	}
