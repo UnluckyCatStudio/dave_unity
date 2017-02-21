@@ -9,10 +9,13 @@ public class DaveController : MonoBehaviour
 
 	// Movement
 	[Header("Basic movement")]
-	public Transform    cam;			// The camera pivot ( for relative movement )
 	public bool			canMove;		// Can the player move?
+	public Transform    cam;			// The camera pivot ( for relative movement )
 	public float		speed;          // Movement speed multiplier
-	public float        rotationSpeed;
+
+	[Header("Combat")]
+	public bool canCombat;
+	public bool swordOut;		
 
 //	[Header("IK")]
 //	public Transform    leftFoot;
@@ -20,42 +23,69 @@ public class DaveController : MonoBehaviour
 
 	void Update ()
 	{
+		#region BASIC MOVEMENT
 		if ( canMove )
 		{
 			#region MOVEMENT
 			var movement = Vector3.zero;
 			// Get movement relative to camera rotation
-			if ( Input.GetKey ( Game.input.keys[(int)Key.Forward] ) )	movement += cam.forward;
-			if ( Input.GetKey ( Game.input.keys[(int)Key.Backwards] ) ) movement -= cam.forward;
-			if ( Input.GetKey ( Game.input.keys[(int)Key.Left] ) )		movement -= cam.right;
-			if ( Input.GetKey ( Game.input.keys[(int)Key.Right] ) )		movement += cam.right;
-			// Only keep direction of movement
+			if ( Game.input.GetKey ( Key.Forward ) )	movement += cam.forward;
+			if ( Game.input.GetKey ( Key.Backwards ) )  movement -= cam.forward;
+			if ( Game.input.GetKey ( Key.Left ) )		movement -= cam.right;
+			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.right;
+			// Keep only direction of movement
 			movement.Normalize ();
 
 			if ( movement != Vector3.zero )
 			{
+				#region CORRECT ROTATION
+				var rotDir = Quaternion.LookRotation ( movement );
+				var diff   = Quaternion.Angle ( transform.rotation, rotDir );
+
+				transform.rotation =
+					Quaternion.Slerp
+					(
+						transform.rotation,
+						rotDir,
+						diff / Time.deltaTime * .0001f   // bigger diff = faster rotation
+					);
+				#endregion
+
 				me.SimpleMove ( movement * speed );
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
 			#endregion
-
-			#region ROTATION
-			// poor implementattion
-			transform.rotation = cam.rotation;
-			#endregion
 		}
+		#endregion
+
+		#region COMBAT
+		if ( canCombat )
+		{
+			// Unsheathe sword
+			/* 
+			 * 'swordOut' is set true/false by the
+			 * animation itself. Preventing issues
+			 * if animation is cancelled.
+			 */
+			if ( Game.input.GetKey ( Key.Sword ) )
+			{
+				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
+				else			 anim.SetTrigger ( "Sheathe" );
+			}
+		}
+		#endregion
 	}
 
-//	private void OnAnimatorIK ()
-//	{
-//		if ( activeIK )
-//		{
-//
-//		}
-//	} 
+	//	private void OnAnimatorIK ()
+	//	{
+	//		if ( activeIK )
+	//		{
+	//
+	//		}
+	//	} 
 
-	void Awake ()
+	void Awake () 
 	{
 		anim	= GetComponent<Animator> ();
 		me		= GetComponent<CharacterController> ();

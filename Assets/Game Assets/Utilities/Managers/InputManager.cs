@@ -10,6 +10,11 @@ public struct InputSettings
 {
 	public KeyCode[] keys;
 
+	public bool GetKey ( Key key ) 
+	{
+		return Input.GetKey ( keys[( int ) key] );
+	}
+
     public void SetDefaults () 
     {
         keys = new KeyCode[]
