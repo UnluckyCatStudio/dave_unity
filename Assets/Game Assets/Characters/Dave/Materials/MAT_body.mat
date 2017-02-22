@@ -84,10 +84,10 @@ Material:
       second: 0
     - first:
         name: _GlossMapScale
-      second: 0
+      second: 0.687
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0.313
     - first:
         name: _GlossyReflections
       second: 1
@@ -103,6 +103,9 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _Richness
+      second: 0
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -125,3 +128,6 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _HairTint
+      second: {r: 1, g: 1, b: 1, a: 1}

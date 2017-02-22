@@ -47,11 +47,11 @@ public class DaveController : MonoBehaviour
 					(
 						transform.rotation,
 						rotDir,
-						diff / Time.deltaTime * .0001f   // bigger diff = faster rotation
+						diff / 5f * Time.deltaTime   // bigger diff = faster rotation
 					);
 				#endregion
 
-				me.SimpleMove ( movement * speed );
+				me.Move ( movement * speed * Time.deltaTime );
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -62,11 +62,11 @@ public class DaveController : MonoBehaviour
 		#region COMBAT
 		if ( canCombat )
 		{
-			// Unsheathe sword
+			// (un)Sheathe sword
 			/* 
 			 * 'swordOut' is set true/false by the
-			 * animation itself. Preventing issues
-			 * if animation is cancelled.
+			 * animation itself, preventing issues
+			 * if animation is cancelled, etc
 			 */
 			if ( Game.input.GetKey ( Key.Sword ) )
 			{
@@ -77,13 +77,13 @@ public class DaveController : MonoBehaviour
 		#endregion
 	}
 
-	//	private void OnAnimatorIK ()
-	//	{
-	//		if ( activeIK )
-	//		{
-	//
-	//		}
-	//	} 
+//	private void OnAnimatorIK ()
+//	{
+//		if ( activeIK )
+//		{
+//
+//		}
+//	} 
 
 	void Awake () 
 	{
