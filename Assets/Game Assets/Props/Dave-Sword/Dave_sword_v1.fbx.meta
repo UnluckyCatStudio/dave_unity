@@ -6,10 +6,20 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: edge
+    100004: handle
     400000: //RootNode
+    400002: edge
+    400004: handle
     2300000: //RootNode
+    2300002: edge
+    2300004: handle
     3300000: //RootNode
+    3300002: edge
+    3300004: handle
     4300000: sword
+    4300002: handle
+    4300004: edge
   materials:
     importMaterials: 1
     materialName: 0

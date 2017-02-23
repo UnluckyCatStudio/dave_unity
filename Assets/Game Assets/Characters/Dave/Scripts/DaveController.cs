@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaveController : MonoBehaviour
+public class DaveController : Kyru.etc.AnimatorController
 {
 	private Animator anim;
 	private CharacterController me;
@@ -14,8 +14,9 @@ public class DaveController : MonoBehaviour
 	public float		speed;          // Movement speed multiplier
 
 	[Header("Combat")]
-	public bool canCombat;
-	public bool swordOut;		
+	public  bool canCombat;
+	private bool swordOut;		
+	public  SwordController sword;
 
 //	[Header("IK")]
 //	public Transform    leftFoot;
@@ -90,4 +91,28 @@ public class DaveController : MonoBehaviour
 		anim	= GetComponent<Animator> ();
 		me		= GetComponent<CharacterController> ();
 	}
+
+	#region EVENTS
+	[Header ("Animations")]
+	public Transform swordBeltHolder;
+	public Transform swordHandHolder;
+	/// <summary>
+	/// Attaches the sword to either
+	/// the belt or the hand.
+	/// </summary>
+	void Seathe ( int unseathe )
+	{
+		sword.transform.SetParent
+		(
+			unseathe == 0 ?
+			swordHandHolder
+			:
+			swordBeltHolder
+		);
+
+		sword.transform.localPosition = Vector3.zero;
+		sword.transform.localRotation = Quaternion.identity;
+		sword.StartCoroutine ( "Fade", true );
+	}
+	#endregion
 }
