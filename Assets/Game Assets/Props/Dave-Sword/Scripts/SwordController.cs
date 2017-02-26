@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordController : MonoBehaviour
+public class SwordController : Kyru.etc.AnimatorController
 {
 	public GameObject edge;
 
-	private IEnumerator Fade ( bool fadeIn )
+	void Awake () 
 	{
-		yield return new WaitForSeconds ( .2f );
-		edge.SetActive ( true );
+		anim = GetComponent<Animator> ();
 	}
 }

@@ -14,14 +14,12 @@ namespace Kyru.etc
 			delay = _delay;
 			caller = _caller;
 
-			if ( working )
-				return;
-			else
-				working = true;
+			if ( working )  return;
+			else			working = true;
 
 			fx = SceneManager.LoadSceneAsync ( zone, LoadSceneMode.Single );
-			caller.StartCoroutine ( LoadZone () );
 			fx.allowSceneActivation = false;
+			caller.StartCoroutine ( LoadZone () );
 		}
 
 		private static AsyncOperation   fx;
@@ -38,8 +36,8 @@ namespace Kyru.etc
 				yield return null;
 			}
 
-			yield return new WaitForSeconds ( delay );
 			fx.allowSceneActivation = true;
+			yield return new WaitForSeconds ( delay );
 			Game.ui.GetComponent<Animator> ().SetBool ( "Loading", false );
 
 			working = false;

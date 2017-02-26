@@ -11,6 +11,7 @@ public class CamController : MonoBehaviour
 	public Transform pivot;          // Pivot for rotating camera around
 
 	[Header("Settings")]
+	public Vector3 offsetFromDave;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
 	public float speed;
@@ -24,7 +25,7 @@ public class CamController : MonoBehaviour
 	private void LateUpdate () 
 	{
 		// Follow Dave
-		transform.position = dave.position + Vector3.up;
+		transform.position = dave.position + offsetFromDave;
 
 		// Get user input
 		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
@@ -89,7 +90,6 @@ public class CamController : MonoBehaviour
 		}
 
 		if ( collidingThisFrame )
-		{
 		do
 		{
 			if ( Vector3.Distance ( pivot.position, Game.cam.transform.position ) > minDistanceFromPivot )
@@ -98,7 +98,6 @@ public class CamController : MonoBehaviour
 			else return true; // Camera is too close!
 
 		} while ( isColliding );
-		}
 
 		collidedInLastFrame = collidingThisFrame;
 		return false;

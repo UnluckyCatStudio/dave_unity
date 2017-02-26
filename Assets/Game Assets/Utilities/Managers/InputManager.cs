@@ -15,7 +15,12 @@ public struct InputSettings
 		return Input.GetKey ( keys[( int ) key] );
 	}
 
-    public void SetDefaults () 
+	public bool GetKeyDown ( Key key )
+	{
+		return Input.GetKeyDown ( keys[( int ) key] );
+	}
+
+	public void SetDefaults () 
     {
         keys = new KeyCode[]
         {
