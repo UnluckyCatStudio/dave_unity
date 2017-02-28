@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 338a8f9ef741f5840b6b60773c782ab5
+timeCreated: 1488267963
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: aro_1
+    100002: aro_2
+    100004: aro_3
+    100006: aro_4
+    100008: aro_5
+    100010: aro_6
+    100012: aro_7
+    100014: base
+    100016: //RootNode
+    100018: enemy_plt_1
+    100020: enemy_plt_2
+    100022: enemy_plt_3
+    100024: enemy_plt_4
+    100026: enemy_plt_5
+    100028: enemy_plt_6
+    100030: enemy_plt_7
+    100032: enemy_plt_8
+    100034: pl_doble
+    100036: plt_central
+    400000: aro_1
+    400002: aro_2
+    400004: aro_3
+    400006: aro_4
+    400008: aro_5
+    400010: aro_6
+    400012: aro_7
+    400014: base
+    400016: //RootNode
+    400018: enemy_plt_1
+    400020: enemy_plt_2
+    400022: enemy_plt_3
+    400024: enemy_plt_4
+    400026: enemy_plt_5
+    400028: enemy_plt_6
+    400030: enemy_plt_7
+    400032: enemy_plt_8
+    400034: pl_doble
+    400036: plt_central
+    2300000: aro_1
+    2300002: aro_2
+    2300004: aro_3
+    2300006: aro_4
+    2300008: aro_5
+    2300010: aro_6
+    2300012: aro_7
+    2300014: base
+    2300016: enemy_plt_1
+    2300018: enemy_plt_2
+    2300020: enemy_plt_3
+    2300022: enemy_plt_4
+    2300024: enemy_plt_5
+    2300026: enemy_plt_6
+    2300028: enemy_plt_7
+    2300030: enemy_plt_8
+    2300032: pl_doble
+    2300034: plt_central
+    3300000: aro_1
+    3300002: aro_2
+    3300004: aro_3
+    3300006: aro_4
+    3300008: aro_5
+    3300010: aro_6
+    3300012: aro_7
+    3300014: base
+    3300016: enemy_plt_1
+    3300018: enemy_plt_2
+    3300020: enemy_plt_3
+    3300022: enemy_plt_4
+    3300024: enemy_plt_5
+    3300026: enemy_plt_6
+    3300028: enemy_plt_7
+    3300030: enemy_plt_8
+    3300032: pl_doble
+    3300034: plt_central
+    4300000: aro_1
+    4300002: plt_central
+    4300004: aro_2
+    4300006: aro_3
+    4300008: aro_4
+    4300010: aro_5
+    4300012: aro_6
+    4300014: aro_7
+    4300016: pl_doble
+    4300018: base
+    4300020: enemy_plt_8
+    4300022: enemy_plt_1
+    4300024: enemy_plt_2
+    4300026: enemy_plt_3
+    4300028: enemy_plt_4
+    4300030: enemy_plt_5
+    4300032: enemy_plt_6
+    4300034: enemy_plt_7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
