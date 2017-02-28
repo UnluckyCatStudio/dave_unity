@@ -23,6 +23,11 @@ public class Game : MonoBehaviour
 	/// </summary>
 	public static CamManager cam;
 
+	/// <summary>
+	/// Global reference to Dave controller.
+	/// </summary>
+	public static DaveController dave;
+
 	private void Awake ()
 	{
 		var lang	        = PlayerPrefs.GetInt    ( "Lang" );

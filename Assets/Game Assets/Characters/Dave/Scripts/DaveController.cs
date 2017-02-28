@@ -25,7 +25,6 @@ public class DaveController : Kyru.etc.AnimatorController
 	// Animation params
 	private bool sheathing;		// Is Dave currently un/sheathing with the sword?
 	private bool swordOut;		// Is sword unsheathed?
-	private bool attacking;		// Is Dave attacking?
 
 	void Update ()
 	{
@@ -35,8 +34,12 @@ public class DaveController : Kyru.etc.AnimatorController
 		// conflict between values.
 		sheathing = anim.GetBool ( "Sheathing" );
 		swordOut  = anim.GetBool ( "SwordOut" );
-		attacking = anim.GetBool ( "Attacking" );
 		#endregion
+
+		// Avoid any user-driven logic
+		// if Dave is locked
+		if ( !DaveIsUp () )
+			return;
 
 		#region MOVEMENT
 		if ( canMove )
@@ -52,24 +55,20 @@ public class DaveController : Kyru.etc.AnimatorController
 
 			if ( movement != Vector3.zero )
 			{
-				if ( DaveIsUp () )
-				{
-					#region CORRECT ROTATION
-					var rotDir = Quaternion.LookRotation ( movement );
-					var diff = Quaternion.Angle ( transform.rotation, rotDir );
+				#region CORRECT ROTATION
+				var rotDir = Quaternion.LookRotation ( movement );
+				var diff = Quaternion.Angle ( transform.rotation, rotDir );
 
-					transform.rotation =
-						Quaternion.Slerp
-						(
-							transform.rotation,
-							rotDir,
-							diff / 5f * Time.deltaTime   // bigger diff = faster rotation
-						);
-					#endregion
+				transform.rotation =
+					Quaternion.Slerp
+					(
+						transform.rotation,
+						rotDir,
+						diff / 5f * Time.deltaTime   // bigger diff = faster rotation
+					);
+				#endregion
 
-					me.Move ( movement * speed * Time.deltaTime ); 
-				}
-
+				me.Move ( movement * speed * Time.deltaTime ); 
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -81,7 +80,6 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			// (un)Sheathe sword
 			if ( !sheathing
-				&& DaveIsUp ()
 				&& Game.input.GetKeyDown ( Key.Sword ) )
 			{
 				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
@@ -91,10 +89,9 @@ public class DaveController : Kyru.etc.AnimatorController
 			// Attacking
 			if ( swordOut
 				&& !sheathing
-				&& !attacking
 				&& Game.input.GetKeyDown ( Key.Attack ) )
 			{
-				anim.SetBool ( "Attacking", true );
+				anim.SetTrigger ( "Attack" );
 			}
 		}
 		#endregion
@@ -126,6 +123,7 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	void Awake () 
 	{
+		Game.dave = this;
 		anim	= GetComponent<Animator> ();
 		me		= GetComponent<CharacterController> ();
 	}
@@ -165,7 +163,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	 * able to do any user-driven action.
 	*/
 	private bool animatorLock;
-	private void LockDave ( int value ) 
+	public  void LockDave ( int value ) 
 	{
 		animatorLock = ( value == 1 );
 	}
