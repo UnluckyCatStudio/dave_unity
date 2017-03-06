@@ -267,18 +267,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 177571286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFog: 1
+  distanceFog: 0
   excludeFarPixels: 1
   useRadialDistance: 1
   heightFog: 1
-  height: 38.5
-  heightDensity: 0.37
-  startDistance: 201.5
+  height: 28.8
+  heightDensity: 4.59
+  startDistance: 0
   fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &177571289
 MonoBehaviour:
@@ -894,18 +894,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 556611648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFog: 1
+  distanceFog: 0
   excludeFarPixels: 1
   useRadialDistance: 1
   heightFog: 1
-  height: 38.5
-  heightDensity: 0.37
-  startDistance: 201.5
+  height: 28.8
+  heightDensity: 4.59
+  startDistance: 0
   fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &556611651
 MonoBehaviour:
@@ -1316,9 +1316,9 @@ MonoBehaviour:
   excludeFarPixels: 1
   useRadialDistance: 1
   heightFog: 1
-  height: 49.6
-  heightDensity: 1.12
-  startDistance: 1502.3
+  height: 28.8
+  heightDensity: 4.59
+  startDistance: 0
   fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &676314959
 MonoBehaviour:
@@ -3346,18 +3346,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2106260543}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFog: 1
+  distanceFog: 0
   excludeFarPixels: 1
   useRadialDistance: 1
   heightFog: 1
-  height: 38.5
-  heightDensity: 0.37
-  startDistance: 201.5
+  height: 28.8
+  heightDensity: 4.59
+  startDistance: 0
   fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &2106260546
 MonoBehaviour:
@@ -3647,7 +3647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 94.71
+      value: 94.625
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3853,6 +3853,7 @@ MonoBehaviour:
   speed: 4
   canCombat: 1
   sword: {fileID: 1955937962}
+  fallingThreshold: 0.5
   swordBeltHolder: {fileID: 729296762}
   swordHandHolder: {fileID: 656310871}
 --- !u!143 &2136571417
@@ -3871,7 +3872,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.87, z: 0}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!1 &2145236156 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100018, guid: 09fa31d28827c7043957b9ec56afa35a, type: 3}
