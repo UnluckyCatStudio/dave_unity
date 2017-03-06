@@ -7,12 +7,12 @@ public class DaveController : Kyru.etc.AnimatorController
 	private CharacterController me;
 
 	[Header("References")]
-	public Transform cam;			// The camera pivot ( for relative movement )
+	public Transform cam;		// The camera pivot ( for relative movement )
 
 	// Movement
 	[Header("Movement")]
 	public bool	 canMove;		// Can the player move?
-	public float speed;          // Movement speed multiplier
+	public float speed;			// Movement speed multiplier
 
 	[Header("Combat")]
 	public  bool canCombat;
@@ -24,7 +24,8 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	// Animation params
 	private bool sheathing;		// Is Dave currently un/sheathing with the sword?
-	private bool swordOut;		// Is sword unsheathed?
+	private bool swordOut;      // Is sword unsheathed?
+	private bool attacking;		// Is Dave performing an attack?
 
 	void Update ()
 	{
@@ -34,12 +35,8 @@ public class DaveController : Kyru.etc.AnimatorController
 		// conflict between values.
 		sheathing = anim.GetBool ( "Sheathing" );
 		swordOut  = anim.GetBool ( "SwordOut" );
+		attacking = anim.GetBool ( "Attacking" );
 		#endregion
-
-		// Avoid any user-driven logic
-		// if Dave is locked
-		if ( !DaveIsUp () )
-			return;
 
 		#region MOVEMENT
 		if ( canMove )
@@ -53,7 +50,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			// Keep only direction of movement
 			movement.Normalize ();
 
-			if ( movement != Vector3.zero )
+			if ( movement != Vector3.zero && DaveIsUp () )
 			{
 				#region CORRECT ROTATION
 				var rotDir = Quaternion.LookRotation ( movement );
@@ -80,6 +77,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			// (un)Sheathe sword
 			if ( !sheathing
+				&& DaveIsUp ()
 				&& Game.input.GetKeyDown ( Key.Sword ) )
 			{
 				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
@@ -91,7 +89,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				&& !sheathing
 				&& Game.input.GetKeyDown ( Key.Attack ) )
 			{
-				anim.SetTrigger ( "Attack" );
+				anim.SetBool ( "Attacking", true );
 			}
 		}
 		#endregion
@@ -115,24 +113,24 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	bool DaveIsUp () 
 	{
-		if ( animatorLock )
+		if ( animatorLock || attacking )
 			return false;
 
 		return true;
 	}
 
-	void Awake () 
+	protected override void Awake () 
 	{
+		base.Awake ();
 		Game.dave = this;
-		anim	= GetComponent<Animator> ();
-		me		= GetComponent<CharacterController> ();
+		me = GetComponent<CharacterController> ();
 	}
 	#endregion
 
 	#region EVENTS
 	[Header ("Animation references")]
-	public Transform swordBeltHolder;
-	public Transform swordHandHolder;
+	[SerializeField] Transform swordBeltHolder;
+	[SerializeField] Transform swordHandHolder;
 
 	/// <summary>
 	/// Attaches the sword to either
@@ -160,7 +158,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	/* This is used to lock Dave from
 	 * an animator event. While this
 	 * remains 'true', Dave won't be
-	 * able to do any user-driven action.
+	 * able to perform any user-driven action.
 	*/
 	private bool animatorLock;
 	public  void LockDave ( int value ) 
