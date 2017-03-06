@@ -29,15 +29,6 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	void Update ()
 	{
-		#region ANIMATOR CHECK
-		// Some script variables are checked against
-		// animator parameters to ensure there is no
-		// conflict between values.
-		sheathing = anim.GetBool ( "Sheathing" );
-		swordOut  = anim.GetBool ( "SwordOut" );
-		attacking = anim.GetBool ( "Attacking" );
-		#endregion
-
 		#region MOVEMENT
 		if ( canMove )
 		{
@@ -49,6 +40,9 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.right;
 			// Keep only direction of movement
 			movement.Normalize ();
+			// Move and correct rotation even when no
+			// real movement is done
+			me.Move ( movement * speed * Time.deltaTime );
 
 			if ( movement != Vector3.zero && DaveIsUp () )
 			{
@@ -65,7 +59,6 @@ public class DaveController : Kyru.etc.AnimatorController
 					);
 				#endregion
 
-				me.Move ( movement * speed * Time.deltaTime ); 
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -93,6 +86,16 @@ public class DaveController : Kyru.etc.AnimatorController
 			}
 		}
 		#endregion
+
+		#region ANIMATOR CHECK
+		// Some script variables are checked against
+		// animator parameters to ensure there is no
+		// conflict between values.
+		sheathing = anim.GetBool ( "Sheathing" );
+		swordOut  = anim.GetBool ( "SwordOut" );
+		attacking = anim.GetBool ( "Attacking" );
+		anim.SetBool ( "Grounded", IsGrounded () );
+		#endregion
 	}
 
 	#region IK
@@ -106,6 +109,29 @@ public class DaveController : Kyru.etc.AnimatorController
 	#endregion
 
 	#region FX
+	[SerializeField] float fallingThreshold;
+	float lastTimeOnGround;
+	/// <summary>
+	/// Checks if Dave has been in Air-time
+	/// for too long, in that case Falling animation
+	/// will play.
+	/// </summary>
+	bool IsGrounded ()
+	{
+		if ( me.isGrounded )
+		{
+			lastTimeOnGround = Time.time;
+			return true;
+		}
+		else
+		{
+			if ( Time.time >= lastTimeOnGround + fallingThreshold )
+				return false;
+			else
+				return true;
+		}
+	}
+
 	/// <summary>
 	/// This returns false when
 	/// for any reason Dave is incapable
