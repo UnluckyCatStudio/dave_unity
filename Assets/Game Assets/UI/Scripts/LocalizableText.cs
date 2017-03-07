@@ -42,7 +42,10 @@ public class LocalizableText : MonoBehaviour
 	/// </summary>
 	public virtual void UpdateText () 
 	{
-		control.text = value;
+		control.text = value
+			.Replace ( "$$", "\n" )
+			.Replace ( "[", "<b><color=orange>" )
+			.Replace ( "]", "</color></b>" );
 	}
 
 	/// <summary>

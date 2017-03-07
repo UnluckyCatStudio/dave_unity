@@ -14,7 +14,7 @@ namespace Kyru.etc
 			delay = _delay;
 			caller = _caller;
 
-			if ( working )  return;
+			if ( working )  throw new Exception ( "Zone loader working" );
 			else			working = true;
 
 			caller.StartCoroutine ( LoadZone () );
@@ -41,6 +41,7 @@ namespace Kyru.etc
 			fx.allowSceneActivation = true;
 			yield return new WaitForSeconds ( delay / 2 );
 			Game.ui.GetComponent<Animator> ().SetBool ( "Loading", false );
+			// esto es muy feo :c
 
 			working = false;
 		}

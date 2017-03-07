@@ -60,25 +60,25 @@ Material:
     - first:
         name: _BumpSpecMap
       second:
-        m_Texture: {fileID: 2800000, guid: cf601e84922e4f640b5a8474b9e3cd4a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 177bf2a8faede0d4884b617d47af0bdc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: b42e04d91df619a48894360585859745, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85094a741ea4a1a4896e5d4f352a502a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _ShadowTex
       second:
-        m_Texture: {fileID: 2800000, guid: fd65d337d7198044f8c9affbbe2956ba, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29af75d3b2efe7740aa0d07207fd1733, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _TranslucencyMap
       second:
-        m_Texture: {fileID: 2800000, guid: 72b9d414cab771a4db0610915e388916, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0dd797f3da79e2d4882b73037a2adedb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -128,19 +128,19 @@ Material:
     - first:
         name: _BumpSpecMap
       second:
-        m_Texture: {fileID: 2800000, guid: cf601e84922e4f640b5a8474b9e3cd4a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 177bf2a8faede0d4884b617d47af0bdc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: b42e04d91df619a48894360585859745, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85094a741ea4a1a4896e5d4f352a502a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _TranslucencyMap
       second:
-        m_Texture: {fileID: 2800000, guid: 72b9d414cab771a4db0610915e388916, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0dd797f3da79e2d4882b73037a2adedb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
