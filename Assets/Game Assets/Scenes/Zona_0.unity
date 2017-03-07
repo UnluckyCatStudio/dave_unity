@@ -6015,7 +6015,7 @@ Cloth:
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0.1
-  m_ExternalAcceleration: {x: 3, y: 3, z: 3}
+  m_ExternalAcceleration: {x: 3, y: 1, z: 3}
   m_RandomAcceleration: {x: 0, y: 0, z: 0}
   m_WorldVelocityScale: 0
   m_WorldAccelerationScale: 0
@@ -8025,19 +8025,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.14409824
+      value: -0.14409825
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5523528
+      value: -0.55235285
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.18957143
+      value: -0.18957146
       objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7988771
+      value: 0.79887724
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
       propertyPath: m_Controller
@@ -8245,7 +8245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  cam: {fileID: 1631170}
+  cam: {fileID: 1631169}
   canMove: 1
   speed: 4
   canCombat: 1
