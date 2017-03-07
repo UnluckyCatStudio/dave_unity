@@ -40,9 +40,6 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.right;
 			// Keep only direction of movement
 			movement.Normalize ();
-			// Move and correct rotation even when no
-			// real movement is done
-			me.Move ( movement * speed * Time.deltaTime );
 
 			if ( movement != Vector3.zero && DaveIsUp () )
 			{
@@ -59,6 +56,7 @@ public class DaveController : Kyru.etc.AnimatorController
 					);
 				#endregion
 
+				me.Move ( movement * speed * Time.deltaTime );
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -75,6 +73,8 @@ public class DaveController : Kyru.etc.AnimatorController
 			{
 				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
 				else			 anim.SetTrigger ( "Sheathe" );
+
+				anim.SetBool ( "Sheathing", true );
 			}
 			
 			// Attacking
@@ -166,19 +166,23 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	private void Seathe ( int unseathe ) 
 	{
-		sword.transform.SetParent
-		(
-			unseathe == 0 ?
-			swordHandHolder
-			:
-			swordBeltHolder
-		);
+		if ( unseathe == 0 )
+		{
+			sword.transform.SetParent ( swordHandHolder );
+			sword.anim.SetTrigger ( "Fade-in" );
+			//...
+			sword.Fade ( true );
+		}
+		else
+		{
+			sword.transform.SetParent ( swordBeltHolder );
+			sword.anim.SetTrigger ( "Fade-out" );
+			//...
+			sword.Fade ( false );
+		}
 
 		sword.transform.localPosition = Vector3.zero;
 		sword.transform.localRotation = Quaternion.identity;
-
-		// Play sword fade-in animation
-		sword.anim.SetTrigger ( "Fade-in" );
 	}
 
 	/* This is used to lock Dave from
