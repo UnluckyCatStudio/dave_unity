@@ -7,7 +7,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	private CharacterController me;
 
 	[Header("References")]
-	public Transform cam;		// The camera pivot ( for relative movement )
+	public CamController cam;	// The camera pivot ( for relative movement )
 
 	// Movement
 	[Header("Movement")]
@@ -25,7 +25,8 @@ public class DaveController : Kyru.etc.AnimatorController
 	// Animation params
 	private bool sheathing;		// Is Dave currently un/sheathing with the sword?
 	private bool swordOut;      // Is sword unsheathed?
-	private bool attacking;		// Is Dave performing an attack?
+	private bool attacking;     // Is Dave performing an attack?
+	private bool holdingBoomerang;
 
 	void Update ()
 	{
@@ -34,10 +35,10 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			var movement = Vector3.zero;
 			// Get movement relative to camera rotation
-			if ( Game.input.GetKey ( Key.Forward ) )	movement += cam.forward;
-			if ( Game.input.GetKey ( Key.Backwards ) )  movement -= cam.forward;
-			if ( Game.input.GetKey ( Key.Left ) )		movement -= cam.right;
-			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.right;
+			if ( Game.input.GetKey ( Key.Forward ) )	movement += cam.transform.forward;
+			if ( Game.input.GetKey ( Key.Backwards ) )  movement -= cam.transform.forward;
+			if ( Game.input.GetKey ( Key.Left ) )		movement -= cam.transform.right;
+			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.transform.right;
 			// Keep only direction of movement
 			movement.Normalize ();
 
@@ -84,6 +85,16 @@ public class DaveController : Kyru.etc.AnimatorController
 			{
 				anim.SetBool ( "Attacking", true );
 			}
+
+			// Boomerang shot
+			if ( !holdingBoomerang
+				&& DaveIsUp ()
+				&& Game.input.GetKeyDown ( Key.Boomerang ) )
+			{
+				anim.SetBool ( "HoldingBoomerang", true );
+				cam.FocusBoomerang ();
+			}
+
 		}
 		#endregion
 
@@ -116,7 +127,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// for too long, in that case Falling animation
 	/// will play.
 	/// </summary>
-	bool IsGrounded ()
+	bool IsGrounded () 
 	{
 		if ( me.isGrounded )
 		{

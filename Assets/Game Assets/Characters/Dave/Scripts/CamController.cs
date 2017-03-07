@@ -56,6 +56,15 @@ public class CamController : MonoBehaviour
 	}
 
 	#region FX
+	/// <summary>
+	/// Makes camera go into
+	/// boomerang-focus mode
+	/// </summary>
+	public void FocusBoomerang ()
+	{
+
+	}
+
 	// Did Camera collide in last frame?
 	/*
 	 * When true, it is safe for the camera
