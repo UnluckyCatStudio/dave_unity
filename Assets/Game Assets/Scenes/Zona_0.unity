@@ -543,7 +543,7 @@ MonoBehaviour:
   m_SMAA:
     settings:
       debugPass: 0
-      quality: 3
+      quality: 2
       edgeDetectionMethod: 2
     quality:
       diagonalDetection: 1
@@ -1357,9 +1357,9 @@ MonoBehaviour:
   settings:
     intensity: 1.48
     radius: 1.21
-    sampleCount: 3
+    sampleCount: 1
     sampleCountValue: 24
-    downsampling: 0
+    downsampling: 1
     ambientOnly: 0
     occlusionSource: 0
     debug: 0
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_SMAA:
     settings:
       debugPass: 0
-      quality: 3
+      quality: 0
       edgeDetectionMethod: 2
     quality:
       diagonalDetection: 1
@@ -7723,7 +7723,7 @@ MonoBehaviour:
   settings:
     intensity: 1.48
     radius: 1.21
-    sampleCount: 3
+    sampleCount: 2
     sampleCountValue: 24
     downsampling: 0
     ambientOnly: 0
@@ -7745,7 +7745,7 @@ MonoBehaviour:
   m_SMAA:
     settings:
       debugPass: 0
-      quality: 3
+      quality: 1
       edgeDetectionMethod: 2
     quality:
       diagonalDetection: 1
