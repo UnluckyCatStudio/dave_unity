@@ -44,6 +44,5 @@ namespace Kyru.etc
 
 			working = false;
 		}
-
 	} 
 }

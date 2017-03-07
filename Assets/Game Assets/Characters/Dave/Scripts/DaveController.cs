@@ -87,8 +87,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			}
 
 			// Boomerang shot
-			if ( !holdingBoomerang
-				&& DaveIsUp ()
+			if ( DaveIsUp ()
 				&& Game.input.GetKeyDown ( Key.Boomerang ) )
 			{
 				anim.SetBool ( "HoldingBoomerang", true );
@@ -150,7 +149,9 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	bool DaveIsUp () 
 	{
-		if ( animatorLock || attacking )
+		if ( animatorLock
+			|| attacking
+			|| holdingBoomerang )
 			return false;
 
 		return true;

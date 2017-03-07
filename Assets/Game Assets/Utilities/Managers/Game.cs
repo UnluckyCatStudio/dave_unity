@@ -16,7 +16,7 @@ public class Game : MonoBehaviour
 	/// <summary>
 	/// Global UI parent.
 	/// </summary>
-	public static GameObject ui;
+	public static Animator ui;
 
 	/// <summary>
 	/// Reference to the Main Camera Rig Manager
@@ -36,7 +36,7 @@ public class Game : MonoBehaviour
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 
 		DontDestroyOnLoad ( this );
-		ui  = GameObject.Find ( "UI" );
+		ui  = GameObject.Find ( "UI" ).GetComponent<Animator> ();
 		// Camera Rig will be self-set when game is started
 
 		#region TRANSLATION
