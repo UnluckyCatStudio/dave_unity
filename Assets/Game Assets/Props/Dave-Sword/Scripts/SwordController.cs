@@ -1,0 +1,13 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SwordController : Kyru.etc.AnimatorController
+{
+	public GameObject edge;
+
+	public void Fade ( bool fadeIn )
+	{
+		edge.SetActive ( fadeIn );
+	}
+}

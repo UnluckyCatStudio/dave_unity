@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 88bbae2233b7a944b8990b5f73fead0c
+timeCreated: 1488060532
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bed
+    100002: Bed_dog
+    100004: Bin
+    100006: //RootNode
+    100008: Chair
+    100010: Door
+    100012: Floor
+    100014: Lamp
+    100016: pared_lisa
+    100018: "pared_peque\xF1a"
+    100020: pared_puerta
+    100022: pared_techo_puerta
+    100024: pared_ventana
+    100026: pered_techo
+    100028: Picture_Dave
+    100030: Picture_dog
+    100032: Picture_girl
+    100034: Shelving
+    100036: Table
+    100038: techo
+    100040: Wardrobe
+    100042: Window_glass
+    400000: Bed
+    400002: Bed_dog
+    400004: Bin
+    400006: //RootNode
+    400008: Chair
+    400010: Door
+    400012: Floor
+    400014: Lamp
+    400016: pared_lisa
+    400018: "pared_peque\xF1a"
+    400020: pared_puerta
+    400022: pared_techo_puerta
+    400024: pared_ventana
+    400026: pered_techo
+    400028: Picture_Dave
+    400030: Picture_dog
+    400032: Picture_girl
+    400034: Shelving
+    400036: Table
+    400038: techo
+    400040: Wardrobe
+    400042: Window_glass
+    2300000: Bed
+    2300002: Bed_dog
+    2300004: Bin
+    2300006: Chair
+    2300008: Door
+    2300010: Floor
+    2300012: Lamp
+    2300014: pared_lisa
+    2300016: "pared_peque\xF1a"
+    2300018: pared_puerta
+    2300020: pared_techo_puerta
+    2300022: pared_ventana
+    2300024: pered_techo
+    2300026: Picture_Dave
+    2300028: Picture_dog
+    2300030: Picture_girl
+    2300032: Shelving
+    2300034: Table
+    2300036: techo
+    2300038: Wardrobe
+    2300040: Window_glass
+    3300000: Bed
+    3300002: Bed_dog
+    3300004: Bin
+    3300006: Chair
+    3300008: Door
+    3300010: Floor
+    3300012: Lamp
+    3300014: pared_lisa
+    3300016: "pared_peque\xF1a"
+    3300018: pared_puerta
+    3300020: pared_techo_puerta
+    3300022: pared_ventana
+    3300024: pered_techo
+    3300026: Picture_Dave
+    3300028: Picture_dog
+    3300030: Picture_girl
+    3300032: Shelving
+    3300034: Table
+    3300036: techo
+    3300038: Wardrobe
+    3300040: Window_glass
+    4300000: Bed
+    4300002: Wardrobe
+    4300004: Picture_dog
+    4300006: Picture_girl
+    4300008: Picture_Dave
+    4300010: Chair
+    4300012: Table
+    4300014: Shelving
+    4300016: Lamp
+    4300018: Bed_dog
+    4300020: Floor
+    4300022: Door
+    4300024: Window_glass
+    4300026: Bin
+    4300028: pared_puerta
+    4300030: pared_lisa
+    4300032: "pared_peque\xF1a"
+    4300034: pared_ventana
+    4300036: pared_techo_puerta
+    4300038: pered_techo
+    4300040: techo
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

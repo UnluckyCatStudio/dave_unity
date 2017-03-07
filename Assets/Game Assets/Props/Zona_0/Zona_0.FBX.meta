@@ -70,6 +70,7 @@ ModelImporter:
     100124: piedra.001
     100126: Piedra.002
     100128: piedra.003
+    100130: pedestal_tanque
     400000: acueducto
     400002: aro
     400004: balla
@@ -135,6 +136,7 @@ ModelImporter:
     400124: piedra.001
     400126: Piedra.002
     400128: piedra.003
+    400130: pedestal_tanque
     2300000: acueducto
     2300002: aro
     2300004: balla
@@ -191,6 +193,7 @@ ModelImporter:
     2300106: cuerda_v.002
     2300108: piedra.001
     2300110: piedra.003
+    2300112: pedestal_tanque
     3300000: acueducto
     3300002: aro
     3300004: balla
@@ -247,6 +250,7 @@ ModelImporter:
     3300106: cuerda_v.002
     3300108: piedra.001
     3300110: piedra.003
+    3300112: pedestal_tanque
     4300000: pedestal
     4300002: piedra
     4300004: balla
@@ -303,6 +307,7 @@ ModelImporter:
     4300106: piedra.001
     4300108: cuerda_v
     4300110: cuerda_piedra
+    4300112: pedestal_tanque
   materials:
     importMaterials: 1
     materialName: 0
