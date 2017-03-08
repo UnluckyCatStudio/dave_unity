@@ -14,11 +14,9 @@ namespace Kyru.etc
 			delay = _delay;
 			caller = _caller;
 
-			if ( working )  return;
+			if ( working )  throw new Exception ( "Zone loader working" );
 			else			working = true;
 
-			fx = SceneManager.LoadSceneAsync ( zone, LoadSceneMode.Single );
-			fx.allowSceneActivation = false;
 			caller.StartCoroutine ( LoadZone () );
 		}
 
@@ -30,18 +28,22 @@ namespace Kyru.etc
 
 		private static IEnumerator LoadZone ()
 		{
+			yield return new WaitForSeconds ( delay / 2 );
+			fx = SceneManager.LoadSceneAsync ( zone, LoadSceneMode.Single );
+			fx.allowSceneActivation = false;
+
 			while ( fx.progress < 0.89 )
 			{
-				Debug.Log ( fx.progress );
+//				Debug.Log ( fx.progress );
 				yield return null;
 			}
 
 			fx.allowSceneActivation = true;
-			yield return new WaitForSeconds ( delay );
+			yield return new WaitForSeconds ( delay / 2 );
 			Game.ui.GetComponent<Animator> ().SetBool ( "Loading", false );
+			// esto es muy feo :c
 
 			working = false;
 		}
-
 	} 
 }

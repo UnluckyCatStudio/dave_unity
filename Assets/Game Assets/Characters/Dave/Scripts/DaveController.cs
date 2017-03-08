@@ -7,12 +7,12 @@ public class DaveController : Kyru.etc.AnimatorController
 	private CharacterController me;
 
 	[Header("References")]
-	public Transform cam;			// The camera pivot ( for relative movement )
+	public CamController cam;	// The camera pivot ( for relative movement )
 
 	// Movement
 	[Header("Movement")]
 	public bool	 canMove;		// Can the player move?
-	public float speed;          // Movement speed multiplier
+	public float speed;			// Movement speed multiplier
 
 	[Header("Combat")]
 	public  bool canCombat;
@@ -24,36 +24,25 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	// Animation params
 	private bool sheathing;		// Is Dave currently un/sheathing with the sword?
-	private bool swordOut;		// Is sword unsheathed?
+	private bool swordOut;      // Is sword unsheathed?
+	private bool attacking;     // Is Dave performing an attack?
+	private bool holdingBoomerang;
 
 	void Update ()
 	{
-		#region ANIMATOR CHECK
-		// Some script variables are checked against
-		// animator parameters to ensure there is no
-		// conflict between values.
-		sheathing = anim.GetBool ( "Sheathing" );
-		swordOut  = anim.GetBool ( "SwordOut" );
-		#endregion
-
-		// Avoid any user-driven logic
-		// if Dave is locked
-		if ( !DaveIsUp () )
-			return;
-
 		#region MOVEMENT
 		if ( canMove )
 		{
 			var movement = Vector3.zero;
 			// Get movement relative to camera rotation
-			if ( Game.input.GetKey ( Key.Forward ) )	movement += cam.forward;
-			if ( Game.input.GetKey ( Key.Backwards ) )  movement -= cam.forward;
-			if ( Game.input.GetKey ( Key.Left ) )		movement -= cam.right;
-			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.right;
+			if ( Game.input.GetKey ( Key.Forward ) )	movement += cam.transform.forward;
+			if ( Game.input.GetKey ( Key.Backwards ) )  movement -= cam.transform.forward;
+			if ( Game.input.GetKey ( Key.Left ) )		movement -= cam.transform.right;
+			if ( Game.input.GetKey ( Key.Right ) )		movement += cam.transform.right;
 			// Keep only direction of movement
 			movement.Normalize ();
 
-			if ( movement != Vector3.zero )
+			if ( movement != Vector3.zero && DaveIsUp () )
 			{
 				#region CORRECT ROTATION
 				var rotDir = Quaternion.LookRotation ( movement );
@@ -68,7 +57,7 @@ public class DaveController : Kyru.etc.AnimatorController
 					);
 				#endregion
 
-				me.Move ( movement * speed * Time.deltaTime ); 
+				me.Move ( movement * speed * Time.deltaTime );
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -80,10 +69,13 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			// (un)Sheathe sword
 			if ( !sheathing
+				&& DaveIsUp ()
 				&& Game.input.GetKeyDown ( Key.Sword ) )
 			{
 				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
 				else			 anim.SetTrigger ( "Sheathe" );
+
+				anim.SetBool ( "Sheathing", true );
 			}
 			
 			// Attacking
@@ -91,9 +83,28 @@ public class DaveController : Kyru.etc.AnimatorController
 				&& !sheathing
 				&& Game.input.GetKeyDown ( Key.Attack ) )
 			{
-				anim.SetTrigger ( "Attack" );
+				anim.SetBool ( "Attacking", true );
 			}
+
+			// Boomerang shot
+			if ( DaveIsUp ()
+				&& Game.input.GetKeyDown ( Key.Boomerang ) )
+			{
+				anim.SetBool ( "HoldingBoomerang", true );
+				cam.FocusBoomerang ();
+			}
+
 		}
+		#endregion
+
+		#region ANIMATOR CHECK
+		// Some script variables are checked against
+		// animator parameters to ensure there is no
+		// conflict between values.
+		sheathing = anim.GetBool ( "Sheathing" );
+		swordOut  = anim.GetBool ( "SwordOut" );
+		attacking = anim.GetBool ( "Attacking" );
+		anim.SetBool ( "Grounded", IsGrounded () );
 		#endregion
 	}
 
@@ -108,6 +119,29 @@ public class DaveController : Kyru.etc.AnimatorController
 	#endregion
 
 	#region FX
+	[SerializeField] float fallingThreshold;
+	float lastTimeOnGround;
+	/// <summary>
+	/// Checks if Dave has been in Air-time
+	/// for too long, in that case Falling animation
+	/// will play.
+	/// </summary>
+	bool IsGrounded () 
+	{
+		if ( me.isGrounded )
+		{
+			lastTimeOnGround = Time.time;
+			return true;
+		}
+		else
+		{
+			if ( Time.time >= lastTimeOnGround + fallingThreshold )
+				return false;
+			else
+				return true;
+		}
+	}
+
 	/// <summary>
 	/// This returns false when
 	/// for any reason Dave is incapable
@@ -115,24 +149,26 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	bool DaveIsUp () 
 	{
-		if ( animatorLock )
+		if ( animatorLock
+			|| attacking
+			|| holdingBoomerang )
 			return false;
 
 		return true;
 	}
 
-	void Awake () 
+	protected override void Awake () 
 	{
+		base.Awake ();
 		Game.dave = this;
-		anim	= GetComponent<Animator> ();
-		me		= GetComponent<CharacterController> ();
+		me = GetComponent<CharacterController> ();
 	}
 	#endregion
 
 	#region EVENTS
 	[Header ("Animation references")]
-	public Transform swordBeltHolder;
-	public Transform swordHandHolder;
+	[SerializeField] Transform swordBeltHolder;
+	[SerializeField] Transform swordHandHolder;
 
 	/// <summary>
 	/// Attaches the sword to either
@@ -142,25 +178,29 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	private void Seathe ( int unseathe ) 
 	{
-		sword.transform.SetParent
-		(
-			unseathe == 0 ?
-			swordHandHolder
-			:
-			swordBeltHolder
-		);
+		if ( unseathe == 0 )
+		{
+			sword.transform.SetParent ( swordHandHolder );
+			sword.anim.SetTrigger ( "Fade-in" );
+			//...
+			sword.Fade ( true );
+		}
+		else
+		{
+			sword.transform.SetParent ( swordBeltHolder );
+			sword.anim.SetTrigger ( "Fade-out" );
+			//...
+			sword.Fade ( false );
+		}
 
 		sword.transform.localPosition = Vector3.zero;
 		sword.transform.localRotation = Quaternion.identity;
-
-		// Play sword fade-in animation
-		sword.anim.SetTrigger ( "Fade-in" );
 	}
 
 	/* This is used to lock Dave from
 	 * an animator event. While this
 	 * remains 'true', Dave won't be
-	 * able to do any user-driven action.
+	 * able to perform any user-driven action.
 	*/
 	private bool animatorLock;
 	public  void LockDave ( int value ) 

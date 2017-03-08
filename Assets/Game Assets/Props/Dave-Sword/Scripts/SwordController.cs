@@ -6,8 +6,8 @@ public class SwordController : Kyru.etc.AnimatorController
 {
 	public GameObject edge;
 
-	void Awake () 
+	public void Fade ( bool fadeIn )
 	{
-		anim = GetComponent<Animator> ();
+		edge.SetActive ( fadeIn );
 	}
 }
