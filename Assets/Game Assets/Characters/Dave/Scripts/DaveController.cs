@@ -28,7 +28,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	private bool attacking;     // Is Dave performing an attack?
 	private bool holdingBoomerang;
 
-	void Update ()
+	void Update () 
 	{
 		#region MOVEMENT
 		if ( canMove )
@@ -117,7 +117,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	//		}
 	//	} 
 	#endregion
-
+	
 	#region FX
 	[SerializeField] float fallingThreshold;
 	float lastTimeOnGround;
