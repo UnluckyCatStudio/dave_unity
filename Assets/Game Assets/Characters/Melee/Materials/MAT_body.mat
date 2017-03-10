@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MAT_body
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 68a292f4157b4f64cadc6ab2d802de03, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -72,13 +72,16 @@ Material:
     m_Floats:
     - first:
         name: _BumpScale
-      second: 3.21
+      second: 1.11
     - first:
         name: _Cutoff
       second: 0.5
     - first:
         name: _DetailNormalMapScale
       second: 1
+    - first:
+        name: _DiffuseThreshold
+      second: 0.068
     - first:
         name: _DstBlend
       second: 0
@@ -92,6 +95,9 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _LitOutlineThickness
+      second: 0.159
+    - first:
         name: _Metallic
       second: 0
     - first:
@@ -103,6 +109,9 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _Shininess
+      second: 10
     - first:
         name: _SmoothnessTextureChannel
       second: 0
@@ -116,6 +125,9 @@ Material:
         name: _UVSec
       second: 0
     - first:
+        name: _UnlitOutlineThickness
+      second: 0.4
+    - first:
         name: _ZWrite
       second: 1
     m_Colors:
@@ -125,3 +137,12 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _OutlineColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _UnlitColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -15,5 +15,10 @@ namespace Kyru.etc
 			var value = bool.Parse ( split[1] );
 			anim.SetBool ( name, value );
 		}
+
+		protected virtual void Awake () 
+		{
+			anim = GetComponent<Animator> ();
+		}
 	}
 }

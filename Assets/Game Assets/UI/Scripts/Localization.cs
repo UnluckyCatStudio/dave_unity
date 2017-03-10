@@ -13,8 +13,8 @@ namespace Kyru.UI
 		public static int lang = 0;
 		public static string[] availableLanguage =
 		{
-			"en",
 			"es",
+			"en",
 			"cat"
 		};
 

@@ -10,7 +10,8 @@ public struct InputSettings
 {
 	public KeyCode[] keys;
 
-	public bool GetKey ( Key key ) 
+	#region FX
+	public bool GetKey ( Key key )
 	{
 		return Input.GetKey ( keys[( int ) key] );
 	}
@@ -19,6 +20,12 @@ public struct InputSettings
 	{
 		return Input.GetKeyDown ( keys[( int ) key] );
 	}
+
+	public bool GetKeyUp ( Key key )
+	{
+		return Input.GetKeyUp ( keys[( int ) key] );
+	} 
+	#endregion
 
 	public void SetDefaults () 
     {

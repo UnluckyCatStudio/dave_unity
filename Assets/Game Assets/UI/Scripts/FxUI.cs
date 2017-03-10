@@ -8,25 +8,24 @@ namespace Kyru.UI
 	// General UI functions.
 	public class FxUI : MonoBehaviour
 	{
-		public static bool paused = true;
-		Animator ui;
-
 		public void Resume () 
 		{
-
+			Game.ui.SetBool ( "Paused", false );
+			Time.timeScale = 1;
 		}
 
 		// Starts new game
 		public void Play ()
 		{
-			ui.SetBool ( "OnMainMenu", false );
-			ui.SetBool ( "Loading", true );
+			Game.ui.SetBool ( "OnMainMenu", false );
+			Game.ui.SetBool ( "Loading", true );
 			ZoneLoader.Init ( this, "Zona_0", 3f );
 		}
 
 		public void QuitToMainMenu () 
 		{
-
+			Game.ui.SetBool ( "OnMainMenu", true );
+			Game.ui.SetBool ( "Paused", false );
 		}
 
 		public void QuitToDesktop () 
@@ -34,11 +33,33 @@ namespace Kyru.UI
 			Application.Quit ();
 		}
 
+
+		private bool canPause 
+		{
+			get
+			{
+				return
+					! ( Game.ui.GetBool ( "OnMainMenu" )
+					 || Game.ui.GetBool ( "Loading" ) );
+			}
+		}
+		public static bool paused = true;
+		void Update ()
+		{
+			// Animator check
+			paused = Game.ui.GetBool ( "Paused" );
+
+			if ( canPause && Input.GetKeyDown ( KeyCode.Escape ) )
+			{
+				Game.ui.SetBool ( "Paused", !paused );
+				Time.timeScale = !paused ? 0 : 1;
+			}
+		}
+
 		// Don't destoy on load
 		private void Awake () 
 		{
 			DontDestroyOnLoad ( this );
-			ui = GetComponent<Animator> ();
 		}
 	} 
 }
