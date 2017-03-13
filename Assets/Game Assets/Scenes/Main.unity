@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18197256, g: 0.22766122, b: 0.30741364, a: 1}
+  m_IndirectSpecularColor: {r: 0.18016301, g: 0.22065127, b: 0.27841645, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000001, guid: d1a254ffe93142f4eaae1197d1dc73a2,
+  m_LightingDataAsset: {fileID: 112000002, guid: 618ff8aff4a1afc4b8f9f5906978be67,
     type: 2}
   m_RuntimeCPUUsage: 75
 --- !u!196 &4
