@@ -10,7 +10,7 @@ namespace Kyru.UI
 {
 	public static class Localization
 	{
-		public static Language lang = 0;
+		public static int lang = 0;
 
 		/// <summary>
 		/// All the translations of the UI.
