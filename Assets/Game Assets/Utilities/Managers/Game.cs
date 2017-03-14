@@ -13,10 +13,6 @@ public class Game : MonoBehaviour
 	public static InputSettings      input    = new InputSettings ();
 	public static new AudioSettings  audio    = new AudioSettings ();
 
-	public static Translation[] translations;
-
-	//public 
-
 	/// <summary>
 	/// Global UI parent.
 	/// </summary>
@@ -34,9 +30,6 @@ public class Game : MonoBehaviour
 
 	private void Awake ()
 	{
-		// De-comment this if it keeps resetting
-//		RenderSettings.reflectionIntensity = 0;
-
 		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
 		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );

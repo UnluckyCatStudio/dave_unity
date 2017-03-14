@@ -11,6 +11,7 @@ namespace Kyru.UI
 	public static class Localization
 	{
 		public static Language lang = 0;
+		public static Translation[] translations;
 
 		/// <summary>
 		/// All the translations of the UI.
@@ -26,12 +27,10 @@ namespace Kyru.UI
 
 		public static bool LoadTexts () 
 		{
-			throw new NotImplementedException ( "New localization system!" );
+			if (Game.ui == null)
+				Game.ui = GameObject.Find("UI").GetComponent<Animator>();
 
-			// If loaded again, clear it first
 			texts.Clear ();
-
-
 
 			return true;
 		}
@@ -42,7 +41,8 @@ namespace Kyru.UI
 				Game.ui = GameObject.Find ( "UI" ).GetComponent<Animator> ();
 
 			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
-			foreach ( var t in txts )
+            registry.Clear ();
+            foreach ( var t in txts )
 			{
 				registry.Add ( t );
 				t.Init ();

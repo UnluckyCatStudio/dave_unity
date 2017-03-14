@@ -9,9 +9,12 @@ public enum Language
 	CAT
 }
 
+// SHOULD ONLY HAVE ONE FOR
+// EACH LANGUAGE
+
 [CreateAssetMenu]
 public class Translation : ScriptableObject
 {
-	public static Language language;
+	public Language language;
 	public string[] texts;
 }

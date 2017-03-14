@@ -57,7 +57,7 @@ public class LocalizableText : MonoBehaviour
 		return key + ":";
 	}
 
-	public virtual void Init() 
+	public virtual void Init () 
 	{
 		control = GetComponent<Text> ();
 	}
