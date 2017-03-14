@@ -10,13 +10,7 @@ namespace Kyru.UI
 {
 	public static class Localization
 	{
-		public static int lang = 0;
-		public static string[] availableLanguage =
-		{
-			"es",
-			"en",
-			"cat"
-		};
+		public static Language lang = 0;
 
 		/// <summary>
 		/// All the translations of the UI.
@@ -32,36 +26,21 @@ namespace Kyru.UI
 
 		public static bool LoadTexts () 
 		{
+			throw new NotImplementedException ( "New localization system!" );
+
 			// If loaded again, clear it first
 			texts.Clear ();
 
-			/*
-			 * BUILD:
-			 * /PATH/Kyru_Data/Lang/*.lang
-			 * -
-			 * EDITOR:
-			 * /PATH/Assets/Lang/*.lang
-			*/
-			var path = Application.dataPath + "/Lang/" + availableLanguage[lang] + ".lang";
 
-			using ( var fs = new FileStream ( path, FileMode.Open, FileAccess.Read ) )
-			using ( var sr = new StreamReader ( fs ) )
-			{
-				// key:Value
-				var line = sr.ReadLine ();
-				while ( line != null )
-				{
-					var s = line.Split ( ':' );
-					texts.Add ( s[0], s[1] );
-					line = sr.ReadLine ();
-				}
-			}
 
 			return true;
 		}
 
 		public static bool InitAllTexts () 
 		{
+			if ( Game.ui == null )
+				Game.ui = GameObject.Find ( "UI" ).GetComponent<Animator> ();
+
 			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
 			foreach ( var t in txts )
 			{
