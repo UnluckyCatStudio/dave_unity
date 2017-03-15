@@ -13,6 +13,15 @@ public class Game : MonoBehaviour
 	public static InputSettings      input    = new InputSettings ();
 	public static new AudioSettings  audio    = new AudioSettings ();
 
+	// Order is irrelevant here
+	[SerializeField]
+	private Translation[] translations;
+
+	/// <summary>
+	/// Self reference.
+	/// </summary>
+	public Game manager;
+
 	/// <summary>
 	/// Global UI parent.
 	/// </summary>
@@ -41,7 +50,6 @@ public class Game : MonoBehaviour
 
 		#region TRANSLATION
 		Localization.lang = lang;
-		Localization.LoadTexts ();
 		Localization.InitAllTexts ();
 		Localization.UpdateAllTexts ();
 		#endregion

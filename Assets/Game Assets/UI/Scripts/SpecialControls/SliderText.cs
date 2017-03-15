@@ -8,18 +8,20 @@ namespace Kyru.UI
 	public class SliderText : LocalizableText
 	{
 		Slider slider;
-		public static string[] keys =
+		public static AllTexts[] keys =
 		{
-			"low",
-			"medium",
-			"high",
-			"high+"
+			AllTexts.Low,
+			AllTexts.Medium,
+			AllTexts.High,
+			AllTexts.High_plus
 		};
 
 
 		public override void UpdateText ()
 		{
-			control.text = Localization.texts[keys[( int ) slider.value]];
+			control.text =
+				Localization.translations[( int ) Localization.lang]
+				.texts[( int ) keys[( int ) slider.value]];
 		}
 
 		public override void Init ()

@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Language 
+namespace Kyru.UI
 {
-	EN,
-	ES,
-	CAT
-}
+	public enum Language
+	{
+		EN,
+		ES,
+		CAT
+	}
 
-// SHOULD ONLY HAVE ONE FOR
-// EACH LANGUAGE
+	// SHOULD ONLY HAVE ONE FOR
+	// EACH LANGUAGE
 
-[CreateAssetMenu]
-public class Translation : ScriptableObject
-{
-	public Language language;
-	public string[] texts;
+	[CreateAssetMenu]
+	public class Translation : ScriptableObject
+	{
+		public Language language;
+		public string[] texts;
+	} 
 }

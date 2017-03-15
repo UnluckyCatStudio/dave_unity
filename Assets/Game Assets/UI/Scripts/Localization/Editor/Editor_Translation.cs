@@ -1,42 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using Kyru.UI;
 
-[CustomEditor(typeof(Translation))]
-public class Editor_Translation : Editor
+namespace Kyru.UI
 {
-    Translation t;
-	public override void OnInspectorGUI ()
+	[CustomEditor ( typeof ( Translation ) )]
+	public class Editor_Translation : Editor
 	{
-		t = target as Translation;
-        InitializationCheck ();
-
-		foreach ( var txt in Localization.texts )
+		Translation t;
+		AllTexts[] keys = ( AllTexts[] ) Enum.GetValues ( typeof ( AllTexts ) );
+		public override void OnInspectorGUI ()
 		{
-			// Temp array of all texts
-			var list = new List<string> ();
+			t = target as Translation;
 
+			// Initialize array
+			if ( t.texts == null || t.texts.Length != keys.Length )
+				t.texts = new string[keys.Length];
+
+			foreach ( int k in keys )
+			{
+				t.texts[k] = EditorGUILayout.TextField ( keys[k].ToString (), t.texts[k] );
+			}
 		}
-	}
-
-    // Checks if Localization
-    // dictionaries are initialized.ç
-    // If not, do so.
-    void InitializationCheck () 
-    {
-		if (Localization.registry == null)
-		{
-			Localization.InitAllTexts();
-		}
-
-        if (Localization.texts == null)
-        {
-            Localization.lang = t.language;
-			Localization.translations[(int)t.language] = t;
-			Localization.LoadTexts ();
-		}
-
-    }
+	} 
 }
