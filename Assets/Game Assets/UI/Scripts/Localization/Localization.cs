@@ -16,7 +16,7 @@ namespace Kyru.UI
 		/// 2 = CAT
 		/// </summary>
 		public static int lang = 0;
-		public static Translation[] translations;
+		public static Translation[] translations = new Translation[3];
 
 		/// <summary>
 		/// All the UI Text elements registered to have

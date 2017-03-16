@@ -49,6 +49,14 @@ public class Game : MonoBehaviour
 		// Camera Rig will be self-set when game is started
 
 		#region TRANSLATION
+		// Setup references
+		foreach ( var t in translations )
+		{
+			// Order independent
+			var i = ( int ) t.language;
+			Localization.translations[i] = t;
+		}
+
 		Localization.lang = lang;
 		Localization.InitAllTexts ();
 		Localization.UpdateAllTexts ();
