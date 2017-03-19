@@ -10,11 +10,6 @@ namespace Kyru.UI
 {
 	public static class Localization
 	{
-<<<<<<< HEAD
-		public static int lang = 0;
-
-=======
->>>>>>> refs/remotes/origin/menus
 		/// <summary>
 		/// 0 = EN
 		/// 1 = ES
