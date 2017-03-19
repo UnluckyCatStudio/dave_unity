@@ -10,13 +10,18 @@ namespace Kyru.UI
 {
 	public static class Localization
 	{
+<<<<<<< HEAD
 		public static int lang = 0;
 
+=======
+>>>>>>> refs/remotes/origin/menus
 		/// <summary>
-		/// All the translations of the UI.
-		/// Including: Menus and HUD.
+		/// 0 = EN
+		/// 1 = ES
+		/// 2 = CAT
 		/// </summary>
-		public static Dictionary<string, string> texts = new Dictionary<string, string> ();
+		public static int lang = 0;
+		public static Translation[] translations = new Translation[3];
 
 		/// <summary>
 		/// All the UI Text elements registered to have
@@ -24,25 +29,14 @@ namespace Kyru.UI
 		/// </summary>
 		public static List<LocalizableText> registry = new List<LocalizableText> ();
 
-		public static bool LoadTexts () 
-		{
-			throw new NotImplementedException ( "New localization system!" );
-
-			// If loaded again, clear it first
-			texts.Clear ();
-
-
-
-			return true;
-		}
-
 		public static bool InitAllTexts () 
 		{
 			if ( Game.ui == null )
 				Game.ui = GameObject.Find ( "UI" ).GetComponent<Animator> ();
 
+            registry.Clear ();
 			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
-			foreach ( var t in txts )
+            foreach ( var t in txts )
 			{
 				registry.Add ( t );
 				t.Init ();
@@ -56,43 +50,6 @@ namespace Kyru.UI
 			foreach ( var t in registry ) t.UpdateText ();
 
 			return true;
-		}
-
-		public static IEnumerable<string> PrintAllTexts () 
-		{
-			var list = new List<string> ();
-
-			#if UNITY_EDITOR
-			var txts = Game.ui.GetComponentsInChildren<LocalizableText> ( true );
-			foreach ( var t in txts )
-			{
-				if ( !(t is SliderText) )
-				{
-					var k = t.GetKey ();
-					if ( !list.Contains ( k ) )
-					{
-						yield return k;
-						list.Add ( k );
-					}
-				}
-			}
-			#else
-			foreach ( var t in texts )
-			{
-				if ( !(t is SliderText) )
-				{
-					if ( !list.Contains ( t.Key ) )
-					{
-						yield return t.Key+":"+t.Value;
-						list.Add ( t.Key );
-					}
-				}
-			}
-			#endif
-
-			// Quality-text keys
-			for ( int i=0; i!=SliderText.keys.Length; i++ )
-				yield return SliderText.keys[i] + ":";
 		}
 	}
 }

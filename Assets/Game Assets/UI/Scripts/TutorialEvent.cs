@@ -7,14 +7,16 @@ using Kyru.UI;
 public class TutorialEvent : MonoBehaviour
 {
 	// Localization key
-	public string key;
+	public AllTexts key;
 
 	public void Trigger ()
 	{
 		var t = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
-		t.text = Localization.texts[key]
+		t.text =
+			Localization.translations[( int ) Localization.lang]
+			.texts[( int ) key]
 			.Replace ( "$$", "\n" )
-			.Replace ( "[", "<b><color=orange>")
+			.Replace ( "[", "<b><color=orange>" )
 			.Replace ( "]", "</color></b>" );
 
 		Time.timeScale = 0;

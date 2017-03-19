@@ -3,62 +3,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Kyru.UI;
 
-/// <summary>
-/// Class for any UI Text
-/// that should be localizable.
-/// </summary>
-public class LocalizableText : MonoBehaviour
+namespace Kyru.UI
 {
-	protected Text control;
-
-	[SerializeField] private bool allCaps;
-	[SerializeField] private string _key;
-
-	private string key   
-	{
-		get { return _key; }
-		set
-		{
-			_key = value;
-			UpdateText ();
-		}
-	}
-	private string value 
-	{
-		get
-		{
-			if ( allCaps )
-				return Localization.texts[key].ToUpper ();
-			else
-				return Localization.texts[key];
-		}
-	}
-
 	/// <summary>
-	/// Updates the control text
-	/// to current translation.
+	/// Class for any UI Text
+	/// that should be localizable.
 	/// </summary>
-	public virtual void UpdateText () 
+	public class LocalizableText : MonoBehaviour
 	{
-		control.text = value
-			.Replace ( "$$", "\n" )
-			.Replace ( "[", "<b><color=orange>" )
-			.Replace ( "]", "</color></b>" );
-	}
+		protected Text control;
 
-	/// <summary>
-	/// Returns the localizable text dictionary entry
-	/// in the format "key:value"
-	/// </summary>
-	public string GetKey () 
-	{
-		return key + ":";
-	}
+		[SerializeField] private bool allCaps;
+		public AllTexts key;
 
-	public virtual void Init() 
-	{
-		control = GetComponent<Text> ();
-	}
+		private string value 
+		{
+			get
+			{
+				if ( allCaps )
+					return
+						Localization.translations[( int ) Localization.lang]
+						.texts[( int ) key]
+						.ToUpper ();
+				else
+					return
+						Localization.translations[( int ) Localization.lang]
+						.texts[( int ) key];
+			}
+		}
+
+		/// <summary>
+		/// Updates the control text
+		/// to current translation.
+		/// </summary>
+		public virtual void UpdateText ()
+		{
+			control.text = value
+				.Replace ( "$$", "\n" )
+				.Replace ( "[", "<b><color=orange>" )
+				.Replace ( "]", "</color></b>" );
+		}
+
+		public virtual void Init () 
+		{
+			control = GetComponent<Text> ();
+		}
+	} 
 }

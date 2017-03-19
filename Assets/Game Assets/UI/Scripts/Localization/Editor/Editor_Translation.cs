@@ -1,19 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using Kyru.UI;
 
-[CustomEditor(typeof(Translation))]
-public class Editor_Translation : Editor
+namespace Kyru.UI
 {
-	public override void OnInspectorGUI ()
+	[CustomEditor ( typeof ( Translation ) )]
+	public class Editor_Translation : Editor
 	{
-		var target = this.target as Translation;
-
-		if ( Localization.texts == null )
+		Translation t;
+		AllTexts[] keys = ( AllTexts[] ) Enum.GetValues ( typeof ( AllTexts ) );
+		public override void OnInspectorGUI ()
 		{
-			Localization.InitAllTexts ();
+			t = target as Translation;
+			EditorGUI.BeginChangeCheck ();
+
+			// Change language
+			t.language = ( Language ) EditorGUILayout.EnumPopup ( "Language", t.language );
+
+			// Initialize texts array
+			if ( t.texts == null || t.texts.Length != keys.Length )
+				t.texts = new string[keys.Length];
+
+			foreach ( int k in keys )
+			{
+				t.texts[k] = EditorGUILayout.TextField ( keys[k].ToString (), t.texts[k] );
+			}
+
+			if ( EditorGUI.EndChangeCheck () )
+			{
+				EditorUtility.SetDirty ( target );
+			}
 		}
-	}
+	} 
 }
