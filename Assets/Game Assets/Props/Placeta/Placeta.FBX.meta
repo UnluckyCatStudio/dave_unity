@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 33cdf84cba1d65346bff096831af22db
+timeCreated: 1490126553
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: columpio
+    100002: cuerdas_columpio
+    100004: escaleras_plaza
+    100006: lamp
+    100008: lamp_glass
+    100010: pil_hor
+    100012: pilar_1
+    100014: pilar_2
+    100016: pilar_3
+    100018: //RootNode
+    100020: runa_1
+    100022: runa_2
+    100024: runa_3
+    100026: runa_4
+    100028: soporte_valla
+    100030: square
+    100032: valla_arbol_1
+    100034: valla_arbol_2
+    100036: valla_arbol_3
+    100038: valla_arbol_4
+    400000: columpio
+    400002: cuerdas_columpio
+    400004: escaleras_plaza
+    400006: lamp
+    400008: lamp_glass
+    400010: pil_hor
+    400012: pilar_1
+    400014: pilar_2
+    400016: pilar_3
+    400018: //RootNode
+    400020: runa_1
+    400022: runa_2
+    400024: runa_3
+    400026: runa_4
+    400028: soporte_valla
+    400030: square
+    400032: valla_arbol_1
+    400034: valla_arbol_2
+    400036: valla_arbol_3
+    400038: valla_arbol_4
+    2300000: columpio
+    2300002: cuerdas_columpio
+    2300004: escaleras_plaza
+    2300006: lamp
+    2300008: lamp_glass
+    2300010: pil_hor
+    2300012: pilar_1
+    2300014: pilar_2
+    2300016: pilar_3
+    2300018: runa_1
+    2300020: runa_2
+    2300022: runa_3
+    2300024: runa_4
+    2300026: soporte_valla
+    2300028: square
+    2300030: valla_arbol_1
+    2300032: valla_arbol_2
+    2300034: valla_arbol_3
+    2300036: valla_arbol_4
+    3300000: columpio
+    3300002: cuerdas_columpio
+    3300004: escaleras_plaza
+    3300006: lamp
+    3300008: lamp_glass
+    3300010: pil_hor
+    3300012: pilar_1
+    3300014: pilar_2
+    3300016: pilar_3
+    3300018: runa_1
+    3300020: runa_2
+    3300022: runa_3
+    3300024: runa_4
+    3300026: soporte_valla
+    3300028: square
+    3300030: valla_arbol_1
+    3300032: valla_arbol_2
+    3300034: valla_arbol_3
+    3300036: valla_arbol_4
+    4300000: square
+    4300002: valla_arbol_1
+    4300004: soporte_valla
+    4300006: valla_arbol_3
+    4300008: valla_arbol_2
+    4300010: valla_arbol_4
+    4300012: pilar_2
+    4300014: pilar_1
+    4300016: escaleras_plaza
+    4300018: lamp
+    4300020: lamp_glass
+    4300022: cuerdas_columpio
+    4300024: columpio
+    4300026: runa_1
+    4300028: runa_2
+    4300030: runa_3
+    4300032: runa_4
+    4300034: pil_hor
+    4300036: pilar_3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
