@@ -104,7 +104,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		sheathing = anim.GetBool ( "Sheathing" );
 		swordOut  = anim.GetBool ( "SwordOut" );
 		attacking = anim.GetBool ( "Attacking" );
-		anim.SetBool ( "Grounded", IsGrounded () );
+		//anim.SetBool ( "Grounded", IsGrounded () );
 		#endregion
 	}
 
