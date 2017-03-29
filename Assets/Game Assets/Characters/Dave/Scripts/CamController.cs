@@ -30,6 +30,9 @@ public class CamController : MonoBehaviour
 		// Get user input
 		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
 		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime;
+		// Axis inversion
+		rotationX *= Game.input.invertX ? -1 : 1;
+		rotationY *= Game.input.invertY ? -1 : 1;
 		// Look at pivot
 		transform.LookAt ( pivot );
 

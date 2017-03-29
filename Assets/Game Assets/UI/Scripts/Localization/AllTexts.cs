@@ -53,14 +53,16 @@ namespace Kyru.UI
 		Left,
 		Right,
 		Jump,
-		Run,
+		Walk,
 		Un_sheathe,
 		Boomerang,
-		Lock_enemy,
 		Attack,
 		Interact,
+		Shield,
+		InvertX,
+		InvertY,
 
 		// Tutorial
-		Press_enter
+		Press_E
 	}
 }
