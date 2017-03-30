@@ -84,7 +84,7 @@ public class InputManager : MonoBehaviour
 		{
 			hotkeys[k].info.text = Game.input.keys[(int)hotkeys[k].key].ToString ();
 		}
-
+		
 		invertX.isOn = Game.input.invertX;
 		invertY.isOn = Game.input.invertY;
 	}

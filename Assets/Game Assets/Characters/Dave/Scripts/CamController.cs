@@ -28,8 +28,8 @@ public class CamController : MonoBehaviour
 		transform.position = dave.position + offsetFromDave;
 
 		// Get user input
-		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
 		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime;
+		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
 		// Axis inversion
 		rotationX *= Game.input.invertX ? -1 : 1;
 		rotationY *= Game.input.invertY ? -1 : 1;

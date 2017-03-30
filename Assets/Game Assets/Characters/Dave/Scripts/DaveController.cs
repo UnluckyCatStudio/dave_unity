@@ -6,6 +6,10 @@ public class DaveController : Kyru.etc.AnimatorController
 {
 	private CharacterController me;
 
+	// Rotation correction
+	private Quaternion startRotation;
+	private Vector3 startMovement;
+
 	[Header("References")]
 	public CamController cam;	// The camera pivot ( for relative movement )
 
@@ -45,15 +49,20 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( movement != Vector3.zero && DaveIsUp () )
 			{
 				#region CORRECT ROTATION
+				if ( movement != startMovement )
+				{
+					startMovement = movement;
+					startRotation = transform.rotation;
+				}
 				var rotDir = Quaternion.LookRotation ( movement );
 				var diff = Quaternion.Angle ( transform.rotation, rotDir );
 
 				transform.rotation =
 					Quaternion.Slerp
 					(
-						transform.rotation,
+						startRotation,
 						rotDir,
-						diff / 5f * Time.deltaTime   // bigger diff = faster rotation
+						10 * Time.deltaTime   // bigger diff = faster rotation
 					);
 				#endregion
 
