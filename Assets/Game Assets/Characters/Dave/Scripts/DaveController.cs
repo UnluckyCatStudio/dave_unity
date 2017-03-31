@@ -100,7 +100,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				&& Game.input.GetKeyDown ( Key.Boomerang ) )
 			{
 				anim.SetBool ( "HoldingBoomerang", true );
-				cam.FocusBoomerang ();
+//				cam.FocusBoomerang ();
 			}
 
 		}

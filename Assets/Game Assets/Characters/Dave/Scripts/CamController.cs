@@ -8,13 +8,15 @@ public class CamController : MonoBehaviour
 {
 	[Header("References")]
 	public Transform dave;
-	public Transform pivot;          // Pivot for rotating camera around
+	public Transform pivotLook;
+	public Transform pivotY;
+	public Transform pivotX;
 
 	[Header("Settings")]
 	public Vector3 offsetFromDave;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
-	public float speed;
+	public float avoidingSpeed;
 	public float speedX;
 	public float speedY;
 
@@ -34,95 +36,51 @@ public class CamController : MonoBehaviour
 		rotationX *= Game.input.invertX ? -1 : 1;
 		rotationY *= Game.input.invertY ? -1 : 1;
 		// Look at pivot
-		transform.LookAt ( pivot );
+		transform.LookAt ( pivotLook );
 
-		// Store current rotations
-		var tempX = pivot.localRotation;
-		var tempY = transform.localRotation;
-
-		// Apply rotations
-		if ( rotationY != 0 )
-			transform.Rotate ( Vector3.up, rotationY );     // Controller gets only Y-axis rotation
-
-		if ( rotationX != 0 )
-			ClampRotatePivot ( rotationX );                 // Pivot gets clamped X-axis rotation
-
-		// Check for collisionss
-		if ( CheckCollisions () )
-		{
-			// This happens when camera is colliding but still
-			// is too close too pivot.
-			// Rotations are reverted. 
-			pivot.localRotation     = tempX;
-			transform.localRotation = tempY;
-		}
+		RotateCamera ( rotationX, rotationY );
 	}
 
 	#region FX
-	/// <summary>
-	/// Makes camera go into
-	/// boomerang-focus mode
-	/// </summary>
-	public void FocusBoomerang ()
-	{
-
-	}
-
-	// Did Camera collide in last frame?
-	/*
-	 * When true, it is safe for the camera
-	 * to zoom out to default position.
-	 */
-	bool collidedInLastFrame;
 	bool isColliding 
 	{
 		get { return Physics.CheckSphere ( Game.cam.transform.position, .3f ); }
 	}
 
-	/// <summary>
-	/// Moves the camera rig in order to avoid collisions.
-	/// </summary>
-	/// <returns>
-	/// Returns true if Camera is colliding but it's
-	/// too close to minimun distance to pivot. In that case,
-	/// rotations should be reverted.
-	/// </returns>
-	private bool CheckCollisions ()
+	private void RotateCamera ( float X, float Y )
 	{
-		var collidingThisFrame = isColliding;
-		// If camera isn't colliding, nor did collide
-		// in the last frame, it is save to return
-		// to default position.
-		if ( !collidedInLastFrame && !collidingThisFrame )
-		{
-			if ( ( Vector3.Distance ( pivot.position, Game.cam.transform.position ) < maxDistanceFromPivot ) )
-				Game.cam.transform.Translate ( 0, 0, -speed * 20f * Time.deltaTime );
+		// Previous rotations
+		var tempX = pivotX.localRotation;
+		var tempY = pivotY.localRotation;
 
-			return false;
+		// Clamped rotations
+		if ( X != 0 )
+		{
+			var rot	  = Quaternion.AngleAxis ( X, Vector3.right );
+			var prev  = pivotX.localRotation * rot;
+			var angle = Quaternion.Angle ( Quaternion.identity, prev );
+
+			if ( angle >= min && angle <= max ) pivotX.localRotation = prev;
+
 		}
+		// Don't clamp Y-axis rotation
+		if ( Y != 0 ) pivotY.Rotate ( Vector3.up, Y );
 
-		if ( collidingThisFrame )
-		do
+		// Collision checks
+		if ( isColliding )
 		{
-			if ( Vector3.Distance ( pivot.position, Game.cam.transform.position ) > minDistanceFromPivot )
-				Game.cam.transform.Translate ( 0, 0, speed * Time.deltaTime );
-				
-			else return true; // Camera is too close!
-
-		} while ( isColliding );
-
-		collidedInLastFrame = collidingThisFrame;
-		return false;
-	}
-
-	private void ClampRotatePivot ( float rotX ) 
-	{
-		var rot	  = Quaternion.AngleAxis ( rotX, Vector3.right );
-		var temp  = pivot.localRotation * rot;
-		var angle = Quaternion.Angle ( Quaternion.identity, temp );
-
-		// Clamp rotation
-		if ( angle > min && angle < max ) pivot.localRotation = temp;
+			Game.cam.transform.Translate ( 0, 0, avoidingSpeed * 20f * Time.deltaTime );
+		}
+		else
+		{
+			Game.cam.transform.localPosition =
+				new Vector3
+				(
+				0,
+				0,
+				Mathf.Lerp ( Game.cam.transform.localPosition.z, -maxDistanceFromPivot, Time.deltaTime )
+				);
+		}
 	}
 	#endregion
 }
