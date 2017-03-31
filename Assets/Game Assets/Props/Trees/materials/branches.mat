@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MAT_escaleras_plaza
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_Name: branches
+  m_Shader: {fileID: 10600, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: d976ba6f7aa57ae4c828d438d2940f18, type: 3}
+        m_Texture: {fileID: 2800000, guid: be5be57103bb4ae49b88a424b14ae547, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -46,9 +46,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _GlossMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 4e56b4a3afe1b694d9fb31e6d3db2c92, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8847a9684fe1b19499bec0cea1fb4f1f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -87,7 +93,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 1
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -104,10 +110,16 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
+        name: _Shininess
+      second: 0.078125
+    - first:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
         name: _SpecularHighlights
+      second: 1
+    - first:
+        name: _SquashAmount
       second: 1
     - first:
         name: _SrcBlend
@@ -125,3 +137,12 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - first:
+        name: _TreeInstanceColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _TreeInstanceScale
+      second: {r: 1, g: 1, b: 1, a: 1}
