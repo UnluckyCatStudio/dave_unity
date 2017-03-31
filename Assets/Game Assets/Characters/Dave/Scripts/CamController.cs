@@ -24,7 +24,7 @@ public class CamController : MonoBehaviour
 	public float min;
 	public float max;
 
-	private void LateUpdate () 
+	private void Update () 
 	{
 		// Follow Dave
 		transform.position = dave.position + offsetFromDave;
@@ -38,7 +38,9 @@ public class CamController : MonoBehaviour
 		// Look at pivot
 		transform.LookAt ( pivotLook );
 
+		// Rotation and collision check
 		RotateCamera ( rotationX, rotationY );
+		CollisionCheck ();
 	}
 
 	#region FX
@@ -46,13 +48,12 @@ public class CamController : MonoBehaviour
 	{
 		get { return Physics.CheckSphere ( Game.cam.transform.position, .3f ); }
 	}
+	Quaternion tempX;
+	Quaternion tempY;
+	Vector3 tempLoc;
 
-	private void RotateCamera ( float X, float Y )
+	private void RotateCamera ( float X, float Y ) 
 	{
-		// Previous rotations
-		var tempX = pivotX.localRotation;
-		var tempY = pivotY.localRotation;
-
 		// Clamped rotations
 		if ( X != 0 )
 		{
@@ -65,21 +66,22 @@ public class CamController : MonoBehaviour
 		}
 		// Don't clamp Y-axis rotation
 		if ( Y != 0 ) pivotY.Rotate ( Vector3.up, Y );
-
-		// Collision checks
+	}
+	private void CollisionCheck () 
+	{
 		if ( isColliding )
 		{
-			Game.cam.transform.Translate ( 0, 0, avoidingSpeed * 20f * Time.deltaTime );
+			// Use previous values
+			pivotX.localRotation = tempX;
+			pivotY.localRotation = tempY;
+			transform.localPosition = tempLoc;
 		}
 		else
 		{
-			Game.cam.transform.localPosition =
-				new Vector3
-				(
-				0,
-				0,
-				Mathf.Lerp ( Game.cam.transform.localPosition.z, -maxDistanceFromPivot, Time.deltaTime )
-				);
+			// Save current values
+			tempX = pivotX.localRotation;
+			tempY = pivotY.localRotation;
+			tempLoc = transform.localPosition;
 		}
 	}
 	#endregion
