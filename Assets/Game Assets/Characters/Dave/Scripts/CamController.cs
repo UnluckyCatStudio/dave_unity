@@ -38,20 +38,12 @@ public class CamController : MonoBehaviour
 		// Look at pivot
 		transform.LookAt ( pivotLook );
 
-		// Rotation and collision check
+		// Transformations
 		RotateCamera ( rotationX, rotationY );
 		CollisionCheck ();
 	}
 
 	#region FX
-	bool isColliding 
-	{
-		get { return Physics.CheckSphere ( Game.cam.transform.position, .3f ); }
-	}
-	Quaternion tempX;
-	Quaternion tempY;
-	Vector3 tempLoc;
-
 	private void RotateCamera ( float X, float Y ) 
 	{
 		// Clamped rotations
@@ -67,8 +59,17 @@ public class CamController : MonoBehaviour
 		// Don't clamp Y-axis rotation
 		if ( Y != 0 ) pivotY.Rotate ( Vector3.up, Y );
 	}
+
+	bool isColliding 
+	{
+		get { return Physics.CheckSphere ( Game.cam.transform.position, .3f ); }
+	}
 	private void CollisionCheck () 
 	{
+		Quaternion tempX = pivotX.localRotation;
+		Quaternion tempY = pivotY.localRotation;
+		Vector3 tempLoc = transform.localPosition;
+
 		if ( isColliding )
 		{
 			// Use previous values
@@ -76,13 +77,13 @@ public class CamController : MonoBehaviour
 			pivotY.localRotation = tempY;
 			transform.localPosition = tempLoc;
 		}
-		else
+
+		var c = Game.cam.transform;
+		while ( isColliding && c.localPosition.z < -minDistanceFromPivot )
 		{
-			// Save current values
-			tempX = pivotX.localRotation;
-			tempY = pivotY.localRotation;
-			tempLoc = transform.localPosition;
+			c.Translate ( 0, 0, avoidingSpeed * Time.deltaTime, Space.Self );
 		}
+
 	}
 	#endregion
 }
