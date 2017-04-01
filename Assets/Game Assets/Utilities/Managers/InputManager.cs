@@ -71,12 +71,11 @@ public class InputManager : MonoBehaviour
 {
 	#region UI
 	public HotkeyButton[] hotkeys;
+	HotkeyButton selected;
 
 	public Toggle invertX;
 	public Toggle invertY;
 	#endregion
-
-	HotkeyButton selected;
 
 	public void LoadValues () 
 	{

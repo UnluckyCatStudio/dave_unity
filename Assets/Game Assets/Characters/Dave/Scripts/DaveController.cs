@@ -60,7 +60,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				transform.rotation =
 					Quaternion.Slerp
 					(
-						startRotation,
+						transform.rotation,
 						rotDir,
 						10 * Time.deltaTime   // bigger diff = faster rotation
 					);

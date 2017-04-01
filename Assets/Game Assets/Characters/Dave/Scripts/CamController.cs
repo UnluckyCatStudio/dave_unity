@@ -8,15 +8,14 @@ public class CamController : MonoBehaviour
 {
 	[Header("References")]
 	public Transform dave;
-	public Transform pivotLook;
 	public Transform pivotY;
 	public Transform pivotX;
 
 	[Header("Settings")]
-	public Vector3 offsetFromDave;
+	public Vector3 lookOffset;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
-	public float avoidingSpeed;
+	public float avoidingStep;
 	public float speedX;
 	public float speedY;
 
@@ -26,26 +25,42 @@ public class CamController : MonoBehaviour
 
 	private void Update () 
 	{
-		// Follow Dave
-		transform.position = dave.position + offsetFromDave;
-
 		// Get user input
 		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime;
 		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
 		// Axis inversion
 		rotationX *= Game.input.invertX ? -1 : 1;
 		rotationY *= Game.input.invertY ? -1 : 1;
-		// Look at pivot
-		transform.LookAt ( pivotLook );
 
 		// Transformations
 		RotateCamera ( rotationX, rotationY );
-		CollisionCheck ();
+		FollowDave ();
+		Stabilize ();
 	}
 
 	#region FX
+	private void FollowDave () 
+	{
+		// Follow Dave movement
+		pivot = dave.position + lookOffset;
+		transform.position = pivot;
+
+		// If camera collides when moved
+		while ( IsColliding () )
+		{
+			Game.cam.transform.Translate
+				( Vector3.forward * avoidingStep );
+		}
+	}
+
+	// Unchanged rotations
+	Quaternion tempX;
+	Quaternion tempY;
 	private void RotateCamera ( float X, float Y ) 
 	{
+		tempX = pivotX.localRotation;
+		tempY = pivotY.localRotation;
+
 		// Clamped rotations
 		if ( X != 0 )
 		{
@@ -53,37 +68,73 @@ public class CamController : MonoBehaviour
 			var prev  = pivotX.localRotation * rot;
 			var angle = Quaternion.Angle ( Quaternion.identity, prev );
 
-			if ( angle >= min && angle <= max ) pivotX.localRotation = prev;
-
+			if ( angle >= min && angle <= max )
+				pivotX.localRotation = prev;
 		}
 		// Don't clamp Y-axis rotation
 		if ( Y != 0 ) pivotY.Rotate ( Vector3.up, Y );
+
+		// If camera collides when rotating
+		while ( IsColliding () )
+		{
+			if ( !TooClose () )
+			{
+				Game.cam.transform.Translate
+					( Vector3.forward * avoidingStep );
+			}
+			else
+			{
+				pivotX.localRotation = tempX;
+				pivotY.localRotation = tempY;
+				break;
+			}
+		}
 	}
 
-	bool isColliding 
+	private void Stabilize () 
 	{
-		get { return Physics.CheckSphere ( Game.cam.transform.position, .3f ); }
+		if ( !TooFar () )
+		{
+			var z =
+				Mathf.Lerp
+				(
+					Game.cam.transform.localPosition.z,
+					-maxDistanceFromPivot,
+					Time.deltaTime
+				);
+
+			Game.cam.transform.localPosition =
+				new Vector3
+				(
+					Game.cam.transform.localPosition.x,
+					Game.cam.transform.localPosition.y,
+					z
+				);
+		}
 	}
-	private void CollisionCheck () 
+	#endregion
+
+	#region HELPERS
+	// Is camera too close/far ?
+	Vector3 pivot;
+	private bool TooClose () 
 	{
-		Quaternion tempX = pivotX.localRotation;
-		Quaternion tempY = pivotY.localRotation;
-		Vector3 tempLoc = transform.localPosition;
+		return
+			Vector3.Distance ( pivot, Game.cam.transform.position )
+			<= minDistanceFromPivot;
+	}
+	private bool TooFar () 
+	{
+		return
+			Vector3.Distance ( pivot, Game.cam.transform.position )
+			>= maxDistanceFromPivot;
+	}
 
-		if ( isColliding )
-		{
-			// Use previous values
-			pivotX.localRotation = tempX;
-			pivotY.localRotation = tempY;
-			transform.localPosition = tempLoc;
-		}
-
-		var c = Game.cam.transform;
-		while ( isColliding && c.localPosition.z < -minDistanceFromPivot )
-		{
-			c.Translate ( 0, 0, avoidingSpeed * Time.deltaTime, Space.Self );
-		}
-
+	// Performs collisions checks from camera
+	private bool IsColliding ( float radius=0.1f ) 
+	{
+		return
+			Physics.CheckSphere ( Game.cam.transform.position, radius );
 	}
 	#endregion
 }
