@@ -81,6 +81,8 @@ ModelImporter:
     100146: Dave-sword
     100148: dave-rig
     100150: edge
+    100152: sword-back
+    100154: sword-hand
     400000: body
     400002: bufanda
     400004: //RootNode
@@ -157,6 +159,8 @@ ModelImporter:
     400146: Dave-sword
     400148: dave-rig
     400150: edge
+    400152: sword-back
+    400154: sword-hand
     2300000: pelo
     2300002: cuerpo
     2300004: handle
@@ -184,6 +188,8 @@ ModelImporter:
     4300016: cuerpo
     4300018: surcos
     4300020: edge
+    4300022: sword-hand
+    4300024: sword-back
     7400000: rig|French_girl_p
     7400002: rig|Holding_sword_p
     7400004: rig|Idle
@@ -229,6 +235,8 @@ ModelImporter:
     13700004: cejas
     13700006: pelo
     13700008: edge
+    13700010: sword-back
+    13700012: sword-hand
   materials:
     importMaterials: 1
     materialName: 0
@@ -261,14 +269,25 @@ ModelImporter:
       that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
       has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
       that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'dave-rig|Jog':\n\tRightLowerLeg
-      average position error 0.2 mm and maximum position error 1.2 mm at time 0:28
-      (49.1%) Frame 28\n\nRetargeting quality report for clip 'dave-rig|Run_in_2016_lol':\n\tRetargeting
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'dave-rig|Jog':\n\tRetargeting
       quality is good. No significant differences with original animation were found.\n\nRetargeting
-      quality report for clip 'dave-rig|Walk':\n\tRightLowerLeg average position error
-      0.3 mm and maximum position error 7.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightFoot
-      average position error 0.1 mm and maximum position error 1.8 mm at time 0: 0
-      (0.0%) Frame 0\n"
+      quality report for clip 'dave-rig|Pose_RenderRichard':\n\tLeftLowerLeg average
+      position error 1.0 mm and maximum position error 1.0 mm at time 0: 0 (0.0%)
+      Frame 0\n\tRightLowerLeg average position error 1.0 mm and maximum position
+      error 1.0 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
+      'dave-rig|Run_in_2016_lol':\n\tRetargeting quality is good. No significant differences
+      with original animation were found.\n\nRetargeting quality report for clip 'dave-rig|sword-backAction':\n\tRetargeting
+      quality is good. No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'dave-rig|Walk':\n\tRetargeting quality is good. No
+      significant differences with original animation were found.\n\nRetargeting quality
+      report for clip 'body|sword-backAction':\n\tRetargeting quality is good. No
+      significant differences with original animation were found.\n\nRetargeting quality
+      report for clip 'bufanda|sword-backAction':\n\tRetargeting quality is good.
+      No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'sword-hand|sword-backAction':\n\tRetargeting quality
+      is good. No significant differences with original animation were found.\n\nRetargeting
+      quality report for clip 'sword-back|sword-backAction':\n\tRetargeting quality
+      is good. No significant differences with original animation were found.\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 0
     animationRotationError: 0.5

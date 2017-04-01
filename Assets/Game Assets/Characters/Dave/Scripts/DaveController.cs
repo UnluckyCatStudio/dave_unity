@@ -11,7 +11,9 @@ public class DaveController : Kyru.etc.AnimatorController
 	private Vector3 startMovement;
 
 	[Header("References")]
-	public CamController cam;	// The camera pivot ( for relative movement )
+	public CamController cam;   // The camera pivot ( for relative movement )
+	public Cloth scarf;
+	public Vector3 scarfWind;
 
 	// Movement
 	[Header("Movement")]
@@ -25,7 +27,7 @@ public class DaveController : Kyru.etc.AnimatorController
 //	[Header("IK")]
 //	public Transform    leftFoot;
 //	public Transform    rightFoot;
-
+	
 	// Animation params
 	private bool sheathing;		// Is Dave currently un/sheathing with the sword?
 	private bool swordOut;      // Is sword unsheathed?
@@ -34,6 +36,12 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	void Update () 
 	{
+		#region SCARF
+		// Apply local-space wind to the scarf
+		scarf.externalAcceleration =
+			transform.TransformDirection ( scarfWind );
+		#endregion
+
 		#region MOVEMENT
 		if ( canMove )
 		{
