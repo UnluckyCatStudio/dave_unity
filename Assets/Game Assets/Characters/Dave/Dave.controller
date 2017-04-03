@@ -585,11 +585,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: Sheathing
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: SwordOut
+  - m_ConditionMode: 1
+    m_ConditionEvent: Sheathe
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102159651612652656}
@@ -657,11 +654,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: SwordOut
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Sheathing
+  - m_ConditionMode: 1
+    m_ConditionEvent: Sheathe
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102159651612652656}
@@ -688,7 +682,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Moving
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: SwordOut
+    m_ConditionEvent: Unsheathe
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102067833140533476}
@@ -696,9 +690,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 1.1448563
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 0.013333896
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -874,7 +868,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Moving
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: SwordOut
+    m_ConditionEvent: Unsheathe
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102603467923584192}
@@ -882,9 +876,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.19228584
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 0.9485714
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -927,9 +921,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.026285827
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 0.9737142
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1215,9 +1209,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.93397444
+  m_ExitTime: 1.0036519
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1236,9 +1230,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.19799984
   m_TransitionOffset: 0
-  m_ExitTime: 0.9302326
+  m_ExitTime: 0.99495983
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1653,8 +1647,8 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Sheathe
-  m_Speed: -1
-  m_CycleOffset: 1
+  m_Speed: 1
+  m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101996534904097446}
   m_StateMachineBehaviours: []
@@ -1665,7 +1659,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400074, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
+  m_Motion: {fileID: 7400090, guid: 31e31e3c3d6b98b42b9de0624a6c46e6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
