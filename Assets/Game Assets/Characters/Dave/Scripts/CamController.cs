@@ -96,20 +96,20 @@ public class CamController : MonoBehaviour
 		if ( !TooFar () )
 		{
 			var z =
-				Mathf.Lerp
-				(
-					Game.cam.transform.localPosition.z,
-					-maxDistanceFromPivot,
-					Time.deltaTime
-				);
+			Mathf.Lerp
+			(
+				Game.cam.transform.localPosition.z,
+				-maxDistanceFromPivot,
+				Time.deltaTime
+			);
 
 			Game.cam.transform.localPosition =
-				new Vector3
-				(
-					Game.cam.transform.localPosition.x,
-					Game.cam.transform.localPosition.y,
-					z
-				);
+			new Vector3
+			(
+				Game.cam.transform.localPosition.x,
+				Game.cam.transform.localPosition.y,
+				z
+			);
 		}
 	}
 	#endregion

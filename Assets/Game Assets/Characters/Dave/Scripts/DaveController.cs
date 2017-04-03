@@ -6,11 +6,8 @@ public class DaveController : Kyru.etc.AnimatorController
 {
 	private CharacterController me;
 
-	// Rotation correction
-	private Quaternion startRotation;
-	private Vector3 startMovement;
-
 	[Header("References")]
+	public SkinnedMeshRenderer skin;
 	public CamController cam;   // The camera pivot ( for relative movement )
 	public Cloth scarf;
 	public Vector3 scarfWind;
@@ -57,21 +54,16 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( movement != Vector3.zero && DaveIsUp () )
 			{
 				#region CORRECT ROTATION
-				if ( movement != startMovement )
-				{
-					startMovement = movement;
-					startRotation = transform.rotation;
-				}
 				var rotDir = Quaternion.LookRotation ( movement );
 				var diff = Quaternion.Angle ( transform.rotation, rotDir );
 
 				transform.rotation =
-					Quaternion.Slerp
-					(
-						transform.rotation,
-						rotDir,
-						10 * Time.deltaTime   // bigger diff = faster rotation
-					);
+				Quaternion.Slerp
+				(
+					transform.rotation,
+					rotDir,
+					10 * Time.deltaTime   // bigger diff = faster rotation
+				);
 				#endregion
 
 				me.Move ( movement * speed * Time.deltaTime );
@@ -84,7 +76,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		#region COMBAT
 		if ( canCombat )
 		{
-			// (un)Sheathe sword
+			#region SHEATHING
 			if ( !sheathing
 				&& DaveIsUp ()
 				&& Game.input.GetKeyDown ( Key.Sword ) )
@@ -94,8 +86,9 @@ public class DaveController : Kyru.etc.AnimatorController
 
 				anim.SetBool ( "Sheathing", true );
 			}
-			
-			// Attacking
+			#endregion
+
+			#region ATTACKING
 			if ( swordOut
 				&& !sheathing
 				&& Game.input.GetKeyDown ( Key.Attack ) )
@@ -110,7 +103,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				anim.SetBool ( "HoldingBoomerang", true );
 //				cam.FocusBoomerang ();
 			}
-
+			#endregion
 		}
 		#endregion
 
@@ -193,7 +186,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	///  0 = unsheathe
 	/// !0 = sheathe
 	/// </summary>
-	private void Seathe ( int unseathe ) 
+	private void Sheathe ( int unseathe ) 
 	{
 		if ( unseathe == 0 )
 		{
