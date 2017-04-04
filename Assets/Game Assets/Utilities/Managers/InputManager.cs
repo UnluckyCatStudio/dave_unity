@@ -34,17 +34,17 @@ public struct InputSettings
     {
         keys = new KeyCode[]
         {
-            KeyCode.W,
-            KeyCode.S,
-            KeyCode.A,
-            KeyCode.D,
-            KeyCode.Space,
-            KeyCode.LeftShift,
-            KeyCode.R,
-            KeyCode.Mouse2,
-            KeyCode.Mouse0,
-            KeyCode.E,
-			KeyCode.Q
+            KeyCode.W,				// Forward
+            KeyCode.S,				// Backwards
+            KeyCode.A,				// Left
+            KeyCode.D,				// Right
+            KeyCode.Space,			// Shield
+            KeyCode.LeftShift,		// Walk
+            KeyCode.R,				// Sheathe
+            KeyCode.Mouse2,			// Attack-big
+            KeyCode.Mouse0,			// Attack-single
+            KeyCode.E,				// Interact
+			KeyCode.Q				// Boomerang
 		};
 
 		invertX = false;
@@ -58,13 +58,13 @@ public enum Key
 	Backwards,
 	Left,
 	Right,
-	Jump,
+	Shield,
 	Walk,
 	Sword,
-	Boomerang,
-	Attack,
+	Attack_big,
+	Attack_single,
 	Interact,
-	Shield
+	Boomerang
 }
 
 public class InputManager : MonoBehaviour

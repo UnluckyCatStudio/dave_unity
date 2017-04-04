@@ -56,9 +56,11 @@ namespace Kyru.UI
 		Walk,
 		Un_sheathe,
 		Boomerang,
-		Attack,
+		Attack_single,
+		Attack_big,
 		Interact,
 		Shield,
+		Esc_to_cancel,
 		InvertX,
 		InvertY,
 

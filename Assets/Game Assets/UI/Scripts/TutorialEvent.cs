@@ -20,7 +20,6 @@ public class TutorialEvent : MonoBehaviour
 			.Replace ( "]", "</color></b>" );
 
 		Time.timeScale = 0;
-		Game.dave.LockDave ( 1 );
 		Game.ui.SetTrigger ( "Tutorial" );
 		active = true;
 	}
@@ -30,7 +29,6 @@ public class TutorialEvent : MonoBehaviour
 	{
 		if ( active && Input.GetKeyDown ( KeyCode.E ) )
 		{
-			Game.dave.LockDave ( 0 );
 			Game.ui.SetTrigger ( "TutorialCompleted" );
 			Time.timeScale = 1;
 			Destroy ( gameObject );
