@@ -52,7 +52,6 @@ half4 CalculateLight (unity_v2f_deferred i)
 	UnityDeferredCalculateLightParams (i, wpos, uv, light.dir, atten, fadeDist);
 
 	light.color = _LightColor.rgb * Ramp ( atten );
-	//light.color = _LightColor.rgb * atten;
 
 	// unpack Gbuffer
 	half4 gbuffer0 = tex2D (_CameraGBufferTexture0, uv);
