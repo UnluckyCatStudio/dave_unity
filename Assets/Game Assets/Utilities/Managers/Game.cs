@@ -13,6 +13,15 @@ public class Game : MonoBehaviour
 	public static InputSettings      input    = new InputSettings ();
 	public static new AudioSettings  audio    = new AudioSettings ();
 
+	// Order is irrelevant here
+	[SerializeField]
+	private Translation[] translations;
+
+	/// <summary>
+	/// Self reference.
+	/// </summary>
+	public Game manager;
+
 	/// <summary>
 	/// Global UI parent.
 	/// </summary>
@@ -40,8 +49,15 @@ public class Game : MonoBehaviour
 		// Camera Rig will be self-set when game is started
 
 		#region TRANSLATION
+		// Setup references
+		foreach ( var t in translations )
+		{
+			// Order independent
+			var i = ( int ) t.language;
+			Localization.translations[i] = t;
+		}
+
 		Localization.lang = lang;
-		Localization.LoadTexts ();
 		Localization.InitAllTexts ();
 		Localization.UpdateAllTexts ();
 		#endregion

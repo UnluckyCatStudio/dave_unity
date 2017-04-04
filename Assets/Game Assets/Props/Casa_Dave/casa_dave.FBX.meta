@@ -27,6 +27,16 @@ ModelImporter:
     100038: techo
     100040: Wardrobe
     100042: Window_glass
+    100044: bed
+    100046: book_1
+    100048: book_2
+    100050: book_3
+    100052: book_4
+    100054: book_5
+    100056: book_6
+    100058: book_7
+    100060: shirt
+    100062: sweater
     400000: Bed
     400002: Bed_dog
     400004: Bin
@@ -49,6 +59,16 @@ ModelImporter:
     400038: techo
     400040: Wardrobe
     400042: Window_glass
+    400044: bed
+    400046: book_1
+    400048: book_2
+    400050: book_3
+    400052: book_4
+    400054: book_5
+    400056: book_6
+    400058: book_7
+    400060: shirt
+    400062: sweater
     2300000: Bed
     2300002: Bed_dog
     2300004: Bin
@@ -70,6 +90,16 @@ ModelImporter:
     2300036: techo
     2300038: Wardrobe
     2300040: Window_glass
+    2300042: bed
+    2300044: book_1
+    2300046: book_2
+    2300048: book_3
+    2300050: book_4
+    2300052: book_5
+    2300054: book_6
+    2300056: book_7
+    2300058: shirt
+    2300060: sweater
     3300000: Bed
     3300002: Bed_dog
     3300004: Bin
@@ -91,6 +121,16 @@ ModelImporter:
     3300036: techo
     3300038: Wardrobe
     3300040: Window_glass
+    3300042: bed
+    3300044: book_1
+    3300046: book_2
+    3300048: book_3
+    3300050: book_4
+    3300052: book_5
+    3300054: book_6
+    3300056: book_7
+    3300058: shirt
+    3300060: sweater
     4300000: Bed
     4300002: Wardrobe
     4300004: Picture_dog
@@ -112,6 +152,16 @@ ModelImporter:
     4300036: pared_techo_puerta
     4300038: pered_techo
     4300040: techo
+    4300042: bed
+    4300044: book_6
+    4300046: book_1
+    4300048: book_2
+    4300050: book_5
+    4300052: book_7
+    4300054: book_4
+    4300056: book_3
+    4300058: shirt
+    4300060: sweater
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -138,7 +188,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0625
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -157,7 +207,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

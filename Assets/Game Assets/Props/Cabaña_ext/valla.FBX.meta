@@ -9,19 +9,54 @@ ModelImporter:
     100002: valla_horizontal
     100004: valla_vertical_1
     100006: valla_vertical_2
+    100008: valla_hor_1
+    100010: valla_hor_2
+    100012: valla_hor_3
+    100014: valla_ver_1
+    100016: valla_ver_2
+    100018: valla_ver_3
+    100020: valla_ver_4
     400000: //RootNode
     400002: valla_horizontal
     400004: valla_vertical_1
     400006: valla_vertical_2
+    400008: valla_hor_1
+    400010: valla_hor_2
+    400012: valla_hor_3
+    400014: valla_ver_1
+    400016: valla_ver_2
+    400018: valla_ver_3
+    400020: valla_ver_4
     2300000: valla_horizontal
     2300002: valla_vertical_1
     2300004: valla_vertical_2
+    2300006: valla_hor_1
+    2300008: valla_hor_2
+    2300010: valla_hor_3
+    2300012: valla_ver_1
+    2300014: valla_ver_2
+    2300016: valla_ver_3
+    2300018: valla_ver_4
     3300000: valla_horizontal
     3300002: valla_vertical_1
     3300004: valla_vertical_2
+    3300006: valla_hor_1
+    3300008: valla_hor_2
+    3300010: valla_hor_3
+    3300012: valla_ver_1
+    3300014: valla_ver_2
+    3300016: valla_ver_3
+    3300018: valla_ver_4
     4300000: valla_horizontal
     4300002: valla_vertical_1
     4300004: valla_vertical_2
+    4300006: valla_hor_1
+    4300008: valla_ver_1
+    4300010: valla_ver_2
+    4300012: valla_hor_2
+    4300014: valla_ver_3
+    4300016: valla_hor_3
+    4300018: valla_ver_4
   materials:
     importMaterials: 1
     materialName: 0

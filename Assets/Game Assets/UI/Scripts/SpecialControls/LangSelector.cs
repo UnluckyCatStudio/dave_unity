@@ -9,14 +9,15 @@ namespace Kyru.UI
 	{
 		private void Start () 
 		{
-			GetComponent<Dropdown> ().value = Localization.lang;
+			//GetComponent<Dropdown> ().value = Localization.lang;
+			GetComponent<Dropdown> ().value = (int) Localization.lang;
 		}
 
 		public void ChangeLang ( int lang ) 
 		{
 			Localization.lang = lang;
-			Localization.LoadTexts ();
 			Localization.UpdateAllTexts ();
-		}
+		} // k es mu bonico :3
+		//xd
 	} 
 }
