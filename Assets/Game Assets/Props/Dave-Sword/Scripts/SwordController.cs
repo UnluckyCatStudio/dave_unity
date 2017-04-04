@@ -8,6 +8,6 @@ public class SwordController : Kyru.etc.AnimatorController
 
 	public void Fade ( bool fadeIn )
 	{
-
+		edge.SetActive ( fadeIn );
 	}
 }
