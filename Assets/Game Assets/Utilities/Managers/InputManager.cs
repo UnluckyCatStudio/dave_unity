@@ -10,6 +10,9 @@ public struct InputSettings
 {
 	public KeyCode[] keys;
 
+	public bool invertX;
+	public bool invertY;
+
 	#region FX
 	public bool GetKey ( Key key )
 	{
@@ -31,18 +34,21 @@ public struct InputSettings
     {
         keys = new KeyCode[]
         {
-            KeyCode.W,
-            KeyCode.S,
-            KeyCode.A,
-            KeyCode.D,
-            KeyCode.Space,
-            KeyCode.LeftShift,
-            KeyCode.R,
-            KeyCode.Q,
-            KeyCode.Mouse2,
-            KeyCode.Mouse0,
-            KeyCode.E
-        };
+            KeyCode.W,				// Forward
+            KeyCode.S,				// Backwards
+            KeyCode.A,				// Left
+            KeyCode.D,				// Right
+            KeyCode.Space,			// Shield
+            KeyCode.LeftShift,		// Walk
+            KeyCode.R,				// Sheathe
+            KeyCode.Mouse2,			// Attack-big
+            KeyCode.Mouse0,			// Attack-single
+            KeyCode.E,				// Interact
+			KeyCode.Q				// Boomerang
+		};
+
+		invertX = false;
+		invertY = false;
     }
 }
 
@@ -52,22 +58,24 @@ public enum Key
 	Backwards,
 	Left,
 	Right,
-	Jump,
-	Run,
+	Shield,
+	Walk,
 	Sword,
-	Boomerang,
-	Lock,
-	Attack,
-	Interact
+	Attack_big,
+	Attack_single,
+	Interact,
+	Boomerang
 }
 
 public class InputManager : MonoBehaviour
 {
 	#region UI
 	public HotkeyButton[] hotkeys;
-	#endregion
-
 	HotkeyButton selected;
+
+	public Toggle invertX;
+	public Toggle invertY;
+	#endregion
 
 	public void LoadValues () 
 	{
@@ -75,6 +83,9 @@ public class InputManager : MonoBehaviour
 		{
 			hotkeys[k].info.text = Game.input.keys[(int)hotkeys[k].key].ToString ();
 		}
+		
+		invertX.isOn = Game.input.invertX;
+		invertY.isOn = Game.input.invertY;
 	}
 
 	public void ApplySave () 
@@ -83,6 +94,9 @@ public class InputManager : MonoBehaviour
 		{
 			Game.input.keys[(int)hotkeys[k].key] = ParseKey ( hotkeys[k].info.text );
 		}
+
+		Game.input.invertX = invertX.isOn;
+		Game.input.invertY = invertY.isOn;
 
 		PlayerPrefs.SetString ( "Input", JsonUtility.ToJson ( Game.input ) );
 		PlayerPrefs.Save ();
@@ -111,7 +125,10 @@ public class InputManager : MonoBehaviour
 				if ( Input.GetKeyDown ( kcode ) )
 				{
 					// Check if user pressed ESC or P ( pausing keys )
-					if ( kcode != KeyCode.Escape && kcode != KeyCode.P )
+					// Or  ENTER
+					if (   kcode != KeyCode.Escape
+						&& kcode != KeyCode.P
+						&& kcode != KeyCode.Return )
 					{
 						// Save new value
 						Game.input.keys[(int)selected.key] = kcode;
