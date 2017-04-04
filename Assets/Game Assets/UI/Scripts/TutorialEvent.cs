@@ -13,14 +13,13 @@ public class TutorialEvent : MonoBehaviour
 	{
 		var t = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
 		t.text =
-			Localization.translations[( int ) Localization.lang]
+			Localization.translations[Localization.lang]
 			.texts[( int ) key]
 			.Replace ( "$$", "\n" )
 			.Replace ( "[", "<b><color=orange>" )
 			.Replace ( "]", "</color></b>" );
 
 		Time.timeScale = 0;
-		Game.dave.LockDave ( 1 );
 		Game.ui.SetTrigger ( "Tutorial" );
 		active = true;
 	}
@@ -28,9 +27,8 @@ public class TutorialEvent : MonoBehaviour
 	private bool active;
 	void Update ()
 	{
-		if ( active && Input.GetKeyDown ( KeyCode.Return ) )
+		if ( active && Input.GetKeyDown ( KeyCode.E ) )
 		{
-			Game.dave.LockDave ( 0 );
 			Game.ui.SetTrigger ( "TutorialCompleted" );
 			Time.timeScale = 1;
 			Destroy ( gameObject );
