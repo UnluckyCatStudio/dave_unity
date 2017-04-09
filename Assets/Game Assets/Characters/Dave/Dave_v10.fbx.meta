@@ -238,6 +238,8 @@ ModelImporter:
     7400090: dave-rig|Sheathe
     7400092: dave-rig|Attack_Single
     7400094: dave-rig|Attack_Single_to_pose
+    7400096: dave-rig|Attack_Big
+    7400098: dave-rig|Attack_Big_to_pose
     9500000: //RootNode
     13700000: body
     13700002: bufanda
@@ -257,22 +259,34 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'dave-rig|Attack_Single' has import animation
-      warnings that might lower retargeting quality:\n\t'ORG-upper_arm.L' has scale
-      animation that will be discarded.\n\t'ORG-forearm.L' has scale animation that
-      will be discarded.\n\t'ORG-hand.L' has scale animation that will be discarded.\n\t'ORG-forearm.R'
-      has scale animation that will be discarded.\n\t'ORG-hand.R' has scale animation
-      that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
-      has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
-      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|dave-rigAction' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Falling' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Idle' has import animation warnings that might lower retargeting quality:\n\t'ORG-neck'
-      has scale animation that will be discarded.\n\t'ORG-head' has scale animation
+    animationImportWarnings: "\nClip 'dave-rig|Attack_Big' has import animation warnings
+      that might lower retargeting quality:\n\t'ORG-upper_arm.L' has scale animation
       that will be discarded.\n\t'ORG-forearm.L' has scale animation that will be
-      discarded.\n\t'ORG-palm.03.R' has scale animation that will be discarded.\n\nClip
+      discarded.\n\t'ORG-hand.L' has scale animation that will be discarded.\n\t'ORG-palm.02.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-forearm.R'
+      has scale animation that will be discarded.\n\t'ORG-hand.R' has scale animation
+      that will be discarded.\n\t'ORG-palm.02.R' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'ORG-thigh.L' has scale
+      animation that will be discarded.\n\t'ORG-shin.L' has scale animation that will
+      be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
+      has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
+      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n\nClip
+      'dave-rig|Attack_Single' has import animation warnings that might lower retargeting
+      quality:\n\t'ORG-upper_arm.L' has scale animation that will be discarded.\n\t'ORG-forearm.L'
+      has scale animation that will be discarded.\n\t'ORG-hand.L' has scale animation
+      that will be discarded.\n\t'ORG-forearm.R' has scale animation that will be
+      discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\t'ORG-palm.04.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-thigh.L'
+      has scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
+      that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-foot.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|dave-rigAction'
+      has import animation warnings that might lower retargeting quality:\n\t'ORG-forearm.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|Falling' has import
+      animation warnings that might lower retargeting quality:\n\t'ORG-forearm.L'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|Idle' has import
+      animation warnings that might lower retargeting quality:\n\t'ORG-neck' has scale
+      animation that will be discarded.\n\t'ORG-head' has scale animation that will
+      be discarded.\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\nClip
       'dave-rig|Jog' has import animation warnings that might lower retargeting quality:\n\t'ORG-forearm.L'
       has scale animation that will be discarded.\n\t'ORG-forearm.R' has scale animation
       that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
@@ -293,58 +307,65 @@ ModelImporter:
       'dave-rig|Sowrd_Idle' has import animation warnings that might lower retargeting
       quality:\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\nClip
       'dave-rig|Sword_Jog' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\t'ORG-thigh.L'
-      has scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
-      that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
-      has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
-      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Unsheathe' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\t'ORG-hand.L'
-      has scale animation that will be discarded.\n\t'ORG-forearm.R' has scale animation
-      that will be discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\nClip
+      quality:\n\t'ORG-forearm.L' has scale animation that will be discarded.\n\t'ORG-palm.03.R'
+      has scale animation that will be discarded.\n\t'ORG-thigh.L' has scale animation
+      that will be discarded.\n\t'ORG-shin.L' has scale animation that will be discarded.\n\t'ORG-foot.L'
+      has scale animation that will be discarded.\n\t'ORG-thigh.R' has scale animation
+      that will be discarded.\n\t'ORG-shin.R' has scale animation that will be discarded.\n\t'ORG-foot.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|Unsheathe' has
+      import animation warnings that might lower retargeting quality:\n\t'ORG-forearm.L'
+      has scale animation that will be discarded.\n\t'ORG-hand.L' has scale animation
+      that will be discarded.\n\t'ORG-forearm.R' has scale animation that will be
+      discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\t'ORG-palm.04.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
       'dave-rig|Walk' has import animation warnings that might lower retargeting quality:\n\t'ORG-thigh.L'
       has scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
       that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
       has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
       that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'dave-rig|Attack_Single':\n\tLeftLowerArm
-      average position error 9.3 mm and maximum position error 23.5 mm at time 0:
-      7 (4.9%) Frame 7\n\tLeftHand average position error 20.2 mm and maximum position
-      error 46.8 mm at time 0: 7 (4.9%) Frame 7\n\nRetargeting quality report for
-      clip 'dave-rig|dave-rigAction':\n\tLeftLowerArm average position error 3.7 mm
-      and maximum position error 3.7 mm at time 0:18 (94.7%) Frame 18\n\tLeftHand
-      average position error 6.6 mm and maximum position error 6.6 mm at time 0:18
-      (94.7%) Frame 18\n\nRetargeting quality report for clip 'dave-rig|Falling':\n\tLeftLowerArm
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'dave-rig|Attack_Big':\n\tRightLowerLeg
+      average position error 0.5 mm and maximum position error 8.7 mm at time 3: 1
+      (84.6%) Frame 181\n\tRightFoot average position error 0.2 mm and maximum position
+      error 8.0 mm at time 3: 1 (84.6%) Frame 181\n\tLeftLowerArm average position
+      error 14.0 mm and maximum position error 14.0 mm at time 0: 8 (3.7%) Frame 8\n\tLeftHand
+      average position error 33.1 mm and maximum position error 40.2 mm at time 0:28
+      (13.1%) Frame 28\n\nRetargeting quality report for clip 'dave-rig|Attack_Single':\n\tLeftLowerArm
+      average position error 14.0 mm and maximum position error 15.1 mm at time 0:57
+      (39.9%) Frame 57\n\tLeftHand average position error 32.9 mm and maximum position
+      error 40.5 mm at time 0:37 (25.9%) Frame 37\n\nRetargeting quality report for
+      clip 'dave-rig|dave-rigAction':\n\tLeftLowerArm average position error 14.0
+      mm and maximum position error 14.0 mm at time 0:18 (94.7%) Frame 18\n\tLeftHand
+      average position error 29.4 mm and maximum position error 29.4 mm at time 0:
+      1 (5.3%) Frame 1\n\nRetargeting quality report for clip 'dave-rig|Falling':\n\tLeftLowerArm
       average position error 14.0 mm and maximum position error 14.0 mm at time 0:22
       (9.2%) Frame 22\n\tLeftHand average position error 33.5 mm and maximum position
       error 35.6 mm at time 4: 0 (100.0%) Frame 240\n\nRetargeting quality report
       for clip 'dave-rig|Idle':\n\tLeftLowerArm average position error 14.0 mm and
       maximum position error 14.0 mm at time 3:23 (79.3%) Frame 203\n\tLeftHand average
-      position error 30.0 mm and maximum position error 30.6 mm at time 2: 1 (47.3%)
-      Frame 121\n\nRetargeting quality report for clip 'dave-rig|Jog':\n\tLeftLowerArm
-      average position error 14.0 mm and maximum position error 14.0 mm at time 0:
-      0 (0.0%) Frame 0\n\tLeftHand average position error 33.2 mm and maximum position
+      position error 30.0 mm and maximum position error 30.6 mm at time 3:44 (87.5%)
+      Frame 224\n\nRetargeting quality report for clip 'dave-rig|Jog':\n\tLeftLowerArm
+      average position error 14.0 mm and maximum position error 14.0 mm at time 0:32
+      (64.0%) Frame 32\n\tLeftHand average position error 33.2 mm and maximum position
       error 39.4 mm at time 0:18 (36.0%) Frame 18\n\nRetargeting quality report for
-      clip 'dave-rig|Run_in_2016_lol':\n\tRetargeting quality is good. No significant
-      differences with original animation were found.\n\nRetargeting quality report
-      for clip 'dave-rig|Sowrd_Idle':\n\tLeftLowerArm average position error 14.0
-      mm and maximum position error 14.0 mm at time 2:57 (68.9%) Frame 177\n\tLeftHand
-      average position error 29.7 mm and maximum position error 30.6 mm at time 3:42
-      (86.4%) Frame 222\n\nRetargeting quality report for clip 'dave-rig|Sword_Jog':\n\tLeftLowerLeg
-      average position error 0.2 mm and maximum position error 1.3 mm at time 0: 0
-      (0.0%) Frame 0\n\tLeftLowerArm average position error 14.0 mm and maximum position
-      error 14.0 mm at time 0:48 (96.0%) Frame 48\n\tLeftHand average position error
-      33.6 mm and maximum position error 35.4 mm at time 0:18 (36.0%) Frame 18\n\nRetargeting
-      quality report for clip 'dave-rig|Unsheathe':\n\tLeftLowerArm average position
-      error 14.0 mm and maximum position error 14.0 mm at time 2: 4 (84.4%) Frame
-      124\n\tLeftHand average position error 31.2 mm and maximum position error 34.4
-      mm at time 0:20 (13.6%) Frame 20\n\nRetargeting quality report for clip 'dave-rig|Walk':\n\tRightLowerLeg
-      average position error 0.3 mm and maximum position error 7.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightFoot average position error 0.1 mm and maximum position
-      error 1.8 mm at time 0: 0 (0.0%) Frame 0\n\tLeftLowerArm average position error
-      14.0 mm and maximum position error 14.0 mm at time 0:43 (86.0%) Frame 43\n\tLeftHand
-      average position error 28.4 mm and maximum position error 28.4 mm at time 0:43
-      (86.0%) Frame 43\n"
+      clip 'dave-rig|Run_in_2016_lol':\n\tLeftLowerArm average position error 173.7
+      mm and maximum position error 281.4 mm at time 1:33 (100.0%) Frame 93\n\tLeftHand
+      average position error 359.3 mm and maximum position error 599.4 mm at time
+      1:33 (100.0%) Frame 93\n\nRetargeting quality report for clip 'dave-rig|Sowrd_Idle':\n\tLeftLowerArm
+      average position error 14.0 mm and maximum position error 14.0 mm at time 4:13
+      (98.4%) Frame 253\n\tLeftHand average position error 29.7 mm and maximum position
+      error 30.6 mm at time 3:42 (86.4%) Frame 222\n\nRetargeting quality report for
+      clip 'dave-rig|Sword_Jog':\n\tLeftLowerLeg average position error 0.2 mm and
+      maximum position error 1.3 mm at time 0: 0 (0.0%) Frame 0\n\tLeftLowerArm average
+      position error 14.0 mm and maximum position error 14.0 mm at time 0:46 (92.0%)
+      Frame 46\n\tLeftHand average position error 33.6 mm and maximum position error
+      35.4 mm at time 0:18 (36.0%) Frame 18\n\nRetargeting quality report for clip
+      'dave-rig|Unsheathe':\n\tLeftLowerArm average position error 14.0 mm and maximum
+      position error 14.0 mm at time 2:13 (90.5%) Frame 133\n\tLeftHand average position
+      error 31.2 mm and maximum position error 34.4 mm at time 0:20 (13.6%) Frame
+      20\n\nRetargeting quality report for clip 'dave-rig|Walk':\n\tLeftLowerArm average
+      position error 14.0 mm and maximum position error 14.0 mm at time 0: 7 (14.0%)
+      Frame 7\n\tLeftHand average position error 28.4 mm and maximum position error
+      28.4 mm at time 0:15 (30.0%) Frame 15\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 0
     animationRotationError: 0.5
@@ -1586,7 +1607,7 @@ ModelImporter:
       name: dave-rig|Attack_Single
       takeName: dave-rig|Attack_Single
       firstFrame: 0
-      lastFrame: 82
+      lastFrame: 143
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1606,9 +1627,16 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.7249283
+      - time: 0.35549134
         functionName: SetBool
-        data: CanRotate:false
+        data: DealingDmg:true
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.46242777
+        functionName: SetBool
+        data: DealingDmg:false
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
@@ -1766,7 +1794,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -1929,6 +1957,372 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: SetBool
+        data: Sheathing:false
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.25379807
+        functionName: Sheathe
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.9799427
+        functionName: SetBool
+        data: Sheathing:true
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.06590258
+        functionName: SetBool
+        data: SwordOut:false
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 0
+      - path: bufanda
+        weight: 0
+      - path: dave-rig
+        weight: 1
+      - path: dave-rig/root
+        weight: 1
+      - path: dave-rig/root/ORG-hips
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck/ORG-head
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L/ORG-f_index.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L/ORG-thumb.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L/ORG-f_middle.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L/ORG-f_ring.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L/ORG-f_pinky.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R/ORG-f_index.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R/ORG-thumb.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R/ORG-f_middle.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R/ORG-f_ring.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R/ORG-f_pinky.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L/ORG-toe.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R/ORG-toe.R
+        weight: 1
+      - path: pelo
+        weight: 0
+      - path: sword-back
+        weight: 0
+      - path: sword-hand
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: dave-rig|Attack_Big
+      takeName: dave-rig|Attack_Big
+      firstFrame: 0
+      lastFrame: 215
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.43641618
+        functionName: SetBool
+        data: DealingDmg:true
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.48554915
+        functionName: SetBool
+        data: DealingDmg:false
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body
+        weight: 0
+      - path: bufanda
+        weight: 0
+      - path: dave-rig
+        weight: 1
+      - path: dave-rig/root
+        weight: 1
+      - path: dave-rig/root/ORG-hips
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck/ORG-head
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L/ORG-f_index.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L/ORG-thumb.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L/ORG-f_middle.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L/ORG-f_ring.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L/ORG-f_pinky.03.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R/ORG-f_index.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R/ORG-thumb.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R/ORG-f_middle.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R/ORG-f_ring.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R/ORG-f_pinky.03.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L/ORG-toe.L
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R
+        weight: 1
+      - path: dave-rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R/ORG-toe.R
+        weight: 1
+      - path: pelo
+        weight: 0
+      - path: sword-back
+        weight: 0
+      - path: sword-hand
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: dave-rig|Attack_Big_to_pose
+      takeName: dave-rig|Attack_Big
+      firstFrame: 185
+      lastFrame: 215
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1

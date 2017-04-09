@@ -37,14 +37,20 @@ public class Game : MonoBehaviour
 	/// </summary>
 	public static DaveController dave;
 
+	/// <summary>
+	/// The fucking sun.
+	/// </summary>
+	public static Light sun;
+
 	private void Awake ()
 	{
-		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
+		DontDestroyOnLoad ( this );
+
+		var lang	        = 1; // PlayerPrefs.GetInt    ( "Lang" );
 		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );
 
-		DontDestroyOnLoad ( this );
 		ui  = GameObject.Find ( "UI" ).GetComponent<Animator> ();
 		// Camera Rig will be self-set when game is started
 

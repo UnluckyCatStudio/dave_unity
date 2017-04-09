@@ -41,7 +41,7 @@ public struct InputSettings
             KeyCode.Space,			// Shield
             KeyCode.LeftShift,		// Walk
             KeyCode.R,				// Sheathe
-            KeyCode.Mouse2,			// Attack-big
+            KeyCode.Mouse1,			// Attack-big
             KeyCode.Mouse0,			// Attack-single
             KeyCode.E,				// Interact
 			KeyCode.Q				// Boomerang

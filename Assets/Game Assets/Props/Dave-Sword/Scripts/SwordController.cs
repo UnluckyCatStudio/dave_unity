@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwordController : Kyru.etc.AnimatorController
 {
-	public GameObject edge;
+	public Collider edge;
 
 	public void Fade ( bool fadeIn )
 	{

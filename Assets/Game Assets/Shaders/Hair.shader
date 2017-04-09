@@ -12,10 +12,5 @@
 		_GStrength	( "G strenght",			Range(-1,1) )		= 0.25
 	}
 
-	SubShader
-	{
-
-	}
-}
 	FallBack "Diffuse"
 }

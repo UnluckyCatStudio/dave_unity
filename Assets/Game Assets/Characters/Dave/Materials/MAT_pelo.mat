@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MAT_pelo
-  m_Shader: {fileID: 4800000, guid: 5ba6f202b1c584b4683da2257c3a7005, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6cec90648246f354b8bce1030aa2b081, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2

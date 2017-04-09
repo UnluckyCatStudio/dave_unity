@@ -70,7 +70,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				}
 				#endregion
 
-				me.Move ( movement * speed * Time.deltaTime );
+				//me.Move ( movement * speed * Time.deltaTime );
 				anim.SetBool ( "Moving", true );
 			}
 			else anim.SetBool ( "Moving", false );
@@ -96,10 +96,16 @@ public class DaveController : Kyru.etc.AnimatorController
 				&& !sheathing )
 			{
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
-					anim.SetTrigger ( "Attack" );
-
-
-				anim.SetBool ( "Attacking", true );
+				{
+					anim.SetTrigger ( "Attack-single" );
+					anim.SetBool ( "Attacking", true );
+				}
+				else
+				if ( Game.input.GetKeyDown ( Key.Attack_big ) )
+				{
+					anim.SetTrigger ( "Attack-big" );
+					anim.SetBool ( "Attacking", true );
+				}
 			}
 
 			/// Boomerang shot
@@ -124,7 +130,11 @@ public class DaveController : Kyru.etc.AnimatorController
 		attacking = anim.GetBool ( "Attacking" );
 		holdingBoomerang = anim.GetBool ( "HoldingBoomerang" );
 		//anim.SetBool ( "Grounded", IsGrounded () );
+
+		sword.edge.enabled = anim.GetBool ( "DealingDmg" );
 		#endregion
+
+		cam.FollowDave ();
 	}
 
 	#region IK

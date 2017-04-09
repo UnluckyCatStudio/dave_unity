@@ -13,49 +13,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   language: 0
   texts:
-  - xdgzcxf
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Play
+  - Pause
+  - Resume
+  - Options
+  - Quit to menu
+  - Quit to desktop
+  - 'Language:'
+  - Back
+  - Loading...
+  - Graphics
+  - 'Resolution:'
+  - Fullscreen
+  - V-Sync
+  - Anti-aliasing
+  - Textures
+  - Post Fx
+  - Shadows
+  - FoV
+  - Apply
+  - Very high
+  - High
+  - Medium
+  - Low
+  - Audio
+  - Master
+  - Music
+  - Effects
+  - Environment
+  - Voices
+  - Controls
+  - Move ( forward )
+  - Move ( backwards )
+  - Move ( left )
+  - Move ( right )
+  - Jump
+  - Walk
+  - Use sword
+  - Use boomerang
+  - Attack 1
+  - Attack 2
+  - Interact
+  - Shield
+  - Esc to cancel
+  - Invert X
+  - Invert Y
+  - Press [E] to continue...

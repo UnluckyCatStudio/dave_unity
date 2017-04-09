@@ -25,7 +25,7 @@ public struct GraphicSettings
 	{
 		resolution	= 0;
 		fullscreen	= true;
-		vsync		= true;
+		vsync		= false;
 		textures	= 3;
 		postFX      = 3;
 		shadows     = 3;
@@ -86,7 +86,7 @@ public class GraphicsManager : MonoBehaviour
 		Screen.SetResolution ( Screen.resolutions[resolution.value].width, Screen.resolutions[resolution.value].height, fullscreen.isOn );
 		QualitySettings.vSyncCount = vsync.isOn ? 1 : 0;
 		QualitySettings.masterTextureLimit = ( int ) Math.Abs ( textures.value - 3 );		// Correct slider value
-		QualitySettings.shadowResolution = ( ShadowResolution ) shadows.value;
+		//QualitySettings.shadowResolution = ( ShadowResolution ) shadows.value;
 		// TODO:
 		// AA, PostFX & FoV
 		// is controlled per camera

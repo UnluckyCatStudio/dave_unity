@@ -15,7 +15,7 @@ public class CamController : MonoBehaviour
 	public Vector3 lookOffset;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
-	public float avoidingStep;
+	[Range(0.01f,1)] public float avoidingStep;
 	public float speedX;
 	public float speedY;
 
@@ -34,12 +34,11 @@ public class CamController : MonoBehaviour
 
 		// Transformations
 		RotateCamera ( rotationX, rotationY );
-		FollowDave ();
 		Stabilize ();
 	}
 
 	#region FX
-	private void FollowDave () 
+	public void FollowDave () 
 	{
 		// Follow Dave movement
 		pivot = dave.position + lookOffset;
@@ -93,7 +92,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () )
+		if ( !TooFar () && !IsColliding ( avoidingStep * 1.2f ) )
 		{
 			var z =
 			Mathf.Lerp

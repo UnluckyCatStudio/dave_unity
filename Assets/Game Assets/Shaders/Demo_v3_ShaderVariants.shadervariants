@@ -8,24 +8,77 @@ ShaderVariantCollection:
   m_Name: Demo_v3_ShaderVariants
   m_Shaders:
     data:
+      first: {fileID: 19, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
       first: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
       second:
         variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL _EMISSION
+          passType: 4
+        - keywords: DIRECTIONAL _EMISSION _NORMALMAP
+          passType: 4
+        - keywords: DIRECTIONAL FOG_EXP2 _EMISSION _NORMALMAP
+          passType: 4
+        - keywords: DIRECTIONAL _EMISSION _METALLICGLOSSMAP _NORMALMAP
+          passType: 4
         - keywords: DIRECTIONAL FOG_EXP2 _EMISSION _METALLICGLOSSMAP _NORMALMAP
           passType: 4
-        - keywords: DIRECTIONAL FOG_EXP2 SHADOWS_SCREEN _EMISSION _METALLICGLOSSMAP
-            _NORMALMAP
+        - keywords: DIRECTIONAL _ALPHAPREMULTIPLY_ON _EMISSION
           passType: 4
-        - keywords: DIRECTIONAL FOG_EXP2 _ALPHAPREMULTIPLY_ON _EMISSION _METALLICGLOSSMAP
-            _NORMALMAP
+        - keywords: DIRECTIONAL FOG_EXP2 _ALPHAPREMULTIPLY_ON _EMISSION
           passType: 4
-        - keywords: DIRECTIONAL FOG_EXP2 SHADOWS_SCREEN _EMISSION _GLOSSYREFLECTIONS_OFF
-            _METALLICGLOSSMAP _NORMALMAP
+        - keywords: DIRECTIONAL FOG_EXP2 _EMISSION _GLOSSYREFLECTIONS_OFF _NORMALMAP
           passType: 4
+        - keywords: DIRECTIONAL FOG_EXP2 _ALPHABLEND_ON _EMISSION
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: DIRECTIONAL _NORMALMAP
+          passType: 5
+        - keywords: DIRECTIONAL _METALLICGLOSSMAP _NORMALMAP
+          passType: 5
+        - keywords: DIRECTIONAL _ALPHAPREMULTIPLY_ON
+          passType: 5
+        - keywords: FOG_EXP2 POINT _ALPHAPREMULTIPLY_ON
+          passType: 5
+        - keywords: FOG_EXP2 POINT _ALPHABLEND_ON
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+        - keywords: SHADOWS_CUBE
+          passType: 8
         - keywords: SHADOWS_DEPTH _METALLICGLOSSMAP
           passType: 8
-        - keywords: SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP
+        - keywords: SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON
           passType: 8
+        - keywords: SHADOWS_CUBE _ALPHAPREMULTIPLY_ON
+          passType: 8
+        - keywords: SHADOWS_DEPTH _ALPHABLEND_ON
+          passType: 8
+        - keywords: SHADOWS_CUBE _ALPHABLEND_ON
+          passType: 8
+        - keywords: UNITY_HDR_ON
+          passType: 10
+        - keywords: _EMISSION _NORMALMAP
+          passType: 10
+        - keywords: UNITY_HDR_ON _EMISSION _NORMALMAP
+          passType: 10
+        - keywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+          passType: 10
+        - keywords: UNITY_HDR_ON _EMISSION _METALLICGLOSSMAP _NORMALMAP
+          passType: 10
     data:
       first: {fileID: 64, guid: 0000000000000000f000000000000000, type: 0}
       second:
@@ -33,10 +86,42 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
-      first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+      first: {fileID: 74, guid: 0000000000000000f000000000000000, type: 0}
       second:
         variants:
-        - keywords: _SUNDISK_HIGH_QUALITY
+        - keywords: 
+          passType: 0
+        - keywords: UNITY_HDR_ON
+          passType: 0
+    data:
+      first: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+    data:
+      first: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+    data:
+      first: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 209, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: FOG_EXP2 SOFTPARTICLES_ON
           passType: 0
     data:
       first: {fileID: 10501, guid: 0000000000000000f000000000000000, type: 0}
@@ -48,18 +133,34 @@ ShaderVariantCollection:
       first: {fileID: 10502, guid: 0000000000000000f000000000000000, type: 0}
       second:
         variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL SHADOWS_SCREEN
+          passType: 4
+        - keywords: POINT
+          passType: 5
         - keywords: SHADOWS_DEPTH
           passType: 8
     data:
       first: {fileID: 10505, guid: 0000000000000000f000000000000000, type: 0}
       second:
         variants:
-        - keywords: DIRECTIONAL FOG_EXP2
-          passType: 4
-        - keywords: DIRECTIONAL FOG_EXP2 SHADOWS_SCREEN
-          passType: 4
         - keywords: SHADOWS_DEPTH
           passType: 8
+        - keywords: SHADOWS_CUBE
+          passType: 8
+        - keywords: 
+          passType: 10
+        - keywords: UNITY_HDR_ON
+          passType: 10
+    data:
+      first: {fileID: 10503, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 10
+        - keywords: UNITY_HDR_ON
+          passType: 10
     data:
       first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
       second:
@@ -73,11 +174,41 @@ ShaderVariantCollection:
         - keywords: 
           passType: 0
     data:
+      first: {fileID: 9002, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
       first: {fileID: 9003, guid: 0000000000000000f000000000000000, type: 0}
       second:
         variants:
         - keywords: 
           passType: 0
+    data:
+      first: {fileID: 10600, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL FOG_EXP2
+          passType: 4
+        - keywords: SHADOWS_DEPTH
+          passType: 8
+        - keywords: 
+          passType: 10
+        - keywords: UNITY_HDR_ON
+          passType: 10
+    data:
+      first: {fileID: 10601, guid: 0000000000000000f000000000000000, type: 0}
+      second:
+        variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL SHADOWS_SCREEN
+          passType: 4
+        - keywords: DIRECTIONAL FOG_EXP2
+          passType: 4
+        - keywords: SHADOWS_DEPTH
+          passType: 8
     data:
       first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
       second:
@@ -87,10 +218,38 @@ ShaderVariantCollection:
         - keywords: UNITY_UI_ALPHACLIP
           passType: 0
     data:
-      first: {fileID: 4800000, guid: 475c4a4e617a8401b84ca7b32c7cc460, type: 3}
+      first: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
       second:
         variants:
-        - keywords: FOG_EXP2 WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 9a8e838691462194482a43a02e424876, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 964b34bbab7f5e64fa40f37eaccac1ad, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: ENABLE_COLOR_GRADING ENABLE_DITHERING
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 4505fec7a81214243b8e59edf89e3a53, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: USE_CORNER_DETECTION USE_DIAG_SEARCH
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 65e203e5acda447acbf9dc1ef78c4a39, type: 3}
+      second:
+        variants:
+        - keywords: 
           passType: 0
     data:
       first: {fileID: 4800000, guid: 5ba6f202b1c584b4683da2257c3a7005, type: 3}
@@ -98,7 +257,71 @@ ShaderVariantCollection:
         variants:
         - keywords: 
           passType: 0
+        - keywords: DIRECTIONAL
+          passType: 4
         - keywords: DIRECTIONAL FOG_EXP2
           passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: POINT
+          passType: 5
+        - keywords: FOG_EXP2 POINT
+          passType: 5
         - keywords: SHADOWS_DEPTH
           passType: 8
+        - keywords: SHADOWS_CUBE
+          passType: 8
+    data:
+      first: {fileID: 4800000, guid: 475c4a4e617a8401b84ca7b32c7cc460, type: 3}
+      second:
+        variants:
+        - keywords: FOG_EXP2 WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 8aaff0751054e4a9cb4642d01eaf5be9, type: 3}
+      second:
+        variants:
+        - keywords: WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+          passType: 0
+        - keywords: FOG_EXP2 WATER_EDGEBLEND_ON WATER_REFLECTIVE WATER_VERTEX_DISPLACEMENT_ON
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: 1a2ecc647fced7d4cb55e1ba5a6767e9, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 0
+        - keywords: DIRECTIONAL
+          passType: 0
+        - keywords: POINT UNITY_HDR_ON
+          passType: 0
+        - keywords: DIRECTIONAL SHADOWS_SCREEN UNITY_HDR_ON
+          passType: 0
+        - keywords: POINT SHADOWS_CUBE SHADOWS_SOFT UNITY_HDR_ON
+          passType: 0
+    data:
+      first: {fileID: 4800000, guid: a1a7a9176797b9344a5c96e50ac674c2, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL FOG_EXP2
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: 
+          passType: 10
+        - keywords: UNITY_HDR_ON
+          passType: 10
+    data:
+      first: {fileID: 4800000, guid: 6cec90648246f354b8bce1030aa2b081, type: 3}
+      second:
+        variants:
+        - keywords: DIRECTIONAL
+          passType: 4
+        - keywords: DIRECTIONAL FOG_EXP2
+          passType: 4
+        - keywords: DIRECTIONAL
+          passType: 5
+        - keywords: FOG_EXP2 POINT
+          passType: 5
