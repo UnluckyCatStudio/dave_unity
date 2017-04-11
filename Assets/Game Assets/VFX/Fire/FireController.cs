@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireController : MonoBehaviour {
 
+	[Header ("FIRE")] [Space (5)]
 	public ParticleSystem fire;
 	public ParticleSystem smoke;
 	public ParticleSystem explosion;

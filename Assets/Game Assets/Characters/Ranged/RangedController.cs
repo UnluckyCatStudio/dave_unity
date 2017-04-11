@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedController : MonoBehaviour {
 
+	[Header ("RANGED")] [Space (5)]
 	public ParticleSystem ranged;
 	public ParticleSystem death;
 	public ParticleSystem shoot;
