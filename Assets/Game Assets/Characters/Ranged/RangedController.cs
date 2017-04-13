@@ -2,21 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedController : MonoBehaviour {
+public class RangedController : MonoBehaviour
+{
 
-	[Header ("RANGED")] [Space (5)]
+	[Header ("PARTICLE SYSTEMS")]
 	public ParticleSystem ranged;
 	public ParticleSystem death;
 	public ParticleSystem shoot;
 	public ParticleSystem decoration;
 	public ParticleSystem charge;
 
-	// Use this for initialization
-	void Start () {
+	private void Update ()
+	{
+		if ( !active ) return;
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	private bool active;
+	public void Activate ()
+	{
+		ranged.Play ();
+		decoration.Play ();
+		active = true;
+	}
+
+	public bool startOnAwake;
+	void Awake () 
+	{
+		if ( startOnAwake ) Activate ();
 	}
 }
