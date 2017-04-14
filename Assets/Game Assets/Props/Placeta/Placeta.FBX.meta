@@ -25,6 +25,7 @@ ModelImporter:
     100034: valla_arbol_2
     100036: valla_arbol_3
     100038: valla_arbol_4
+    100040: square_fog_wall
     400000: columpio
     400002: cuerdas_columpio
     400004: escaleras_plaza
@@ -45,6 +46,7 @@ ModelImporter:
     400034: valla_arbol_2
     400036: valla_arbol_3
     400038: valla_arbol_4
+    400040: square_fog_wall
     2300000: columpio
     2300002: cuerdas_columpio
     2300004: escaleras_plaza
@@ -64,6 +66,7 @@ ModelImporter:
     2300032: valla_arbol_2
     2300034: valla_arbol_3
     2300036: valla_arbol_4
+    2300038: square_fog_wall
     3300000: columpio
     3300002: cuerdas_columpio
     3300004: escaleras_plaza
@@ -83,6 +86,7 @@ ModelImporter:
     3300032: valla_arbol_2
     3300034: valla_arbol_3
     3300036: valla_arbol_4
+    3300038: square_fog_wall
     4300000: square
     4300002: valla_arbol_1
     4300004: soporte_valla
@@ -102,6 +106,7 @@ ModelImporter:
     4300032: runa_4
     4300034: pil_hor
     4300036: pilar_3
+    4300038: square_fog_wall
   materials:
     importMaterials: 1
     materialName: 0
