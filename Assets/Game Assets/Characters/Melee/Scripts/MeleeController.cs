@@ -6,45 +6,79 @@ using Kyru.etc;
 public class MeleeController : Kyru.etc.AnimatorController
 {
 	private CharacterController me;
-	private bool on;
+
+	private bool active;
 	public bool dead;
+	public float attackDistance;
 
 	public Rigidbody[] parts;
 
 	private void Update ()
 	{
-		if ( !on ) return;
+		CheckHit ();
+		if ( !active ) return;
 
 		transform.LookAt ( Game.dave.transform.position );
 		me.Move ( Vector3.zero );
 
-		var closeEnough = Vector3.Distance ( transform.position,  Game.dave.transform.position ) <= 2.7f;
+		var closeEnough = Vector3.Distance ( transform.position,  Game.dave.transform.position ) <= attackDistance;
 
 		anim.SetBool ( "Attacking", closeEnough );
+
 	}
 
-	private void OnTriggerEnter ( Collider col )
+	private void CheckHit ()
 	{
-		if ( col.tag == "sword" )
+		// I have to manage collision checks by my own
+		// since Unity collision table isn't by my side
+		if ( anim.GetBool ( "DealingDmg" ) )
 		{
-			on = false;
-			anim.Stop ();
-			Die ();
+			var handR = anim.GetBoneTransform ( HumanBodyBones.RightHand ).position;
+			var handL = anim.GetBoneTransform ( HumanBodyBones.LeftHand ).position;
+
+			var colsR = Physics.OverlapSphere ( handR, 0.8f );
+			var colsL = Physics.OverlapSphere ( handL, 0.8f );
+
+			foreach ( var c in colsR )
+			{
+				if ( c.tag == "Player" )
+					c.SendMessage ( "Hit", handR );
+			}
+			foreach ( var c in colsL )
+			{
+				if ( c.tag == "Player" )
+					c.SendMessage ( "Hit", handL );
+			}
 		}
 	}
 
-	public void Die ()
+	#region DYING
+	private void OnTriggerEnter ( Collider col ) 
+	{
+		if ( col.tag == "sword" )
+		{
+			active = false;
+			anim.Stop ();
+			Die ( Game.dave.sword.transform.position );
+		}
+	}
+
+	public void Die ( Vector3 contact ) 
 	{
 		foreach ( var r in parts )
-			r.isKinematic = false;
+		{
+			r.constraints = RigidbodyConstraints.None;
+			r.AddExplosionForce ( 8f, contact, 1.2f, 0.4f, ForceMode.Impulse );
+		}
 
 		GetComponent<CharacterController> ().enabled = false;
 		dead = true;
 	}
+	#endregion
 
 	public void Activate ()
 	{
-		on = true;
+		active = true;
 		me = GetComponent<CharacterController> ();
 		anim.SetTrigger ( "Move" );
 	}

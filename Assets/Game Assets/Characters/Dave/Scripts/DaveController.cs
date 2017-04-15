@@ -26,19 +26,41 @@ public class DaveController : Kyru.etc.AnimatorController
 //	public Transform    rightFoot;
 	
 	// Animation params
-	private bool canRotate;			/// Is Dave able to rotate?
 	private bool sheathing;			/// Is Dave currently un/sheathing with the sword?
 	private bool swordOut;			/// Is sword unsheathed?
 	private bool attacking;			/// Is Dave performing an attack?
-	private bool holdingBoomerang;	/// Is Dave aming the boomerang?
+	private bool charging;          /// Is Dave aiming?
+	private bool hit;				/// Has Dave been hit?
+	private float rotationMul;		/// How many roation is allowed on animations? -> [0,1] float
+
 
 	void Update () 
 	{
 		#region SCARF
 		// Apply local-space wind to the scarf
 		scarf.externalAcceleration =
-			transform.TransformDirection ( scarfWind );
+			transform.TransformDirection
+			( scarfWind );
 		#endregion
+
+		#region ANIMATOR CHECK
+		// Some script variables are checked against
+		// animator parameters to ensure there is no
+		// conflict between values.
+		sheathing = anim.GetBool ( "Sheathing" );
+		swordOut  = anim.GetBool ( "SwordOut" );
+		attacking = anim.GetBool ( "Attacking" );
+		charging  = anim.GetBool ( "Charging" );
+		hit       = anim.GetBool ( "Hit" );
+		rotationMul = anim.GetFloat ( "RotationMul" );
+
+		sword.edge.enabled = anim.GetBool ( "DealingDmg" );
+		//anim.SetBool ( "Grounded", IsGrounded () );
+		#endregion
+
+		cam.FollowDave ();
+
+		if ( hit ) return;
 
 		#region MOVEMENT
 		if ( canMove )
@@ -55,7 +77,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( movement != Vector3.zero )
 			{
 				#region CORRECT ROTATION
-				if ( canRotate )
+				if ( !charging )
 				{
 					var rotDir = Quaternion.LookRotation ( movement );
 					var diff = Quaternion.Angle ( transform.rotation, rotDir );
@@ -66,6 +88,7 @@ public class DaveController : Kyru.etc.AnimatorController
 						transform.rotation,
 						rotDir,
 						10 * Time.deltaTime   // bigger diff = faster rotation
+						* rotationMul
 					); 
 				}
 				#endregion
@@ -93,6 +116,8 @@ public class DaveController : Kyru.etc.AnimatorController
 
 			#region ATTACKING
 			if ( swordOut
+				&& !attacking
+				&& !charging
 				&& !sheathing )
 			{
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
@@ -108,33 +133,30 @@ public class DaveController : Kyru.etc.AnimatorController
 				}
 			}
 
-			/// Boomerang shot
+			/// Charge
 			if ( !sheathing
-				&& Game.input.GetKeyDown ( Key.Boomerang ) )
+				&& !attacking
+				&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
-				anim.SetTrigger ( "HoldBoomerang" );
-				anim.SetBool ( "HoldingBoomerang", true );
-//				cam.FocusBoomerang ();
+				anim.SetTrigger ( "Charge" );
+				anim.SetBool ( "Charging", true );
+			}
+			else
+			if ( Game.input.GetKeyUp ( Key.Charge ) )
+			{
+				anim.SetBool ( "Charging", false );
+			}
+
+			/// Shot
+			if ( charging
+				&& Game.input.GetKeyDown ( Key.Attack_single ) )
+			{
+				anim.SetTrigger ( "Shoot" );
+				anim.SetBool ( "Charging", false );
 			}
 			#endregion
 		}
 		#endregion
-
-		#region ANIMATOR CHECK
-		// Some script variables are checked against
-		// animator parameters to ensure there is no
-		// conflict between values.
-		canRotate = anim.GetBool ( "CanRotate" );
-		sheathing = anim.GetBool ( "Sheathing" );
-		swordOut  = anim.GetBool ( "SwordOut" );
-		attacking = anim.GetBool ( "Attacking" );
-		holdingBoomerang = anim.GetBool ( "HoldingBoomerang" );
-		//anim.SetBool ( "Grounded", IsGrounded () );
-
-		sword.edge.enabled = anim.GetBool ( "DealingDmg" );
-		#endregion
-
-		cam.FollowDave ();
 	}
 
 	#region IK
@@ -174,6 +196,9 @@ public class DaveController : Kyru.etc.AnimatorController
 	protected override void Awake () 
 	{
 		base.Awake ();
+		sword.transform.SetParent ( swordBackHolder );
+		sword.transform.localPosition = Vector3.zero;
+		sword.transform.localRotation = Quaternion.identity;
 		Game.dave = this;
 		me = GetComponent<CharacterController> ();
 	}
@@ -181,7 +206,7 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	#region EVENTS
 	[Header ("Animation references")]
-	[SerializeField] Transform swordBeltHolder;
+	[SerializeField] Transform swordBackHolder;
 	[SerializeField] Transform swordHandHolder;
 
 	/// <summary>
@@ -197,18 +222,23 @@ public class DaveController : Kyru.etc.AnimatorController
 			sword.transform.SetParent ( swordHandHolder );
 			sword.anim.SetTrigger ( "Fade-in" );
 			//...
-			sword.Fade ( true );
 		}
 		else
 		{
-			sword.transform.SetParent ( swordBeltHolder );
+			sword.transform.SetParent ( swordBackHolder );
 			sword.anim.SetTrigger ( "Fade-out" );
 			//...
-			sword.Fade ( false );
 		}
 
 		sword.transform.localPosition = Vector3.zero;
 		sword.transform.localRotation = Quaternion.identity;
+	}
+
+	private void Hit ( Vector3 point )
+	{
+		if ( hit ) return;
+		anim.SetTrigger ( "Hit_Back" );
+		anim.SetBool ( "Hit", true );
 	}
 	#endregion
 }

@@ -42,9 +42,9 @@ public struct InputSettings
             KeyCode.LeftShift,		// Walk
             KeyCode.R,				// Sheathe
             KeyCode.Mouse1,			// Attack-big
-            KeyCode.Mouse0,			// Attack-single
+            KeyCode.Mouse0,			// Attack-single / Shot
             KeyCode.E,				// Interact
-			KeyCode.Q				// Boomerang
+			KeyCode.Q				// Charge
 		};
 
 		invertX = false;
@@ -64,7 +64,7 @@ public enum Key
 	Attack_big,
 	Attack_single,
 	Interact,
-	Boomerang
+	Charge
 }
 
 public class InputManager : MonoBehaviour

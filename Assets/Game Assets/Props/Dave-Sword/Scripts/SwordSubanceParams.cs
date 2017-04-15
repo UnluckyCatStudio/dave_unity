@@ -10,6 +10,7 @@ public class SwordSubanceParams : MonoBehaviour
 	private ProceduralMaterial mat;
 
 	[Header("Params")]
+	[Range(0, 1.216f)] public float emission;
 	[Range (0,1)] public float levelInLow;
 	[Range (0,1)] public float levelInHigh;
 
@@ -17,6 +18,7 @@ public class SwordSubanceParams : MonoBehaviour
 	{
 		mat.SetProceduralFloat ( "levelinlow", levelInLow );
 		mat.SetProceduralFloat ( "levelinhigh", levelInHigh );
+		mat.SetColor ( "_EmissionColor", new Color ( emission, emission, emission ) );
 		mat.RebuildTextures ();
 	}
 
