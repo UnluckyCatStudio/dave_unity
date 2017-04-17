@@ -21,46 +21,65 @@ public class DaveController : Kyru.etc.AnimatorController
 	public  bool canCombat;
 	public  SwordController sword;
 
-//	[Header("IK")]
-//	public Transform    leftFoot;
-//	public Transform    rightFoot;
-	
-	// Animation params
-	private bool sheathing;			/// Is Dave currently un/sheathing with the sword?
-	private bool swordOut;			/// Is sword unsheathed?
-	private bool attacking;			/// Is Dave performing an attack?
-	private bool charging;          /// Is Dave aiming?
-	private bool hit;				/// Has Dave been hit?
-	private float rotationMul;		/// How many roation is allowed on animations? -> [0,1] float
+	//	[Header("IK")]
+	//	public Transform    leftFoot;
+	//	public Transform    rightFoot;
 
+	// Animation params
+	public bool  Moving			
+	{
+		get { return anim.GetBool ( "Moving" ); }
+		set { anim.SetBool ( "Moving", value ); }
+	}
+	public bool  Sheathing		
+	{
+		get { return anim.GetBool ( "Sheathing" ); }
+		set { anim.SetBool ( "Sheathing", value ); }
+	}
+	public bool  SwordOut		
+	{
+		get { return anim.GetBool ( "SwordOut" ); }
+	}
+	public bool  Attacking		
+	{
+		get { return anim.GetBool ( "Attacking" ); }
+		set { anim.SetBool ( "Attacking", value ); }
+	}
+	public bool  Charging		
+	{
+		get { return anim.GetBool ( "Charging" ); }
+		set { anim.SetBool ( "Charging", value ); }
+	}
+	public bool  Hitd			
+	{
+		get { return anim.GetBool ( "Hit" ); }
+		set { anim.SetBool ( "Hit", value ); }
+	}
+	public bool  DealingDmg		
+	{
+		get { return anim.GetBool ( "DealingDmg" ); }
+		set { anim.SetBool ( "DealingDmg", value ); }
+	}
+	public float RotationMul	
+	{
+		get { return anim.GetFloat ( "RotationMul" ); }
+		set { anim.SetFloat ( "RotationMul", value ); }
+	}
 
 	void Update () 
 	{
-		#region SCARF
+		#region ETC
 		// Apply local-space wind to the scarf
-		scarf.externalAcceleration =
-			transform.TransformDirection
-			( scarfWind );
-		#endregion
+		scarf.externalAcceleration = transform.TransformDirection ( scarfWind );
 
-		#region ANIMATOR CHECK
-		// Some script variables are checked against
-		// animator parameters to ensure there is no
-		// conflict between values.
-		sheathing = anim.GetBool ( "Sheathing" );
-		swordOut  = anim.GetBool ( "SwordOut" );
-		attacking = anim.GetBool ( "Attacking" );
-		charging  = anim.GetBool ( "Charging" );
-		hit       = anim.GetBool ( "Hit" );
-		rotationMul = anim.GetFloat ( "RotationMul" );
+		// Only enable sword collider when attacking
+		sword.edge.enabled = DealingDmg;
 
-		sword.edge.enabled = anim.GetBool ( "DealingDmg" );
-		//anim.SetBool ( "Grounded", IsGrounded () );
-		#endregion
-
+		// Make camera follow dave
 		cam.FollowDave ();
+		#endregion
 
-		if ( hit ) return;
+		if ( Hitd ) return;
 
 		#region MOVEMENT
 		if ( canMove )
@@ -77,7 +96,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			if ( movement != Vector3.zero )
 			{
 				#region CORRECT ROTATION
-				if ( !charging )
+				if ( !Charging )
 				{
 					var rotDir = Quaternion.LookRotation ( movement );
 					var diff = Quaternion.Angle ( transform.rotation, rotDir );
@@ -88,15 +107,15 @@ public class DaveController : Kyru.etc.AnimatorController
 						transform.rotation,
 						rotDir,
 						10 * Time.deltaTime   // bigger diff = faster rotation
-						* rotationMul
+						* RotationMul
 					); 
 				}
 				#endregion
 
-				//me.Move ( movement * speed * Time.deltaTime );
-				anim.SetBool ( "Moving", true );
+				me.Move ( movement * speed * Time.deltaTime );
+				Moving = true;
 			}
-			else anim.SetBool ( "Moving", false );
+			else Moving = false;
 		}
 		#endregion
 
@@ -104,56 +123,62 @@ public class DaveController : Kyru.etc.AnimatorController
 		if ( canCombat )
 		{
 			#region SHEATHING
-			if ( !sheathing
+			if ( !Sheathing
 				&& Game.input.GetKeyDown ( Key.Sword ) )
 			{
-				if ( !swordOut ) anim.SetTrigger ( "Unsheathe" );
+				if ( !SwordOut ) anim.SetTrigger ( "Unsheathe" );
 				else			 anim.SetTrigger ( "Sheathe" );
 
-				anim.SetBool ( "Sheathing", true );
+				Sheathing = true;
 			}
 			#endregion
 
 			#region ATTACKING
-			if ( swordOut
-				&& !attacking
-				&& !charging
-				&& !sheathing )
+			if
+			(  SwordOut
+			&& !Attacking
+			&& !Charging
+			&& !Sheathing )
 			{
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
 				{
 					anim.SetTrigger ( "Attack-single" );
-					anim.SetBool ( "Attacking", true );
+					Attacking = true;
 				}
 				else
 				if ( Game.input.GetKeyDown ( Key.Attack_big ) )
 				{
 					anim.SetTrigger ( "Attack-big" );
-					anim.SetBool ( "Attacking", true );
+					Attacking = true;
 				}
 			}
 
-			/// Charge
-			if ( !sheathing
-				&& !attacking
-				&& Game.input.GetKeyDown ( Key.Charge ) )
+			#region CHARGE
+			if
+			(  !Sheathing
+			&& !Attacking
+			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
 				anim.SetTrigger ( "Charge" );
-				anim.SetBool ( "Charging", true );
+				Charging = true;
 			}
 			else
 			if ( Game.input.GetKeyUp ( Key.Charge ) )
 			{
-				anim.SetBool ( "Charging", false );
-			}
+				Charging = false;
+			} 
+			#endregion
 
-			/// Shot
-			if ( charging
-				&& Game.input.GetKeyDown ( Key.Attack_single ) )
+			#region SHOT
+			if
+			(  Charging
+			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
 				anim.SetTrigger ( "Shoot" );
 				anim.SetBool ( "Charging", false );
-			}
+			} 
+			#endregion
+
 			#endregion
 		}
 		#endregion
@@ -168,31 +193,8 @@ public class DaveController : Kyru.etc.AnimatorController
 	//		}
 	//	} 
 	#endregion
-	
-	#region FX
-	[SerializeField] float fallingThreshold;
-	float lastTimeOnGround;
-	/// <summary>
-	/// Checks if Dave has been in Air-time
-	/// for too long, in that case Falling animation
-	/// will play.
-	/// </summary>
-	bool IsGrounded () 
-	{
-		if ( me.isGrounded )
-		{
-			lastTimeOnGround = Time.time;
-			return true;
-		}
-		else
-		{
-			if ( Time.time >= lastTimeOnGround + fallingThreshold )
-				return false;
-			else
-				return true;
-		}
-	}
 
+	#region FX
 	protected override void Awake () 
 	{
 		base.Awake ();
@@ -205,7 +207,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	#endregion
 
 	#region EVENTS
-	[Header ("Animation references")]
+	[Header ("Animation References")]
 	[SerializeField] Transform swordBackHolder;
 	[SerializeField] Transform swordHandHolder;
 
@@ -221,13 +223,11 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			sword.transform.SetParent ( swordHandHolder );
 			sword.anim.SetTrigger ( "Fade-in" );
-			//...
 		}
 		else
 		{
 			sword.transform.SetParent ( swordBackHolder );
 			sword.anim.SetTrigger ( "Fade-out" );
-			//...
 		}
 
 		sword.transform.localPosition = Vector3.zero;
@@ -236,9 +236,19 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	private void Hit ( Vector3 point )
 	{
-		if ( hit ) return;
-		anim.SetTrigger ( "Hit_Back" );
-		anim.SetBool ( "Hit", true );
+		if ( Hitd ) return;
+		// Front or Back ?
+		var angle = Quaternion.Angle ( transform.localRotation, Quaternion.LookRotation ( point ) );
+
+		if ( angle <= 50 )  anim.SetTrigger ( "Hit_Front" );
+		else				anim.SetTrigger ( "Hit_Back" );
+		
+		Hitd = true;
+		Moving = false;
+		Attacking = false;
+		DealingDmg = false;
+		Charging = false;
+		Sheathing = false;
 	}
 	#endregion
 }

@@ -15,7 +15,6 @@ public class MeleeController : Kyru.etc.AnimatorController
 
 	private void Update ()
 	{
-		CheckHit ();
 		if ( !active ) return;
 
 		transform.LookAt ( Game.dave.transform.position );
@@ -27,7 +26,7 @@ public class MeleeController : Kyru.etc.AnimatorController
 
 	}
 
-	private void CheckHit ()
+	private void FixedUpdate ()
 	{
 		// I have to manage collision checks by my own
 		// since Unity collision table isn't by my side
@@ -36,8 +35,8 @@ public class MeleeController : Kyru.etc.AnimatorController
 			var handR = anim.GetBoneTransform ( HumanBodyBones.RightHand ).position;
 			var handL = anim.GetBoneTransform ( HumanBodyBones.LeftHand ).position;
 
-			var colsR = Physics.OverlapSphere ( handR, 0.8f );
-			var colsL = Physics.OverlapSphere ( handL, 0.8f );
+			var colsR = Physics.OverlapSphere ( handR, 0.2f );
+			var colsL = Physics.OverlapSphere ( handL, 0.2f );
 
 			foreach ( var c in colsR )
 			{
@@ -81,5 +80,11 @@ public class MeleeController : Kyru.etc.AnimatorController
 		active = true;
 		me = GetComponent<CharacterController> ();
 		anim.SetTrigger ( "Move" );
+	}
+
+	protected override void Awake () 
+	{
+		base.Awake ();
+		foreach ( var p in parts ) p.Sleep ();
 	}
 }

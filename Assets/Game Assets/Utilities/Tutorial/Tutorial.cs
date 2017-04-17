@@ -3,113 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.ImageEffects;
+using Kyru.UI;
+using Kyru.etc;
 
 public class Tutorial : MonoBehaviour
 {
-	public Collider muro;
-	public MeleeController first;
-	public MeleeController[] firstWave;
-	public Light[] lights;
+	// Public
+	public Color targetAmbient;
+	public Vector3 squarePos;
 
-
-	private bool waiting;
-	private bool running;
-	private Text text;
-	private GlobalFog fog;
+	// private
+	bool started;
+	Text tutoText;
+	bool daveEntered;
 
 	public void OnTriggerEnter ( Collider col )
 	{
-		if ( col.tag == "Player" && !running )
+		if ( col.tag != "Player" ) return;
+
+		if ( !started )
 		{
-			// Start the tutorial
-			running = true;
-			text = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
-			Game.sun = GameObject.Find ( "SUN" ).GetComponent<Light> ();
-			fog = Camera.main.GetComponent<GlobalFog> ();
-			muro.enabled = true;
-			StartCoroutine ( "venga" );
+			started = true;
+			tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
+			StartCoroutine ( "Tutorial_Line" );
 		}
+		else daveEntered =  true;
 	}
 
-	IEnumerator venga ()
+	IEnumerator Tutorial_Line ()
 	{
-		text.text = format ( "Usa [R] para desenfundar $$o enfundar la espada" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
+		// Start turning down ambient
+		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
+		yield return new WaitForSeconds ( 3f );
+
+		// Teleport to square
+		transform.localPosition = squarePos;
+		yield return new WaitUntil ( () => daveEntered );
+		// => collider on
+		// => start fog wall fbx
+		// => modify light / ambient
+		// => maybe wait a bit
+
+		// Wait a second, then:
+		// Sword tuto
 		Game.dave.canCombat = true;
-		
-		yield return new WaitUntil ( () => Input.GetKeyDown ( KeyCode.R ) );
-		yield return new WaitForSeconds ( 1.8f );
-
-		text.text = format ( "[Usa el click izquierdo] para un ataque $$rapido y directo" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
-
-		yield return new WaitUntil ( () => first.dead );
-
-
-		var targetFogHeight = 550f;
-		var targetSunIntensity = 0.5f;
-		var targetLightIntensity = 1;
-		var startTime = Time.time;
-
-		while ( Time.time <= startTime + 1.2f )
-		{
-			fog.height = Mathf.Lerp ( fog.height, targetFogHeight, Time.deltaTime );
-			Game.sun.intensity = Mathf.Lerp ( Game.sun.intensity, targetSunIntensity, Time.deltaTime * 2f );
-			foreach ( var l in lights )
-			{
-				l.intensity = Mathf.Lerp ( l.intensity, targetLightIntensity, Time.deltaTime );
-			}
-
-			yield return null;
-		}
-
-		text.text = format ( "[Usa el click derecho] para un ataque $$mas lento de barrido" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
-
-		firstWave[0].gameObject.SetActive ( true );
-		firstWave[0].Activate ();
-
-		firstWave[1].gameObject.SetActive ( true );
-		firstWave[1].Activate ();
-
-		firstWave[2].gameObject.SetActive ( true );
-		firstWave[2].Activate ();
-
-
-		//		var duration = 3f;
-		//		var start = Time.time;
-		//		var timeout = Time.time + duration;
-		//
-		//		while ( Time.time <= timeout )
-		//		{
-		//			var progress = ( timeout - start ) / duration;
-		//			fog.height = Mathf.Lerp (  )
-		//
-		//			yield return null;
-		//		}
+		yield return NewTuto ( AllTexts.R_To_Unsheathe, Key.Sword );
 	}
 
-	private void Update ()
+	IEnumerator NewTuto ( AllTexts txt, Key key ) 
 	{
-		if ( waiting && Input.GetKeyDown ( KeyCode.E ) )
-		{
-			waiting = false;
-			Time.timeScale = 1;
-			Game.ui.SetTrigger ( "TutorialCompleted" );
-		}
-	}
-
-	private string format ( string s ) 
-	{
-		return s
-			.Replace ( "$$", "\n" )
-			.Replace ( "[", "<b><color=orange>" )
-			.Replace ( "]", "</color></b>" );
+		Game.ui.SetTrigger ( "NewTuto" );
+		tutoText.text = Localization.GetText ( txt );
+		yield return new WaitUntil ( () => Game.input.GetKeyDown ( key ) );
+		Game.ui.SetTrigger ( "TutoOver" );
 	}
 }

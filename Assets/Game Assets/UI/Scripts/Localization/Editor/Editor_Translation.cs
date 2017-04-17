@@ -20,8 +20,20 @@ namespace Kyru.UI
 			t.language = ( Language ) EditorGUILayout.EnumPopup ( "Language", t.language );
 
 			// Initialize texts array
-			if ( t.texts == null || t.texts.Length != keys.Length )
+			if ( t.texts == null )
 				t.texts = new string[keys.Length];
+
+			if ( t.texts.Length != keys.Length )
+			{
+				var newT = new string[keys.Length];
+				for ( var i=0; i!=keys.Length; i++ )
+				{
+					if ( i < t.texts.Length )	newT[i] = t.texts[i];
+					else						newT[i] = "";
+				}
+
+				t.texts = newT;
+			}
 
 			foreach ( int k in keys )
 			{

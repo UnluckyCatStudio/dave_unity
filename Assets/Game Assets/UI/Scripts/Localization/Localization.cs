@@ -46,5 +46,13 @@ namespace Kyru.UI
 
 			return true;
 		}
+
+		public static string GetText ( AllTexts key )
+		{
+			return
+				translations[lang]
+				.texts[( int )key]
+				.Format ();
+		}
 	}
 }

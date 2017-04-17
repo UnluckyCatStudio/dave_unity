@@ -65,6 +65,7 @@ namespace Kyru.UI
 		InvertY,
 
 		// Tutorial
-		Press_E
+		R_To_Unsheathe,
+		Click_To_Attack
 	}
 }

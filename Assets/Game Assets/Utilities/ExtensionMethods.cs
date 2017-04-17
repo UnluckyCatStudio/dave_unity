@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,53 @@ namespace Kyru.etc
 		}
 		#endregion
 
-		#region FLOAT
+		#region STRING
+		public static string Format ( this string s ) 
+		{
+			return s
+				.Replace ( "->", "\n" )
+				.Replace ( "[", "<b><color=orange>" )
+				.Replace ( "]", "</color></b>" );
+		}
 		#endregion
 
-		#region VECTOR3
+		#region MONO
+		public static IEnumerator AsyncLerp ( this MonoBehaviour m, Type type, string value, float target, float duration, UnityEngine.Object parent = null )
+		{
+			// Reflection
+			var param = type.GetProperty ( value );
+			var original = ( float ) param.GetValue ( parent, null );
+
+			var start = Time.time;
+			var progress = 0f;
+
+			while ( progress < 1f )
+			{
+				var newValue = Mathf.Lerp ( original, target, progress );
+				param.SetValue ( parent, newValue, null );
+
+				progress = ( Time.time - start ) / duration;
+				yield return null;
+			}
+		}
+		public static IEnumerator AsyncLerp ( this MonoBehaviour m, Type type, string value, Color target, float duration, UnityEngine.Object parent = null )
+		{
+			// Reflection
+			var param = type.GetProperty ( value );
+			var original = ( Color ) param.GetValue ( parent, null );
+
+			var start = Time.time;
+			var progress = 0f;
+
+			while ( progress < 1f )
+			{
+				var newValue = Color.Lerp ( original, target, progress );
+				param.SetValue ( parent, newValue, null );
+
+				progress = ( Time.time - start ) / duration;
+				yield return null;
+			}
+		}
 		#endregion
 	}
-
 }

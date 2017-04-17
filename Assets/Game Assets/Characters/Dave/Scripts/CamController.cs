@@ -40,9 +40,12 @@ public class CamController : MonoBehaviour
 	#region FX
 	public void FollowDave () 
 	{
-		// Follow Dave movement
-		pivot = dave.position + lookOffset;
-		transform.position = pivot;
+		// Follow Dave movement only if changed
+		if ( dave.position + lookOffset != pivot )
+		{
+			pivot = dave.position + lookOffset;
+			transform.position = pivot;
+		}
 
 		// If camera collides when moved
 		while ( IsColliding () )
@@ -92,7 +95,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () && !IsColliding ( avoidingStep * 1.2f ) )
+		if ( !TooFar () && !IsColliding ( avoidingStep * 1.5f ) )
 		{
 			var z =
 			Mathf.Lerp
