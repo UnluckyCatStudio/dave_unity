@@ -808,6 +808,14 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.571003
       objectReference: {fileID: 0}
+    - target: {fileID: 400014, guid: 9df0f5919fbc0be4399120ef15c121b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.864
+      objectReference: {fileID: 0}
+    - target: {fileID: 400014, guid: 9df0f5919fbc0be4399120ef15c121b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.494
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9df0f5919fbc0be4399120ef15c121b6, type: 3}
   m_IsPrefabParent: 0
@@ -4223,6 +4231,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4574737204912836, guid: 1ca2dec172396b849abc30e5a28298a0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ca2dec172396b849abc30e5a28298a0, type: 2}
   m_IsPrefabParent: 0
@@ -7565,6 +7577,36 @@ Prefab:
       propertyPath: sword
       value: 
       objectReference: {fileID: 617333212}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.105041504
+      objectReference: {fileID: 0}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.1653862
+      objectReference: {fileID: 0}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Center.z
+      value: 1.1723022
+      objectReference: {fileID: 0}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.55637825
+      objectReference: {fileID: 0}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.5564778
+      objectReference: {fileID: 0}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.15420555
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c675c376b1e623741a123305cda116ce, type: 2}
   m_IsPrefabParent: 0
