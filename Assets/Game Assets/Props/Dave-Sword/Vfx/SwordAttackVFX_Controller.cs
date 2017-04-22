@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordVFX_Controller : MonoBehaviour {
+public class SwordAttackVFX_Controller : MonoBehaviour {
 
-	[Header ("SWORD HUD")]
+	[Header ("SWORD ATTACK")]
 	[Space (5)]
-	public ParticleSystem HUD;
-	public ParticleSystem Death;
-	public ParticleSystem Disolve;
-
+	public ParticleSystem carga;
+	public ParticleSystem release;
+	public ParticleSystem disparo;
 
 	// Use this for initialization
 	void Start () {
