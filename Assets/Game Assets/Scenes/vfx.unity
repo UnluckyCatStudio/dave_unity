@@ -395,6 +395,12 @@ Prefab:
       propertyPath: ShapeModule.m_SkinnedMeshRenderer
       value: 
       objectReference: {fileID: 773021349}
+    - target: {fileID: 114760110543586270, guid: bb47c776c27b7d54c800dae8b3769418,
+        type: 2}
+      propertyPath: Disolve
+      value: 
+      objectReference: {fileID: 198666279726370078, guid: a2d8637c8bcdfc54ca851cd4c5f11d89,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb47c776c27b7d54c800dae8b3769418, type: 2}
   m_IsPrefabParent: 0

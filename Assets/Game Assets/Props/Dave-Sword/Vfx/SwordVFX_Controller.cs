@@ -8,6 +8,7 @@ public class SwordVFX_Controller : MonoBehaviour {
 	[Space (5)]
 	public ParticleSystem HUD;
 	public ParticleSystem Death;
+	public ParticleSystem Disolve;
 
 	// Use this for initialization
 	void Start () {
