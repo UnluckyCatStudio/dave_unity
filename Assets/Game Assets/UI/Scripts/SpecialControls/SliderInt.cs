@@ -30,7 +30,7 @@ namespace Kyru.UI
 
 		public void Init () 
 		{
-			text   = GetComponent<Text> ();
+			text = GetComponent<Text> ();
 		}
 	} 
 }

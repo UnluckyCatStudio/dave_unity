@@ -55,7 +55,7 @@ namespace Kyru.UI
 			if ( canPause && Input.GetKeyDown ( KeyCode.Escape ) )
 			{
 				Game.ui.SetBool ( "Paused", !paused );
-				Cursor.visible = paused;
+				Cursor.visible = !paused;
 				Time.timeScale = !paused ? 0 : 1;
 			}
 		}

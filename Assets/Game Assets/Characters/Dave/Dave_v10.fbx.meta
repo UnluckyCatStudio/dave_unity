@@ -268,39 +268,40 @@ ModelImporter:
       that will be discarded.\n\t'ORG-forearm.L' has scale animation that will be
       discarded.\n\t'ORG-hand.L' has scale animation that will be discarded.\n\t'ORG-forearm.R'
       has scale animation that will be discarded.\n\t'ORG-hand.R' has scale animation
-      that will be discarded.\n\t'ORG-palm.03.R' has scale animation that will be
-      discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
+      that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
       has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
       that will be discarded.\n\t'ORG-thigh.R' has scale animation that will be discarded.\n\t'ORG-shin.R'
       has scale animation that will be discarded.\n\t'ORG-foot.R' has scale animation
       that will be discarded.\n\nClip 'dave-rig|Attack_Single' has import animation
       warnings that might lower retargeting quality:\n\t'ORG-upper_arm.L' has scale
       animation that will be discarded.\n\t'ORG-forearm.L' has scale animation that
-      will be discarded.\n\t'ORG-hand.L' has scale animation that will be discarded.\n\t'ORG-forearm.R'
+      will be discarded.\n\t'ORG-hand.L' has scale animation that will be discarded.\n\t'ORG-palm.04.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-forearm.R'
       has scale animation that will be discarded.\n\t'ORG-hand.R' has scale animation
-      that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
-      has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
-      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|dave-rigAction' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-upper_arm.L' has scale animation that will be discarded.\n\t'ORG-forearm.L'
-      has scale animation that will be discarded.\n\t'ORG-hand.L' has scale animation
+      that will be discarded.\n\t'ORG-palm.02.R' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'ORG-thigh.L' has scale
+      animation that will be discarded.\n\t'ORG-shin.L' has scale animation that will
+      be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-foot.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|dave-rigAction'
+      has import animation warnings that might lower retargeting quality:\n\t'ORG-forearm.R'
+      has scale animation that will be discarded.\n\t'ORG-hand.R' has scale animation
+      that will be discarded.\n\t'ORG-palm.03.R' has scale animation that will be
+      discarded.\n\nClip 'dave-rig|Falling' has import animation warnings that might
+      lower retargeting quality:\n\t'ORG-forearm.R' has scale animation that will
+      be discarded.\n\nClip 'dave-rig|Hit_Back' has import animation warnings that
+      might lower retargeting quality:\n\t'ORG-forearm.R' has scale animation that
+      will be discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\nClip
+      'dave-rig|Hit_Front' has import animation warnings that might lower retargeting
+      quality:\n\t'ORG-neck' has scale animation that will be discarded.\n\t'ORG-head'
+      has scale animation that will be discarded.\n\t'ORG-forearm.L' has scale animation
       that will be discarded.\n\t'ORG-forearm.R' has scale animation that will be
       discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Falling' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Hit_Back' has import animation warnings that might lower retargeting
-      quality:\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\t'ORG-hand.R'
-      has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
-      that will be discarded.\n\nClip 'dave-rig|Hit_Front' has import animation warnings
-      that might lower retargeting quality:\n\t'ORG-neck' has scale animation that
-      will be discarded.\n\t'ORG-head' has scale animation that will be discarded.\n\t'ORG-forearm.L'
-      has scale animation that will be discarded.\n\t'ORG-forearm.R' has scale animation
-      that will be discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\t'ORG-thigh.L'
-      has scale animation that will be discarded.\n\nClip 'dave-rig|Idle' has import
-      animation warnings that might lower retargeting quality:\n\t'ORG-neck' has scale
-      animation that will be discarded.\n\t'ORG-head' has scale animation that will
-      be discarded.\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Jog' has import animation warnings that might lower retargeting quality:\n\t'ORG-forearm.L'
+      'dave-rig|Idle' has import animation warnings that might lower retargeting quality:\n\t'ORG-neck'
+      has scale animation that will be discarded.\n\t'ORG-head' has scale animation
+      that will be discarded.\n\t'ORG-palm.02.L' has scale animation that will be
+      discarded.\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\t'ORG-palm.03.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|Jog' has import
+      animation warnings that might lower retargeting quality:\n\t'ORG-forearm.L'
       has scale animation that will be discarded.\n\t'ORG-forearm.R' has scale animation
       that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
       has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
@@ -323,93 +324,86 @@ ModelImporter:
       that will be discarded.\n\nClip 'dave-rig|Shot_charge' has import animation
       warnings that might lower retargeting quality:\n\t'ORG-forearm.R' has scale
       animation that will be discarded.\n\t'ORG-hand.R' has scale animation that will
-      be discarded.\n\nClip 'dave-rig|Sowrd_Idle' has import animation warnings that
-      might lower retargeting quality:\n\t'ORG-palm.04.R' has scale animation that
-      will be discarded.\n\nClip 'dave-rig|Sword_Jog' has import animation warnings
-      that might lower retargeting quality:\n\t'ORG-forearm.R' has scale animation
-      that will be discarded.\n\t'ORG-thigh.L' has scale animation that will be discarded.\n\t'ORG-shin.L'
-      has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
-      that will be discarded.\n\t'ORG-thigh.R' has scale animation that will be discarded.\n\t'ORG-shin.R'
-      has scale animation that will be discarded.\n\t'ORG-foot.R' has scale animation
-      that will be discarded.\n\nClip 'dave-rig|Unsheathe' has import animation warnings
-      that might lower retargeting quality:\n\t'ORG-forearm.R' has scale animation
-      that will be discarded.\n\t'ORG-hand.R' has scale animation that will be discarded.\n\nClip
-      'dave-rig|Walk' has import animation warnings that might lower retargeting quality:\n\t'ORG-palm.02.L'
-      has scale animation that will be discarded.\n\t'ORG-thigh.L' has scale animation
-      that will be discarded.\n\t'ORG-shin.L' has scale animation that will be discarded.\n\t'ORG-foot.L'
-      has scale animation that will be discarded.\n\t'ORG-thigh.R' has scale animation
-      that will be discarded.\n\t'ORG-shin.R' has scale animation that will be discarded.\n\t'ORG-foot.R'
-      has scale animation that will be discarded.\n"
+      be discarded.\n\nClip 'dave-rig|Sword_Jog' has import animation warnings that
+      might lower retargeting quality:\n\t'ORG-forearm.L' has scale animation that
+      will be discarded.\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\t'ORG-thigh.L'
+      has scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
+      that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
+      has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
+      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n\nClip
+      'dave-rig|Unsheathe' has import animation warnings that might lower retargeting
+      quality:\n\t'ORG-forearm.R' has scale animation that will be discarded.\n\t'ORG-hand.R'
+      has scale animation that will be discarded.\n\nClip 'dave-rig|Walk' has import
+      animation warnings that might lower retargeting quality:\n\t'ORG-thigh.L' has
+      scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
+      that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-thigh.R'
+      has scale animation that will be discarded.\n\t'ORG-shin.R' has scale animation
+      that will be discarded.\n\t'ORG-foot.R' has scale animation that will be discarded.\n"
     animationRetargetingWarnings: "\nRetargeting quality report for clip 'dave-rig|Attack_Big':\n\tRightLowerLeg
-      average position error 0.5 mm and maximum position error 8.7 mm at time 2:44
-      (83.2%) Frame 164\n\tRightFoot average position error 0.2 mm and maximum position
-      error 8.0 mm at time 2:44 (83.2%) Frame 164\n\tLeftLowerArm average position
-      error 4.5 mm and maximum position error 74.3 mm at time 1:18 (39.6%) Frame 78\n\tLeftHand
-      average position error 10.7 mm and maximum position error 148.5 mm at time 1:18
-      (39.6%) Frame 78\n\tRightLowerArm average position error 14.0 mm and maximum
-      position error 14.0 mm at time 1: 1 (31.0%) Frame 61\n\tRightHand average position
-      error 30.2 mm and maximum position error 38.1 mm at time 1:18 (39.6%) Frame
-      78\n\nRetargeting quality report for clip 'dave-rig|Attack_Single':\n\tLeftLowerArm
+      average position error 0.5 mm and maximum position error 8.7 mm at time 2:52
+      (83.9%) Frame 172\n\tRightFoot average position error 0.2 mm and maximum position
+      error 8.0 mm at time 2:52 (83.9%) Frame 172\n\tLeftLowerArm average position
+      error 3.2 mm and maximum position error 14.4 mm at time 1:18 (38.0%) Frame 78\n\tLeftHand
+      average position error 8.1 mm and maximum position error 38.3 mm at time 1:
+      8 (33.2%) Frame 68\n\tRightLowerArm average position error 14.0 mm and maximum
+      position error 14.0 mm at time 3:16 (95.6%) Frame 196\n\tRightHand average position
+      error 30.2 mm and maximum position error 38.1 mm at time 1:26 (42.0%) Frame
+      86\n\nRetargeting quality report for clip 'dave-rig|Attack_Single':\n\tLeftLowerArm
       average position error 6.4 mm and maximum position error 63.6 mm at time 0:50
       (35.7%) Frame 50\n\tLeftHand average position error 15.0 mm and maximum position
       error 127.0 mm at time 0:50 (35.7%) Frame 50\n\tRightLowerArm average position
-      error 14.0 mm and maximum position error 14.0 mm at time 1:38 (70.0%) Frame
-      98\n\tRightHand average position error 34.2 mm and maximum position error 40.5
-      mm at time 0:56 (40.0%) Frame 56\n\nRetargeting quality report for clip 'dave-rig|dave-rigAction':\n\tLeftLowerArm
-      average position error 352.5 mm and maximum position error 394.8 mm at time
-      0:10 (52.6%) Frame 10\n\tLeftHand average position error 791.2 mm and maximum
-      position error 914.3 mm at time 0:10 (52.6%) Frame 10\n\tRightLowerArm average
-      position error 14.0 mm and maximum position error 14.0 mm at time 0: 5 (26.3%)
-      Frame 5\n\tRightHand average position error 33.5 mm and maximum position error
-      40.5 mm at time 0: 7 (36.8%) Frame 7\n\nRetargeting quality report for clip
-      'dave-rig|Falling':\n\tRightLowerArm average position error 14.0 mm and maximum
-      position error 14.0 mm at time 3:48 (95.0%) Frame 228\n\tRightHand average position
-      error 30.7 mm and maximum position error 31.5 mm at time 4: 0 (100.0%) Frame
-      240\n\nRetargeting quality report for clip 'dave-rig|Hit_Back':\n\tRightLowerArm
+      error 14.0 mm and maximum position error 14.0 mm at time 1:25 (60.7%) Frame
+      85\n\tRightHand average position error 34.2 mm and maximum position error 40.5
+      mm at time 0:56 (40.0%) Frame 56\n\nRetargeting quality report for clip 'dave-rig|dave-rigAction':\n\tRightLowerArm
+      average position error 14.0 mm and maximum position error 14.0 mm at time 0:
+      5 (26.3%) Frame 5\n\tRightHand average position error 33.5 mm and maximum position
+      error 40.5 mm at time 0: 7 (36.8%) Frame 7\n\nRetargeting quality report for
+      clip 'dave-rig|Falling':\n\tRightLowerArm average position error 14.0 mm and
+      maximum position error 14.0 mm at time 3: 8 (78.3%) Frame 188\n\tRightHand average
+      position error 30.7 mm and maximum position error 31.5 mm at time 4: 0 (100.0%)
+      Frame 240\n\nRetargeting quality report for clip 'dave-rig|Hit_Back':\n\tRightLowerArm
       average position error 14.0 mm and maximum position error 14.0 mm at time 0:25
       (78.1%) Frame 25\n\tRightHand average position error 33.2 mm and maximum position
       error 38.3 mm at time 0:20 (62.5%) Frame 20\n\nRetargeting quality report for
       clip 'dave-rig|Hit_Front':\n\tRightLowerArm average position error 14.0 mm and
-      maximum position error 14.0 mm at time 0: 8 (23.5%) Frame 8\n\tRightHand average
+      maximum position error 14.0 mm at time 0: 6 (17.6%) Frame 6\n\tRightHand average
       position error 31.4 mm and maximum position error 34.8 mm at time 0: 4 (11.8%)
       Frame 4\n\nRetargeting quality report for clip 'dave-rig|Idle':\n\tRightLowerArm
-      average position error 14.0 mm and maximum position error 14.0 mm at time 3:23
-      (79.3%) Frame 203\n\tRightHand average position error 34.0 mm and maximum position
+      average position error 14.0 mm and maximum position error 14.0 mm at time 0:20
+      (7.8%) Frame 20\n\tRightHand average position error 34.0 mm and maximum position
       error 34.5 mm at time 3:42 (86.7%) Frame 222\n\nRetargeting quality report for
       clip 'dave-rig|Jog':\n\tRightLowerArm average position error 14.0 mm and maximum
-      position error 14.0 mm at time 0: 8 (15.7%) Frame 8\n\tRightHand average position
-      error 36.1 mm and maximum position error 40.5 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting
-      quality report for clip 'dave-rig|Run_in_2016_lol':\n\tLeftLowerArm average
-      position error 226.1 mm and maximum position error 370.7 mm at time 1:33 (100.0%)
-      Frame 93\n\tLeftHand average position error 485.4 mm and maximum position error
-      840.6 mm at time 1:33 (100.0%) Frame 93\n\nRetargeting quality report for clip
-      'dave-rig|Shot':\n\tRightLowerLeg average position error 0.9 mm and maximum
-      position error 13.0 mm at time 0: 5 (6.8%) Frame 5\n\tRightFoot average position
-      error 0.7 mm and maximum position error 20.0 mm at time 0: 5 (6.8%) Frame 5\n\tRightLowerArm
-      average position error 14.0 mm and maximum position error 14.0 mm at time 1:11
-      (97.3%) Frame 71\n\tRightHand average position error 29.1 mm and maximum position
-      error 32.3 mm at time 0: 5 (6.8%) Frame 5\n\nRetargeting quality report for
-      clip 'dave-rig|Shot_charge':\n\tRightLowerArm average position error 14.0 mm
-      and maximum position error 14.0 mm at time 0: 5 (38.5%) Frame 5\n\tRightHand
-      average position error 29.5 mm and maximum position error 30.4 mm at time 0:13
-      (100.0%) Frame 13\n\nRetargeting quality report for clip 'dave-rig|Sowrd_Idle':\n\tRightLowerArm
-      average position error 14.0 mm and maximum position error 14.0 mm at time 3:35
-      (83.7%) Frame 215\n\tRightHand average position error 28.7 mm and maximum position
-      error 28.7 mm at time 0:19 (7.4%) Frame 19\n\nRetargeting quality report for
+      position error 14.0 mm at time 0: 1 (2.0%) Frame 1\n\tRightHand average position
+      error 36.1 mm and maximum position error 40.5 mm at time 0:51 (100.0%) Frame
+      51\n\nRetargeting quality report for clip 'dave-rig|Run_in_2016_lol':\n\tLeftLowerArm
+      average position error 225.6 mm and maximum position error 325.2 mm at time
+      1:33 (100.0%) Frame 93\n\tLeftHand average position error 474.6 mm and maximum
+      position error 712.1 mm at time 1:33 (100.0%) Frame 93\n\nRetargeting quality
+      report for clip 'dave-rig|Shot':\n\tRightLowerLeg average position error 0.9
+      mm and maximum position error 13.0 mm at time 0: 5 (6.8%) Frame 5\n\tRightFoot
+      average position error 0.7 mm and maximum position error 20.0 mm at time 0:
+      5 (6.8%) Frame 5\n\tRightLowerArm average position error 14.0 mm and maximum
+      position error 14.0 mm at time 0:38 (52.1%) Frame 38\n\tRightHand average position
+      error 29.1 mm and maximum position error 32.3 mm at time 0: 5 (6.8%) Frame 5\n\nRetargeting
+      quality report for clip 'dave-rig|Shot_charge':\n\tRightLowerArm average position
+      error 14.0 mm and maximum position error 14.0 mm at time 0:13 (100.0%) Frame
+      13\n\tRightHand average position error 29.5 mm and maximum position error 30.4
+      mm at time 0:13 (100.0%) Frame 13\n\nRetargeting quality report for clip 'dave-rig|Sowrd_Idle':\n\tRightLowerArm
+      average position error 14.0 mm and maximum position error 14.0 mm at time 2:57
+      (68.9%) Frame 177\n\tRightHand average position error 28.7 mm and maximum position
+      error 28.7 mm at time 2:57 (68.9%) Frame 177\n\nRetargeting quality report for
       clip 'dave-rig|Sword_Jog':\n\tLeftLowerLeg average position error 0.2 mm and
       maximum position error 1.3 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm average
-      position error 14.0 mm and maximum position error 14.0 mm at time 0:44 (88.0%)
-      Frame 44\n\tRightHand average position error 30.0 mm and maximum position error
+      position error 14.0 mm and maximum position error 14.0 mm at time 0:16 (32.0%)
+      Frame 16\n\tRightHand average position error 30.0 mm and maximum position error
       31.0 mm at time 0:50 (100.0%) Frame 50\n\nRetargeting quality report for clip
       'dave-rig|Unsheathe':\n\tRightLowerArm average position error 14.0 mm and maximum
-      position error 14.0 mm at time 2:23 (97.3%) Frame 143\n\tRightHand average position
-      error 28.8 mm and maximum position error 40.5 mm at time 0:13 (8.8%) Frame 13\n\nRetargeting
-      quality report for clip 'dave-rig|Walk':\n\tRightLowerLeg average position error
-      0.3 mm and maximum position error 7.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightFoot
-      average position error 0.1 mm and maximum position error 1.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 14.0 mm and maximum position
-      error 14.0 mm at time 0:50 (100.0%) Frame 50\n\tRightHand average position error
-      28.4 mm and maximum position error 28.4 mm at time 0: 9 (18.0%) Frame 9\n"
+      position error 14.0 mm at time 2: 8 (71.1%) Frame 128\n\tRightHand average position
+      error 27.9 mm and maximum position error 40.5 mm at time 1:48 (60.0%) Frame
+      108\n\nRetargeting quality report for clip 'dave-rig|Walk':\n\tRightLowerArm
+      average position error 14.0 mm and maximum position error 14.0 mm at time 0:20
+      (40.0%) Frame 20\n\tRightHand average position error 28.4 mm and maximum position
+      error 28.4 mm at time 0:20 (40.0%) Frame 20\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 0
     animationRotationError: 0.5
@@ -1306,7 +1300,7 @@ ModelImporter:
       name: dave-rig|Unsheathe
       takeName: dave-rig|Unsheathe
       firstFrame: 0
-      lastFrame: 147
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -2330,14 +2324,14 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 0
       events:
-      - time: 0.60917366
+      - time: 0.67187995
         functionName: SetBool
         data: DealingDmg:true
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.76173526
+      - time: 0.82444155
         functionName: SetBool
         data: DealingDmg:false
         objectReferenceParameter: {instanceID: 0}
@@ -2486,7 +2480,7 @@ ModelImporter:
       name: dave-rig|Attack_Big_to_pose
       takeName: dave-rig|Attack_Big
       firstFrame: 115
-      lastFrame: 197
+      lastFrame: 205
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

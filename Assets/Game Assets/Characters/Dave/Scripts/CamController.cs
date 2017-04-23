@@ -26,8 +26,8 @@ public class CamController : MonoBehaviour
 	private void Update () 
 	{
 		// Get user input
-		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime;
-		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
+		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime * ( Game.input.speedY / 100f );
+		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime * ( Game.input.speedX / 100f );
 		// Axis inversion
 		rotationX *= Game.input.invertX ? -1 : 1;
 		rotationY *= Game.input.invertY ? -1 : 1;

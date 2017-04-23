@@ -63,6 +63,8 @@ namespace Kyru.UI
 		Esc_to_cancel,
 		InvertX,
 		InvertY,
+		SpeedX,
+		SpeedY,
 
 		// Tutorial
 		R_To_Unsheathe,

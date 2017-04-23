@@ -719,8 +719,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.10510254, y: 1.1722832, z: -0.16539001}
-    m_Extent: {x: 0.36257154, y: 0.36253256, z: 0.3481752}
+    m_Center: {x: -0.105041504, y: 0.1653862, z: 1.1723022}
+    m_Extent: {x: 0.55637825, y: 0.5564778, z: 0.15420555}
   m_DirtyAABB: 0
 --- !u!137 &137841120599027034
 SkinnedMeshRenderer:
@@ -825,7 +825,7 @@ CharacterController:
   m_Height: 1.6
   m_Radius: 0.34
   m_SlopeLimit: 0
-  m_StepOffset: 0.35
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.875, z: 0}

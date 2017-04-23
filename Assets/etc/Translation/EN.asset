@@ -58,5 +58,7 @@ MonoBehaviour:
   - Esc to cancel
   - Invert X
   - Invert Y
+  - Horizontal speed
+  - Vertical speed
   - Press [R] to unsheathe your sword
-  - '[Right click] to perform a quick forward attack'
+  - '[Right click] to perform a forward attack'

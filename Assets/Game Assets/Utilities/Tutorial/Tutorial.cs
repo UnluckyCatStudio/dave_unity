@@ -9,6 +9,8 @@ using Kyru.etc;
 public class Tutorial : MonoBehaviour
 {
 	// Public
+	public Animation square;
+	public ParticleSystem fog;
 	public Color targetAmbient;
 	public Vector3 squarePos;
 
@@ -32,6 +34,8 @@ public class Tutorial : MonoBehaviour
 
 	IEnumerator Tutorial_Line ()
 	{
+		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+
 		// Start turning down ambient
 		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
 		yield return new WaitForSeconds ( 3f );
@@ -48,6 +52,10 @@ public class Tutorial : MonoBehaviour
 		// Sword tuto
 		Game.dave.canCombat = true;
 		yield return NewTuto ( AllTexts.R_To_Unsheathe, Key.Sword );
+		square.Play ( "Fade" );
+		fog.Play ();
+		yield return new WaitForSeconds ( 2f );
+		square.Play ( "Loop" );
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 

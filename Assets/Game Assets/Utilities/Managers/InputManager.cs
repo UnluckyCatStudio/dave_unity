@@ -13,6 +13,9 @@ public struct InputSettings
 	public bool invertX;
 	public bool invertY;
 
+	public int speedX;
+	public int speedY;
+
 	#region FX
 	public bool GetKey ( Key key )
 	{
@@ -49,6 +52,9 @@ public struct InputSettings
 
 		invertX = false;
 		invertY = false;
+
+		speedX = 100;
+		speedY = 100;
     }
 }
 
@@ -75,6 +81,9 @@ public class InputManager : MonoBehaviour
 
 	public Toggle invertX;
 	public Toggle invertY;
+
+	public Slider speedX;
+	public Slider speedY;
 	#endregion
 
 	public void LoadValues () 
@@ -86,6 +95,9 @@ public class InputManager : MonoBehaviour
 		
 		invertX.isOn = Game.input.invertX;
 		invertY.isOn = Game.input.invertY;
+
+		speedX.value = Game.input.speedX;
+		speedY.value = Game.input.speedY;
 	}
 
 	public void ApplySave () 
@@ -97,6 +109,9 @@ public class InputManager : MonoBehaviour
 
 		Game.input.invertX = invertX.isOn;
 		Game.input.invertY = invertY.isOn;
+
+		Game.input.speedX = (int) speedX.value;
+		Game.input.speedY = (int) speedY.value;
 
 		PlayerPrefs.SetString ( "Input", JsonUtility.ToJson ( Game.input ) );
 		PlayerPrefs.Save ();

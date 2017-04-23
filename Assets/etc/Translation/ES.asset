@@ -58,5 +58,7 @@ MonoBehaviour:
   - Esc para cancelar
   - Invertir X
   - Invertir Y
+  - Sensibilidad horizontal
+  - Sensibilidad vertical
   - Pulsa [R] para->desenfundar tu espada
   - "[Haz click derecho] para->lanzar un ataque vertical->en l\xEDnea recta"

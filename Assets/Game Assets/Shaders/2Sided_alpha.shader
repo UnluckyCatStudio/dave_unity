@@ -9,10 +9,11 @@
 		Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
 		LOD 200
 		Cull Off
-		
+		Blend SrcAlpha DstColor
+
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Standard fullforwardshadows alpha:blend
+		#pragma surface surf Standard fullforwardshadows keepalpha
 
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
