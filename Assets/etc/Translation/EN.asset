@@ -17,48 +17,49 @@ MonoBehaviour:
   - Pause
   - Resume
   - Options
-  - Quit to menu
-  - Quit to desktop
-  - 'Language:'
+  - Quit_to_menu
+  - Quit_to_desktop
+  - Language
   - Back
-  - Loading...
-  - Graphics
-  - 'Resolution:'
+  - Loading
+  - Graphcis
+  - Resolution
   - Fullscreen
-  - V-Sync
-  - Anti-aliasing
+  - Vsync
+  - Antialias
   - Textures
-  - Post Fx
+  - Post_Fx
   - Shadows
-  - FoV
+  - Fov
   - Apply
-  - Very high
+  - High_plus
   - High
   - Medium
   - Low
   - Audio
   - Master
   - Music
-  - Effects
-  - Environment
+  - Sfx
+  - Ambient
   - Voices
   - Controls
-  - Move ( forward )
-  - Move ( backwards )
-  - Move ( left )
-  - Move ( right )
+  - Forward
+  - Backwards
+  - Left
+  - Right
   - Jump
   - Walk
-  - Use sword
-  - Use boomerang
-  - Attack 1
-  - Attack 2
+  - Un_sheathe
+  - Boomerang
+  - Attack_single
+  - Attack_big
   - Interact
   - Shield
-  - Esc to cancel
-  - Invert X
-  - Invert Y
-  - Horizontal speed
-  - Vertical speed
-  - Press [R] to unsheathe your sword
-  - '[Right click] to perform a forward attack'
+  - Esc_to_cancel
+  - InvertX
+  - InvertY
+  - SpeedX
+  - SpeedY
+  - R_To_Unsheathe
+  - Click_To_Attack
+  - Click_To_Attack_Big

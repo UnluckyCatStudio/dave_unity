@@ -7,12 +7,18 @@ public class MeleeController : Kyru.etc.AnimatorController
 {
 	private CharacterController me;
 
-	private bool active;
+	[Header("Settings")]
+	public bool startOnAwake;
+	public float runMul;
 	public bool dead;
-	public float attackDistance;
+
+	[Header("Death")]
+	public GameObject receiver;
+	public string msg;
 
 	public Rigidbody[] parts;
 
+	private bool active;
 	private void Update ()
 	{
 		if ( !active ) return;
@@ -20,13 +26,13 @@ public class MeleeController : Kyru.etc.AnimatorController
 		transform.LookAt ( Game.dave.transform.position );
 		me.Move ( Vector3.zero );
 
-		var closeEnough = Vector3.Distance ( transform.position,  Game.dave.transform.position ) <= attackDistance;
+		var closeEnough = Vector3.Distance ( transform.position,  Game.dave.transform.position ) <= 1f;
 
 		anim.SetBool ( "Attacking", closeEnough );
 
 	}
 
-	private void FixedUpdate ()
+	private void FixedUpdate () 
 	{
 		// I have to manage collision checks by my own
 		// since Unity collision table isn't by my side
@@ -58,16 +64,21 @@ public class MeleeController : Kyru.etc.AnimatorController
 		{
 			active = false;
 			anim.Stop ();
-			Die ( Game.dave.sword.transform.position );
+			Die ();
+
+			if (receiver)
+				receiver.GetComponent<MonoBehaviour> ()
+				.StartCoroutine ( msg );
 		}
 	}
 
-	public void Die ( Vector3 contact ) 
+	public void Die () 
 	{
 		foreach ( var r in parts )
 		{
+			if (r.isKinematic) r.isKinematic = false;
 			r.constraints = RigidbodyConstraints.None;
-			r.AddExplosionForce ( 8f, contact, 1.2f, 0.4f, ForceMode.Impulse );
+			r.AddForce ( Game.dave.transform.forward.normalized * 5f + Vector3.up * 2f, ForceMode.Impulse );
 		}
 
 		GetComponent<CharacterController> ().enabled = false;
@@ -75,16 +86,21 @@ public class MeleeController : Kyru.etc.AnimatorController
 	}
 	#endregion
 
-	public void Activate ()
+	public void Activate () 
 	{
 		active = true;
 		me = GetComponent<CharacterController> ();
 		anim.SetTrigger ( "Move" );
+
+		anim.SetFloat ( "RunMul", runMul );
 	}
 
 	protected override void Awake () 
 	{
 		base.Awake ();
 		foreach ( var p in parts ) p.Sleep ();
+
+		if (startOnAwake)
+			Activate ();
 	}
 }

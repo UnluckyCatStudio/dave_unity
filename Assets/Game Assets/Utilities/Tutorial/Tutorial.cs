@@ -9,60 +9,102 @@ using Kyru.etc;
 public class Tutorial : MonoBehaviour
 {
 	// Public
+	public Collider placeta;
 	public Animation square;
 	public ParticleSystem fog;
 	public Color targetAmbient;
 	public Vector3 squarePos;
+	public GameObject[] firstWave;
+	public RangedController firstRanged;
+	public GameObject[] secondWave;
 
 	// private
-	bool started;
 	Text tutoText;
-	bool daveEntered;
 
-	public void OnTriggerEnter ( Collider col )
+	IEnumerator StartTuto ( Collider col ) 
 	{
-		if ( col.tag != "Player" ) return;
+		col.enabled = false;
 
-		if ( !started )
-		{
-			started = true;
-			tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
-			StartCoroutine ( "Tutorial_Line" );
-		}
-		else daveEntered =  true;
+		// Turn down ambient
+		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
+		yield return null;
 	}
 
-	IEnumerator Tutorial_Line ()
+	IEnumerator ClosePlaceta ( Collider col ) 
 	{
-		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+		col.enabled = false;
 
-		// Start turning down ambient
-		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
-		yield return new WaitForSeconds ( 3f );
+		// Close placeta
+		placeta.enabled = true;
 
-		// Teleport to square
-		transform.localPosition = squarePos;
-		yield return new WaitUntil ( () => daveEntered );
-		// => collider on
-		// => start fog wall fbx
-		// => modify light / ambient
-		// => maybe wait a bit
-
-		// Wait a second, then:
 		// Sword tuto
 		Game.dave.canCombat = true;
-		yield return NewTuto ( AllTexts.R_To_Unsheathe, Key.Sword );
+		Game.dave.canMove =  false;
+		Game.dave.Moving = false;
+		yield return NewTuto ( AllTexts.Tuto_R_To_Unsheathe, Key.Sword );
+
+		// Close 
 		square.Play ( "Fade" );
-		fog.Play ();
 		yield return new WaitForSeconds ( 2f );
+		fog.Play ();
+
+		// Return Dave control
+		Game.dave.canMove = true;
+		StartCoroutine ( NewTuto ( AllTexts.Tuto_Click_To_Attack, Key.Attack_single ) );
+
+		yield return new WaitForSeconds ( 4f );
 		square.Play ( "Loop" );
+	}
+
+	IEnumerator KilledFirst ()
+	{
+		yield return new WaitForSeconds ( 1f );
+		foreach (var m in firstWave) m.SetActive ( true );
+		yield return new WaitForSeconds ( 2f );
+		StartCoroutine(  NewTuto ( AllTexts.Tuto_Click_To_Attack_Big, Key.Attack_big ) );
+	}
+
+	int firstWaveCount;
+	IEnumerator FirstWave ()
+	{
+		if ( ++firstWaveCount == 3 )
+		{
+			yield return new WaitForSeconds ( 1f );
+			Game.dave.canShoot = true;
+			yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
+			yield return new WaitForSeconds ( 1f );
+			//firstRanged
+		}
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 
 	{
 		Game.ui.SetTrigger ( "NewTuto" );
 		tutoText.text = Localization.GetText ( txt );
-		yield return new WaitUntil ( () => Game.input.GetKeyDown ( key ) );
+		yield return new WaitUntil
+			( () =>
+			{
+				if ( key == Key.Attack_big || key == Key.Attack_single )
+				{
+					return
+						Game.input.GetKeyDown
+						( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
+				}
+				else
+				if ( key == Key.Charge )
+				{
+					return
+						Game.input.GetKeyDown
+						( Key.Attack_single ) && Game.dave.Charging;
+				}
+				else return Game.input.GetKeyDown ( key );
+			});
 		Game.ui.SetTrigger ( "TutoOver" );
+	}
+
+	void Start () 
+	{
+		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+		tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
 	}
 }

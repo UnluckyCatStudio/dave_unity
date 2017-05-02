@@ -67,7 +67,9 @@ namespace Kyru.UI
 		SpeedY,
 
 		// Tutorial
-		R_To_Unsheathe,
-		Click_To_Attack
+		Tuto_R_To_Unsheathe,
+		Tuto_Click_To_Attack,
+		Tuto_Click_To_Attack_Big,
+		Tuto_Charge_And_Shot
 	}
 }

@@ -19,6 +19,7 @@ public class DaveController : Kyru.etc.AnimatorController
 
 	[Header("Combat")]
 	public  bool canCombat;
+	public	bool canShoot;
 	public  SwordController sword;
 
 	//	[Header("IK")]
@@ -52,8 +53,8 @@ public class DaveController : Kyru.etc.AnimatorController
 	}
 	public bool  Hitd			
 	{
-		get { return anim.GetBool ( "Hit" ); }
-		set { anim.SetBool ( "Hit", value ); }
+		get { return anim.GetBool ( "Hitd" ); }
+		set { anim.SetBool ( "Hitd", value ); }
 	}
 	public bool  DealingDmg		
 	{
@@ -153,10 +154,14 @@ public class DaveController : Kyru.etc.AnimatorController
 				}
 			}
 
+
+			#endregion
+
 			#region CHARGE
 			if
 			(  !Sheathing
 			&& !Attacking
+			&& canShoot
 			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
 				anim.SetTrigger ( "Charge" );
@@ -175,10 +180,8 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
 				anim.SetTrigger ( "Shoot" );
-				anim.SetBool ( "Charging", false );
+				Charging = false;
 			} 
-			#endregion
-
 			#endregion
 		}
 		#endregion
@@ -219,6 +222,8 @@ public class DaveController : Kyru.etc.AnimatorController
 	/// </summary>
 	private void Sheathe ( int unseathe ) 
 	{
+		if (locked) return;
+
 		if ( unseathe == 0 )
 		{
 			sword.transform.SetParent ( swordHandHolder );
@@ -234,21 +239,29 @@ public class DaveController : Kyru.etc.AnimatorController
 		sword.transform.localRotation = Quaternion.identity;
 	}
 
-	private void Hit ( Vector3 point )
+	private void Hit ( Vector3 point ) 
 	{
 		if ( Hitd ) return;
 		// Front or Back ?
 		var angle = Quaternion.Angle ( transform.localRotation, Quaternion.LookRotation ( point ) );
 
-		if ( angle <= 50 )  anim.SetTrigger ( "Hit_Front" );
+		if ( angle >= 50 )  anim.SetTrigger ( "Hit_Front" );
 		else				anim.SetTrigger ( "Hit_Back" );
-		
+
 		Hitd = true;
 		Moving = false;
 		Attacking = false;
+		anim.ResetTrigger ( "Attack-big" );
+		anim.ResetTrigger ( "Attack-single" );
+		anim.ResetTrigger ( "Charge" );
+		anim.ResetTrigger ( "Shoot" );
 		DealingDmg = false;
 		Charging = false;
 		Sheathing = false;
+		anim.ResetTrigger ( "Sheathe" );
+		anim.ResetTrigger ( "Unsheathe" );
+
+		locked=true;
 	}
 	#endregion
 }

@@ -26,6 +26,6 @@ public class PlacetaParams : MonoBehaviour
 	private void OnEnable ()
 	{
 		mat = fog.sharedMaterial as ProceduralMaterial;
-		mat.cacheSize = ProceduralCacheSize.Medium;
+		mat.cacheSize = ProceduralCacheSize.Heavy;
 	}
 }

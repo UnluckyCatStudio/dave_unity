@@ -37,7 +37,8 @@ namespace Kyru.UI
 
 			foreach ( int k in keys )
 			{
-				t.texts[k] = EditorGUILayout.TextField ( keys[k].ToString (), t.texts[k] );
+				EditorGUILayout.LabelField ( keys[k].ToString () );
+				t.texts[k] = EditorGUILayout.TextArea ( t.texts[k] );
 			}
 
 			if ( EditorGUI.EndChangeCheck () )

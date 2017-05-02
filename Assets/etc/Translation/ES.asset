@@ -18,17 +18,17 @@ MonoBehaviour:
   - Continuar
   - Opciones
   - "Salir al men\xFA"
-  - Salir del juego
-  - 'Idioma:'
+  - Salir al escritorio
+  - Idioma
   - Volver
   - Cargando...
   - "Gr\xE1ficos"
   - "Resoluci\xF3n:"
   - Pantalla completa
   - V-Sync
-  - Antia-aliasing
+  - Anti-aliasing
   - Texturas
-  - Post FX
+  - Efectos
   - Sombras
   - "Campo de visi\xF3n"
   - Aplicar
@@ -40,7 +40,7 @@ MonoBehaviour:
   - General
   - "M\xFAsica"
   - Efectos
-  - Entorno
+  - Ambiente
   - Voces
   - Controles
   - Adelante
@@ -51,14 +51,28 @@ MonoBehaviour:
   - Caminar
   - Espada
   - Boomerang
-  - Ataque 1
-  - Ataque 2
+  - Ataqiue / Disparo
+  - Ataque de barrido
   - Interactuar
   - Escudo
-  - Esc para cancelar
+  - ESC para cancelar
   - Invertir X
   - Invertir Y
-  - Sensibilidad horizontal
-  - Sensibilidad vertical
-  - Pulsa [R] para->desenfundar tu espada
-  - "[Haz click derecho] para->lanzar un ataque vertical->en l\xEDnea recta"
+  - Velocidad horizontal
+  - Velocidad vertical
+  - Pulsa [R] para desenfundar o enfundar la espada.
+  - '[Haz click izquierdo] para lanzar un ataque directo vertical.
+
+    Usa [WASD] para redireccionar el ataque.'
+  - '[Haz click derecho] para lanzar un ataque de barrido.
+
+    Este es mas lento.
+
+    Usa [WASD] para redireccionar el ataque.'
+  - 'Usa [Q] para cargar un disparo.
+
+    Mientras cargas [haz click izquierdo] para disparar o
+
+    suelta [Q] para dejar de cargar.
+
+    Mientras cargas no puedes moverte!'

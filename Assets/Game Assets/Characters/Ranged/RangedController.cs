@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedController : MonoBehaviour
 {
-
 	[Header ("PARTICLE SYSTEMS")]
 	public ParticleSystem ranged;
 	public ParticleSystem death;
@@ -15,6 +14,8 @@ public class RangedController : MonoBehaviour
 	private void Update ()
 	{
 		if ( !active ) return;
+
+
 	}
 
 	private bool active;
@@ -28,6 +29,6 @@ public class RangedController : MonoBehaviour
 	public bool startOnAwake;
 	void Awake () 
 	{
-		if ( startOnAwake ) Activate ();
+		if (startOnAwake) Activate ();
 	}
 }
