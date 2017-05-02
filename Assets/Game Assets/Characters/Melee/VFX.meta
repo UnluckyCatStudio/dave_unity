@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0d78ba7400426824fa1c8ff4b5737d55
 folderAsset: yes
 timeCreated: 1492946982
+=======
+guid: f078e4587edd0fa45a60039ac71e1816
+folderAsset: yes
+timeCreated: 1492163262
+>>>>>>> refs/remotes/origin/vfx
 licenseType: Free
 DefaultImporter:
   userData: 
