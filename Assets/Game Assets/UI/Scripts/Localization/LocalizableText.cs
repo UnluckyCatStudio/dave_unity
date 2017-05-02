@@ -21,15 +21,8 @@ namespace Kyru.UI
 		{
 			get
 			{
-				if ( allCaps )
-					return
-						Localization.translations[( int ) Localization.lang]
-						.texts[( int ) key]
-						.ToUpper ();
-				else
-					return
-						Localization.translations[( int ) Localization.lang]
-						.texts[( int ) key];
+				if ( allCaps )  return Localization.GetText ( key ).ToUpper ();
+				else			return Localization.GetText ( key );
 			}
 		}
 
@@ -39,10 +32,7 @@ namespace Kyru.UI
 		/// </summary>
 		public virtual void UpdateText ()
 		{
-			control.text = value
-				.Replace ( "$$", "\n" )
-				.Replace ( "[", "<b><color=orange>" )
-				.Replace ( "]", "</color></b>" );
+			control.text = value;
 		}
 
 		public virtual void Init () 

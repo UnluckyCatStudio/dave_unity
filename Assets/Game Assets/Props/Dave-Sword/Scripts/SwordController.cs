@@ -5,9 +5,4 @@ using UnityEngine;
 public class SwordController : Kyru.etc.AnimatorController
 {
 	public Collider edge;
-
-	public void Fade ( bool fadeIn )
-	{
-
-	}
 }

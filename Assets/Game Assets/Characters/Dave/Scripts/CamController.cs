@@ -26,8 +26,8 @@ public class CamController : MonoBehaviour
 	private void Update () 
 	{
 		// Get user input
-		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime;
-		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime;
+		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime * ( Game.input.speedY / 100f );
+		var rotationY = speedY * Input.GetAxis ( "Mouse X" ) * Time.deltaTime * ( Game.input.speedX / 100f );
 		// Axis inversion
 		rotationX *= Game.input.invertX ? -1 : 1;
 		rotationY *= Game.input.invertY ? -1 : 1;
@@ -40,9 +40,12 @@ public class CamController : MonoBehaviour
 	#region FX
 	public void FollowDave () 
 	{
-		// Follow Dave movement
-		pivot = dave.position + lookOffset;
-		transform.position = pivot;
+		// Follow Dave movement only if changed
+		if ( dave.position + lookOffset != pivot )
+		{
+			pivot = dave.position + lookOffset;
+			transform.position = pivot;
+		}
 
 		// If camera collides when moved
 		while ( IsColliding () )
@@ -92,7 +95,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () && !IsColliding ( avoidingStep * 1.2f ) )
+		if ( !TooFar () && !IsColliding ( avoidingStep * 1.5f ) )
 		{
 			var z =
 			Mathf.Lerp

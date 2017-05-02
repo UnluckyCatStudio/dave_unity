@@ -86,10 +86,7 @@ public class GraphicsManager : MonoBehaviour
 		Screen.SetResolution ( Screen.resolutions[resolution.value].width, Screen.resolutions[resolution.value].height, fullscreen.isOn );
 		QualitySettings.vSyncCount = vsync.isOn ? 1 : 0;
 		QualitySettings.masterTextureLimit = ( int ) Math.Abs ( textures.value - 3 );		// Correct slider value
-		//QualitySettings.shadowResolution = ( ShadowResolution ) shadows.value;
-		// TODO:
-		// AA, PostFX & FoV
-		// is controlled per camera
+		QualitySettings.shadowResolution = ( ShadowResolution ) shadows.value;
 	}
 
 	public void LoadResolutions () 

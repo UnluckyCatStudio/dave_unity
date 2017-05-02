@@ -3,113 +3,108 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.ImageEffects;
+using Kyru.UI;
+using Kyru.etc;
 
 public class Tutorial : MonoBehaviour
 {
-	public Collider muro;
-	public MeleeController first;
-	public MeleeController[] firstWave;
-	public Light[] lights;
+	// Public
+	public Collider placeta;
+	public Animation square;
+	public ParticleSystem fog;
+	public Color targetAmbient;
+	public Vector3 squarePos;
+	public GameObject[] firstWave;
+	public RangedController firstRanged;
+	public GameObject[] secondWave;
 
+	// private
+	Text tutoText;
 
-	private bool waiting;
-	private bool running;
-	private Text text;
-	private GlobalFog fog;
-
-	public void OnTriggerEnter ( Collider col )
+	IEnumerator StartTuto ( Collider col ) 
 	{
-		if ( col.tag == "Player" && !running )
-		{
-			// Start the tutorial
-			running = true;
-			text = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
-			Game.sun = GameObject.Find ( "SUN" ).GetComponent<Light> ();
-			fog = Camera.main.GetComponent<GlobalFog> ();
-			muro.enabled = true;
-			StartCoroutine ( "venga" );
-		}
+		col.enabled = false;
+
+		// Turn down ambient
+		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
+		yield return null;
 	}
 
-	IEnumerator venga ()
+	IEnumerator ClosePlaceta ( Collider col ) 
 	{
-		text.text = format ( "Usa [R] para desenfundar $$o enfundar la espada" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
+		col.enabled = false;
+
+		// Close placeta
+		placeta.enabled = true;
+
+		// Sword tuto
 		Game.dave.canCombat = true;
-		
-		yield return new WaitUntil ( () => Input.GetKeyDown ( KeyCode.R ) );
-		yield return new WaitForSeconds ( 1.8f );
+		Game.dave.canMove =  false;
+		Game.dave.Moving = false;
+		yield return NewTuto ( AllTexts.Tuto_R_To_Unsheathe, Key.Sword );
 
-		text.text = format ( "[Usa el click izquierdo] para un ataque $$rapido y directo" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
+		// Close 
+		square.Play ( "Fade" );
+		yield return new WaitForSeconds ( 2f );
+		fog.Play ();
 
-		yield return new WaitUntil ( () => first.dead );
+		// Return Dave control
+		Game.dave.canMove = true;
+		StartCoroutine ( NewTuto ( AllTexts.Tuto_Click_To_Attack, Key.Attack_single ) );
 
+		yield return new WaitForSeconds ( 4f );
+		square.Play ( "Loop" );
+	}
 
-		var targetFogHeight = 550f;
-		var targetSunIntensity = 0.5f;
-		var targetLightIntensity = 1;
-		var startTime = Time.time;
+	IEnumerator KilledFirst ()
+	{
+		yield return new WaitForSeconds ( 1f );
+		foreach (var m in firstWave) m.SetActive ( true );
+		yield return new WaitForSeconds ( 2f );
+		StartCoroutine(  NewTuto ( AllTexts.Tuto_Click_To_Attack_Big, Key.Attack_big ) );
+	}
 
-		while ( Time.time <= startTime + 1.2f )
+	int firstWaveCount;
+	IEnumerator FirstWave ()
+	{
+		if ( ++firstWaveCount == 3 )
 		{
-			fog.height = Mathf.Lerp ( fog.height, targetFogHeight, Time.deltaTime );
-			Game.sun.intensity = Mathf.Lerp ( Game.sun.intensity, targetSunIntensity, Time.deltaTime * 2f );
-			foreach ( var l in lights )
+			yield return new WaitForSeconds ( 1f );
+			Game.dave.canShoot = true;
+			yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
+			yield return new WaitForSeconds ( 1f );
+			//firstRanged
+		}
+	}
+
+	IEnumerator NewTuto ( AllTexts txt, Key key ) 
+	{
+		Game.ui.SetTrigger ( "NewTuto" );
+		tutoText.text = Localization.GetText ( txt );
+		yield return new WaitUntil
+			( () =>
 			{
-				l.intensity = Mathf.Lerp ( l.intensity, targetLightIntensity, Time.deltaTime );
-			}
-
-			yield return null;
-		}
-
-		text.text = format ( "[Usa el click derecho] para un ataque $$mas lento de barrido" );
-		waiting = true;
-		Game.ui.SetTrigger ( "Tutorial" );
-		Time.timeScale = 0;
-
-		firstWave[0].gameObject.SetActive ( true );
-		firstWave[0].Activate ();
-
-		firstWave[1].gameObject.SetActive ( true );
-		firstWave[1].Activate ();
-
-		firstWave[2].gameObject.SetActive ( true );
-		firstWave[2].Activate ();
-
-
-		//		var duration = 3f;
-		//		var start = Time.time;
-		//		var timeout = Time.time + duration;
-		//
-		//		while ( Time.time <= timeout )
-		//		{
-		//			var progress = ( timeout - start ) / duration;
-		//			fog.height = Mathf.Lerp (  )
-		//
-		//			yield return null;
-		//		}
+				if ( key == Key.Attack_big || key == Key.Attack_single )
+				{
+					return
+						Game.input.GetKeyDown
+						( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
+				}
+				else
+				if ( key == Key.Charge )
+				{
+					return
+						Game.input.GetKeyDown
+						( Key.Attack_single ) && Game.dave.Charging;
+				}
+				else return Game.input.GetKeyDown ( key );
+			});
+		Game.ui.SetTrigger ( "TutoOver" );
 	}
 
-	private void Update ()
+	void Start () 
 	{
-		if ( waiting && Input.GetKeyDown ( KeyCode.E ) )
-		{
-			waiting = false;
-			Time.timeScale = 1;
-			Game.ui.SetTrigger ( "TutorialCompleted" );
-		}
-	}
-
-	private string format ( string s ) 
-	{
-		return s
-			.Replace ( "$$", "\n" )
-			.Replace ( "[", "<b><color=orange>" )
-			.Replace ( "]", "</color></b>" );
+		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+		tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
 	}
 }

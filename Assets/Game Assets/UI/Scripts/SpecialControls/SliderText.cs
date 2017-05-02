@@ -19,9 +19,7 @@ namespace Kyru.UI
 
 		public override void UpdateText ()
 		{
-			control.text =
-				Localization.translations[( int ) Localization.lang]
-				.texts[( int ) keys[( int ) slider.value]];
+			control.text = Localization.GetText ( keys[( int ) slider.value] );
 		}
 
 		public override void Init ()

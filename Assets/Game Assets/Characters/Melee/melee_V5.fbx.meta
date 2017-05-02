@@ -322,6 +322,7 @@ ModelImporter:
     7400008: rig|Attack_1
     7400010: rig|Attack_2
     7400012: rig|stand_still
+    7400014: rig|Attack_2
     9500000: //RootNode
     13700000: melee_parts
     13700002: melee_parts.001
@@ -378,315 +379,111 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'rig|Attack_1' has import animation warnings
       that might lower retargeting quality:\n\t'ORG-spine' has scale animation that
-      will be discarded.\n\t'ORG-chest' has scale animation that will be discarded.\n\t'ORG-palm.02.L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-palm.03.L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-palm.04.L'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
-      'rig|Attack_2' has import animation warnings that might lower retargeting quality:\n\t'ORG-spine'
+      will be discarded.\n\t'ORG-chest' has scale animation that will be discarded.\n\t'ORG-palm.04.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-palm.02.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-palm.04.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'ORG-thigh.L'
+      has scale animation that will be discarded.\n\t'ORG-shin.L' has scale animation
+      that will be discarded.\n\t'ORG-foot.L' has scale animation that will be discarded.\n\t'ORG-toe.L'
+      has scale animation that will be discarded.\n\t'ORG-thigh.R' has scale animation
+      that will be discarded.\n\t'ORG-shin.R' has scale animation that will be discarded.\n\t'ORG-foot.R'
+      has scale animation that will be discarded.\n\t'ORG-toe.R' has scale animation
+      that will be discarded.\n\nClip 'rig|Attack_2' has import animation warnings
+      that might lower retargeting quality:\n\t'ORG-spine' has scale animation that
+      will be discarded.\n\t'ORG-chest' has scale animation that will be discarded.\n\nClip
+      'rig|Hit' has import animation warnings that might lower retargeting quality:\n\t'ORG-spine'
       has scale animation that will be discarded.\n\t'ORG-chest' has scale animation
-      that will be discarded.\n\t'ORG-palm.04.L' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\nClip 'rig|Walking' has
-      import animation warnings that might lower retargeting quality:\n\t'ORG-shin.L'
-      has scale animation that will be discarded.\n\t'ORG-foot.L' has scale animation
-      that will be discarded.\n\t'ORG-thigh.R' has scale animation that will be discarded.\n\t'ORG-shin.R'
-      has scale animation that will be discarded.\n\t'ORG-foot.R' has scale animation
-      that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'rig|Attack_1':\n\tLeftLowerArm
-      average position error 3.0 mm and maximum position error 12.3 mm at time 0:
-      6 (10.0%) Frame 6\n\tLeftHand average position error 0.2 mm and maximum position
-      error 1.1 mm at time 0: 5 (8.3%) Frame 5\n\tRightLowerArm average position error
-      9.6 mm and maximum position error 41.6 mm at time 0:43 (71.7%) Frame 43\n\tRightHand
-      average position error 0.6 mm and maximum position error 4.2 mm at time 0:43
-      (71.7%) Frame 43\n\nRetargeting quality report for clip 'rig|Attack_2':\n\tLeftLowerArm
+      that will be discarded.\n\nClip 'rig|Walking' has import animation warnings
+      that might lower retargeting quality:\n\t'ORG-palm.03.L' has scale animation
+      that will be discarded.\n\t'ORG-shin.L' has scale animation that will be discarded.\n\t'ORG-foot.L'
+      has scale animation that will be discarded.\n\t'ORG-thigh.R' has scale animation
+      that will be discarded.\n\t'ORG-shin.R' has scale animation that will be discarded.\n\t'ORG-foot.R'
+      has scale animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'rig|Attack_1':\n\tRightLowerLeg
+      average position error 0.2 mm and maximum position error 1.3 mm at time 0:23
+      (19.5%) Frame 23\n\tLeftLowerArm average position error 1.2 mm and maximum position
+      error 9.3 mm at time 0:32 (27.1%) Frame 32\n\tRightLowerArm average position
+      error 1.8 mm and maximum position error 30.5 mm at time 1:47 (90.7%) Frame 107\n\tRightHand
+      average position error 0.2 mm and maximum position error 4.8 mm at time 1:47
+      (90.7%) Frame 107\n\nRetargeting quality report for clip 'rig|Attack_2':\n\tLeftLowerArm
       average position error 0.5 mm and maximum position error 4.8 mm at time 0: 0
       (0.0%) Frame 0\n\tRightLowerArm average position error 8.4 mm and maximum position
       error 41.6 mm at time 0:54 (76.1%) Frame 54\n\tRightHand average position error
       0.5 mm and maximum position error 4.2 mm at time 0:54 (76.1%) Frame 54\n\nRetargeting
-      quality report for clip 'rig|Idle':\n\tLeftLowerArm average position error 4.8
+      quality report for clip 'rig|Hit':\n\tLeftLowerArm average position error 0.9
       mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'rig|melee.001Action':\n\tLeftLowerArm
+      average position error 1.3 mm and maximum position error 9.1 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'rig|Idle':\n\tLeftLowerArm
       average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
       (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
       error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'rig|melee.001Action.001':\n\tLeftLowerArm average position error 4.8 mm and
-      maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm average
-      position error 9.1 mm and maximum position error 9.1 mm at time 0: 0 (0.0%)
-      Frame 0\n\nRetargeting quality report for clip 'rig|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'rig|stand_still':\n\tRetargeting quality is good. No significant differences
-      with original animation were found.\n\nRetargeting quality report for clip 'rig|Standing_p':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'rig|Standing_p_exit':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 7
-      (16.7%) Frame 7\n\tRightLowerArm average position error 3.0 mm and maximum position
-      error 9.1 mm at time 0:30 (71.4%) Frame 30\n\nRetargeting quality report for
-      clip 'rig|Walking':\n\tLeftLowerArm average position error 2.3 mm and maximum
-      position error 4.1 mm at time 0:13 (21.7%) Frame 13\n\nRetargeting quality report
-      for clip 'melee_parts.025|melee.001Action':\n\tLeftLowerArm average position
+      'rig|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm and maximum
+      position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm average position
+      error 9.1 mm and maximum position error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting
+      quality report for clip 'rig|stand_still':\n\tRetargeting quality is good. No
+      significant differences with original animation were found.\n\nRetargeting quality
+      report for clip 'rig|Standing_p':\n\tLeftLowerArm average position error 4.8
+      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting
+      quality report for clip 'rig|Standing_p_exit':\n\tLeftLowerArm average position
       error 4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.025|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.025|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.012|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.012|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 3.0 mm and maximum position error 9.1 mm at time 0:31
+      (73.8%) Frame 31\n\nRetargeting quality report for clip 'rig|Walking':\n\tLeftLowerArm
+      average position error 3.4 mm and maximum position error 17.8 mm at time 0:21
+      (35.0%) Frame 21\n\tLeftHand average position error 0.2 mm and maximum position
+      error 2.0 mm at time 0:21 (35.0%) Frame 21\n\tRightLowerArm average position
+      error 1.5 mm and maximum position error 4.7 mm at time 0:41 (68.3%) Frame 41\n\nRetargeting
+      quality report for clip 'melee_parts.025|Pose_richard':\n\tLeftLowerArm average
+      position error 5.5 mm and maximum position error 5.5 mm at time 0: 0 (0.0%)
+      Frame 0\n\nRetargeting quality report for clip 'melee_parts.025|Walking':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.012|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.008|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.008|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.008|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.007|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.007|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.008|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.007|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.006|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.006|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.006|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.005|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.005|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.006|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.005|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.004|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.004|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.004|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.003|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.003|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.004|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.003|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.002|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.002|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.002|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.001|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.001|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.002|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.001|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.011|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.011|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.011|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.010|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.010|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.011|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.010|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.009|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.009|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.009|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.024|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.024|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.009|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.024|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.023|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.023|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.023|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.022|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.022|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.023|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.022|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.021|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.021|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.021|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.020|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.020|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.021|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.020|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.019|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.019|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.019|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.018|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.018|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.019|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.018|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.017|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.017|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.017|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.016|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.016|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.017|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.016|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.015|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.015|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.015|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.014|melee.001Action':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.014|melee.001Action.001':\n\tLeftLowerArm average position error
-      4.8 mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.015|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.014|Pose_richard':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.013|melee.001Action':\n\tLeftLowerArm average position error 4.8
-      mm and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
-      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.013|melee.001Action.001':\n\tLeftLowerArm
-      average position error 4.8 mm and maximum position error 4.8 mm at time 0: 0
-      (0.0%) Frame 0\n\tRightLowerArm average position error 9.1 mm and maximum position
-      error 9.1 mm at time 0: 0 (0.0%) Frame 0\n\nRetargeting quality report for clip
-      'melee_parts.013|Pose_richard':\n\tLeftLowerArm average position error 4.8 mm
-      and maximum position error 4.8 mm at time 0: 0 (0.0%) Frame 0\n\tRightLowerArm
-      average position error 9.1 mm and maximum position error 9.1 mm at time 0: 0
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
+      (0.0%) Frame 0\n\nRetargeting quality report for clip 'melee_parts.013|Pose_richard':\n\tLeftLowerArm
+      average position error 5.5 mm and maximum position error 5.5 mm at time 0: 0
       (0.0%) Frame 0\n"
     animationDoRetargetingWarnings: 1
     animationCompression: 0
@@ -1316,7 +1113,7 @@ ModelImporter:
       name: rig|Attack_1
       takeName: rig|Attack_1
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 37
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1327,7 +1124,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -1335,161 +1132,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: melee_body
-        weight: 0
-      - path: melee_body/melee_parts
-        weight: 0
-      - path: root
-        weight: 1
-      - path: root/ORG-hips
-        weight: 1
-      - path: root/ORG-hips/ORG-spine
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-neck
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-neck/ORG-head
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L/ORG-f_index.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L/ORG-thumb.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L/ORG-f_middle.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L/ORG-f_ring.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L/ORG-f_pinky.03.L
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R/ORG-f_index.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R/ORG-thumb.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R/ORG-f_middle.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R/ORG-f_ring.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R
-        weight: 1
-      - path: root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R/ORG-f_pinky.03.R
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.L
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.L/ORG-shin.L
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L/ORG-toe.L
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.R
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.R/ORG-shin.R
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R
-        weight: 1
-      - path: root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R/ORG-toe.R
-        weight: 1
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: rig|Attack_2
-      takeName: rig|Attack_2
-      firstFrame: 0
-      lastFrame: 71
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 1
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
+      events:
+      - time: 0.6156749
+        functionName: SetBool
+        data: DealingDmg:true
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9318793
+        functionName: SetBool
+        data: DealingDmg:false
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1644,6 +1301,228 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: melee
+        weight: 0
+      - path: rig
+        weight: 1
+      - path: rig/melee_body
+        weight: 0
+      - path: rig/melee_body/melee_parts
+        weight: 0
+      - path: rig/melee_body/melee_parts.001
+        weight: 0
+      - path: rig/melee_body/melee_parts.002
+        weight: 0
+      - path: rig/melee_body/melee_parts.003
+        weight: 0
+      - path: rig/melee_body/melee_parts.004
+        weight: 0
+      - path: rig/melee_body/melee_parts.005
+        weight: 0
+      - path: rig/melee_body/melee_parts.006
+        weight: 0
+      - path: rig/melee_body/melee_parts.007
+        weight: 0
+      - path: rig/melee_body/melee_parts.008
+        weight: 0
+      - path: rig/melee_body/melee_parts.009
+        weight: 0
+      - path: rig/melee_body/melee_parts.010
+        weight: 0
+      - path: rig/melee_body/melee_parts.011
+        weight: 0
+      - path: rig/melee_body/melee_parts.012
+        weight: 0
+      - path: rig/melee_body/melee_parts.013
+        weight: 0
+      - path: rig/melee_body/melee_parts.014
+        weight: 0
+      - path: rig/melee_body/melee_parts.015
+        weight: 0
+      - path: rig/melee_body/melee_parts.016
+        weight: 0
+      - path: rig/melee_body/melee_parts.017
+        weight: 0
+      - path: rig/melee_body/melee_parts.018
+        weight: 0
+      - path: rig/melee_body/melee_parts.019
+        weight: 0
+      - path: rig/melee_body/melee_parts.020
+        weight: 0
+      - path: rig/melee_body/melee_parts.021
+        weight: 0
+      - path: rig/melee_body/melee_parts.022
+        weight: 0
+      - path: rig/melee_body/melee_parts.023
+        weight: 0
+      - path: rig/melee_body/melee_parts.024
+        weight: 0
+      - path: rig/melee_body/melee_parts.025
+        weight: 0
+      - path: rig/root
+        weight: 1
+      - path: rig/root/ORG-hips
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-neck/ORG-head
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-f_index.01.L/ORG-f_index.02.L/ORG-f_index.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.01.L/ORG-thumb.01.L/ORG-thumb.02.L/ORG-thumb.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.02.L/ORG-f_middle.01.L/ORG-f_middle.02.L/ORG-f_middle.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.03.L/ORG-f_ring.01.L/ORG-f_ring.02.L/ORG-f_ring.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.L/ORG-upper_arm.L/ORG-forearm.L/ORG-hand.L/ORG-palm.04.L/ORG-f_pinky.01.L/ORG-f_pinky.02.L/ORG-f_pinky.03.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-f_index.01.R/ORG-f_index.02.R/ORG-f_index.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.01.R/ORG-thumb.01.R/ORG-thumb.02.R/ORG-thumb.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.02.R/ORG-f_middle.01.R/ORG-f_middle.02.R/ORG-f_middle.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.03.R/ORG-f_ring.01.R/ORG-f_ring.02.R/ORG-f_ring.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-spine/ORG-chest/ORG-shoulder.R/ORG-upper_arm.R/ORG-forearm.R/ORG-hand.R/ORG-palm.04.R/ORG-f_pinky.01.R/ORG-f_pinky.02.R/ORG-f_pinky.03.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.L/ORG-shin.L/ORG-foot.L/ORG-toe.L
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R
+        weight: 1
+      - path: rig/root/ORG-hips/ORG-thigh.R/ORG-shin.R/ORG-foot.R/ORG-toe.R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|Attack_2
+      takeName: rig|Attack_1
+      firstFrame: 37
+      lastFrame: 118
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.6041667
+        functionName: SetBool
+        data: DealingDmg:true
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.80952376
+        functionName: SetBool
+        data: DealingDmg:false
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

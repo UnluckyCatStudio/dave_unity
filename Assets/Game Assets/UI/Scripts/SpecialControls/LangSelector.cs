@@ -10,7 +10,7 @@ namespace Kyru.UI
 		private void Start () 
 		{
 			//GetComponent<Dropdown> ().value = Localization.lang;
-			GetComponent<Dropdown> ().value = (int) Localization.lang;
+			GetComponent<Dropdown> ().value = Localization.lang;
 		}
 
 		public void ChangeLang ( int lang ) 

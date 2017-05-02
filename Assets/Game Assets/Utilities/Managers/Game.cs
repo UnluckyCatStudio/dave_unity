@@ -18,11 +18,6 @@ public class Game : MonoBehaviour
 	private Translation[] translations;
 
 	/// <summary>
-	/// Self reference.
-	/// </summary>
-	public Game manager;
-
-	/// <summary>
 	/// Global UI parent.
 	/// </summary>
 	public static Animator ui;
@@ -53,6 +48,9 @@ public class Game : MonoBehaviour
 
 		ui  = GameObject.Find ( "UI" ).GetComponent<Animator> ();
 		// Camera Rig will be self-set when game is started
+		// Initialize all sliders
+		foreach (var s in ui.GetComponentsInChildren<SliderInt> ( true ))
+			s.Init ();
 
 		#region TRANSLATION
 		// Setup references
@@ -99,10 +97,6 @@ public class Game : MonoBehaviour
 			audio = JsonUtility.FromJson<AudioSettings> ( jsonAudio );
         else
             audio.SetDefaults ();
-
-        // Initialize all values
-        foreach ( var s in ui.GetComponentsInChildren<SliderInt> ( true ) )
-            s.Init ();
         
 		aManager.LoadValues ();
 		aManager.ApplySave ( true );
