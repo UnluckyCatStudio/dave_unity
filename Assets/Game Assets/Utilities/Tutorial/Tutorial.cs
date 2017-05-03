@@ -14,9 +14,16 @@ public class Tutorial : MonoBehaviour
 	public ParticleSystem fog;
 	public Color targetAmbient;
 	public Vector3 squarePos;
+	public GameObject water;
 	public GameObject[] firstWave;
-	public RangedController firstRanged;
 	public GameObject[] secondWave;
+	public Color normalAmbient;
+	public RangedController firstRanged;
+	public Animation cupula;
+	public Color cupulaAmbient;
+	public RangedController[] firstRangeds;
+	public RangedController[] secondRangeds;
+	public RangedController[] thirdRangeds;
 
 	// private
 	Text tutoText;
@@ -26,7 +33,7 @@ public class Tutorial : MonoBehaviour
 		col.enabled = false;
 
 		// Turn down ambient
-		StartCoroutine ( this.AsyncLerp ( typeof ( RenderSettings ), "ambientLight", targetAmbient, 4f ) );
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", targetAmbient, 4f ) );
 		yield return null;
 	}
 
@@ -47,6 +54,7 @@ public class Tutorial : MonoBehaviour
 		square.Play ( "Fade" );
 		yield return new WaitForSeconds ( 2f );
 		fog.Play ();
+		water.SetActive ( false );
 
 		// Return Dave control
 		Game.dave.canMove = true;
@@ -60,21 +68,61 @@ public class Tutorial : MonoBehaviour
 	{
 		yield return new WaitForSeconds ( 1f );
 		foreach (var m in firstWave) m.SetActive ( true );
-		yield return new WaitForSeconds ( 2f );
+		yield return new WaitForSeconds ( 0.5f );
 		StartCoroutine(  NewTuto ( AllTexts.Tuto_Click_To_Attack_Big, Key.Attack_big ) );
 	}
 
 	int firstWaveCount;
-	IEnumerator FirstWave ()
+	IEnumerator FirstWave () 
 	{
-		if ( ++firstWaveCount == 3 )
+		if ( ++firstWaveCount == firstWave.Length )
 		{
-			yield return new WaitForSeconds ( 1f );
-			Game.dave.canShoot = true;
-			yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
-			yield return new WaitForSeconds ( 1f );
-			//firstRanged
+			yield return new WaitForSeconds ( 2f );
+			foreach (var m in secondWave) m.SetActive ( true );
 		}
+	}
+
+	int secondWaveCount;
+	IEnumerator SecondWave ()
+	{
+		if ( ++secondWaveCount == secondWave.Length )
+		{
+			yield return new WaitForSeconds ( 2f );
+			placeta.enabled = false;
+			square["Fade"].speed = -1;
+			square["Fade"].time = square["Fade"].length;
+			square.Play ( "Fade" );
+			yield return new WaitForSeconds ( 2f );
+			water.SetActive ( true );
+			fog.Stop ( false, ParticleSystemStopBehavior.StopEmitting );
+			StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
+		}
+	}
+
+	IEnumerator Ranged ( Collider col )
+	{
+		col.enabled = false;
+		if ( !Game.dave.SwordOut )
+		{
+			Game.dave.canMove = false;
+			Game.dave.Moving = false;
+			yield return NewTuto ( AllTexts.Tuto_R_To_Unsheathe, Key.Sword );
+			Game.dave.canMove = true;
+			yield return new WaitForSeconds ( 1f );
+		}
+		Game.dave.canShoot = true;
+		yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
+		firstRanged.Activate ();
+	}
+
+	IEnumerator StartCupula ()
+	{
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", cupulaAmbient, 2.5f ) );
+		yield return cupula.Play ( "Start" );
+		cupula.Stop ();
+		yield return new WaitForSeconds ( .5f );
+		firstRangeds[0].Activate ();
+
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 
@@ -89,13 +137,6 @@ public class Tutorial : MonoBehaviour
 					return
 						Game.input.GetKeyDown
 						( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
-				}
-				else
-				if ( key == Key.Charge )
-				{
-					return
-						Game.input.GetKeyDown
-						( Key.Attack_single ) && Game.dave.Charging;
 				}
 				else return Game.input.GetKeyDown ( key );
 			});

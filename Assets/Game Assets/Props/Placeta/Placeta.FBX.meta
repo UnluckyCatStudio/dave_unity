@@ -28,6 +28,7 @@ ModelImporter:
     100040: square_fog_wall
     100042: tree_wall
     100044: square_fog_wall_shadow
+    100046: square_collider
     400000: columpio
     400002: cuerdas_columpio
     400004: escaleras_plaza
@@ -51,6 +52,7 @@ ModelImporter:
     400040: square_fog_wall
     400042: tree_wall
     400044: square_fog_wall_shadow
+    400046: square_collider
     2300000: columpio
     2300002: cuerdas_columpio
     2300004: escaleras_plaza
@@ -73,6 +75,7 @@ ModelImporter:
     2300038: square_fog_wall
     2300040: tree_wall
     2300042: square_fog_wall_shadow
+    2300044: square_collider
     3300000: columpio
     3300002: cuerdas_columpio
     3300004: escaleras_plaza
@@ -95,6 +98,7 @@ ModelImporter:
     3300038: square_fog_wall
     3300040: tree_wall
     3300042: square_fog_wall_shadow
+    3300044: square_collider
     4300000: square
     4300002: valla_arbol_1
     4300004: soporte_valla
@@ -117,6 +121,7 @@ ModelImporter:
     4300038: square_fog_wall
     4300040: tree_wall
     4300042: square_fog_wall_shadow
+    4300044: square_collider
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Kyru.etc;
 
 public class DaveController : Kyru.etc.AnimatorController
 {
@@ -161,17 +162,28 @@ public class DaveController : Kyru.etc.AnimatorController
 			if
 			(  !Sheathing
 			&& !Attacking
+			&& !Charging
 			&& canShoot
 			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
+				sword.vfx.carga.Play ();
+				//cam.lookOffset += Vector3.forward * 3f;
+				//var rot = Quaternion.LookRotation ( Vector3.Scale ( cam.transform.forward, Vector3.forward ) );
+				//StartCoroutine ( this.AsyncLerp<Transform> ( "rotation", rot, .1f, transform ) );
+
 				anim.SetTrigger ( "Charge" );
 				Charging = true;
+
+				//StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", new Vector3 ( 0, 1, 4 ), .5f, cam ) );
 			}
 			else
-			if ( Game.input.GetKeyUp ( Key.Charge ) )
+			if
+			(  Charging
+			&& Game.input.GetKeyUp ( Key.Charge ) )
 			{
+				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
-			} 
+			}
 			#endregion
 
 			#region SHOT
@@ -180,11 +192,32 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
 				anim.SetTrigger ( "Shoot" );
+				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
+				sword.vfx.release.Play ();
+				var shot = Instantiate ( sword.shot, sword.transform, false );
+				shot.transform.SetParent ( null, true );
+				shot.transform.rotation = Quaternion.LookRotation ( Game.cam.transform.forward ); //, anim.GetBoneTransform (HumanBodyBones.RightUpperArm).up );
+				shot.transform.rotation *= Quaternion.Euler ( 0, 180, 0 );
 			} 
 			#endregion
 		}
 		#endregion
+	}
+
+	void LateUpdate ()
+	{
+		if (Charging)
+		{
+			var chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
+			var arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
+			var lArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
+
+			transform.rotation = cam.transform.rotation;
+			chest.rotation *= Quaternion.Euler ( 0, -30, 0 );
+			arm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
+			lArm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
+		}
 	}
 
 	#region IK
@@ -245,7 +278,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		// Front or Back ?
 		var angle = Quaternion.Angle ( transform.localRotation, Quaternion.LookRotation ( point ) );
 
-		if ( angle >= 50 )  anim.SetTrigger ( "Hit_Front" );
+		if ( angle >= 40 )  anim.SetTrigger ( "Hit_Front" );
 		else				anim.SetTrigger ( "Hit_Back" );
 
 		Hitd = true;

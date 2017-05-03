@@ -38,14 +38,13 @@ public class CamController : MonoBehaviour
 	}
 
 	#region FX
+	Vector3 pivot = new Vector3 ( 0, 0, -2.9f );
 	public void FollowDave () 
 	{
-		// Follow Dave movement only if changed
-		if ( dave.position + lookOffset != pivot )
-		{
-			pivot = dave.position + lookOffset;
-			transform.position = pivot;
-		}
+		transform.position = dave.position;						// Follow Dave
+		var offset = dave.TransformVector ( lookOffset );       // Relative offset
+		pivot = new Vector3 ( offset.x, offset.y, pivot.z );
+		Game.cam.transform.localPosition = pivot;
 
 		// If camera collides when moved
 		while ( IsColliding () )
@@ -118,7 +117,6 @@ public class CamController : MonoBehaviour
 
 	#region HELPERS
 	// Is camera too close/far ?
-	Vector3 pivot;
 	private bool TooClose () 
 	{
 		return

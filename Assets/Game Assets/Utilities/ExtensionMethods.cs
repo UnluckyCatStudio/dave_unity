@@ -27,10 +27,10 @@ namespace Kyru.etc
 		#endregion
 
 		#region MONO
-		public static IEnumerator AsyncLerp ( this MonoBehaviour m, Type type, string value, float target, float duration, UnityEngine.Object parent = null )
+		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, float target, float duration, UnityEngine.Object parent = null )
 		{
 			// Reflection
-			var param = type.GetProperty ( value );
+			var param = typeof ( T ).GetProperty ( value );
 			var original = ( float ) param.GetValue ( parent, null );
 
 			var start = Time.time;
@@ -45,10 +45,10 @@ namespace Kyru.etc
 				yield return null;
 			}
 		}
-		public static IEnumerator AsyncLerp ( this MonoBehaviour m, Type type, string value, Color target, float duration, UnityEngine.Object parent = null )
+		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, Color target, float duration, UnityEngine.Object parent = null )
 		{
 			// Reflection
-			var param = type.GetProperty ( value );
+			var param = typeof(T).GetProperty ( value );
 			var original = ( Color ) param.GetValue ( parent, null );
 
 			var start = Time.time;
@@ -62,6 +62,49 @@ namespace Kyru.etc
 				progress = ( Time.time - start ) / duration;
 				yield return null;
 			}
+		}
+		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, Vector3 target, float duration, UnityEngine.Object parent = null )
+		{
+			// Reflection
+			var param = typeof(T).GetProperty ( value );
+			var original = (Vector3) param.GetValue ( parent, null );
+
+			var start = Time.time;
+			var progress = 0f;
+
+			while (progress < 1f)
+			{
+				var newValue = Vector3.Lerp ( original, target, progress );
+				param.SetValue ( parent, newValue, null );
+
+				progress = (Time.time - start) / duration;
+				yield return null;
+			}
+		}
+		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, Quaternion target, float duration, UnityEngine.Object parent = null )
+		{
+			// Reflection
+			var param = typeof (T).GetProperty ( value );
+			var original = (Quaternion) param.GetValue ( parent, null );
+
+			var start = Time.time;
+			var progress = 0f;
+
+			while (progress < 1f)
+			{
+				var newValue = Quaternion.Lerp ( original, target, progress );
+				param.SetValue ( parent, newValue, null );
+
+				progress = (Time.time - start) / duration;
+				yield return null;
+			}
+		}
+		#endregion
+
+		#region QUATERNION
+		public static Quaternion Inverse ( this Quaternion q ) 
+		{
+			return Quaternion.Inverse ( q );
 		}
 		#endregion
 	}

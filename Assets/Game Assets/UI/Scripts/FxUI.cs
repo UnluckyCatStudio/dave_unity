@@ -12,6 +12,7 @@ namespace Kyru.UI
 		{
 			Game.ui.SetBool ( "Paused", false );
 			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.Locked;
 			Time.timeScale = 1;
 		}
 
@@ -21,6 +22,7 @@ namespace Kyru.UI
 			Game.ui.SetBool ( "OnMainMenu", false );
 			Game.ui.SetBool ( "Loading", true );
 			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
 			ZoneLoader.Init ( this, "Zona_0", 3f );
 		}
 
@@ -29,6 +31,7 @@ namespace Kyru.UI
 			Game.ui.SetBool ( "OnMainMenu", true );
 			Game.ui.SetBool ( "Paused", false );
 			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 		}
 
 		public void QuitToDesktop () 
@@ -56,6 +59,7 @@ namespace Kyru.UI
 			{
 				Game.ui.SetBool ( "Paused", !paused );
 				Cursor.visible = !paused;
+				Cursor.lockState = !paused ? CursorLockMode.None : CursorLockMode.Locked;
 				Time.timeScale = !paused ? 0 : 1;
 			}
 		}
