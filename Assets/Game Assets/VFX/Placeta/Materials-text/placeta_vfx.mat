@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: placeta_vfx
-  m_Shader: {fileID: 206, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -93,7 +93,7 @@ Material:
       second: 1
     - first:
         name: _InvFade
-      second: 3
+      second: 0.19
     - first:
         name: _Metallic
       second: 0
@@ -133,4 +133,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _TintColor
-      second: {r: 0.0018255581, g: 0, b: 0.031034458, a: 1}
+      second: {r: 0.043534473, g: 0.05862069, b: 0.056623984, a: 1}

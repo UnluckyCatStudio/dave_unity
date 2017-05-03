@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1924896811529076
 GameObject:
   m_ObjectHideFlags: 1
@@ -1067,8 +1067,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915885824623356}
-  m_LocalRotation: {x: -0, y: 0.84911996, z: -0, w: -0.52820003}
-  m_LocalPosition: {x: 726.095, y: 121.594, z: 732.042}
+  m_LocalRotation: {x: -0, y: -0.83334696, z: -0, w: -0.5527503}
+  m_LocalPosition: {x: 716.46735, y: 121.832, z: 740.5493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4435323152623590}
@@ -1089,7 +1089,7 @@ Transform:
   - {fileID: 4120533693263680}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 243.768, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 472.888, z: 0}
 --- !u!4 &4318348753936740
 Transform:
   m_ObjectHideFlags: 1
@@ -1174,7 +1174,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1453342480326642}
-  m_LocalRotation: {x: -0.1547345, y: 0.70081025, z: -0.69051504, w: 0.09006219}
+  m_LocalRotation: {x: -0.15473452, y: 0.7008103, z: -0.6905151, w: 0.0900622}
   m_LocalPosition: {x: -0.5926239, y: 1.0519851, z: -0.00042107323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3070,7 +3070,7 @@ Animator:
   m_GameObject: {fileID: 1915885824623356}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cd84d7c242afb3948b20332c2bf5ba8c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1dc26fc493f06e64db093fc185506f3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: d7cd098ecfd886e4ea529d3ad1e7983b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3124,11 +3124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  startOnAwake: 0
-  attackDistance: 0
+  startOnAwake: 1
+  runMul: 1.3
   dead: 0
   receiver: {fileID: 0}
-  msg: KilledFirst
+  msg: SecondWave
   parts:
   - {fileID: 54570642525787878}
   - {fileID: 54662410138105374}
@@ -3367,8 +3367,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.81
   m_Radius: 0.25
-  m_SlopeLimit: 0
-  m_StepOffset: 0
+  m_SlopeLimit: 20
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0.01, y: 0.95, z: 0}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,7 +43,7 @@ public class Tutorial : MonoBehaviour
 		col.enabled = false;
 
 		// Close placeta
-		placeta.enabled = true;
+		placeta.gameObject.SetActive ( true );
 
 		// Sword tuto
 		Game.dave.canCombat = true;
@@ -89,10 +90,10 @@ public class Tutorial : MonoBehaviour
 		{
 			yield return new WaitForSeconds ( 2f );
 			placeta.enabled = false;
-			square["Fade"].speed = -1;
+			square["Fade"].speed = -2;
 			square["Fade"].time = square["Fade"].length;
 			square.Play ( "Fade" );
-			yield return new WaitForSeconds ( 2f );
+			yield return new WaitForSeconds ( 1f );
 			water.SetActive ( true );
 			fog.Stop ( false, ParticleSystemStopBehavior.StopEmitting );
 			StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
@@ -115,13 +116,25 @@ public class Tutorial : MonoBehaviour
 		firstRanged.Activate ();
 	}
 
-	IEnumerator StartCupula ()
+	IEnumerator StartCupula ( Collider col )
 	{
+		col.enabled = false;
+
 		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", cupulaAmbient, 2.5f ) );
 		yield return cupula.Play ( "Start" );
-		cupula.Stop ();
+		//cupula.Stop ();
 		yield return new WaitForSeconds ( .5f );
 		firstRangeds[0].Activate ();
+		yield return new WaitUntil ( () => !firstRangeds[0].active );
+		yield return cupula.Play ( "SecondWave" );
+		foreach (var r in secondRangeds) r.Activate ();
+		yield return new WaitUntil ( () => secondRangeds.All ( x => !x.active ) );
+		yield return cupula.Play ( "ThirdWave" );
+		foreach (var r in thirdRangeds) r.Activate ();
+		yield return new WaitUntil ( () => thirdRangeds.All ( x => !x.active ) );
+		yield return cupula.Play ( "LastWave" );
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
+		yield return cupula.Play ( "End" );
 
 	}
 
@@ -145,7 +158,7 @@ public class Tutorial : MonoBehaviour
 
 	void Start () 
 	{
-		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+		//ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
 		tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
 	}
 }

@@ -13,24 +13,24 @@ public class RangedController : MonoBehaviour
 
 	public float attackSpeed;
 	IEnumerator Logic ()
-	{
-		while ( true )
-		{
-			RaycastHit hit =  new RaycastHit ();
-			var dir = transform.position - Game.dave.transform.position;
-			if
-			(  Physics.Raycast ( transform.position, -dir, out hit )
-			&& hit.transform.tag == "Player" )
-			{
-				print ( "GLA" );
-			}
-
-			yield return null;
-		}
+	{yield return null;
+//		while ( true )
+//		{
+//			RaycastHit hit =  new RaycastHit ();
+//			var dir = transform.position - Game.dave.transform.position;
+//			if
+//			(  Physics.Raycast ( transform.position, -dir, out hit )
+//			&& hit.transform.tag == "Player" )
+//			{
+//				print ( "GLA" );
+//			}
+//
+//			yield return null;
+//		}
 	}
 
 	public bool active;
-	private void Update () { if (active) Activate (); }
+	//private void Update () { if (active) Activate (); }
 
 	public void Activate ()
 	{
