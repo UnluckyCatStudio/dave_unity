@@ -190,7 +190,7 @@ Material:
       second: {r: 0.19, g: -0.12, b: 1.53, a: 0.79}
     - first:
         name: _Main
-      second: {r: 0, g: 0.012182294, b: 0.023668468, a: 0}
+      second: {r: 0.6862069, g: 0.6646887, b: 0.39355984, a: 0}
     - first:
         name: _ReflectionColor
       second: {r: 0, g: 0, b: 0, a: 0.972}

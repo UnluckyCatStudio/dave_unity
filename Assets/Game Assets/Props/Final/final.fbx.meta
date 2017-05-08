@@ -8,15 +8,60 @@ ModelImporter:
     100000: Circle
     100002: Cube
     100004: //RootNode
+    100006: BO_Pared
+    100008: BO_Pared.001
+    100010: BO_Pared.002
+    100012: BO_Pared.003
+    100014: BO_Pared.004
+    100016: BO_Pared.005
+    100018: BO_Pared.006
+    100020: BO_Ref_1.6m
+    100022: BO_suelo
     400000: Circle
     400002: Cube
     400004: //RootNode
+    400006: BO_Pared
+    400008: BO_Pared.001
+    400010: BO_Pared.002
+    400012: BO_Pared.003
+    400014: BO_Pared.004
+    400016: BO_Pared.005
+    400018: BO_Pared.006
+    400020: BO_Ref_1.6m
+    400022: BO_suelo
     2300000: Circle
     2300002: Cube
+    2300004: BO_Pared
+    2300006: BO_Pared.001
+    2300008: BO_Pared.002
+    2300010: BO_Pared.003
+    2300012: BO_Pared.004
+    2300014: BO_Pared.005
+    2300016: BO_Pared.006
+    2300018: BO_Ref_1.6m
+    2300020: BO_suelo
     3300000: Circle
     3300002: Cube
+    3300004: BO_Pared
+    3300006: BO_Pared.001
+    3300008: BO_Pared.002
+    3300010: BO_Pared.003
+    3300012: BO_Pared.004
+    3300014: BO_Pared.005
+    3300016: BO_Pared.006
+    3300018: BO_Ref_1.6m
+    3300020: BO_suelo
     4300000: Circle
     4300002: Cube
+    4300004: BO_Pared.006
+    4300006: BO_Pared.005
+    4300008: BO_Pared.004
+    4300010: BO_Pared.003
+    4300012: BO_Pared.002
+    4300014: BO_Pared.001
+    4300016: BO_Pared
+    4300018: BO_suelo
+    4300020: BO_Ref_1.6m
   materials:
     importMaterials: 1
     materialName: 0
