@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
+    path: Assets/etc/Trailer/Trailer_1.unity
+  - enabled: 0
     path: Assets/DEMO/v0.1/MainMenuBG_DEMO.unity
   - enabled: 0
     path: Assets/Game Assets/Scenes/Loading.unity
