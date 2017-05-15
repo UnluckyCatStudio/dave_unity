@@ -145,12 +145,14 @@ public class DaveController : Kyru.etc.AnimatorController
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
 				{
 					anim.SetTrigger ( "Attack-single" );
+					anim.ResetTrigger ( "Charge" );
 					Attacking = true;
 				}
 				else
 				if ( Game.input.GetKeyDown ( Key.Attack_big ) )
 				{
 					anim.SetTrigger ( "Attack-big" );
+					anim.ResetTrigger ( "Charge" );
 					Attacking = true;
 				}
 			}
@@ -163,6 +165,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  !Sheathing
 			&& !Attacking
 			&& !Charging
+			&& SwordOut
 			&& canShoot
 			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
@@ -172,7 +175,6 @@ public class DaveController : Kyru.etc.AnimatorController
 				//StartCoroutine ( this.AsyncLerp<Transform> ( "rotation", rot, .1f, transform ) );
 
 				anim.SetTrigger ( "Charge" );
-				Charging = true;
 
 				//StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", new Vector3 ( 0, 1, 4 ), .5f, cam ) );
 			}
