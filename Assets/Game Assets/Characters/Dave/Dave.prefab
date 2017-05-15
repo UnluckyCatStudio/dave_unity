@@ -1555,7 +1555,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741376630678382}
   m_LocalRotation: {x: -0, y: -0.9274541, z: -0, w: -0.37393713}
-  m_LocalPosition: {x: 673.683, y: 129.683, z: 693.552}
+  m_LocalPosition: {x: 673.867, y: 129.686, z: 693.612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4229562121728020}
@@ -2077,8 +2077,8 @@ MonoBehaviour:
   scarfWind: {x: 0, y: 9, z: -3}
   canMove: 1
   speed: 0
-  canCombat: 0
-  canShoot: 0
+  canCombat: 1
+  canShoot: 1
   sword: {fileID: 0}
   swordBackHolder: {fileID: 4510159214274134}
   swordHandHolder: {fileID: 4584216610574858}
@@ -2690,8 +2690,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.6
   m_Radius: 0.34
-  m_SlopeLimit: 0
-  m_StepOffset: 0.1
+  m_SlopeLimit: 20
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.875, z: 0}

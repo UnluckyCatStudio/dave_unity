@@ -12,6 +12,7 @@ public class CamController : MonoBehaviour
 	public Transform pivotX;
 
 	[Header("Settings")]
+	public LayerMask dontCollideWith;
 	public Vector3 lookOffset;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
@@ -94,7 +95,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () && !IsColliding ( avoidingStep * 1.5f ) )
+		if ( !TooFar () && !IsColliding ( avoidingStep * 2f ) )
 		{
 			var z =
 			Mathf.Lerp
@@ -120,21 +121,21 @@ public class CamController : MonoBehaviour
 	private bool TooClose () 
 	{
 		return
-			Vector3.Distance ( pivot, Game.cam.transform.position )
+			-Game.cam.transform.localPosition.z
 			<= minDistanceFromPivot;
 	}
 	private bool TooFar () 
 	{
 		return
-			Vector3.Distance ( pivot, Game.cam.transform.position )
+			-Game.cam.transform.localPosition.z
 			>= maxDistanceFromPivot;
 	}
 
 	// Performs collisions checks from camera
-	private bool IsColliding ( float radius=0.1f ) 
+	private bool IsColliding ( float radius=0.15f ) 
 	{
 		return
-			Physics.CheckSphere ( Game.cam.transform.position, radius );
+			Physics.CheckSphere ( Game.cam.transform.position, radius, ~dontCollideWith );
 	}
 	#endregion
 }

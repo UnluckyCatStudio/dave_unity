@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179935743978810}
   m_LocalRotation: {x: -0, y: -0.92700654, z: -0, w: -0.37504527}
-  m_LocalPosition: {x: 673.786, y: 130.91216, z: 693.492}
+  m_LocalPosition: {x: 673.967, y: 130.915, z: 693.512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4276698227554512}
@@ -892,7 +892,7 @@ MonoBehaviour:
       temperatureShift: 0
       tint: 0
       hue: 0
-      saturation: 1.38
+      saturation: 1.09
       vibrance: -0.09
       value: 3.55
       contrast: 1
@@ -1251,6 +1251,9 @@ MonoBehaviour:
   dave: {fileID: 0}
   pivotY: {fileID: 4460022991560350}
   pivotX: {fileID: 4276698227554512}
+  dontCollideWith:
+    serializedVersion: 2
+    m_Bits: 4096
   lookOffset: {x: 0, y: 1, z: 0}
   minDistanceFromPivot: 1.2
   maxDistanceFromPivot: 3.1
