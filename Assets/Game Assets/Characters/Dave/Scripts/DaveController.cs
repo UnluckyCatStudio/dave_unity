@@ -194,7 +194,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
 				anim.SetTrigger ( "Shoot" );
-				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
+				sword.vfx.carga.Stop ( true, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				sword.vfx.release.Play ();
 				var shot = Instantiate ( sword.shot, sword.transform, false );
