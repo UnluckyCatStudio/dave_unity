@@ -1146,9 +1146,9 @@ Transform:
   - {fileID: 1789283119}
   - {fileID: 1202187444}
   - {fileID: 667767005}
-  - {fileID: 909507708}
   - {fileID: 867423211}
   - {fileID: 1016828453}
+  - {fileID: 909507708}
   - {fileID: 277628553}
   - {fileID: 2037001701}
   - {fileID: 489215080}
@@ -3780,6 +3780,11 @@ Prefab:
       propertyPath: sword
       value: 
       objectReference: {fileID: 617333212}
+    - target: {fileID: 137351999063532132, guid: c675c376b1e623741a123305cda116ce,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c675c376b1e623741a123305cda116ce, type: 2}
   m_IsPrefabParent: 0
