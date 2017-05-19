@@ -36,7 +36,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: e6f8288974c664a309d6c66de636978c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36dd0b22da8874ed38075789055ca664, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -78,7 +78,7 @@ Material:
     m_Floats:
     - first:
         name: _FresnelScale
-      second: 0.15
+      second: 1.81
     - first:
         name: _GerstnerIntensity
       second: 1
@@ -100,7 +100,7 @@ Material:
       second: {r: 0.4, g: 0.39099997, b: 0.56, a: 0.7}
     - first:
         name: _BaseColor
-      second: {r: 0.0023073044, g: 0.3137931, b: 0.3137931, a: 0.522}
+      second: {r: 0.11323529, g: 0.23864393, b: 0.26551723, a: 0.522}
     - first:
         name: _BumpDirection
       second: {r: 1, g: 30, b: 20, a: -20}
@@ -121,7 +121,7 @@ Material:
       second: {r: 0.3275862, g: 0.7471264, b: 0, a: 0}
     - first:
         name: _GAmplitude
-      second: {r: 0.03, g: 0, b: 0, a: 0.25}
+      second: {r: 0.1, g: 0, b: 0, a: 0.25}
     - first:
         name: _GDirectionAB
       second: {r: 0.85, g: 0, b: 0.25, a: 0.25}
@@ -130,7 +130,7 @@ Material:
       second: {r: -0.3, g: -0.9, b: 0.5, a: 0.5}
     - first:
         name: _GFrequency
-      second: {r: 0.5, g: 0.25, b: 0.6, a: 0.245}
+      second: {r: 0.85, g: 0.25, b: 0.6, a: 0.245}
     - first:
         name: _GSpeed
       second: {r: 4, g: 2, b: 1, a: 1}
@@ -142,13 +142,13 @@ Material:
       second: {r: 0.27508128, g: 0.08562102, b: 0.09414239, a: 0.48031002}
     - first:
         name: _ReflectionColor
-      second: {r: 0.116379306, g: 0.1517241, b: 0.29310343, a: 0.953}
+      second: {r: 0.08813388, g: 0.17485383, b: 0.2724138, a: 0.953}
     - first:
         name: _RefractionFog
       second: {r: 0.8681778, g: 0.8797176, b: 0.8880597, a: 1}
     - first:
         name: _SpecularColor
-      second: {r: 0.82089555, g: 0.80581594, b: 0.7718869, a: 1}
+      second: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
     - first:
         name: _WorldLightDir
       second: {r: 2.45, g: -1.18, b: 1.62, a: 0}

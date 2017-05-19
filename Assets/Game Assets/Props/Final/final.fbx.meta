@@ -66,6 +66,13 @@ ModelImporter:
     100116: wall_base.004
     100118: wall_base.005
     100120: Wall_radial_int
+    100122: wall_4
+    100124: wall_5
+    100126: wall_6
+    100128: wall_7
+    100130: wall_radial_ext.2
+    100132: wall_radial_ext_1
+    100134: wall_radial_ext_bo
     400000: Circle
     400002: Cube
     400004: //RootNode
@@ -127,6 +134,13 @@ ModelImporter:
     400116: wall_base.004
     400118: wall_base.005
     400120: Wall_radial_int
+    400122: wall_4
+    400124: wall_5
+    400126: wall_6
+    400128: wall_7
+    400130: wall_radial_ext.2
+    400132: wall_radial_ext_1
+    400134: wall_radial_ext_bo
     2300000: Circle
     2300002: Cube
     2300004: BO_Pared
@@ -187,6 +201,13 @@ ModelImporter:
     2300114: wall_base.004
     2300116: wall_base.005
     2300118: Wall_radial_int
+    2300120: wall_4
+    2300122: wall_5
+    2300124: wall_6
+    2300126: wall_7
+    2300128: wall_radial_ext.2
+    2300130: wall_radial_ext_1
+    2300132: wall_radial_ext_bo
     3300000: Circle
     3300002: Cube
     3300004: BO_Pared
@@ -247,6 +268,13 @@ ModelImporter:
     3300114: wall_base.004
     3300116: wall_base.005
     3300118: Wall_radial_int
+    3300120: wall_4
+    3300122: wall_5
+    3300124: wall_6
+    3300126: wall_7
+    3300128: wall_radial_ext.2
+    3300130: wall_radial_ext_1
+    3300132: wall_radial_ext_bo
     4300000: Circle
     4300002: Cube
     4300004: BO_Pared.006
@@ -306,6 +334,13 @@ ModelImporter:
     4300112: floor
     4300114: radius_wall_1
     4300116: radius_1
+    4300118: wall_radial_ext_1
+    4300120: wall_radial_ext.2
+    4300122: wall_7
+    4300124: wall_6
+    4300126: wall_5
+    4300128: wall_4
+    4300130: wall_radial_ext_bo
   materials:
     importMaterials: 1
     materialName: 0
