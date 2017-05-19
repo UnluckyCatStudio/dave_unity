@@ -39,6 +39,33 @@ ModelImporter:
     100062: BO_Pared.023
     100064: BO_Pared.024
     100066: BO_Pared.025
+    100068: BLOCKOUT
+    100070: Terrain
+    100072: Vert
+    100074: entrance_wall_1
+    100076: entrance_wall_2
+    100078: Cube.001
+    100080: BO_centro
+    100082: BO_radio
+    100084: column_1
+    100086: column_2
+    100088: column_3
+    100090: column_4
+    100092: column_5
+    100094: floor
+    100096: radius_1
+    100098: radius_wall_1
+    100100: radius_wall_2
+    100102: radius_wall_piece_1
+    100104: wall_1
+    100106: wall_2
+    100108: wall_3
+    100110: wall_base
+    100112: wall_base.001
+    100114: wall_base.003
+    100116: wall_base.004
+    100118: wall_base.005
+    100120: Wall_radial_int
     400000: Circle
     400002: Cube
     400004: //RootNode
@@ -73,6 +100,33 @@ ModelImporter:
     400062: BO_Pared.023
     400064: BO_Pared.024
     400066: BO_Pared.025
+    400068: BLOCKOUT
+    400070: Terrain
+    400072: Vert
+    400074: entrance_wall_1
+    400076: entrance_wall_2
+    400078: Cube.001
+    400080: BO_centro
+    400082: BO_radio
+    400084: column_1
+    400086: column_2
+    400088: column_3
+    400090: column_4
+    400092: column_5
+    400094: floor
+    400096: radius_1
+    400098: radius_wall_1
+    400100: radius_wall_2
+    400102: radius_wall_piece_1
+    400104: wall_1
+    400106: wall_2
+    400108: wall_3
+    400110: wall_base
+    400112: wall_base.001
+    400114: wall_base.003
+    400116: wall_base.004
+    400118: wall_base.005
+    400120: Wall_radial_int
     2300000: Circle
     2300002: Cube
     2300004: BO_Pared
@@ -107,6 +161,32 @@ ModelImporter:
     2300062: BO_Pared.023
     2300064: BO_Pared.024
     2300066: BO_Pared.025
+    2300068: Terrain
+    2300070: Vert
+    2300072: entrance_wall_1
+    2300074: entrance_wall_2
+    2300076: Cube.001
+    2300078: BO_centro
+    2300080: BO_radio
+    2300082: column_1
+    2300084: column_2
+    2300086: column_3
+    2300088: column_4
+    2300090: column_5
+    2300092: floor
+    2300094: radius_1
+    2300096: radius_wall_1
+    2300098: radius_wall_2
+    2300100: radius_wall_piece_1
+    2300102: wall_1
+    2300104: wall_2
+    2300106: wall_3
+    2300108: wall_base
+    2300110: wall_base.001
+    2300112: wall_base.003
+    2300114: wall_base.004
+    2300116: wall_base.005
+    2300118: Wall_radial_int
     3300000: Circle
     3300002: Cube
     3300004: BO_Pared
@@ -141,6 +221,32 @@ ModelImporter:
     3300062: BO_Pared.023
     3300064: BO_Pared.024
     3300066: BO_Pared.025
+    3300068: Terrain
+    3300070: Vert
+    3300072: entrance_wall_1
+    3300074: entrance_wall_2
+    3300076: Cube.001
+    3300078: BO_centro
+    3300080: BO_radio
+    3300082: column_1
+    3300084: column_2
+    3300086: column_3
+    3300088: column_4
+    3300090: column_5
+    3300092: floor
+    3300094: radius_1
+    3300096: radius_wall_1
+    3300098: radius_wall_2
+    3300100: radius_wall_piece_1
+    3300102: wall_1
+    3300104: wall_2
+    3300106: wall_3
+    3300108: wall_base
+    3300110: wall_base.001
+    3300112: wall_base.003
+    3300114: wall_base.004
+    3300116: wall_base.005
+    3300118: Wall_radial_int
     4300000: Circle
     4300002: Cube
     4300004: BO_Pared.006
@@ -174,6 +280,32 @@ ModelImporter:
     4300060: BO_Pared.014
     4300062: BO_Pared.013
     4300064: BO_Pared.012
+    4300066: Vert
+    4300068: Terrain
+    4300070: entrance_wall_2
+    4300072: entrance_wall_1
+    4300074: Cube.001
+    4300076: Wall_radial_int
+    4300078: wall_base.005
+    4300080: wall_base.004
+    4300082: wall_base.003
+    4300084: wall_3
+    4300086: wall_base.001
+    4300088: wall_2
+    4300090: wall_1
+    4300092: wall_base
+    4300094: radius_wall_piece_1
+    4300096: radius_wall_2
+    4300098: column_5
+    4300100: column_4
+    4300102: column_3
+    4300104: column_2
+    4300106: column_1
+    4300108: BO_centro
+    4300110: BO_radio
+    4300112: floor
+    4300114: radius_wall_1
+    4300116: radius_1
   materials:
     importMaterials: 1
     materialName: 0
