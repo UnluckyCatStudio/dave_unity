@@ -24,7 +24,7 @@ public class CamController : MonoBehaviour
 	public float min;
 	public float max;
 
-	private void Update () 
+	private void LateUpdate () 
 	{
 		// Get user input
 		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime * ( Game.input.speedY / 100f );
@@ -34,6 +34,7 @@ public class CamController : MonoBehaviour
 		rotationY *= Game.input.invertY ? -1 : 1;
 
 		// Transformations
+		FollowDave ();
 		RotateCamera ( rotationX, rotationY );
 		Stabilize ();
 	}

@@ -76,9 +76,6 @@ public class DaveController : Kyru.etc.AnimatorController
 
 		// Only enable sword collider when attacking
 		sword.edge.enabled = DealingDmg;
-
-		// Make camera follow dave
-		cam.FollowDave ();
 		#endregion
 
 		if ( Hitd ) return;

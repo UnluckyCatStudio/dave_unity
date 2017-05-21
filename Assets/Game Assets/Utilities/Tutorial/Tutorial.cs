@@ -40,10 +40,10 @@ public class Tutorial : MonoBehaviour
 
 	IEnumerator ClosePlaceta ( Collider col ) 
 	{
-		col.enabled = false;
+		Destroy ( col.gameObject );
 
 		// Close placeta
-		placeta.gameObject.SetActive ( true );
+		placeta.enabled = true;
 
 		// Sword tuto
 		Game.dave.canCombat = true;
@@ -53,7 +53,7 @@ public class Tutorial : MonoBehaviour
 
 		// Close 
 		square.Play ( "Fade" );
-		yield return new WaitForSeconds ( 2f );
+		yield return new WaitForSeconds ( 0.8f );
 		fog.Play ();
 		water.SetActive ( false );
 
