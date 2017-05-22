@@ -166,9 +166,9 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& !Charging
 			&& SwordOut
 			&& canShoot
-			&& Game.input.GetKeyDown ( Key.Charge ) )
+			&& Game.input.GetKeyDown ( Key.Charge )
+			&& Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70 )
 			{
-				startRot = transform.rotation;
 				sword.vfx.carga.Play ();
 				anim.SetTrigger ( "Charge" );
 				cam.CamCharging ();
@@ -176,7 +176,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			else
 			if
 			(  Charging
-			&& Game.input.GetKeyUp ( Key.Charge ) )
+			&& !Game.input.GetKey ( Key.Charge ) )
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
@@ -191,16 +191,16 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  Charging
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
-				anim.SetTrigger ( "Shoot" );
 				sword.vfx.carga.Stop ( true, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				sword.vfx.release.Play ();
 				var shot = Instantiate ( sword.shot, sword.transform, false );
 				shot.transform.SetParent ( null, true );
 				shot.transform.rotation = Quaternion.LookRotation ( Game.cam.transform.forward ); //, anim.GetBoneTransform (HumanBodyBones.RightUpperArm).up );
-				shot.transform.rotation *= Quaternion.Euler ( 0, 180, 0 );
+				shot.transform.rotation *= Quaternion.Euler ( 5, 175, 0 );
 				Destroy ( shot, 10 );
 
+				anim.SetTrigger ( "Shoot" );
 				cam.CamCharging ( true );
 			} 
 			#endregion
@@ -208,10 +208,9 @@ public class DaveController : Kyru.etc.AnimatorController
 		#endregion
 	}
 
-	Transform chest;
-	Transform arm;
+	Transform chest;	Quaternion lastChestRot;
+	Transform arm;		Quaternion lastArmRotation;
 	Transform altArm;
-	Quaternion startRot;
 	void LateUpdate ()
 	{
 		if (Charging)
@@ -219,28 +218,35 @@ public class DaveController : Kyru.etc.AnimatorController
 			Quaternion q;
 			float limit;
 			float angle;
+
 			#region ROTATE CHEST ( Y-Axis )
 			q = cam.pivotY.rotation;
-			limit = 65;
-			angle = Quaternion.Angle ( startRot, q );
-			if (angle >= -limit)
+			limit = 40;
+			angle = Quaternion.Angle ( transform.rotation, q );
+
+			if ( angle <= limit )
 			{
-				if (angle <= limit) chest.rotation = q;
-				else				chest.rotation = startRot * Quaternion.Euler ( 0, limit, 0 );
+				chest.rotation = q;
+				lastChestRot = q;
 			}
-			else chest.rotation = startRot * Quaternion.Euler ( 0, -limit, 0 );
+			else chest.rotation = lastChestRot;
 			#endregion
 
 			#region ROTATE ARM ( X-Axis )
-			q = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
-			angle = Quaternion.Angle ( startRot, q );
-			if (angle >= -limit)
+			q = Quaternion.LookRotation ( Game.cam.transform.up, Game.cam.transform.forward );
+			limit = 90;
+			angle = Quaternion.Angle ( arm.rotation, q );
+
+			if ( angle <= limit )
 			{
-				if (angle <= limit) arm.rotation = q;
-				else				arm.rotation = startRot * Quaternion.Euler ( 0, 0, limit );
+				arm.rotation = q;
+				lastArmRotation = q;
 			}
-			else arm.rotation = startRot * Quaternion.Euler ( 0, 0, -limit );
+			else arm.rotation = lastArmRotation;
 			#endregion
+
+			// finally rotate lower arm
+			altArm.rotation *= Quaternion.Euler ( 0, 70, 0 );
 		}
 	}
 
@@ -257,6 +263,11 @@ public class DaveController : Kyru.etc.AnimatorController
 	#region FX
 	protected override void Awake () 
 	{
+#if UNITY_EDITOR
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+#endif
+
 		base.Awake ();
 
 		chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
@@ -328,6 +339,20 @@ public class DaveController : Kyru.etc.AnimatorController
 		if (Charging) cam.GetComponent<Animation> ().Play ( "CamFromCharge" );
 
 		locked =true;
+	}
+
+	private void TryCharging ()
+	{
+		if (Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70
+			&& Game.input.GetKey ( Key.Charge ))
+		{
+			Charging = true;
+		}
+		else
+		{
+			Charging = false;
+			cam.CamCharging ( true );
+		}
 	}
 	#endregion
 }

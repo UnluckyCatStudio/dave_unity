@@ -31,16 +31,15 @@ public class Tutorial : MonoBehaviour
 
 	IEnumerator StartTuto ( Collider col ) 
 	{
-		col.enabled = false;
-
-		// Turn down ambient
-		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", targetAmbient, 4f ) );
 		yield return null;
 	}
 
 	IEnumerator ClosePlaceta ( Collider col ) 
 	{
 		Destroy ( col.gameObject );
+
+		// Turn down ambient
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", targetAmbient, 4f ) );
 
 		// Close placeta
 		placeta.enabled = true;

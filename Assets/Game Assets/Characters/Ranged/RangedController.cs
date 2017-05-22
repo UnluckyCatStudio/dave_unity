@@ -12,25 +12,26 @@ public class RangedController : MonoBehaviour
 	public ParticleSystem charge;
 
 	public float attackSpeed;
+	public LayerMask daveLayer;
 	IEnumerator Logic ()
-	{yield return null;
-//		while ( true )
-//		{
-//			RaycastHit hit =  new RaycastHit ();
-//			var dir = transform.position - Game.dave.transform.position;
-//			if
-//			(  Physics.Raycast ( transform.position, -dir, out hit )
-//			&& hit.transform.tag == "Player" )
-//			{
-//				print ( "GLA" );
-//			}
-//
-//			yield return null;
-//		}
+	{
+		RaycastHit hit =  new RaycastHit ();
+		while ( true )
+		{
+			var dir = ( Game.dave.transform.position + Vector3.up ) - transform.position;
+			if
+			( Physics.Raycast ( transform.position, dir.normalized, out hit )
+			&& hit.transform.tag == "Player" )
+			{
+				print ( "HOLIS" );
+			}
+
+			yield return new WaitForSeconds ( attackSpeed );
+		}
 	}
 
 	public bool active;
-	//private void Update () { if (active) Activate (); }
+	private void Update () {}
 
 	public void Activate ()
 	{
