@@ -515,10 +515,7 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Moving
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102603467923584192}
   m_Solo: 0
@@ -1103,10 +1100,7 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Moving
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102603467923584192}
   m_Solo: 0
@@ -1408,7 +1402,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: dave-rig|Hit_Back
+  m_Name: Hit_Back
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1707,7 +1701,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: dave-rig|Hit_Front
+  m_Name: Hit_Front
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1795,10 +1789,10 @@ AnimatorStateMachine:
     m_Position: {x: 816, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102252329739092516}
-    m_Position: {x: 540, y: 552, z: 0}
+    m_Position: {x: 192, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102941308203702902}
-    m_Position: {x: 528, y: 492, z: 0}
+    m_Position: {x: 684, y: 360, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107813097003000588}

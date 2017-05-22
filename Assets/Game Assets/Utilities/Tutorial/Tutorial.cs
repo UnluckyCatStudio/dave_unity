@@ -61,7 +61,7 @@ public class Tutorial : MonoBehaviour
 		Game.dave.canMove = true;
 		StartCoroutine ( NewTuto ( AllTexts.Tuto_Click_To_Attack, Key.Attack_single ) );
 
-		yield return new WaitForSeconds ( 4f );
+		yield return new WaitForSeconds ( 6f );
 		square.Play ( "Loop" );
 	}
 

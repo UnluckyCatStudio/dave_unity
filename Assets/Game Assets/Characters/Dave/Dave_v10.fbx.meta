@@ -2306,7 +2306,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.82444155
+      - time: 0.7783889
         functionName: SetBool
         data: DealingDmg:false
         objectReferenceParameter: {instanceID: 0}

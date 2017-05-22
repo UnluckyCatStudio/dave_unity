@@ -38,21 +38,18 @@ public class MeleeController : Kyru.etc.AnimatorController
 		// since Unity collision table isn't by my side
 		if ( anim.GetBool ( "DealingDmg" ) )
 		{
-			var handR = anim.GetBoneTransform ( HumanBodyBones.RightHand ).position;
-			var handL = anim.GetBoneTransform ( HumanBodyBones.LeftHand ).position;
-
-			var colsR = Physics.OverlapSphere ( handR, 0.2f );
-			var colsL = Physics.OverlapSphere ( handL, 0.2f );
+			var colsR = Physics.OverlapSphere ( handR.position, 0.2f );
+			var colsL = Physics.OverlapSphere ( handL.position, 0.2f );
 
 			foreach ( var c in colsR )
 			{
 				if ( c.tag == "Player" )
-					c.SendMessage ( "Hit", handR );
+					c.SendMessage ( "Hit", handR.position );
 			}
 			foreach ( var c in colsL )
 			{
 				if ( c.tag == "Player" )
-					c.SendMessage ( "Hit", handL );
+					c.SendMessage ( "Hit", handL.position );
 			}
 		}
 	}
@@ -95,9 +92,15 @@ public class MeleeController : Kyru.etc.AnimatorController
 		anim.SetFloat ( "RunMul", runMul );
 	}
 
+	Transform handR;
+	Transform handL;
 	protected override void Awake () 
 	{
 		base.Awake ();
+
+		handR = anim.GetBoneTransform ( HumanBodyBones.RightHand );
+		handL = anim.GetBoneTransform ( HumanBodyBones.LeftHand );
+
 		foreach ( var p in parts ) p.Sleep ();
 
 		if (startOnAwake)

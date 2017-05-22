@@ -76,6 +76,8 @@ public class DaveController : Kyru.etc.AnimatorController
 
 		// Only enable sword collider when attacking
 		sword.edge.enabled = DealingDmg;
+
+		// reset some triggers
 		#endregion
 
 		if ( Hitd ) return;
@@ -167,13 +169,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
 				sword.vfx.carga.Play ();
-				//cam.lookOffset += Vector3.forward * 3f;
-				//var rot = Quaternion.LookRotation ( Vector3.Scale ( cam.transform.forward, Vector3.forward ) );
-				//StartCoroutine ( this.AsyncLerp<Transform> ( "rotation", rot, .1f, transform ) );
-
 				anim.SetTrigger ( "Charge" );
-
-				//StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", new Vector3 ( 0, 1, 4 ), .5f, cam ) );
 			}
 			else
 			if
@@ -182,6 +178,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
+				anim.ResetTrigger ( "Shoot" );
 			}
 			#endregion
 
@@ -212,7 +209,6 @@ public class DaveController : Kyru.etc.AnimatorController
 			var arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
 			var lArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
 
-			transform.rotation = cam.transform.rotation;
 			chest.rotation *= Quaternion.Euler ( 0, -30, 0 );
 			arm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
 			lArm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
@@ -275,9 +271,10 @@ public class DaveController : Kyru.etc.AnimatorController
 	{
 		if ( Hitd ) return;
 		// Front or Back ?
-		var angle = Quaternion.Angle ( transform.localRotation, Quaternion.LookRotation ( point ) );
+		var hitDir = point - transform.position;
+		var angle = Quaternion.Angle ( transform.rotation, Quaternion.LookRotation ( hitDir, transform.up ) );
 
-		if ( angle >= 40 )  anim.SetTrigger ( "Hit_Front" );
+		if ( angle <= 150 )  anim.SetTrigger ( "Hit_Front" );
 		else				anim.SetTrigger ( "Hit_Back" );
 
 		Hitd = true;
