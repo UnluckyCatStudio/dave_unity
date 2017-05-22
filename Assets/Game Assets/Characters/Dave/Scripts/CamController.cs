@@ -44,16 +44,8 @@ public class CamController : MonoBehaviour
 	public void FollowDave () 
 	{
 		transform.position = dave.position;						// Follow Dave
-		var offset = dave.TransformVector ( lookOffset );       // Relative offset
-		pivot = new Vector3 ( offset.x, offset.y, pivot.z );
+		pivot = new Vector3 ( lookOffset.x, lookOffset.y, pivot.z );
 		Game.cam.transform.localPosition = pivot;
-
-		// If camera collides when moved
-		while ( IsColliding () )
-		{
-			Game.cam.transform.Translate
-				( Vector3.forward * avoidingStep );
-		}
 	}
 
 	// Unchanged rotations
@@ -96,7 +88,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () && !IsColliding ( avoidingStep * 2f ) )
+		if ( !TooFar () && !IsColliding ( 0.3f ) )
 		{
 			var z =
 			Mathf.Lerp
@@ -113,6 +105,20 @@ public class CamController : MonoBehaviour
 				Game.cam.transform.localPosition.y,
 				z
 			);
+		}
+	}
+
+	// Charging
+	public void CamCharging (bool from=false)
+	{
+		if ( from )
+		{
+			StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", dave.up, 0.5f, this ) );
+		}
+		else
+		{
+			var look = dave.InverseTransformPoint ( pivotY.TransformPoint ( new Vector3 ( 0.85f, 1.2f, -1f ) ) );
+			StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", look, 0.25f, this ) );
 		}
 	}
 	#endregion

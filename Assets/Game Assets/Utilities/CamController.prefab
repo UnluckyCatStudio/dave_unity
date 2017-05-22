@@ -1255,9 +1255,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   lookOffset: {x: 0, y: 1, z: 0}
-  minDistanceFromPivot: 1.2
+  minDistanceFromPivot: 0.1
   maxDistanceFromPivot: 3.1
-  avoidingStep: 0.1
+  avoidingStep: 0.01
   speedX: 90
   speedY: 90
   min: -89

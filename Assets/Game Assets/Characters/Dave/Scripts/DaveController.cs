@@ -168,8 +168,10 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& canShoot
 			&& Game.input.GetKeyDown ( Key.Charge ) )
 			{
+				startRot = transform.rotation;
 				sword.vfx.carga.Play ();
 				anim.SetTrigger ( "Charge" );
+				cam.CamCharging ();
 			}
 			else
 			if
@@ -178,7 +180,9 @@ public class DaveController : Kyru.etc.AnimatorController
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
+
 				anim.ResetTrigger ( "Shoot" );
+				cam.CamCharging (true);
 			}
 			#endregion
 
@@ -195,23 +199,48 @@ public class DaveController : Kyru.etc.AnimatorController
 				shot.transform.SetParent ( null, true );
 				shot.transform.rotation = Quaternion.LookRotation ( Game.cam.transform.forward ); //, anim.GetBoneTransform (HumanBodyBones.RightUpperArm).up );
 				shot.transform.rotation *= Quaternion.Euler ( 0, 180, 0 );
+				Destroy ( shot, 10 );
+
+				cam.CamCharging ( true );
 			} 
 			#endregion
 		}
 		#endregion
 	}
 
+	Transform chest;
+	Transform arm;
+	Transform altArm;
+	Quaternion startRot;
 	void LateUpdate ()
 	{
 		if (Charging)
 		{
-			var chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
-			var arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
-			var lArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
+			Quaternion q;
+			float limit;
+			float angle;
+			#region ROTATE CHEST ( Y-Axis )
+			q = cam.pivotY.rotation;
+			limit = 65;
+			angle = Quaternion.Angle ( startRot, q );
+			if (angle >= -limit)
+			{
+				if (angle <= limit) chest.rotation = q;
+				else				chest.rotation = startRot * Quaternion.Euler ( 0, limit, 0 );
+			}
+			else chest.rotation = startRot * Quaternion.Euler ( 0, -limit, 0 );
+			#endregion
 
-			chest.rotation *= Quaternion.Euler ( 0, -30, 0 );
-			arm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
-			lArm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
+			#region ROTATE ARM ( X-Axis )
+			q = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
+			angle = Quaternion.Angle ( startRot, q );
+			if (angle >= -limit)
+			{
+				if (angle <= limit) arm.rotation = q;
+				else				arm.rotation = startRot * Quaternion.Euler ( 0, 0, limit );
+			}
+			else arm.rotation = startRot * Quaternion.Euler ( 0, 0, -limit );
+			#endregion
 		}
 	}
 
@@ -229,6 +258,11 @@ public class DaveController : Kyru.etc.AnimatorController
 	protected override void Awake () 
 	{
 		base.Awake ();
+
+		chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
+		arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
+		altArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
+
 		sword.transform.SetParent ( swordBackHolder );
 		sword.transform.localPosition = Vector3.zero;
 		sword.transform.localRotation = Quaternion.identity;
@@ -270,6 +304,7 @@ public class DaveController : Kyru.etc.AnimatorController
 	private void Hit ( Vector3 point ) 
 	{
 		if ( Hitd ) return;
+
 		// Front or Back ?
 		var hitDir = point - transform.position;
 		var angle = Quaternion.Angle ( transform.rotation, Quaternion.LookRotation ( hitDir, transform.up ) );
@@ -290,7 +325,9 @@ public class DaveController : Kyru.etc.AnimatorController
 		anim.ResetTrigger ( "Sheathe" );
 		anim.ResetTrigger ( "Unsheathe" );
 
-		locked=true;
+		if (Charging) cam.GetComponent<Animation> ().Play ( "CamFromCharge" );
+
+		locked =true;
 	}
 	#endregion
 }

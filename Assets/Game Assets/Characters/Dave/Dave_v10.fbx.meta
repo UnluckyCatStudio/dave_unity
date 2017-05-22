@@ -2669,7 +2669,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.9935275
+      - time: 0.4845022
         functionName: SetBool
         data: Charging:true
         objectReferenceParameter: {instanceID: 0}
