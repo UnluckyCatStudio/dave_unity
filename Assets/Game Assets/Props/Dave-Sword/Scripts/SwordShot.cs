@@ -6,6 +6,6 @@ public class SwordShot : MonoBehaviour
 {
 	private void Update ()
 	{
-		transform.Translate ( 0, 0, -10f * Time.deltaTime, Space.Self );
+		transform.Translate ( 0, 0, -20f * Time.deltaTime, Space.Self );
 	}
 }

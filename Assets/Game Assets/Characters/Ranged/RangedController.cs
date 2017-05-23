@@ -5,28 +5,31 @@ using UnityEngine;
 public class RangedController : MonoBehaviour
 {
 	[Header ("PARTICLE SYSTEMS")]
+	public GameObject shot;
 	public ParticleSystem ranged;
 	public ParticleSystem death;
-	public ParticleSystem shoot;
 	public ParticleSystem decoration;
 	public ParticleSystem charge;
 
 	public float attackSpeed;
-	public LayerMask daveLayer;
+	public LayerMask dontCollideWith;
 	IEnumerator Logic ()
 	{
 		RaycastHit hit =  new RaycastHit ();
 		while ( true )
 		{
-			var dir = ( Game.dave.transform.position + Vector3.up ) - transform.position;
+			var dir = ( ( Game.dave.transform.position + Vector3.up ) - transform.position ).normalized;
 			if
-			( Physics.Raycast ( transform.position, dir.normalized, out hit )
+			( Physics.Raycast ( transform.position, dir, out hit, 20f, ~dontCollideWith )
 			&& hit.transform.tag == "Player" )
 			{
-				print ( "HOLIS" );
+				charge.Play ();
+				yield return new WaitForSeconds ( 0.15f ); // Shot delay
+				var s = Instantiate ( shot, transform.position - Vector3.up, Quaternion.LookRotation (dir) );
 			}
 
-			yield return new WaitForSeconds ( attackSpeed );
+			yield return new WaitForSeconds ( 1 / attackSpeed );
+			charge.Stop ( true );
 		}
 	}
 
