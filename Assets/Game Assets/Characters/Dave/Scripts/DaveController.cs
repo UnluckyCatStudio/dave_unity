@@ -172,6 +172,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				sword.vfx.carga.Play ();
 				anim.SetTrigger ( "Charge" );
 				cam.CamCharging ();
+				canMove = false;
 			}
 			else
 			if
@@ -184,6 +185,7 @@ public class DaveController : Kyru.etc.AnimatorController
 
 				anim.ResetTrigger ( "Shoot" );
 				cam.CamCharging (true);
+				canMove = true;
 			}
 			#endregion
 
@@ -203,6 +205,7 @@ public class DaveController : Kyru.etc.AnimatorController
 
 				anim.SetTrigger ( "Shoot" );
 				cam.CamCharging ( true );
+				canMove = true;
 			} 
 			#endregion
 		}
@@ -249,6 +252,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			// finally rotate lower arm
 			altArm.rotation *= Quaternion.Euler ( 0, 70, 0 );
 		}
+		else anim.ResetTrigger ( "StopCharge" );
 	}
 
 	#region IK
@@ -329,6 +333,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		Attacking = false;
 		anim.ResetTrigger ( "Attack-big" );
 		anim.ResetTrigger ( "Attack-single" );
+		anim.SetTrigger ( "StopCharge" );
 		anim.ResetTrigger ( "Charge" );
 		anim.ResetTrigger ( "Shoot" );
 		DealingDmg = false;
@@ -336,6 +341,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		Sheathing = false;
 		anim.ResetTrigger ( "Sheathe" );
 		anim.ResetTrigger ( "Unsheathe" );
+		canMove = true;
 
 		if (Charging) cam.GetComponent<Animation> ().Play ( "CamFromCharge" );
 

@@ -6,13 +6,11 @@ public class FireLink : MonoBehaviour
 {
 	public float intensity;
 	public bool update;
-	public bool fireOn;
-	public bool smokeOn;
 	public Light[] luses;
 	public ParticleSystem[] fires;
 	public ParticleSystem[] smokes;
 
-	public void Update ()
+	public void LateUpdate ()
 	{
 		if (update)
 		{
@@ -21,18 +19,12 @@ public class FireLink : MonoBehaviour
 				l.intensity = intensity;
 			}
 		}
+	}
 
-		if (fireOn)
-		{
-			foreach (var f in fires) f.Play ();
-			fireOn = false;
-		}
-
-		if (smokeOn)
-		{
-			foreach (var s in smokes)
-				s.Play ();
-			smokeOn = false;
-		}
+	public void FireOn () { foreach (var f in fires) f.Play (); }
+	public void SmokeOn () 
+	{
+		foreach (var s in smokes) s.Play ();
+		foreach (var f in fires) f.Stop ( true, ParticleSystemStopBehavior.StopEmitting );
 	}
 }

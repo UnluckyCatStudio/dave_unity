@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
 	public GameObject[] secondWave;
 	public Color normalAmbient;
 	public RangedController firstRanged;
-	public Animation cupula;
+	public Animator cupula;
 	public Color cupulaAmbient;
 	public RangedController[] firstRangeds;
 	public RangedController[] secondRangeds;
@@ -99,7 +99,7 @@ public class Tutorial : MonoBehaviour
 		}
 	}
 
-	IEnumerator Ranged ( Collider col )
+	IEnumerator Ranged ( Collider col ) 
 	{
 		col.enabled = false;
 		if ( !Game.dave.SwordOut )
@@ -107,11 +107,12 @@ public class Tutorial : MonoBehaviour
 			Game.dave.canMove = false;
 			Game.dave.Moving = false;
 			yield return NewTuto ( AllTexts.Tuto_R_To_Unsheathe, Key.Sword );
-			Game.dave.canMove = true;
 			yield return new WaitForSeconds ( 1f );
 		}
+
 		Game.dave.canShoot = true;
 		yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
+		Game.dave.canMove = true;
 		firstRanged.Activate ();
 	}
 
@@ -119,22 +120,21 @@ public class Tutorial : MonoBehaviour
 	{
 		col.enabled = false;
 
+		cupula.SetTrigger ( "Close" );
+		yield return new WaitForSeconds ( 3.5f );
+		cupula.SetTrigger ( "FireOn" );
 		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", cupulaAmbient, 2.5f ) );
-		yield return cupula.Play ( "Start" );
-		//cupula.Stop ();
-		yield return new WaitForSeconds ( .5f );
+		yield return new WaitForSeconds ( 3f );
 		firstRangeds[0].Activate ();
 		yield return new WaitUntil ( () => !firstRangeds[0].active );
-		yield return cupula.Play ( "SecondWave" );
+		cupula.SetTrigger ( "KilledRangeds_1" );
 		foreach (var r in secondRangeds) r.Activate ();
 		yield return new WaitUntil ( () => secondRangeds.All ( x => !x.active ) );
-		yield return cupula.Play ( "ThirdWave" );
+		cupula.SetTrigger ( "KilledRangeds_2" );
 		foreach (var r in thirdRangeds) r.Activate ();
 		yield return new WaitUntil ( () => thirdRangeds.All ( x => !x.active ) );
-		yield return cupula.Play ( "LastWave" );
+		cupula.SetTrigger ( "KilledRangeds_3" );
 		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
-		yield return cupula.Play ( "End" );
-
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 
@@ -142,16 +142,18 @@ public class Tutorial : MonoBehaviour
 		Game.ui.SetTrigger ( "NewTuto" );
 		tutoText.text = Localization.GetText ( txt );
 		yield return new WaitUntil
-			( () =>
+		( () =>
+		{
+			if ( key == Key.Attack_big || key == Key.Attack_single )
 			{
-				if ( key == Key.Attack_big || key == Key.Attack_single )
-				{
-					return
-						Game.input.GetKeyDown
-						( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
-				}
-				else return Game.input.GetKeyDown ( key );
-			});
+				return
+					Game.dave.SwordOut
+					&& Game.input.GetKeyDown
+					( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
+			}
+			else return Game.input.GetKeyDown ( key );
+		});
+
 		Game.ui.SetTrigger ( "TutoOver" );
 	}
 

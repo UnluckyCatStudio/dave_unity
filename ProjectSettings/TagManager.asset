@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sword
   - Shot
+  - Ranged
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - melee_parts
   - Dave
   - No-cam-colliders
-  - 
+  - Sword-Shot
   - 
   - 
   - 
