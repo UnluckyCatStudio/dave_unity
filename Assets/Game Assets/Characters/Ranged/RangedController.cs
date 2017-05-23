@@ -8,7 +8,6 @@ public class RangedController : MonoBehaviour
 	public GameObject shot;
 	public ParticleSystem ranged;
 	public ParticleSystem death;
-	public ParticleSystem decoration;
 	public ParticleSystem charge;
 
 	public float attackSpeed;
@@ -16,16 +15,18 @@ public class RangedController : MonoBehaviour
 	IEnumerator Logic ()
 	{
 		RaycastHit hit =  new RaycastHit ();
-		while ( true )
+		while ( active )
 		{
-			var dir = ( ( Game.dave.transform.position + Vector3.up ) - transform.position ).normalized;
+			var pos = transform.position - Vector3.up * 2f;
+			var dPos = Game.dave.transform.position + Vector3.up * 1.3f;
+			var dir = ( dPos - pos ).normalized;
 			if
-			( Physics.Raycast ( transform.position, dir, out hit, 20f, ~dontCollideWith )
+			( Physics.Raycast ( pos, dir, out hit, 20f, ~dontCollideWith )
 			&& hit.transform.tag == "Player" )
 			{
 				charge.Play ();
 				yield return new WaitForSeconds ( 0.15f ); // Shot delay
-				var s = Instantiate ( shot, transform.position - Vector3.up, Quaternion.LookRotation (dir) );
+				var s = Instantiate ( shot, pos, Quaternion.LookRotation (dir) );
 			}
 
 			yield return new WaitForSeconds ( 1 / attackSpeed );
@@ -34,12 +35,11 @@ public class RangedController : MonoBehaviour
 	}
 
 	public bool active;
-	private void Update () {}
+	private void Update () { }
 
 	public void Activate ()
 	{
 		ranged.Play ();
-		decoration.Play ();
 		active = true;
 		StartCoroutine ( Logic () );
 	}
@@ -50,7 +50,6 @@ public class RangedController : MonoBehaviour
 		{
 			// Die
 			ranged.Stop ( true, ParticleSystemStopBehavior.StopEmitting );
-			decoration.Stop ( true, ParticleSystemStopBehavior.StopEmitting );
 			charge.Stop ( true, ParticleSystemStopBehavior.StopEmitting );
 			death.Play ();
 			GetComponent<Collider> ().enabled = false;

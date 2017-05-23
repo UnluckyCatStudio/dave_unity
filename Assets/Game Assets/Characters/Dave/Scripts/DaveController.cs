@@ -180,6 +180,7 @@ public class DaveController : Kyru.etc.AnimatorController
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
+				anim.SetTrigger ( "StopCharge" );
 
 				anim.ResetTrigger ( "Shoot" );
 				cam.CamCharging (true);
@@ -312,7 +313,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		sword.transform.localRotation = Quaternion.identity;
 	}
 
-	private void Hit ( Vector3 point ) 
+	public void Hit ( Vector3 point ) 
 	{
 		if ( Hitd ) return;
 
