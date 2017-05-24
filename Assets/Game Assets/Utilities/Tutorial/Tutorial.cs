@@ -10,6 +10,7 @@ using Kyru.etc;
 public class Tutorial : MonoBehaviour
 {
 	// Public
+	public Light sun;
 	public Collider placeta;
 	public Animation square;
 	public ParticleSystem fog;
@@ -22,9 +23,18 @@ public class Tutorial : MonoBehaviour
 	public RangedController firstRanged;
 	public Animator cupula;
 	public Color cupulaAmbient;
+	public GameObject beforeColliders;
 	public RangedController[] firstRangeds;
+	public MeleeController[] fisrtMelees;
 	public RangedController[] secondRangeds;
+	public MeleeController[] secondMelees;
 	public RangedController[] thirdRangeds;
+	public MeleeController[] lastMelees;
+	public GameObject afterColliders;
+	public Transform lift;
+	public GameObject liftColliders;
+	public Color finalAmbient;
+	public Color finalFogColor;
 
 	// private
 	Text tutoText;
@@ -119,6 +129,7 @@ public class Tutorial : MonoBehaviour
 	IEnumerator StartCupula ( Collider col )
 	{
 		col.enabled = false;
+		beforeColliders.SetActive ( false );
 
 		cupula.SetTrigger ( "Close" );
 		yield return new WaitForSeconds ( 3.5f );
@@ -127,14 +138,65 @@ public class Tutorial : MonoBehaviour
 		yield return new WaitForSeconds ( 3f );
 		firstRangeds[0].Activate ();
 		yield return new WaitUntil ( () => !firstRangeds[0].active );
-		cupula.SetTrigger ( "KilledRangeds_1" );
+		cupula.SetBool ( "KilledRangeds_1", true );
+
 		foreach (var r in secondRangeds) r.Activate ();
+		yield return new WaitForSeconds ( 2.3f );
+		foreach (var m in fisrtMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+
 		yield return new WaitUntil ( () => secondRangeds.All ( x => !x.active ) );
-		cupula.SetTrigger ( "KilledRangeds_2" );
+		cupula.SetBool ( "KilledRangeds_2", true );
+
 		foreach (var r in thirdRangeds) r.Activate ();
+		yield return new WaitForSeconds ( 2.1f );
+		foreach (var m in secondMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+
 		yield return new WaitUntil ( () => thirdRangeds.All ( x => !x.active ) );
-		cupula.SetTrigger ( "KilledRangeds_3" );
-		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
+		cupula.SetBool ( "KilledRangeds_3", true );
+
+		yield return new WaitForSeconds ( 2.1f );
+		foreach (var m in lastMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+	}
+
+	int cupulaCount;
+	IEnumerator OpenPlaceta () 
+	{
+		if ( ++cupulaCount == 8 )
+		{
+			afterColliders.SetActive ( true );
+			cupula.SetBool ( "Stopped", true );
+			yield return new WaitForSeconds ( 2.4f );
+			cupula.SetBool ( "Open", true );
+			StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
+			yield return null;
+		}
+	}
+
+	IEnumerator Lift ( Collider col )
+	{
+		col.enabled = false;
+
+		liftColliders.SetActive ( true );
+		Game.dave.transform.SetParent ( lift, true );
+		lift.GetComponent<Animation> ().Play ();
+		yield return new WaitForSeconds ( 5f );
+		StartCoroutine ( this.AsyncLerp<Light> ( "intensity", 0.56f, 5f, sun ) );
+		yield return new WaitForSeconds ( 2f );
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "fogColor", finalFogColor, 3f ) );
+		yield return this.AsyncLerp<RenderSettings> ( "ambientLight", finalAmbient, 3f );
+		liftColliders.SetActive ( false );
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 

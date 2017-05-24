@@ -67,8 +67,8 @@ namespace Kyru.etc
 		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, Vector3 target, float duration, UnityEngine.Object parent = null )
 		{
 			// Reflection
-			var param = typeof(T).GetField ( value );
-			var original = (Vector3) param.GetValue ( parent );
+			var param = typeof(T).GetProperty ( value );
+			var original = (Vector3) param.GetValue ( parent, null );
 
 			var start = Time.time;
 			var progress = 0f;
@@ -76,7 +76,7 @@ namespace Kyru.etc
 			while (progress < 1f)
 			{
 				var newValue = Vector3.Lerp ( original, target, progress );
-				param.SetValue ( parent, newValue );
+				param.SetValue ( parent, newValue, null );
 
 				progress = (Time.time - start) / duration;
 				yield return null;

@@ -13,7 +13,6 @@ public class CamController : MonoBehaviour
 
 	[Header("Settings")]
 	public LayerMask dontCollideWith;
-	public Vector3 lookOffset;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
 	[Range(0.01f,1)] public float avoidingStep;
@@ -23,6 +22,14 @@ public class CamController : MonoBehaviour
 	[Header ("Clamp Y rotation")]
 	public float min;
 	public float max;
+
+	private Vector3 _lookOffset = Vector3.up;
+	public Vector3 lookOffset
+	{
+		get { return _lookOffset; }
+		set { _lookOffset = value; }
+	}
+
 
 	private void LateUpdate () 
 	{

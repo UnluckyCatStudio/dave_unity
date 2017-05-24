@@ -18,6 +18,6 @@ public class Disparo : MonoBehaviour
 
 		GetComponent<ParticleSystem> ().Stop ( true, ParticleSystemStopBehavior.StopEmitting );
 		GetComponent<Collider> ().enabled = false;
-		Destroy ( gameObject, 2.5f );
+		Destroy ( gameObject, 1.15f );
 	}
 }

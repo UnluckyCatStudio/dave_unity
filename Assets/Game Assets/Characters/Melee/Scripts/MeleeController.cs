@@ -5,7 +5,8 @@ using Kyru.etc;
 
 public class MeleeController : Kyru.etc.AnimatorController
 {
-	private CharacterController me;
+	[HideInInspector]
+	public CharacterController me;
 
 	[Header("Settings")]
 	public bool startOnAwake;
@@ -23,7 +24,8 @@ public class MeleeController : Kyru.etc.AnimatorController
 	{
 		if ( !active ) return;
 
-		transform.LookAt ( Game.dave.transform.position );
+		var altDavePos = Vector3.Scale (Game.dave.transform.position, new Vector3 ( 1f, 0f, 1f ) ) + Vector3.up * transform.position.y;
+		transform.rotation = Quaternion.LookRotation ( altDavePos - transform.position );
 		me.Move ( Vector3.zero );
 
 		var closeEnough = Vector3.Distance ( transform.position,  Game.dave.transform.position ) <= 1f;
