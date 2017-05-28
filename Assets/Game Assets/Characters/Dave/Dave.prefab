@@ -1123,7 +1123,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792188981546008}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: -0.0000000037252899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1296,7 +1296,7 @@ Transform:
   - {fileID: 4096382242188178}
   m_Father: {fileID: 4406810197685448}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -91.51, y: 0, z: 0}
 --- !u!4 &4141896347544750
 Transform:
   m_ObjectHideFlags: 1
@@ -1330,7 +1330,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365505024154678}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.8207654e-11, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1397,7 +1397,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362727042741864}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1555,7 +1555,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741376630678382}
   m_LocalRotation: {x: -0, y: -0.9274541, z: -0, w: -0.37393713}
-  m_LocalPosition: {x: 673.683, y: 129.683, z: 693.552}
+  m_LocalPosition: {x: 922.34, y: 129.686, z: 679.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4229562121728020}
@@ -2077,8 +2077,8 @@ MonoBehaviour:
   scarfWind: {x: 0, y: 9, z: -3}
   canMove: 1
   speed: 0
-  canCombat: 0
-  canShoot: 0
+  canCombat: 1
+  canShoot: 1
   sword: {fileID: 0}
   swordBackHolder: {fileID: 4510159214274134}
   swordHandHolder: {fileID: 4584216610574858}
@@ -2372,7 +2372,7 @@ SkinnedMeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365505024154678}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_MotionVectors: 2
   m_LightProbeUsage: 1
@@ -2465,8 +2465,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4096382242188178}
   m_AABB:
-    m_Center: {x: -0.105041504, y: 0.16539383, z: 1.1723022}
-    m_Extent: {x: 0.55637825, y: 0.55647767, z: 0.15420537}
+    m_Center: {x: -0.10510254, y: 1.1723022, z: -0.16539001}
+    m_Extent: {x: 0.36257154, y: 0.36253244, z: 0.34817508}
   m_DirtyAABB: 0
 --- !u!137 &137841120599027034
 SkinnedMeshRenderer:
@@ -2690,8 +2690,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.6
   m_Radius: 0.34
-  m_SlopeLimit: 0
-  m_StepOffset: 0.1
+  m_SlopeLimit: 20
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.875, z: 0}
@@ -2709,7 +2709,7 @@ Cloth:
   m_Damping: 0.1
   m_ExternalAcceleration: {x: 2.9675627, y: 9.38, z: 0.43996596}
   m_RandomAcceleration: {x: 0, y: -9.75, z: 0}
-  m_WorldVelocityScale: 0.5
+  m_WorldVelocityScale: 0.1
   m_WorldAccelerationScale: 0
   m_Friction: 0
   m_CollisionMassScale: 0

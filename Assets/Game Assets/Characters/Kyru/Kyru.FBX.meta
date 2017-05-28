@@ -1,0 +1,1185 @@
+fileFormatVersion: 2
+guid: fee3f047e9a552b4cbcbf3cd9ae291d0
+timeCreated: 1494685421
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bn_antebrazo_dr
+    100002: Bn_antebrazo_iz
+    100004: Bn_boca_1
+    100006: Bn_boca_2
+    100008: Bn_brazo_dr
+    100010: Bn_brazo_iz
+    100012: Bn_clavicula_dr
+    100014: Bn_clavicula_iz
+    100016: Bn_col_1
+    100018: Bn_col_2
+    100020: Bn_col_3
+    100022: Bn_cuello_1
+    100024: Bn_cuello_2
+    100026: Bn_cuello_3
+    100028: Bn_cuello_4
+    100030: Bn_head
+    100032: Bn_leg_1_dr
+    100034: Bn_leg_1_iz
+    100036: Bn_leg_dr
+    100038: Bn_leg_iz
+    100040: Bn_leg_uncle_dr
+    100042: Bn_leg_uncle_iz
+    100044: Bn_lengua_1
+    100046: Bn_lengua_2
+    100048: Bn_lengua_3
+    100050: Bn_oreja_dr_1
+    100052: Bn_oreja_dr_2
+    100054: Bn_oreja_dr_3
+    100056: Bn_oreja_iz_1
+    100058: Bn_oreja_iz_2
+    100060: Bn_oreja_iz_3
+    100062: Bn_pelvis
+    100064: Bn_uncle_brazo_dr
+    100066: Bn_uncle_brazo_iz
+    100068: bufanda_kyru
+    100070: Cont_arm_dr
+    100072: Cont_arm_iz
+    100074: Cont_leg_dr
+    100076: Cont_leg_iz
+    100078: Controlador_general
+    100080: Kyru
+    100082: //RootNode
+    100084: PantherHeadBone006
+    100086: PantherHeadBone007
+    100088: PantherHeadBone008
+    100090: PantherHeadBone009
+    100092: PantherHeadBone010
+    100094: PantherHeadBone011
+    100096: PantherLLegDigit01
+    100098: PantherLLegDigit01 1
+    100100: PantherLLegDigit02
+    100102: PantherLLegDigit02 1
+    100104: PantherRibcage
+    100106: PantherRLegDigit01
+    100108: PantherRLegDigit01 1
+    100110: PantherRLegDigit02
+    100112: PantherRLegDigit02 1
+    100114: PantherTail1
+    100116: PantherTail2
+    100118: PantherTail3
+    100120: PantherTail4
+    100122: PantherTail5
+    100124: PantherTail6
+    100126: PantherTail7
+    100128: Particle View 001
+    400000: Bn_antebrazo_dr
+    400002: Bn_antebrazo_iz
+    400004: Bn_boca_1
+    400006: Bn_boca_2
+    400008: Bn_brazo_dr
+    400010: Bn_brazo_iz
+    400012: Bn_clavicula_dr
+    400014: Bn_clavicula_iz
+    400016: Bn_col_1
+    400018: Bn_col_2
+    400020: Bn_col_3
+    400022: Bn_cuello_1
+    400024: Bn_cuello_2
+    400026: Bn_cuello_3
+    400028: Bn_cuello_4
+    400030: Bn_head
+    400032: Bn_leg_1_dr
+    400034: Bn_leg_1_iz
+    400036: Bn_leg_dr
+    400038: Bn_leg_iz
+    400040: Bn_leg_uncle_dr
+    400042: Bn_leg_uncle_iz
+    400044: Bn_lengua_1
+    400046: Bn_lengua_2
+    400048: Bn_lengua_3
+    400050: Bn_oreja_dr_1
+    400052: Bn_oreja_dr_2
+    400054: Bn_oreja_dr_3
+    400056: Bn_oreja_iz_1
+    400058: Bn_oreja_iz_2
+    400060: Bn_oreja_iz_3
+    400062: Bn_pelvis
+    400064: Bn_uncle_brazo_dr
+    400066: Bn_uncle_brazo_iz
+    400068: bufanda_kyru
+    400070: Cont_arm_dr
+    400072: Cont_arm_iz
+    400074: Cont_leg_dr
+    400076: Cont_leg_iz
+    400078: Controlador_general
+    400080: //RootNode
+    400082: Kyru
+    400084: PantherHeadBone006
+    400086: PantherHeadBone007
+    400088: PantherHeadBone008
+    400090: PantherHeadBone009
+    400092: PantherHeadBone010
+    400094: PantherHeadBone011
+    400096: PantherLLegDigit01
+    400098: PantherLLegDigit01 1
+    400100: PantherLLegDigit02
+    400102: PantherLLegDigit02 1
+    400104: PantherRibcage
+    400106: PantherRLegDigit01
+    400108: PantherRLegDigit01 1
+    400110: PantherRLegDigit02
+    400112: PantherRLegDigit02 1
+    400114: PantherTail1
+    400116: PantherTail2
+    400118: PantherTail3
+    400120: PantherTail4
+    400122: PantherTail5
+    400124: PantherTail6
+    400126: PantherTail7
+    400128: Particle View 001
+    2300000: Bn_antebrazo_dr
+    2300002: Bn_antebrazo_iz
+    2300004: Bn_boca_1
+    2300006: Bn_boca_2
+    2300008: Bn_brazo_dr
+    2300010: Bn_brazo_iz
+    2300012: Bn_clavicula_dr
+    2300014: Bn_clavicula_iz
+    2300016: Bn_col_1
+    2300018: Bn_col_2
+    2300020: Bn_col_3
+    2300022: Bn_cuello_1
+    2300024: Bn_cuello_2
+    2300026: Bn_cuello_3
+    2300028: Bn_cuello_4
+    2300030: Bn_head
+    2300032: Bn_leg_1_dr
+    2300034: Bn_leg_1_iz
+    2300036: Bn_leg_dr
+    2300038: Bn_leg_iz
+    2300040: Bn_leg_uncle_dr
+    2300042: Bn_leg_uncle_iz
+    2300044: Bn_lengua_1
+    2300046: Bn_lengua_2
+    2300048: Bn_lengua_3
+    2300050: Bn_oreja_dr_1
+    2300052: Bn_oreja_dr_2
+    2300054: Bn_oreja_dr_3
+    2300056: Bn_oreja_iz_1
+    2300058: Bn_oreja_iz_2
+    2300060: Bn_oreja_iz_3
+    2300062: Bn_pelvis
+    2300064: Bn_uncle_brazo_dr
+    2300066: Bn_uncle_brazo_iz
+    2300068: bufanda_kyru
+    2300070: PantherHeadBone006
+    2300072: PantherHeadBone007
+    2300074: PantherHeadBone008
+    2300076: PantherHeadBone009
+    2300078: PantherHeadBone010
+    2300080: PantherHeadBone011
+    2300082: PantherLLegDigit01
+    2300084: PantherLLegDigit01 1
+    2300086: PantherLLegDigit02
+    2300088: PantherLLegDigit02 1
+    2300090: PantherRibcage
+    2300092: PantherRLegDigit01
+    2300094: PantherRLegDigit01 1
+    2300096: PantherRLegDigit02
+    2300098: PantherRLegDigit02 1
+    2300100: PantherTail1
+    2300102: PantherTail2
+    2300104: PantherTail3
+    2300106: PantherTail4
+    2300108: PantherTail5
+    2300110: PantherTail6
+    2300112: PantherTail7
+    3300000: Bn_antebrazo_dr
+    3300002: Bn_antebrazo_iz
+    3300004: Bn_boca_1
+    3300006: Bn_boca_2
+    3300008: Bn_brazo_dr
+    3300010: Bn_brazo_iz
+    3300012: Bn_clavicula_dr
+    3300014: Bn_clavicula_iz
+    3300016: Bn_col_1
+    3300018: Bn_col_2
+    3300020: Bn_col_3
+    3300022: Bn_cuello_1
+    3300024: Bn_cuello_2
+    3300026: Bn_cuello_3
+    3300028: Bn_cuello_4
+    3300030: Bn_head
+    3300032: Bn_leg_1_dr
+    3300034: Bn_leg_1_iz
+    3300036: Bn_leg_dr
+    3300038: Bn_leg_iz
+    3300040: Bn_leg_uncle_dr
+    3300042: Bn_leg_uncle_iz
+    3300044: Bn_lengua_1
+    3300046: Bn_lengua_2
+    3300048: Bn_lengua_3
+    3300050: Bn_oreja_dr_1
+    3300052: Bn_oreja_dr_2
+    3300054: Bn_oreja_dr_3
+    3300056: Bn_oreja_iz_1
+    3300058: Bn_oreja_iz_2
+    3300060: Bn_oreja_iz_3
+    3300062: Bn_pelvis
+    3300064: Bn_uncle_brazo_dr
+    3300066: Bn_uncle_brazo_iz
+    3300068: bufanda_kyru
+    3300070: PantherHeadBone006
+    3300072: PantherHeadBone007
+    3300074: PantherHeadBone008
+    3300076: PantherHeadBone009
+    3300078: PantherHeadBone010
+    3300080: PantherHeadBone011
+    3300082: PantherLLegDigit01
+    3300084: PantherLLegDigit01 1
+    3300086: PantherLLegDigit02
+    3300088: PantherLLegDigit02 1
+    3300090: PantherRibcage
+    3300092: PantherRLegDigit01
+    3300094: PantherRLegDigit01 1
+    3300096: PantherRLegDigit02
+    3300098: PantherRLegDigit02 1
+    3300100: PantherTail1
+    3300102: PantherTail2
+    3300104: PantherTail3
+    3300106: PantherTail4
+    3300108: PantherTail5
+    3300110: PantherTail6
+    3300112: PantherTail7
+    4300000: Kyru
+    4300002: bufanda_kyru
+    4300004: Bn_pelvis
+    4300006: Bn_leg_iz
+    4300008: Bn_leg_1_iz
+    4300010: Bn_leg_uncle_iz
+    4300012: PantherLLegDigit01
+    4300014: PantherLLegDigit02
+    4300016: Bn_leg_dr
+    4300018: Bn_leg_1_dr
+    4300020: Bn_leg_uncle_dr
+    4300022: PantherRLegDigit01
+    4300024: PantherRLegDigit02
+    4300026: Bn_col_1
+    4300028: Bn_col_2
+    4300030: Bn_col_3
+    4300032: PantherRibcage
+    4300034: Bn_clavicula_iz
+    4300036: Bn_brazo_iz
+    4300038: Bn_antebrazo_iz
+    4300040: Bn_uncle_brazo_iz
+    4300042: PantherLLegDigit01
+    4300044: PantherLLegDigit02
+    4300046: Bn_clavicula_dr
+    4300048: Bn_brazo_dr
+    4300050: Bn_antebrazo_dr
+    4300052: Bn_uncle_brazo_dr
+    4300054: PantherRLegDigit01
+    4300056: PantherRLegDigit02
+    4300058: Bn_cuello_1
+    4300060: Bn_cuello_2
+    4300062: Bn_cuello_3
+    4300064: Bn_cuello_4
+    4300066: Bn_head
+    4300068: Bn_boca_1
+    4300070: Bn_boca_2
+    4300072: Bn_lengua_1
+    4300074: Bn_lengua_2
+    4300076: Bn_lengua_3
+    4300078: Bn_oreja_iz_1
+    4300080: Bn_oreja_iz_2
+    4300082: Bn_oreja_iz_3
+    4300084: Bn_oreja_dr_1
+    4300086: Bn_oreja_dr_2
+    4300088: Bn_oreja_dr_3
+    4300090: PantherHeadBone006
+    4300092: PantherHeadBone007
+    4300094: PantherHeadBone008
+    4300096: PantherHeadBone009
+    4300098: PantherHeadBone010
+    4300100: PantherHeadBone011
+    4300102: PantherTail1
+    4300104: PantherTail2
+    4300106: PantherTail3
+    4300108: PantherTail4
+    4300110: PantherTail5
+    4300112: PantherTail6
+    4300114: PantherTail7
+    7400000: Take 001
+    7400002: dpge_wake
+    7400004: doge_cama
+    7400006: doge_cama2
+    7400008: doge_puerta
+    7400010: doge_ladrido
+    9500000: //RootNode
+    13700000: Kyru
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: dpge_wake
+      takeName: doge_animacio02
+      firstFrame: 0
+      lastFrame: 227
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bn_pelvis
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1/PantherRLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1/PantherLLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2/Bn_lengua_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2/Bn_oreja_dr_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2/Bn_oreja_iz_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone006
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone007
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone008
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone009
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone010
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone011
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01/PantherRLegDigit02
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01/PantherLLegDigit02
+        weight: 1
+      - path: Bn_pelvis/PantherTail1
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      - path: Cont_arm_dr
+        weight: 1
+      - path: Cont_arm_iz
+        weight: 1
+      - path: Cont_leg_dr
+        weight: 1
+      - path: Cont_leg_iz
+        weight: 1
+      - path: Controlador_general
+        weight: 1
+      - path: Kyru
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: doge_cama
+      takeName: doge_animacio02
+      firstFrame: 237
+      lastFrame: 497
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bn_pelvis
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1/PantherRLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1/PantherLLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2/Bn_lengua_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2/Bn_oreja_dr_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2/Bn_oreja_iz_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone006
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone007
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone008
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone009
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone010
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone011
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01/PantherRLegDigit02
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01/PantherLLegDigit02
+        weight: 1
+      - path: Bn_pelvis/PantherTail1
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      - path: Cont_arm_dr
+        weight: 1
+      - path: Cont_arm_iz
+        weight: 1
+      - path: Cont_leg_dr
+        weight: 1
+      - path: Cont_leg_iz
+        weight: 1
+      - path: Controlador_general
+        weight: 1
+      - path: Kyru
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: doge_cama2
+      takeName: doge_animacio02
+      firstFrame: 497
+      lastFrame: 673
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bn_pelvis
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1/PantherRLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1/PantherLLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2/Bn_lengua_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2/Bn_oreja_dr_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2/Bn_oreja_iz_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone006
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone007
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone008
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone009
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone010
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone011
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01/PantherRLegDigit02
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01/PantherLLegDigit02
+        weight: 1
+      - path: Bn_pelvis/PantherTail1
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      - path: Cont_arm_dr
+        weight: 1
+      - path: Cont_arm_iz
+        weight: 1
+      - path: Cont_leg_dr
+        weight: 1
+      - path: Cont_leg_iz
+        weight: 1
+      - path: Controlador_general
+        weight: 1
+      - path: Kyru
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: doge_puerta
+      takeName: doge_animacio02
+      firstFrame: 693
+      lastFrame: 1073
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bn_pelvis
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1/PantherRLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1/PantherLLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2/Bn_lengua_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2/Bn_oreja_dr_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2/Bn_oreja_iz_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone006
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone007
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone008
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone009
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone010
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone011
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01/PantherRLegDigit02
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01/PantherLLegDigit02
+        weight: 1
+      - path: Bn_pelvis/PantherTail1
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      - path: Cont_arm_dr
+        weight: 1
+      - path: Cont_arm_iz
+        weight: 1
+      - path: Cont_leg_dr
+        weight: 1
+      - path: Cont_leg_iz
+        weight: 1
+      - path: Controlador_general
+        weight: 1
+      - path: Kyru
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: doge_ladrido
+      takeName: doge_animacio02
+      firstFrame: 1091
+      lastFrame: 1125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bn_pelvis
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_dr/Bn_brazo_dr/Bn_antebrazo_dr/Bn_uncle_brazo_dr/PantherRLegDigit01
+          1/PantherRLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_clavicula_iz/Bn_brazo_iz/Bn_antebrazo_iz/Bn_uncle_brazo_iz/PantherLLegDigit01
+          1/PantherLLegDigit02 1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_boca_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_lengua_1/Bn_lengua_2/Bn_lengua_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_dr_1/Bn_oreja_dr_2/Bn_oreja_dr_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/Bn_oreja_iz_1/Bn_oreja_iz_2/Bn_oreja_iz_3
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone006
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone007
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone008
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone009
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone010
+        weight: 1
+      - path: Bn_pelvis/Bn_col_1/Bn_col_2/Bn_col_3/PantherRibcage/Bn_cuello_1/Bn_cuello_2/Bn_cuello_3/Bn_cuello_4/Bn_head/PantherHeadBone011
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_dr/Bn_leg_1_dr/Bn_leg_uncle_dr/PantherRLegDigit01/PantherRLegDigit02
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01
+        weight: 1
+      - path: Bn_pelvis/Bn_leg_iz/Bn_leg_1_iz/Bn_leg_uncle_iz/PantherLLegDigit01/PantherLLegDigit02
+        weight: 1
+      - path: Bn_pelvis/PantherTail1
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: Bn_pelvis/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      - path: Cont_arm_dr
+        weight: 1
+      - path: Cont_arm_iz
+        weight: 1
+      - path: Cont_leg_dr
+        weight: 1
+      - path: Cont_leg_iz
+        weight: 1
+      - path: Controlador_general
+        weight: 1
+      - path: Kyru
+        weight: 1
+      - path: Particle View 001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Bn_pelvis
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

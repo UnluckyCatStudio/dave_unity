@@ -674,6 +674,39 @@ ModelImporter:
     4300220: aro.2
     4300222: aro.1
     4300224: aro.0
+    7400000: pl_doble|aro.5Action
+    7400002: pl_doble|Aro1
+    7400004: pl_doble|Aro2
+    7400006: pl_doble|Closing_ext
+    7400008: pl_doble|Closing_int
+    7400010: aro.5|aro.5Action
+    7400012: aro.5|Aro1
+    7400014: aro.5|Aro2
+    7400016: aro.5|Closing_ext
+    7400018: aro.5|Closing_int
+    7400020: aro.3|aro.5Action
+    7400022: aro.3|Aro1
+    7400024: aro.3|Aro2
+    7400026: aro.3|Closing_ext
+    7400028: aro.3|Closing_int
+    7400030: aro.1|aro.5Action
+    7400032: aro.1|Aro1
+    7400034: aro.1|Aro2
+    7400036: aro.1|Closing_ext
+    7400038: aro.1|Closing_int
+    7400040: aro.0|aro.5Action
+    7400042: aro.0|Aro1
+    7400044: aro.0|Aro2
+    7400046: aro.0|Closing_ext
+    7400048: aro.0|Closing_int
+    7400050: Scene
+    7400052: pl_doble|Aro3
+    7400054: aro.5|Aro3
+    7400056: aro.3|Aro3
+    7400058: aro.1|Aro3
+    7400060: aro.0|Aro3
+    7400062: pl_doble|opening_ext
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -688,13 +721,1381 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: pl_doble|Closing_ext
+      takeName: pl_doble|Closing_ext
+      firstFrame: 0
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: aro.5|Aro3
+      takeName: aro.5|Aro3
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: aro.3|Aro2
+      takeName: aro.3|Aro2
+      firstFrame: 0
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: aro.1|Aro1
+      takeName: aro.1|Aro1
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: aro.0|Closing_int
+      takeName: aro.0|Closing_int
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: pl_doble|opening_ext
+      takeName: pl_doble|opening_ext
+      firstFrame: 0
+      lastFrame: 275
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: aro.0
+        weight: 1
+      - path: aro.1
+        weight: 1
+      - path: aro.2
+        weight: 1
+      - path: aro.3
+        weight: 1
+      - path: aro.4
+        weight: 1
+      - path: aro.5
+        weight: 1
+      - path: aro.6
+        weight: 1
+      - path: base
+        weight: 1
+      - path: enemy_plt.0
+        weight: 1
+      - path: enemy_plt.1
+        weight: 1
+      - path: enemy_plt.2
+        weight: 1
+      - path: enemy_plt.3
+        weight: 1
+      - path: enemy_plt.4
+        weight: 1
+      - path: enemy_plt.5
+        weight: 1
+      - path: enemy_plt.6
+        weight: 1
+      - path: enemy_plt.7
+        weight: 1
+      - path: pl_doble
+        weight: 1
+      - path: plt_central
+        weight: 1
+      - path: torchs_EXT
+        weight: 1
+      - path: torchs_EXT/torch.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_flame.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_foot.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_mid.00
+        weight: 1
+      - path: torchs_EXT/torch.00/torch_top.00
+        weight: 1
+      - path: torchs_EXT/torch.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_flame.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_foot.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_mid.01
+        weight: 1
+      - path: torchs_EXT/torch.01/torch_top.01
+        weight: 1
+      - path: torchs_EXT/torch.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_flame.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_foot.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_mid.02
+        weight: 1
+      - path: torchs_EXT/torch.02/torch_top.02
+        weight: 1
+      - path: torchs_EXT/torch.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_flame.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_foot.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_mid.03
+        weight: 1
+      - path: torchs_EXT/torch.03/torch_top.03
+        weight: 1
+      - path: torchs_EXT/torch.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_flame.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_foot.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_mid.04
+        weight: 1
+      - path: torchs_EXT/torch.04/torch_top.04
+        weight: 1
+      - path: torchs_EXT/torch.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_flame.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_foot.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_mid.05
+        weight: 1
+      - path: torchs_EXT/torch.05/torch_top.05
+        weight: 1
+      - path: torchs_EXT/torch.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_flame.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_foot.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_mid.06
+        weight: 1
+      - path: torchs_EXT/torch.06/torch_top.06
+        weight: 1
+      - path: torchs_EXT/torch.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_flame.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_foot.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_mid.07
+        weight: 1
+      - path: torchs_EXT/torch.07/torch_top.07
+        weight: 1
+      - path: torchs_EXT/torch.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_flame.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_foot.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_mid.08
+        weight: 1
+      - path: torchs_EXT/torch.08/torch_top.08
+        weight: 1
+      - path: torchs_EXT/torch.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_flame.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_foot.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_mid.09
+        weight: 1
+      - path: torchs_EXT/torch.09/torch_top.09
+        weight: 1
+      - path: torchs_EXT/torch.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_flame.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_foot.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_mid.10
+        weight: 1
+      - path: torchs_EXT/torch.10/torch_top.10
+        weight: 1
+      - path: torchs_EXT/torch.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_flame.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_foot.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_mid.11
+        weight: 1
+      - path: torchs_EXT/torch.11/torch_top.11
+        weight: 1
+      - path: torchs_EXT/torch.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_flame.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_foot.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_mid.12
+        weight: 1
+      - path: torchs_EXT/torch.12/torch_top.12
+        weight: 1
+      - path: torchs_EXT/torch.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_flame.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_foot.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_mid.13
+        weight: 1
+      - path: torchs_EXT/torch.13/torch_top.13
+        weight: 1
+      - path: torchs_EXT/torch.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_flame.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_foot.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_mid.14
+        weight: 1
+      - path: torchs_EXT/torch.14/torch_top.14
+        weight: 1
+      - path: torchs_EXT/torch.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_flame.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_foot.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_mid.15
+        weight: 1
+      - path: torchs_EXT/torch.15/torch_top.15
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -733,10 +2134,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

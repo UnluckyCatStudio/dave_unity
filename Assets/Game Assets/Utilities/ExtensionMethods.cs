@@ -27,6 +27,7 @@ namespace Kyru.etc
 		#endregion
 
 		#region MONO
+		#region AsyncLerp
 		public static IEnumerator AsyncLerp<T> ( this MonoBehaviour m, string value, float target, float duration, UnityEngine.Object parent = null )
 		{
 			// Reflection
@@ -98,6 +99,12 @@ namespace Kyru.etc
 				progress = (Time.time - start) / duration;
 				yield return null;
 			}
+		}
+		#endregion
+		public static IEnumerator WaitAndDo ( this MonoBehaviour m, float t, Action action ) 
+		{
+			yield return new WaitForSeconds ( t );
+			action.Invoke ();
 		}
 		#endregion
 

@@ -6,7 +6,7 @@ public class TutoEvent : MonoBehaviour
 {
 	public string eventName;
 
-	private void OnTriggerStay ( Collider other ) 
+	private void OnTriggerEnter ( Collider other ) 
 	{
 		if (other.tag == "Player")
 			tutorialManager.StartCoroutine

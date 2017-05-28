@@ -77,8 +77,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		// Only enable sword collider when attacking
 		sword.edge.enabled = DealingDmg;
 
-		// Make camera follow dave
-		cam.FollowDave ();
+		// reset some triggers
 		#endregion
 
 		if ( Hitd ) return;
@@ -145,12 +144,14 @@ public class DaveController : Kyru.etc.AnimatorController
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
 				{
 					anim.SetTrigger ( "Attack-single" );
+					anim.ResetTrigger ( "Charge" );
 					Attacking = true;
 				}
 				else
 				if ( Game.input.GetKeyDown ( Key.Attack_big ) )
 				{
 					anim.SetTrigger ( "Attack-big" );
+					anim.ResetTrigger ( "Charge" );
 					Attacking = true;
 				}
 			}
@@ -163,26 +164,28 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  !Sheathing
 			&& !Attacking
 			&& !Charging
+			&& SwordOut
 			&& canShoot
-			&& Game.input.GetKeyDown ( Key.Charge ) )
+			&& Game.input.GetKeyDown ( Key.Charge )
+			&& Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70 )
 			{
 				sword.vfx.carga.Play ();
-				//cam.lookOffset += Vector3.forward * 3f;
-				//var rot = Quaternion.LookRotation ( Vector3.Scale ( cam.transform.forward, Vector3.forward ) );
-				//StartCoroutine ( this.AsyncLerp<Transform> ( "rotation", rot, .1f, transform ) );
-
 				anim.SetTrigger ( "Charge" );
-				Charging = true;
-
-				//StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", new Vector3 ( 0, 1, 4 ), .5f, cam ) );
+				cam.CamCharging ();
+				canMove = false;
 			}
 			else
 			if
 			(  Charging
-			&& Game.input.GetKeyUp ( Key.Charge ) )
+			&& !Game.input.GetKey ( Key.Charge ) )
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
+				anim.SetTrigger ( "StopCharge" );
+
+				anim.ResetTrigger ( "Shoot" );
+				cam.CamCharging (true);
+				canMove = true;
 			}
 			#endregion
 
@@ -191,33 +194,65 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  Charging
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
-				anim.SetTrigger ( "Shoot" );
-				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
+				sword.vfx.carga.Stop ( true, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				sword.vfx.release.Play ();
 				var shot = Instantiate ( sword.shot, sword.transform, false );
 				shot.transform.SetParent ( null, true );
 				shot.transform.rotation = Quaternion.LookRotation ( Game.cam.transform.forward ); //, anim.GetBoneTransform (HumanBodyBones.RightUpperArm).up );
-				shot.transform.rotation *= Quaternion.Euler ( 0, 180, 0 );
+				shot.transform.rotation *= Quaternion.Euler ( 5, 175, 0 );
+				Destroy ( shot, 10 );
+
+				anim.SetTrigger ( "Shoot" );
+				cam.CamCharging ( true );
+				canMove = true;
 			} 
 			#endregion
 		}
 		#endregion
 	}
 
+	Transform chest;	Quaternion lastChestRot;
+	Transform arm;		Quaternion lastArmRotation;
+	Transform altArm;
 	void LateUpdate ()
 	{
 		if (Charging)
 		{
-			var chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
-			var arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
-			var lArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
+			Quaternion q;
+			float limit;
+			float angle;
 
-			transform.rotation = cam.transform.rotation;
-			chest.rotation *= Quaternion.Euler ( 0, -30, 0 );
-			arm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
-			lArm.rotation = Quaternion.LookRotation ( Game.cam.transform.up, cam.transform.forward );
+			#region ROTATE CHEST ( Y-Axis )
+			q = cam.pivotY.rotation;
+			limit = 40;
+			angle = Quaternion.Angle ( transform.rotation, q );
+
+			if ( angle <= limit )
+			{
+				chest.rotation = q;
+				lastChestRot = q;
+			}
+			else chest.rotation = lastChestRot;
+			#endregion
+
+			#region ROTATE ARM ( X-Axis )
+			q = Quaternion.LookRotation ( Game.cam.transform.up, Game.cam.transform.forward );
+			limit = 90;
+			angle = Quaternion.Angle ( arm.rotation, q );
+
+			if ( angle <= limit )
+			{
+				arm.rotation = q;
+				lastArmRotation = q;
+			}
+			else arm.rotation = lastArmRotation;
+			#endregion
+
+			// finally rotate lower arm
+			altArm.rotation *= Quaternion.Euler ( 0, 70, 0 );
 		}
+		else anim.ResetTrigger ( "StopCharge" );
 	}
 
 	#region IK
@@ -233,7 +268,17 @@ public class DaveController : Kyru.etc.AnimatorController
 	#region FX
 	protected override void Awake () 
 	{
+#if UNITY_EDITOR
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+#endif
+
 		base.Awake ();
+
+		chest = anim.GetBoneTransform ( HumanBodyBones.Chest );
+		arm = anim.GetBoneTransform ( HumanBodyBones.RightUpperArm );
+		altArm = anim.GetBoneTransform ( HumanBodyBones.RightLowerArm );
+
 		sword.transform.SetParent ( swordBackHolder );
 		sword.transform.localPosition = Vector3.zero;
 		sword.transform.localRotation = Quaternion.identity;
@@ -272,13 +317,15 @@ public class DaveController : Kyru.etc.AnimatorController
 		sword.transform.localRotation = Quaternion.identity;
 	}
 
-	private void Hit ( Vector3 point ) 
+	public void Hit ( Vector3 point ) 
 	{
 		if ( Hitd ) return;
-		// Front or Back ?
-		var angle = Quaternion.Angle ( transform.localRotation, Quaternion.LookRotation ( point ) );
 
-		if ( angle >= 40 )  anim.SetTrigger ( "Hit_Front" );
+		// Front or Back ?
+		var hitDir = point - transform.position;
+		var angle = Quaternion.Angle ( transform.rotation, Quaternion.LookRotation ( hitDir, transform.up ) );
+
+		if ( angle <= 150 )  anim.SetTrigger ( "Hit_Front" );
 		else				anim.SetTrigger ( "Hit_Back" );
 
 		Hitd = true;
@@ -286,6 +333,7 @@ public class DaveController : Kyru.etc.AnimatorController
 		Attacking = false;
 		anim.ResetTrigger ( "Attack-big" );
 		anim.ResetTrigger ( "Attack-single" );
+		anim.SetTrigger ( "StopCharge" );
 		anim.ResetTrigger ( "Charge" );
 		anim.ResetTrigger ( "Shoot" );
 		DealingDmg = false;
@@ -293,8 +341,25 @@ public class DaveController : Kyru.etc.AnimatorController
 		Sheathing = false;
 		anim.ResetTrigger ( "Sheathe" );
 		anim.ResetTrigger ( "Unsheathe" );
+		canMove = true;
 
-		locked=true;
+		if (Charging) cam.GetComponent<Animation> ().Play ( "CamFromCharge" );
+
+		locked =true;
+	}
+
+	private void TryCharging ()
+	{
+		if (Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70
+			&& Game.input.GetKey ( Key.Charge ))
+		{
+			Charging = true;
+		}
+		else
+		{
+			Charging = false;
+			cam.CamCharging ( true );
+		}
 	}
 	#endregion
 }

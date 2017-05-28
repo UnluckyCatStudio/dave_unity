@@ -12,7 +12,7 @@ public class CamController : MonoBehaviour
 	public Transform pivotX;
 
 	[Header("Settings")]
-	public Vector3 lookOffset;
+	public LayerMask dontCollideWith;
 	public float minDistanceFromPivot;
 	public float maxDistanceFromPivot;
 	[Range(0.01f,1)] public float avoidingStep;
@@ -23,7 +23,15 @@ public class CamController : MonoBehaviour
 	public float min;
 	public float max;
 
-	private void Update () 
+	private Vector3 _lookOffset = Vector3.up;
+	public Vector3 lookOffset
+	{
+		get { return _lookOffset; }
+		set { _lookOffset = value; }
+	}
+
+
+	private void LateUpdate () 
 	{
 		// Get user input
 		var rotationX = speedX * Input.GetAxis ( "Mouse Y" ) * Time.deltaTime * ( Game.input.speedY / 100f );
@@ -33,6 +41,7 @@ public class CamController : MonoBehaviour
 		rotationY *= Game.input.invertY ? -1 : 1;
 
 		// Transformations
+		FollowDave ();
 		RotateCamera ( rotationX, rotationY );
 		Stabilize ();
 	}
@@ -42,16 +51,8 @@ public class CamController : MonoBehaviour
 	public void FollowDave () 
 	{
 		transform.position = dave.position;						// Follow Dave
-		var offset = dave.TransformVector ( lookOffset );       // Relative offset
-		pivot = new Vector3 ( offset.x, offset.y, pivot.z );
+		pivot = new Vector3 ( lookOffset.x, lookOffset.y, pivot.z );
 		Game.cam.transform.localPosition = pivot;
-
-		// If camera collides when moved
-		while ( IsColliding () )
-		{
-			Game.cam.transform.Translate
-				( Vector3.forward * avoidingStep );
-		}
 	}
 
 	// Unchanged rotations
@@ -94,7 +95,7 @@ public class CamController : MonoBehaviour
 
 	private void Stabilize () 
 	{
-		if ( !TooFar () && !IsColliding ( avoidingStep * 1.5f ) )
+		if ( !TooFar () && !IsColliding ( 0.3f ) )
 		{
 			var z =
 			Mathf.Lerp
@@ -113,6 +114,20 @@ public class CamController : MonoBehaviour
 			);
 		}
 	}
+
+	// Charging
+	public void CamCharging (bool from=false)
+	{
+		if ( from )
+		{
+			StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", dave.up, 0.5f, this ) );
+		}
+		else
+		{
+			var look = dave.InverseTransformPoint ( pivotY.TransformPoint ( new Vector3 ( 0.85f, 1.2f, -1f ) ) );
+			StartCoroutine ( this.AsyncLerp<CamController> ( "lookOffset", look, 0.25f, this ) );
+		}
+	}
 	#endregion
 
 	#region HELPERS
@@ -120,21 +135,21 @@ public class CamController : MonoBehaviour
 	private bool TooClose () 
 	{
 		return
-			Vector3.Distance ( pivot, Game.cam.transform.position )
+			-Game.cam.transform.localPosition.z
 			<= minDistanceFromPivot;
 	}
 	private bool TooFar () 
 	{
 		return
-			Vector3.Distance ( pivot, Game.cam.transform.position )
+			-Game.cam.transform.localPosition.z
 			>= maxDistanceFromPivot;
 	}
 
 	// Performs collisions checks from camera
-	private bool IsColliding ( float radius=0.1f ) 
+	private bool IsColliding ( float radius=0.15f ) 
 	{
 		return
-			Physics.CheckSphere ( Game.cam.transform.position, radius );
+			Physics.CheckSphere ( Game.cam.transform.position, radius, ~dontCollideWith );
 	}
 	#endregion
 }

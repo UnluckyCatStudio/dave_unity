@@ -14,7 +14,7 @@ namespace Kyru.UI
 	// SHOULD ONLY HAVE ONE FOR
 	// EACH LANGUAGE
 
-	[CreateAssetMenu]
+	[CreateAssetMenu(order = 1000)]
 	public class Translation : ScriptableObject
 	{
 		public Language language;

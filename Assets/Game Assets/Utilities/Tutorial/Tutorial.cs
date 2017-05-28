@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ using Kyru.etc;
 public class Tutorial : MonoBehaviour
 {
 	// Public
+	public Light sun;
 	public Collider placeta;
 	public Animation square;
 	public ParticleSystem fog;
@@ -19,27 +21,35 @@ public class Tutorial : MonoBehaviour
 	public GameObject[] secondWave;
 	public Color normalAmbient;
 	public RangedController firstRanged;
-	public Animation cupula;
+	public Animator cupula;
 	public Color cupulaAmbient;
+	public GameObject beforeColliders;
 	public RangedController[] firstRangeds;
+	public MeleeController[] fisrtMelees;
 	public RangedController[] secondRangeds;
+	public MeleeController[] secondMelees;
 	public RangedController[] thirdRangeds;
+	public MeleeController[] lastMelees;
+	public GameObject afterColliders;
+	public Transform lift;
+	public GameObject liftColliders;
+	public Color finalAmbient;
+	public Color finalFogColor;
 
 	// private
 	Text tutoText;
 
 	IEnumerator StartTuto ( Collider col ) 
 	{
-		col.enabled = false;
-
-		// Turn down ambient
-		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", targetAmbient, 4f ) );
 		yield return null;
 	}
 
 	IEnumerator ClosePlaceta ( Collider col ) 
 	{
-		col.enabled = false;
+		Destroy ( col.gameObject );
+
+		// Turn down ambient
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", targetAmbient, 4f ) );
 
 		// Close placeta
 		placeta.enabled = true;
@@ -52,7 +62,7 @@ public class Tutorial : MonoBehaviour
 
 		// Close 
 		square.Play ( "Fade" );
-		yield return new WaitForSeconds ( 2f );
+		yield return new WaitForSeconds ( 0.8f );
 		fog.Play ();
 		water.SetActive ( false );
 
@@ -60,7 +70,7 @@ public class Tutorial : MonoBehaviour
 		Game.dave.canMove = true;
 		StartCoroutine ( NewTuto ( AllTexts.Tuto_Click_To_Attack, Key.Attack_single ) );
 
-		yield return new WaitForSeconds ( 4f );
+		yield return new WaitForSeconds ( 6f );
 		square.Play ( "Loop" );
 	}
 
@@ -89,17 +99,17 @@ public class Tutorial : MonoBehaviour
 		{
 			yield return new WaitForSeconds ( 2f );
 			placeta.enabled = false;
-			square["Fade"].speed = -1;
+			square["Fade"].speed = -2;
 			square["Fade"].time = square["Fade"].length;
 			square.Play ( "Fade" );
-			yield return new WaitForSeconds ( 2f );
+			yield return new WaitForSeconds ( 1f );
 			water.SetActive ( true );
 			fog.Stop ( false, ParticleSystemStopBehavior.StopEmitting );
 			StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
 		}
 	}
 
-	IEnumerator Ranged ( Collider col )
+	IEnumerator Ranged ( Collider col ) 
 	{
 		col.enabled = false;
 		if ( !Game.dave.SwordOut )
@@ -107,22 +117,86 @@ public class Tutorial : MonoBehaviour
 			Game.dave.canMove = false;
 			Game.dave.Moving = false;
 			yield return NewTuto ( AllTexts.Tuto_R_To_Unsheathe, Key.Sword );
-			Game.dave.canMove = true;
 			yield return new WaitForSeconds ( 1f );
 		}
+
 		Game.dave.canShoot = true;
 		yield return NewTuto ( AllTexts.Tuto_Charge_And_Shot, Key.Charge );
+		Game.dave.canMove = true;
 		firstRanged.Activate ();
 	}
 
-	IEnumerator StartCupula ()
+	IEnumerator StartCupula ( Collider col )
 	{
-		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", cupulaAmbient, 2.5f ) );
-		yield return cupula.Play ( "Start" );
-		cupula.Stop ();
-		yield return new WaitForSeconds ( .5f );
-		firstRangeds[0].Activate ();
+		col.enabled = false;
+		beforeColliders.SetActive ( false );
 
+		cupula.SetTrigger ( "Close" );
+		yield return new WaitForSeconds ( 3.5f );
+		cupula.SetTrigger ( "FireOn" );
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", cupulaAmbient, 2.5f ) );
+		yield return new WaitForSeconds ( 3f );
+		firstRangeds[0].Activate ();
+		yield return new WaitUntil ( () => !firstRangeds[0].active );
+		cupula.SetBool ( "KilledRangeds_1", true );
+
+		foreach (var r in secondRangeds) r.Activate ();
+		yield return new WaitForSeconds ( 2.3f );
+		foreach (var m in fisrtMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+
+		yield return new WaitUntil ( () => secondRangeds.All ( x => !x.active ) );
+		cupula.SetBool ( "KilledRangeds_2", true );
+
+		foreach (var r in thirdRangeds) r.Activate ();
+		yield return new WaitForSeconds ( 2.1f );
+		foreach (var m in secondMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+
+		yield return new WaitUntil ( () => thirdRangeds.All ( x => !x.active ) );
+		cupula.SetBool ( "KilledRangeds_3", true );
+
+		yield return new WaitForSeconds ( 2.1f );
+		foreach (var m in lastMelees)
+		{
+			m.Activate ();
+			m.me.enabled = true;
+		}
+	}
+
+	int cupulaCount;
+	IEnumerator OpenPlaceta () 
+	{
+		if ( ++cupulaCount == 8 )
+		{
+			afterColliders.SetActive ( true );
+			cupula.SetBool ( "Stopped", true );
+			yield return new WaitForSeconds ( 2.4f );
+			cupula.SetBool ( "Open", true );
+			StartCoroutine ( this.AsyncLerp<RenderSettings> ( "ambientLight", normalAmbient, 4f ) );
+			yield return null;
+		}
+	}
+
+	IEnumerator Lift ( Collider col )
+	{
+		col.enabled = false;
+
+		liftColliders.SetActive ( true );
+		Game.dave.transform.SetParent ( lift, true );
+		lift.GetComponent<Animation> ().Play ();
+		yield return new WaitForSeconds ( 5f );
+		StartCoroutine ( this.AsyncLerp<Light> ( "intensity", 0.56f, 5f, sun ) );
+		yield return new WaitForSeconds ( 2f );
+		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "fogColor", finalFogColor, 3f ) );
+		yield return this.AsyncLerp<RenderSettings> ( "ambientLight", finalAmbient, 3f );
+		liftColliders.SetActive ( false );
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 
@@ -130,22 +204,24 @@ public class Tutorial : MonoBehaviour
 		Game.ui.SetTrigger ( "NewTuto" );
 		tutoText.text = Localization.GetText ( txt );
 		yield return new WaitUntil
-			( () =>
+		( () =>
+		{
+			if ( key == Key.Attack_big || key == Key.Attack_single )
 			{
-				if ( key == Key.Attack_big || key == Key.Attack_single )
-				{
-					return
-						Game.input.GetKeyDown
-						( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
-				}
-				else return Game.input.GetKeyDown ( key );
-			});
+				return
+					Game.dave.SwordOut
+					&& Game.input.GetKeyDown
+					( Key.Attack_big ) || Game.input.GetKeyDown ( Key.Attack_single );
+			}
+			else return Game.input.GetKeyDown ( key );
+		});
+
 		Game.ui.SetTrigger ( "TutoOver" );
 	}
 
 	void Start () 
 	{
-		ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
+		//ProceduralMaterial.substanceProcessorUsage = ProceduralProcessorUsage.All;
 		tutoText = GameObject.Find ( "TXT_Tuto" ).GetComponent<Text> ();
 	}
 }
