@@ -12782,6 +12782,7 @@ MonoBehaviour:
   translations:
   - {fileID: 11400000, guid: f8a2439ae7f9ce642a8b44a94cda6e99, type: 2}
   - {fileID: 11400000, guid: 32af41b6a989f5a458efa2f715f4ea6f, type: 2}
+  - {fileID: 11400000, guid: 8a60f2a38dd04d5448f733a514f81874, type: 2}
 --- !u!4 &1309869451
 Transform:
   m_ObjectHideFlags: 0

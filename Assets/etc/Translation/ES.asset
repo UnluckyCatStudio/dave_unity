@@ -19,7 +19,7 @@ MonoBehaviour:
   - Opciones
   - "Salir al men\xFA"
   - Salir al escritorio
-  - Idioma
+  - 'Idioma: '
   - Volver
   - Cargando...
   - "Gr\xE1ficos"
@@ -50,12 +50,12 @@ MonoBehaviour:
   - Saltar
   - Caminar
   - Espada
-  - Boomerang
+  - Cargar disparo
   - Ataqiue / Disparo
   - Ataque de barrido
   - Interactuar
   - Escudo
-  - ESC para cancelar
+  - ESC para cancelar...
   - Invertir X
   - Invertir Y
   - Velocidad horizontal

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Kyru.UI;
 using Kyru.etc;
 
 public class DaveController : Kyru.etc.AnimatorController
@@ -139,7 +140,8 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  SwordOut
 			&& !Attacking
 			&& !Charging
-			&& !Sheathing )
+			&& !Sheathing
+			&& !FxUI.paused )
 			{
 				if ( Game.input.GetKeyDown ( Key.Attack_single ) )
 				{
@@ -173,15 +175,18 @@ public class DaveController : Kyru.etc.AnimatorController
 				anim.SetTrigger ( "Charge" );
 				cam.CamCharging ();
 				canMove = false;
+				tryingToCharge = true;
 			}
 			else
 			if
-			(  Charging
-			&& !Game.input.GetKey ( Key.Charge ) )
+			( Input.GetKeyDown ( KeyCode.Escape )
+			|| ((Charging || tryingToCharge)
+			&& !Game.input.GetKey ( Key.Charge ) ))
 			{
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				anim.SetTrigger ( "StopCharge" );
+				tryingToCharge = false;
 
 				anim.ResetTrigger ( "Shoot" );
 				cam.CamCharging (true);
@@ -204,6 +209,7 @@ public class DaveController : Kyru.etc.AnimatorController
 				Destroy ( shot, 10 );
 
 				anim.SetTrigger ( "Shoot" );
+				anim.ResetTrigger ( "StopCharge" );
 				cam.CamCharging ( true );
 				canMove = true;
 			} 
@@ -252,7 +258,6 @@ public class DaveController : Kyru.etc.AnimatorController
 			// finally rotate lower arm
 			altArm.rotation *= Quaternion.Euler ( 0, 70, 0 );
 		}
-		else anim.ResetTrigger ( "StopCharge" );
 	}
 
 	#region IK
@@ -333,32 +338,40 @@ public class DaveController : Kyru.etc.AnimatorController
 		Attacking = false;
 		anim.ResetTrigger ( "Attack-big" );
 		anim.ResetTrigger ( "Attack-single" );
-		anim.SetTrigger ( "StopCharge" );
+		Charging = false;
+		tryingToCharge = false;
+		anim.ResetTrigger ( "StopCharge" );
 		anim.ResetTrigger ( "Charge" );
 		anim.ResetTrigger ( "Shoot" );
+		anim.CrossFade ( "None", .1f, 2 );
+		if ( tryingToCharge || Charging ) cam.CamCharging (true);
 		DealingDmg = false;
-		Charging = false;
 		Sheathing = false;
 		anim.ResetTrigger ( "Sheathe" );
 		anim.ResetTrigger ( "Unsheathe" );
 		canMove = true;
 
-		if (Charging) cam.GetComponent<Animation> ().Play ( "CamFromCharge" );
-
 		locked =true;
 	}
 
-	private void TryCharging ()
+	bool tryingToCharge;
+	private void TryCharging () 
 	{
+		if (!tryingToCharge) anim.SetTrigger ( "StopCharge" );
+
 		if (Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70
 			&& Game.input.GetKey ( Key.Charge ))
 		{
 			Charging = true;
+			anim.ResetTrigger ( "StopCharge" );
+			tryingToCharge = false;
 		}
 		else
 		{
 			Charging = false;
+			anim.ResetTrigger ( "StopCharge" );
 			cam.CamCharging ( true );
+			tryingToCharge = false;
 		}
 	}
 	#endregion

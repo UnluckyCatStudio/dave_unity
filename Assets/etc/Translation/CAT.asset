@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5c707d6b394944182b864c899113b6, type: 3}
+  m_Name: CAT
+  m_EditorClassIdentifier: 
+  language: 2
+  texts:
+  - Jugar
+  - Pausa
+  - Continuar
+  - Opcions
+  - "Sortir al men\xFA"
+  - Sortir al escriptori
+  - 'Idioma: '
+  - Tornar
+  - Carregant...
+  - "Gr\xE0fics"
+  - "Resoluci\xF3:"
+  - Pantalla sencera
+  - V-Sync
+  - Anti-aliasing
+  - Textures
+  - Efectes
+  - Ombres
+  - "Camp de visi\xF3"
+  - Aplicar
+  - Molt alt
+  - Alt
+  - Mitg
+  - Baix
+  - "\xC0udio"
+  - General
+  - "M\xFAsica"
+  - Efectes
+  - Entorn
+  - Veus
+  - Controls
+  - Endevant
+  - Enrere
+  - Esquerra
+  - Dreta
+  - Saltar
+  - Caminar
+  - Espasa
+  - Carregar tret
+  - Atac / Tret
+  - Atac 2
+  - Interactuar
+  - Escut
+  - "ESC per cancel\xB7lar..."
+  - Invertir X
+  - Invertir Y
+  - Velocitat horitzontal
+  - Velocitat vertical
+  - Pulsa [R] per desenfundar o enfundar l'espasa.
+  - "[Fes clic esquerre] per llan\xE7ar un atac directe vertical.\nFes servir [WASD]
+    per a redireccionar l'atac."
+  - "[Fes clic dret] per llan\xE7ar un atac m\xE9s ampli i m\xE9s lent.\nFes servir
+    [WASD] per a redireccionar l'atac."
+  - 'Fes servir [Q] per a carregar un tret.
+
+    Mentre carregas [fes clic esquerre] per disparar o
+
+    deixa anar [Q] per parar de carregar.
+
+    No et pots moure fins que paris!'
+  - "Cr\xE8dits"
+  - "V\xEDctor Ochoa  :  Productor, Programador, Animador\nAnna Pe\xF1a    :  Artista
+    2D, UI, VFX\nDavid Farr\xE9   :  Animador, Artista 3D"

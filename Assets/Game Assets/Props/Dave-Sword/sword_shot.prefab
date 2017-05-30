@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54537474570945690}
   - component: {fileID: 114859646600004620}
   - component: {fileID: 108655800764319492}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: sword_shot
   m_TagString: Shot
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4587321833632028}
   - component: {fileID: 198531413385487080}
   - component: {fileID: 199191802572038034}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: disparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
