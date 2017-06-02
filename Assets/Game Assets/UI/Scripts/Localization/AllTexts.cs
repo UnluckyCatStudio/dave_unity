@@ -74,6 +74,9 @@ namespace Kyru.UI
 
 		// lmao
 		Credits_btn,
-		Credits
+		Credits,
+		They_took_Kyru,
+		it_s_time,
+		to_be_c
 	}
 }

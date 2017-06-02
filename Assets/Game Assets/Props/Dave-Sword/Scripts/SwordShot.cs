@@ -16,6 +16,11 @@ public class SwordShot : MonoBehaviour
 			other.GetComponent<RangedController> ().Die ();
 			Destroy ( gameObject );
 		}
+		if ( other.name == "monolito_gema" )
+		{
+			other.GetComponent<Monolito> ().Trigger ( transform.position );
+			Destroy ( gameObject );
+		}
 		else transform.Rotate ( Vector3.right, 45, Space.Self );   // reflect
 	}
 }

@@ -35,6 +35,9 @@ public class Tutorial : MonoBehaviour
 	public GameObject liftColliders;
 	public Color finalAmbient;
 	public Color finalFogColor;
+	public Quaternion finalPivotY;
+	public Quaternion finalCamRot;
+	public Vector3 finalCamZoom;
 
 	// private
 	Text tutoText;
@@ -184,7 +187,7 @@ public class Tutorial : MonoBehaviour
 		}
 	}
 
-	IEnumerator Lift ( Collider col )
+	IEnumerator Lift ( Collider col ) 
 	{
 		col.enabled = false;
 
@@ -196,7 +199,33 @@ public class Tutorial : MonoBehaviour
 		yield return new WaitForSeconds ( 2f );
 		StartCoroutine ( this.AsyncLerp<RenderSettings> ( "fogColor", finalFogColor, 3f ) );
 		yield return this.AsyncLerp<RenderSettings> ( "ambientLight", finalAmbient, 3f );
+		//RenderSettings.skybox.SetColor ( "_Tint", skyTint );
 		liftColliders.SetActive ( false );
+	}
+
+	IEnumerator Finale ( Collider col )
+	{
+		col.enabled = false;
+		Game.dave.canMove = false;
+		Game.dave.Moving = false;
+		Game.dave.cam.enabled = false;
+
+		FindObjectsOfType<MeleeController> ().ToList ().ForEach ( x => x.GetComponent<Animator> ().enabled = false );
+		FindObjectsOfType<RangedController> ().ToList ().ForEach ( x => x.active = false );
+
+		StartCoroutine ( this.AsyncLerp<Transform> ( "localRotation", finalPivotY, 8f, Game.dave.cam.transform ) );
+		StartCoroutine ( this.AsyncLerp<Transform> ( "localRotation", finalCamRot, 5f, Game.cam.transform ) );
+		yield return new WaitForSeconds ( 3.5f );
+		StartCoroutine ( this.AsyncLerp<Transform> ( "localPosition", finalCamZoom, 6f, Game.cam.transform ) );
+		yield return new WaitForSeconds ( 6f );
+
+		GameObject.Find ( "END" ).GetComponent<Image> ().enabled = true;
+		GameObject.Find ( "END" ).GetComponentInChildren<Text> ().enabled = true;
+
+		yield return new WaitForSeconds ( 4f );
+		Game.ui.GetComponent<FxUI> ().QuitToMainMenu ();
+
+		Game.ui.GetComponentInChildren<BoxCollider> ( true ).gameObject.SetActive ( true );
 	}
 
 	IEnumerator NewTuto ( AllTexts txt, Key key ) 

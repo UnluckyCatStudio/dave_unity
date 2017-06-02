@@ -12,6 +12,7 @@ public class MeleeController : Kyru.etc.AnimatorController
 	public bool startOnAwake;
 	public float runMul;
 	public bool dead;
+	public bool killAlways;
 
 	[Header("Death")]
 	public GameObject receiver;
@@ -59,7 +60,7 @@ public class MeleeController : Kyru.etc.AnimatorController
 	#region DYING
 	private void OnTriggerEnter ( Collider col ) 
 	{
-		if ( col.tag == "sword" )
+		if ( ( active || killAlways ) && col.tag == "sword" )
 		{
 			active = false;
 			anim.Stop ();

@@ -126,6 +126,10 @@ public class DaveController : Kyru.etc.AnimatorController
 		{
 			#region SHEATHING
 			if ( !Sheathing
+				&& !Attacking
+				&& !Hitd
+				&& !tryingToCharge
+				&& !Charging
 				&& Game.input.GetKeyDown ( Key.Sword ) )
 			{
 				if ( !SwordOut ) anim.SetTrigger ( "Unsheathe" );
@@ -171,6 +175,8 @@ public class DaveController : Kyru.etc.AnimatorController
 			&& Game.input.GetKeyDown ( Key.Charge )
 			&& Quaternion.Angle ( cam.pivotY.rotation, transform.rotation ) <= 70 )
 			{
+				Game.ui.SetTrigger ( "Charge" );
+
 				sword.vfx.carga.Play ();
 				anim.SetTrigger ( "Charge" );
 				cam.CamCharging ();
@@ -183,6 +189,8 @@ public class DaveController : Kyru.etc.AnimatorController
 			|| ((Charging || tryingToCharge)
 			&& !Game.input.GetKey ( Key.Charge ) ))
 			{
+				Game.ui.SetTrigger ( "StopCharge" );
+
 				sword.vfx.carga.Stop ( false, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				anim.SetTrigger ( "StopCharge" );
@@ -199,13 +207,15 @@ public class DaveController : Kyru.etc.AnimatorController
 			(  Charging
 			&& Game.input.GetKeyDown ( Key.Attack_single ) )
 			{
+				Game.ui.SetTrigger ( "StopCharge" );
+
 				sword.vfx.carga.Stop ( true, ParticleSystemStopBehavior.StopEmittingAndClear );
 				Charging = false;
 				sword.vfx.release.Play ();
 				var shot = Instantiate ( sword.shot, sword.transform, false );
 				shot.transform.SetParent ( null, true );
 				shot.transform.rotation = Quaternion.LookRotation ( Game.cam.transform.forward ); //, anim.GetBoneTransform (HumanBodyBones.RightUpperArm).up );
-				shot.transform.rotation *= Quaternion.Euler ( 5, 175, 0 );
+				shot.transform.rotation *= Quaternion.Euler ( 10, 175, 0 );
 				Destroy ( shot, 10 );
 
 				anim.SetTrigger ( "Shoot" );
@@ -343,6 +353,8 @@ public class DaveController : Kyru.etc.AnimatorController
 		anim.ResetTrigger ( "StopCharge" );
 		anim.ResetTrigger ( "Charge" );
 		anim.ResetTrigger ( "Shoot" );
+		Game.ui.ResetTrigger ( "StopCharge" );
+		Game.ui.CrossFade ( "Crosshair_fade-OUT", 0.25f, 6 );
 		anim.CrossFade ( "None", .1f, 2 );
 		if ( tryingToCharge || Charging ) cam.CamCharging (true);
 		DealingDmg = false;

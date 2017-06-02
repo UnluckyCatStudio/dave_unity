@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Kyru.etc;
 
 namespace Kyru.UI
@@ -32,6 +33,8 @@ namespace Kyru.UI
 			Game.ui.SetBool ( "Paused", false );
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
+			Time.timeScale = 1;
+			SceneManager.UnloadSceneAsync ( 1 );
 		}
 
 		public void QuitToDesktop () 
