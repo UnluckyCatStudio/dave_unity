@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
 	{
 		DontDestroyOnLoad ( this );
 
-		var lang	        = 1; // PlayerPrefs.GetInt    ( "Lang" );
+		var lang	        = PlayerPrefs.GetInt    ( "Lang" );
 		var jsonGraphics    = PlayerPrefs.GetString ( "Graphics" );
 		var jsonInput       = PlayerPrefs.GetString ( "Input" );
 		var jsonAudio       = PlayerPrefs.GetString ( "Audio" );

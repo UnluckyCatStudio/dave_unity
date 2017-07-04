@@ -24,16 +24,18 @@ namespace Kyru.UI
 			Game.ui.SetBool ( "Loading", true );
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
-			ZoneLoader.Init ( this, "Zona_0", 3f );
+			ZoneLoader.Init ( this, "Zona_0", 3f, Input.GetKey ( KeyCode.LeftControl ) );
 		}
 
 		public void QuitToMainMenu () 
 		{
+			_canPause = false;
 			Game.ui.SetBool ( "OnMainMenu", true );
 			Game.ui.SetBool ( "Paused", false );
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 			Time.timeScale = 1;
+			Game.ui.SetTrigger ( "MovieText" );
 			SceneManager.UnloadSceneAsync ( 1 );
 		}
 
@@ -42,17 +44,16 @@ namespace Kyru.UI
 			Application.Quit ();
 		}
 
-
 		private bool canPause 
 		{
 			get
 			{
 				return
-					! ( Game.ui.GetBool ( "OnMainMenu" )
-					 || Game.ui.GetBool ( "Loading" ) );
+					! ( Game.ui.GetBool ( "OnMainMenu" ) || Game.ui.GetBool ( "Loading" ) ) && _canPause;
 			}
 		}
 		public static bool paused = true;
+		public static bool _canPause;
 		void Update ()
 		{
 			// Animator check

@@ -38,6 +38,7 @@ public class Tutorial : MonoBehaviour
 	public Quaternion finalPivotY;
 	public Quaternion finalCamRot;
 	public Vector3 finalCamZoom;
+	public GameObject[] allOtherMelees;
 
 	// private
 	Text tutoText;
@@ -131,6 +132,10 @@ public class Tutorial : MonoBehaviour
 
 	IEnumerator StartCupula ( Collider col )
 	{
+		// Desttroy placeta melees
+		foreach (var m in firstWave) Destroy (m);
+		foreach (var m in secondWave) Destroy (m);
+
 		col.enabled = false;
 		beforeColliders.SetActive ( false );
 
@@ -144,6 +149,7 @@ public class Tutorial : MonoBehaviour
 		cupula.SetBool ( "KilledRangeds_1", true );
 
 		foreach (var r in secondRangeds) r.Activate ();
+		foreach (var m in fisrtMelees) m.gameObject.SetActive (true);
 		yield return new WaitForSeconds ( 2.3f );
 		foreach (var m in fisrtMelees)
 		{
@@ -155,9 +161,10 @@ public class Tutorial : MonoBehaviour
 		cupula.SetBool ( "KilledRangeds_2", true );
 
 		foreach (var r in thirdRangeds) r.Activate ();
+		foreach (var m in secondMelees) m.gameObject.SetActive (true);
 		yield return new WaitForSeconds ( 2.1f );
 		foreach (var m in secondMelees)
-		{
+		{	
 			m.Activate ();
 			m.me.enabled = true;
 		}
@@ -165,6 +172,7 @@ public class Tutorial : MonoBehaviour
 		yield return new WaitUntil ( () => thirdRangeds.All ( x => !x.active ) );
 		cupula.SetBool ( "KilledRangeds_3", true );
 
+		foreach (var m in lastMelees) m.gameObject.SetActive (true);
 		yield return new WaitForSeconds ( 2.1f );
 		foreach (var m in lastMelees)
 		{
@@ -201,6 +209,14 @@ public class Tutorial : MonoBehaviour
 		yield return this.AsyncLerp<RenderSettings> ( "ambientLight", finalAmbient, 3f );
 		//RenderSettings.skybox.SetColor ( "_Tint", skyTint );
 		liftColliders.SetActive ( false );
+
+		// Destroy other melees
+		foreach (var m in fisrtMelees) Destroy (m.gameObject);
+		foreach (var m in secondMelees) Destroy (m.gameObject);
+		foreach (var m in lastMelees) Destroy (m.gameObject);
+
+		// Activate other melees
+		foreach (var m in allOtherMelees) m.SetActive (true);
 	}
 
 	IEnumerator Finale ( Collider col )

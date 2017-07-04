@@ -15,7 +15,7 @@ namespace Kyru.UI
 		/// 1 = ES
 		/// 2 = CAT
 		/// </summary>
-		public static int lang = 1;
+		public static int lang = 0;
 		public static Translation[] translations = new Translation[3];
 
 		/// <summary>
